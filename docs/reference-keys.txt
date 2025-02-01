@@ -1,0 +1,13 @@
+fig:nice-fig
+tab:nice-tab
+about
+keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format
+intro
+literature
+methods
+math-example
+applications
+example-one
+example-two
+final-words
+intro-bd

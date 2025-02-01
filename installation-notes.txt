@@ -1,0 +1,16 @@
+installation notes
+
+install on mac
+update rstudio & r to latest version (Pile of Leaves)
+following: https://bookdown.org/yihui/bookdown/get-started.html
+
+unpack,
+install bookdown
+install tinytex
+get to build all and get TinyTex error
+xelatex
+mac installation on https://yihui.org/tinytex/ seems to fix it
+
+now have downlit & xml2 package errors
+
+
