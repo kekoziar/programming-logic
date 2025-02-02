@@ -1,0 +1,4 @@
+`r if (knitr:::is_html_output()) '
+# References {-}
+> references must be in file order preceding this file in order to render
+'`
