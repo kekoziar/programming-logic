@@ -1,0 +1,18 @@
+# Functions
+Moving into syntax
+What are functions, arguments in functions (order matters, explicit vs defaults)
+Can make own but many are prebuilt in languages
+
+## Libraries
+Plus concept of libraries/packages - functions that other people have built and you can install/import
+Call back to popcorn - if function is make_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
+make_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make_popcorn() with defaults
+import cookbook; cookbook.make_popcorn()
+### From stephanie import make_popcorn()
+### From kat import make_popcorn()
+
+## Activity reprise for functions
+Libraries are libraries - you’re checking out a book and there’s the specific thing that you need. You don’t need to memorize in your brain - which has limited space - every fact, you can check out a book!
+Libraries, packages, modules
+Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
+Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments 

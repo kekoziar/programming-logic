@@ -1,0 +1,15 @@
+# Common Issues
+Some common issues
+ = vs == (set as equal vs test for equality)
+Closing quotes and parentheses
+Overwriting variable names
+Order of running code matters; variable will be whatever most recently set as
+Spelling and capitalization matters
+‘X’ is different from ‘x’
+Ending a statement (needing ; or other conclusion)
+Direct comparison of multiple syntax, so like the same task in R, Python, C, SQL, Stata, Java
+You don’t need to memorize specifics!
+Reading and writing data / files
+Syntax is going to be specific to a language, or package within a language
+Missing values may be special class, different between languages
+Show some examples of reading/writing data in R, Python, Stata, SQL

@@ -13,9 +13,9 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 
 
 ## Other Types of Loops 
-while(check at beginning)
-do-while(check at end)
-until(check at end)
+- while(check at beginning)
+- do-while(check at end)
+- until(check at end)
 
 ## math example
 

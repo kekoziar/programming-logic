@@ -1,0 +1,16 @@
+# Conditionals and Making Choices
+
+which ties into conditionals
+If, if else
+Logical flow: if this, else (otherwise) that
+
+## Boolean Operators
+Equals, not equals, and, or (Boolean operators) - everything boils down to True or False
+
+
+## Example of true vs false outcome for ifelse
+
+## Activity - if else trace
+Importance of parentheses in conditionals
+Example of mismatched or no parentheses
+
