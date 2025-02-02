@@ -14,9 +14,9 @@ description: "This is a programming logic for non-programmers workshop, with a t
 
 # About
 
-```
-Bookdown reference: https://bookdown.org/yihui/bookdown/usage.html
-```
+
+> Bookdown reference: [https://bookdown.org/yihui/bookdown/usage.html](https://bookdown.org/yihui/bookdown/usage.html)
+
 
 `BEGIN pitch()`
 

@@ -1,0 +1,26 @@
+# Loops
+
+Drawing from Introduction to Programming Logic[@lynne_ohanlon_introduction_2000]
+Start with `for` loop as first function term
+“Populate an array from a for loop” as an early example; pg 376 blank table with good early exercise.
+Side note about infinite loop, importance of settling bounds
+What happens if you don’t tell loop to increase?
+Examples of `for` loops in multiple languages (Python, C, R)?
+To decide: all theory and then all practice, or theory/practice/theory/practice?
+Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)
+
+## Activity - loop trace
+
+
+## Other Types of Loops 
+while(check at beginning)
+do-while(check at end)
+until(check at end)
+
+## math example
+
+
+You can also use math in footnotes like this^[where we mention $p = \frac{a}{b}$].
+
+We will approximate standard error to 0.027
+
