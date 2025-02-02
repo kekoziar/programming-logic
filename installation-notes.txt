@@ -1,6 +1,6 @@
-installation notes
+# installation notes
 
-install on mac
+## install on mac
 update rstudio & r to latest version (Pile of Leaves)
 following: https://bookdown.org/yihui/bookdown/get-started.html
 
@@ -12,5 +12,13 @@ xelatex
 mac installation on https://yihui.org/tinytex/ seems to fix it
 
 now have downlit & xml2 package errors
+install downlit & xml2
 
+renders under Build
 
+## Locally update immediately w/o needing to rerender
+
+install.packages("servr")
+
+bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE,
+           in_session = TRUE, quiet = FALSE)
