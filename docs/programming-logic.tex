@@ -186,6 +186,8 @@ New intro for Programming Logic
 
 \section{Building a Mental Model}\label{building-a-mental-model}
 
+\section{A Note on Syntax}\label{a-note-on-syntax}
+
 \chapter{Algorithms}\label{algorithms}
 
 overview of algorithms and computer code/scripting
@@ -207,9 +209,15 @@ Also writing out result of each iteration otherwise you'll only get the last res
 
 \section{Other Types of Loops}\label{other-types-of-loops}
 
-while(check at beginning)
-do-while(check at end)
-until(check at end)
+\begin{itemize}
+\tightlist
+\item
+  while(check at beginning)
+\item
+  do-while(check at end)
+\item
+  until(check at end)
+\end{itemize}
 
 \section{math example}\label{math-example}
 
@@ -217,17 +225,90 @@ You can also use math in footnotes like this\footnote{where we mention \(p = \fr
 
 We will approximate standard error to 0.027
 
-\chapter{Applications}\label{applications}
+\chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+which ties into conditionals
+If, if else
+Logical flow: if this, else (otherwise) that
 
-\section{Example one}\label{example-one}
+\section{Boolean Operators}\label{boolean-operators}
 
-\section{Example two}\label{example-two}
+Equals, not equals, and, or (Boolean operators) - everything boils down to True or False
 
-\chapter{Final Words}\label{final-words}
+\section{Example of true vs false outcome for ifelse}\label{example-of-true-vs-false-outcome-for-ifelse}
 
-We have finished a nice book.
+\section{Activity - if else trace}\label{activity---if-else-trace}
+
+Importance of parentheses in conditionals
+Example of mismatched or no parentheses
+
+\chapter{Functions}\label{functions}
+
+Moving into syntax
+What are functions, arguments in functions (order matters, explicit vs defaults)
+Can make own but many are prebuilt in languages
+
+\section{Libraries}\label{libraries}
+
+Plus concept of libraries/packages - functions that other people have built and you can install/import
+Call back to popcorn - if function is make\_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
+make\_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make\_popcorn() with defaults
+import cookbook; cookbook.make\_popcorn()
+\#\#\# From stephanie import make\_popcorn()
+\#\#\# From kat import make\_popcorn()
+
+\section{Activity reprise for functions}\label{activity-reprise-for-functions}
+
+Libraries are libraries - you're checking out a book and there's the specific thing that you need. You don't need to memorize in your brain - which has limited space - every fact, you can check out a book!
+Libraries, packages, modules
+Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
+Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments
+
+\chapter{Comments and Names}\label{comments-and-names}
+
+Concept of comments, naming of variables and variables
+Briefly touch on common conventions (like \texttt{df} for dataframe); ask about disciplinary conventions for abbreviations or naming
+
+\chapter{Common Issues}\label{common-issues}
+
+Some common issues
+= vs == (set as equal vs test for equality)
+Closing quotes and parentheses
+Overwriting variable names
+Order of running code matters; variable will be whatever most recently set as
+Spelling and capitalization matters
+`X' is different from `x'
+Ending a statement (needing ; or other conclusion)
+Direct comparison of multiple syntax, so like the same task in R, Python, C, SQL, Stata, Java
+You don't need to memorize specifics!
+Reading and writing data / files
+Syntax is going to be specific to a language, or package within a language
+Missing values may be special class, different between languages
+Show some examples of reading/writing data in R, Python, Stata, SQL
+
+\chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
+
+Recap - you won't be an expert, the idea is to build up your skillset
+
+\section{Approaching Consultations}\label{approaching-consultations}
+
+How you may approach consultations - prepare in advance knowing specific question, evening seeing code in advance; have student talk through their code
+Be clear with what you can and cannot do.
+Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician)
+Troubleshooting vs consult
+Ok to say you don't know! Point to documentation and learning resources
+
+\section{Three Areas For Errors}\label{three-areas-for-errors}
+
+Code not running at all → often a syntax error
+
+Running unexpectedly / unexpected output
+
+input
+
+logic
+
+output
 
 \chapter{BD Demo Introduction}\label{intro-bd}
 
