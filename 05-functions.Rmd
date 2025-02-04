@@ -12,7 +12,11 @@ import cookbook; cookbook.make_popcorn()
 ### From kat import make_popcorn()
 
 ## Activity reprise for functions
-Libraries are libraries - you’re checking out a book and there’s the specific thing that you need. You don’t need to memorize in your brain - which has limited space - every fact, you can check out a book!
+
+You can think of programming libraries (or packages, or modules, depending on what term your programming language of choice uses) as similar to actual libraries. You don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more! In the same way, your computer doesn't need to always have every single function on hand (which would take up a lot of space), it can "check out" (load) a "book" (collection of functions) created by another person. This saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference "book" so output should be the same for the same input, across users).\
+
+
+
 Libraries, packages, modules
 Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
 Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments 

@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="Drawing from Introduction to Programming Logic(Lynne O’Hanlon 2000) Start with for loop as first function term “Populate an array from a for loop” as an early example; pg 376 blank table with good...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -96,14 +96,120 @@ What happens if you don’t tell loop to increase?
 Examples of <code>for</code> loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)</p>
-<div id="activity---loop-trace" class="section level2" number="4.1">
+<div id="exercise---populate-an-array" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">4.1</span> Activity - loop trace<a class="anchor" aria-label="anchor" href="#activity---loop-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> Exercise - populate an array<a class="anchor" aria-label="anchor" href="#exercise---populate-an-array"><i class="fas fa-link"></i></a>
 </h2>
+<p>Let’s use a <code>for</code> loop to populate an array.</p>
+<p>We’ll start with an empty array called <code>table</code> with 4 rows and columns named A, B, C, D, and E:</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Our <code>for</code> loop:</p>
+<p>[adapt programming logic book exercise for loop]</p>
+<p>Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.</p>
+<ul>
+<li>What is the number in cell A1?</li>
+<li>What is the number in cell B2?</li>
+<li>What is the number in cell D4?</li>
+</ul>
+<details><summary>
+Your filled array should look like this
+</summary><table class="table table-sm">
+<thead><tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+</tr>
+</tbody>
+</table></details>
 </div>
-<div id="other-types-of-loops" class="section level2" number="4.2">
+<div id="exercise---loop-trace" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">4.2</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
+</h2>
+<p>Grab a pen and paper and write out the output of each iteration of the loop:</p>
+<pre><code>for (x in 0:5) 
+  print(x)</code></pre>
+<details><summary>
+Loop output
+</summary>
+1<br>
+2<br>
+3<br>
+4<br>
+5<br></details><p><br></p>
+</div>
+<div id="other-types-of-loops" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>while(check at beginning)</li>
@@ -111,16 +217,7 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 <li>until(check at end)</li>
 </ul>
 </div>
-<div id="math-example" class="section level2" number="4.3">
-<h2>
-<span class="header-section-number">4.3</span> math example<a class="anchor" aria-label="anchor" href="#math-example"><i class="fas fa-link"></i></a>
-</h2>
-<p>You can also use math in footnotes like this<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;where we mention &lt;span class="math inline"&gt;\(p = \frac{a}{b}\)&lt;/span&gt;&lt;/p&gt;'><sup>1</sup></a>.</p>
-<p>We will approximate standard error to 0.027</p>
-
 </div>
-</div>
-
   <div class="chapter-nav">
 <div class="prev"><a href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></div>
 <div class="next"><a href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></div>
@@ -128,9 +225,9 @@ Also writing out result of each iteration otherwise you’ll only get the last r
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#loops"><span class="header-section-number">4</span> Loops</a></li>
-<li><a class="nav-link" href="#activity---loop-trace"><span class="header-section-number">4.1</span> Activity - loop trace</a></li>
-<li><a class="nav-link" href="#other-types-of-loops"><span class="header-section-number">4.2</span> Other Types of Loops</a></li>
-<li><a class="nav-link" href="#math-example"><span class="header-section-number">4.3</span> math example</a></li>
+<li><a class="nav-link" href="#exercise---populate-an-array"><span class="header-section-number">4.1</span> Exercise - populate an array</a></li>
+<li><a class="nav-link" href="#exercise---loop-trace"><span class="header-section-number">4.2</span> Exercise - loop trace</a></li>
+<li><a class="nav-link" href="#other-types-of-loops"><span class="header-section-number">4.3</span> Other Types of Loops</a></li>
 </ul>
 
       <div class="book-extra">
@@ -147,7 +244,7 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-02.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

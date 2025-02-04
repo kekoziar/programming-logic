@@ -9,7 +9,58 @@ Examples of `for` loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)
 
-## Activity - loop trace
+## Exercise - populate an array
+
+Let's use a `for` loop to populate an array.
+
+We'll start with an empty array called `table` with 4 rows and columns named A, B, C, D, and E:
+
+| A | B | C | D | E |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+Our `for` loop:
+
+[adapt programming logic book exercise for loop]
+    
+
+Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.
+
+- What is the number in cell A1?
+- What is the number in cell B2?
+- What is the number in cell D4?
+
+<details>
+<summary>Your filled array should look like this</summary>
+
+| A   | B   | C   | D   | E  |
+|---  |---  |---  |---  |--- |
+| 1   |  2  | 3   |  4  | 5  |
+| 6   |  7  | 8   |  9  | 10 |
+| 11  | 12  | 13  | 14  | 15 |
+| 16  | 17  | 18  | 19  | 20 |
+
+</details>
+
+## Exercise - loop trace
+
+Grab a pen and paper and write out the output of each iteration of the loop:
+
+```
+for (x in 0:5) 
+  print(x)
+```
+<details>
+<summary>Loop output</summary>
+1\
+2\
+3\
+4\
+5\
+</details>\
 
 
 ## Other Types of Loops 
@@ -17,10 +68,6 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 - do-while(check at end)
 - until(check at end)
 
-## math example
 
 
-You can also use math in footnotes like this^[where we mention $p = \frac{a}{b}$].
-
-We will approximate standard error to 0.027
 

@@ -4,3 +4,15 @@ overview of algorithms and computer code/scripting
 
 ## Breakout Activity
 
+For this activity, you will write an algorithm to make popcorn.\ 
+
+Sounds simple, right? "Make popcorn" is something most people have at least a general understanding of how to do. But in this scenario, you're providing step-by-step directions for a computer to understand how to make popcorn and a computer would need to be told __every action__ to take, in order to successfully make popcorn.\
+
+Your task is to write out each step needed to make popcorn. 
+
+As you write out the steps with your group, consider:
+
+- Are you opening a container at any point?
+- Are you making microwave popcorn, or using a stove?
+- How much time is needed to make popcorn?
+- What should the computer do if the popcorn starts burning?

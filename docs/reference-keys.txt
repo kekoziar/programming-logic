@@ -8,12 +8,12 @@ a-note-on-syntax
 algorithms
 breakout-activity
 loops
-activity---loop-trace
+exercise---populate-an-array
+exercise---loop-trace
 other-types-of-loops
-math-example
 conditionals-and-making-choices
 boolean-operators
-example-of-true-vs-false-outcome-for-ifelse
+exercise---ifelse-trace
 activity---if-else-trace
 functions
 libraries
@@ -25,4 +25,4 @@ approaching-consultations
 three-areas-for-errors
 intro-bd
 bd-demo-methods
-math-example-1
+math-example

@@ -1,16 +1,85 @@
 # Conditionals and Making Choices
 
-which ties into conditionals
-If, if else
-Logical flow: if this, else (otherwise) that
+Many times in programming, we want to take a certain action only if a certain condition is satisfied.\
+
+To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an `if` statement, which is often combined with an `else` statement.\
+
+This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement with conditions: "If condition A is true, do action X. If condition A is not true, do action Y."\
+
+In programming format, this narrative statement would look like: 
+
+```
+IF conditionA == TRUE, do X
+ELSE do Y
+```
+
+Note that `else` here is used equivalent to "if not true", meaning A == FALSE.\
+
+We are not limited to a single `TRUE`/`FALSE` check in an `if else` statement, where actions are limited to "x if true, y in all other scenarios".
+
+The `else if` concept allows us to add another sequential check if the `if` statement is not true. Our updated narrative statement might be: "If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y."\
+
+In programming format, this updated narrative statement would look like: 
+
+```
+IF conditionA == TRUE, do X
+ELSE IF conditionB == TRUE, do Z
+ELSE do Y
+```
 
 ## Boolean Operators
-Equals, not equals, and, or (Boolean operators) - everything boils down to True or False
+
+In programming, most things boil down to `true` or `false`. (Sometimes you may see true/false capitalized as `TRUE` and `FALSE`, but the concept is the same.)\
+
+Programming uses Boolean operators such as:\
+
+- `and` (may also see `&` used)
+- `or` (may also see `|` used)
+- `not` (may also see `!` to indicate negation, for instance `!=` for "not equal")
+- `equals` (also `==`) 
+  - [SL note: most Boolean operator lists include AND, OR, NOT - should we include EQUALS here or keep as separate part of testing true/false?]
 
 
-## Example of true vs false outcome for ifelse
+## Exercise - `ifelse` trace 
+
+Let's look at some examples of conditional statements in practice.
+
+```
+if (x == y) {
+  print("values are equal")
+} else if (x > y) {
+  print("x greater than y")
+} else {
+  print("x must be less than y")
+}
+```
+For the first trace, we will set the values of `x` and `y` as:
+
+```
+x <- 37
+y <- 42
+```
+
+What will be the printed output from this `ifelse` section?\
+
+<details>
+<summary>Answer</summary>
+x must be less than y 
+</details>\
+
+What if we reset `x` and `y` to:
+
+```
+x <- 75
+y <- 9
+```
+<details>
+<summary>Answer</summary>
+x greater than y
+</details>\
 
 ## Activity - if else trace
 Importance of parentheses in conditionals
 Example of mismatched or no parentheses
+new lines, intendents, and other syntax standards vary by language (readability vs needs to be there to run properly)
 

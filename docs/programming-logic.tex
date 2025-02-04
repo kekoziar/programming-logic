@@ -127,7 +127,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-02}
+\date{2025-02-04}
 
 \begin{document}
 \maketitle
@@ -194,6 +194,26 @@ overview of algorithms and computer code/scripting
 
 \section{Breakout Activity}\label{breakout-activity}
 
+For this activity, you will write an algorithm to make popcorn.~
+
+Sounds simple, right? ``Make popcorn'' is something most people have at least a general understanding of how to do. But in this scenario, you're providing step-by-step directions for a computer to understand how to make popcorn and a computer would need to be told \textbf{every action} to take, in order to successfully make popcorn.\\
+
+Your task is to write out each step needed to make popcorn.
+
+As you write out the steps with your group, consider:
+
+\begin{itemize}
+\tightlist
+\item
+  Are you opening a container at any point?
+\item
+  Are you making microwave popcorn, or using a stove?
+\item
+  How much time is needed to make popcorn?
+\item
+  What should the computer do if the popcorn starts burning?
+\end{itemize}
+
 \chapter{Loops}\label{loops}
 
 Drawing from Introduction to Programming Logic\citep{lynne_ohanlon_introduction_2000}
@@ -205,7 +225,74 @@ Examples of \texttt{for} loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you'll only get the last result (a common problem)
 
-\section{Activity - loop trace}\label{activity---loop-trace}
+\section{Exercise - populate an array}\label{exercise---populate-an-array}
+
+Let's use a \texttt{for} loop to populate an array.
+
+We'll start with an empty array called \texttt{table} with 4 rows and columns named A, B, C, D, and E:
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+A & B & C & D & E \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+& & & & \\
+& & & & \\
+& & & & \\
+& & & & \\
+\end{longtable}
+
+Our \texttt{for} loop:
+
+{[}adapt programming logic book exercise for loop{]}
+
+Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the number in cell A1?
+\item
+  What is the number in cell B2?
+\item
+  What is the number in cell D4?
+\end{itemize}
+
+Your filled array should look like this
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+A & B & C & D & E \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 2 & 3 & 4 & 5 \\
+6 & 7 & 8 & 9 & 10 \\
+11 & 12 & 13 & 14 & 15 \\
+16 & 17 & 18 & 19 & 20 \\
+\end{longtable}
+
+\section{Exercise - loop trace}\label{exercise---loop-trace}
+
+Grab a pen and paper and write out the output of each iteration of the loop:
+
+\begin{verbatim}
+for (x in 0:5) 
+  print(x)
+\end{verbatim}
+
+Loop output
+
+1\\
+2\\
+3\\
+4\\
+5\\
+
+\hfill\break
 
 \section{Other Types of Loops}\label{other-types-of-loops}
 
@@ -219,28 +306,106 @@ Also writing out result of each iteration otherwise you'll only get the last res
   until(check at end)
 \end{itemize}
 
-\section{math example}\label{math-example}
-
-You can also use math in footnotes like this\footnote{where we mention \(p = \frac{a}{b}\)}.
-
-We will approximate standard error to 0.027
-
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
-which ties into conditionals
-If, if else
-Logical flow: if this, else (otherwise) that
+Many times in programming, we want to take a certain action only if a certain condition is satisfied.\\
+
+To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an \texttt{if} statement, which is often combined with an \texttt{else} statement.\\
+
+This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement with conditions: ``If condition A is true, do action X. If condition A is not true, do action Y.''\\
+
+In programming format, this narrative statement would look like:
+
+\begin{verbatim}
+IF conditionA == TRUE, do X
+ELSE do Y
+\end{verbatim}
+
+Note that \texttt{else} here is used equivalent to ``if not true'', meaning A == FALSE.\\
+
+We are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to ``x if true, y in all other scenarios''.
+
+The \texttt{else\ if} concept allows us to add another sequential check if the \texttt{if} statement is not true. Our updated narrative statement might be: ``If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.''\\
+
+In programming format, this updated narrative statement would look like:
+
+\begin{verbatim}
+IF conditionA == TRUE, do X
+ELSE IF conditionB == TRUE, do Z
+ELSE do Y
+\end{verbatim}
 
 \section{Boolean Operators}\label{boolean-operators}
 
-Equals, not equals, and, or (Boolean operators) - everything boils down to True or False
+In programming, most things boil down to \texttt{true} or \texttt{false}. (Sometimes you may see true/false capitalized as \texttt{TRUE} and \texttt{FALSE}, but the concept is the same.)\\
 
-\section{Example of true vs false outcome for ifelse}\label{example-of-true-vs-false-outcome-for-ifelse}
+Programming uses Boolean operators such as:\\
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{and} (may also see \texttt{\&} used)
+\item
+  \texttt{or} (may also see \texttt{\textbar{}} used)
+\item
+  \texttt{not} (may also see \texttt{!} to indicate negation, for instance \texttt{!=} for ``not equal'')
+\item
+  \texttt{equals} (also \texttt{==})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    {[}SL note: most Boolean operator lists include AND, OR, NOT - should we include EQUALS here or keep as separate part of testing true/false?{]}
+  \end{itemize}
+\end{itemize}
+
+\section{\texorpdfstring{Exercise - \texttt{ifelse} trace}{Exercise - ifelse trace}}\label{exercise---ifelse-trace}
+
+Let's look at some examples of conditional statements in practice.
+
+\begin{verbatim}
+if (x == y) {
+  print("values are equal")
+} else if (x > y) {
+  print("x greater than y")
+} else {
+  print("x must be less than y")
+}
+\end{verbatim}
+
+For the first trace, we will set the values of \texttt{x} and \texttt{y} as:
+
+\begin{verbatim}
+x <- 37
+y <- 42
+\end{verbatim}
+
+What will be the printed output from this \texttt{ifelse} section?\\
+
+Answer
+
+x must be less than y
+
+\hfill\break
+
+What if we reset \texttt{x} and \texttt{y} to:
+
+\begin{verbatim}
+x <- 75
+y <- 9
+\end{verbatim}
+
+Answer
+
+x greater than y
+
+\hfill\break
 
 \section{Activity - if else trace}\label{activity---if-else-trace}
 
 Importance of parentheses in conditionals
 Example of mismatched or no parentheses
+new lines, intendents, and other syntax standards vary by language (readability vs needs to be there to run properly)
 
 \chapter{Functions}\label{functions}
 
@@ -259,7 +424,8 @@ import cookbook; cookbook.make\_popcorn()
 
 \section{Activity reprise for functions}\label{activity-reprise-for-functions}
 
-Libraries are libraries - you're checking out a book and there's the specific thing that you need. You don't need to memorize in your brain - which has limited space - every fact, you can check out a book!
+You can think of programming libraries (or packages, or modules, depending on what term your programming language of choice uses) as similar to actual libraries. You don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more! In the same way, your computer doesn't need to always have every single function on hand (which would take up a lot of space), it can ``check out'' (load) a ``book'' (collection of functions) created by another person. This saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference ``book'' so output should be the same for the same input, across users).\\
+
 Libraries, packages, modules
 Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
 Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments
@@ -386,7 +552,7 @@ We describe our methods in this chapter.
 
 Math can be added in body using usual syntax like this
 
-\section{math example}\label{math-example-1}
+\section{math example}\label{math-example}
 
 \(p\) is unknown but expected to be around 1/3. Standard error will be approximated
 
