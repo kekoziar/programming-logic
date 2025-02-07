@@ -16,7 +16,10 @@ boolean-operators
 exercise---ifelse-trace
 activity---if-else-trace
 functions
+arguments
 libraries
+accessing-functions-in-libraries
+caveats
 activity-reprise-for-functions
 comments-and-names
 common-issues

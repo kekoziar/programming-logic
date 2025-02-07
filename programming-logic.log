@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.13)  4 FEB 2025 11:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.13)  7 FEB 2025 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,26 +854,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--403
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 414--415
+
+ []
+
+
+Overfull \hbox (484.5pt too wide) in paragraph at lines 427--427
+[]\TU/lmtt/m/n/10 [SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
 
 
 [17]
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+
 
 [18]
-Chapter 7.
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
 
 
-[19
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
-]
+ []
 
-[20
 
-]
-Chapter 8.
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
+
+ []
+
+
+
+[20]
+Underfull \hbox (badness 2495) in paragraph at lines 557--562
+\TU/lmr/m/n/10 with defaults import cookbook; cookbook.make_popcorn() ### From
+ []
+
 
 
 [21]
@@ -881,7 +938,7 @@ Chapter 8.
 [22
 
 ]
-Chapter 9.
+Chapter 7.
 
 
 [23]
@@ -889,25 +946,41 @@ Chapter 9.
 [24
 
 ]
+Chapter 8.
+
+
+[25]
+
+[26
+
+]
+Chapter 9.
+
+
+[27]
+
+[28
+
+]
 Chapter 10.
 
-LaTeX Warning: Reference `methods' on page 25 undefined on input line 481.
+LaTeX Warning: Reference `methods' on page 29 undefined on input line 615.
 
 File: programming-logic_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 <use programming-logic_files/figure-latex/nice-fig-1.pdf>
 
 
-[25]
+[29]
 
-[26]
+[30]
 Chapter 11.
 (./programming-logic.bbl
 
-[27
+[31
 
 ]
 
-[28
+[32
 
 ]
 Underfull \hbox (badness 1668) in paragraph at lines 4--7
@@ -916,7 +989,7 @@ Underfull \hbox (badness 1668) in paragraph at lines 4--7
 
 )
 
-[29] (./programming-logic.aux)
+[33] (./programming-logic.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
@@ -926,12 +999,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17573 strings out of 475851
- 321968 string characters out of 5772782
- 858315 words of memory out of 5000000
- 40261 multiletter control sequences out of 15000+600000
- 565336 words of font info for 95 fonts, out of 8000000 for 9000
+ 17582 strings out of 475851
+ 322144 string characters out of 5772782
+ 857454 words of memory out of 5000000
+ 40269 multiletter control sequences out of 15000+600000
+ 565344 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,8n,123p,852b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,8n,123p,757b,424s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on programming-logic.pdf (29 pages).
+Output written on programming-logic.pdf (33 pages).
