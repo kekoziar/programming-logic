@@ -2,3 +2,5 @@
 
 Concept of comments, naming of variables and variables
 Briefly touch on common conventions (like `df` for dataframe); ask about disciplinary conventions for abbreviations or naming
+
+[SL: kind of moved this into 'caveats' of functions, flagged to discuss]

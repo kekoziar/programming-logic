@@ -70,9 +70,9 @@ The syntax for accessing functions in libraries varies by programming language b
 
 ### Caveats
 
-There are a few caveats to be aware of.\
+### Function names
 
-First, there are only so many function names that make sense in the English language, so there may be functions from _different libraries_ that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
+There are only so many function names that make sense in the English language, so there may be functions from _different libraries_ that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
 
 Let's say we have two `mean()` functions, one from library `A` and one from library `B`. They differ in their default settings: 
 
@@ -118,8 +118,9 @@ B:mean(values)
 #result will be `NA`
 
 ```
+### Aliases
 
-Second, but less dramatic, is that you may encounter the concept of an "alias" for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.
+You may encounter the concept of an "alias" for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.
 
 For example, Python uses the `import` term to load a library (or "package" as Python calls them) and allows setting an alias using `import package as alias` syntax. By convention, many Python users will use standard aliases for common packages, such as:
 

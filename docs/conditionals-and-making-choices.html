@@ -90,17 +90,19 @@
 </h1>
 <p>Many times in programming, we want to take a certain action only if a certain condition is satisfied.<br></p>
 <p>To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an <code>if</code> statement, which is often combined with an <code>else</code> statement.<br></p>
-<p>This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement with conditions: “If condition A is true, do action X. If condition A is not true, do action Y.”<br></p>
+<p>This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement: “If condition A is true, do action X. If condition A is not true, do action Y.”<br></p>
 <p>In programming format, this narrative statement would look like:</p>
 <pre><code>IF conditionA == TRUE, do X
-ELSE do Y</code></pre>
-<p>Note that <code>else</code> here is used equivalent to “if not true”, meaning A == FALSE.<br></p>
+ELSE do Y
+</code></pre>
+<p>Note that <code>else</code> here is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
 <p>We are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to “x if true, y in all other scenarios”.</p>
-<p>The <code>else if</code> concept allows us to add another sequential check if the <code>if</code> statement is not true. Our updated narrative statement might be: “If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.”<br></p>
+<p>The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true. Our updated narrative statement might be: “If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.”<br></p>
 <p>In programming format, this updated narrative statement would look like:</p>
 <pre><code>IF conditionA == TRUE, do X
 ELSE IF conditionB == TRUE, do Z
-ELSE do Y</code></pre>
+ELSE do Y
+</code></pre>
 <div id="boolean-operators" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> Boolean Operators<a class="anchor" aria-label="anchor" href="#boolean-operators"><i class="fas fa-link"></i></a>
@@ -127,16 +129,17 @@ ELSE do Y</code></pre>
 <span class="header-section-number">5.2</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s look at some examples of conditional statements in practice.</p>
-<pre><code>if (x == y) {
+<pre><code>if x == y:
   print("values are equal")
-} else if (x &gt; y) {
+else if x &gt; y:
   print("x greater than y")
-} else {
+else:
   print("x must be less than y")
-}</code></pre>
+  </code></pre>
 <p>For the first trace, we will set the values of <code>x</code> and <code>y</code> as:</p>
 <pre><code>x &lt;- 37
-y &lt;- 42</code></pre>
+y &lt;- 42
+</code></pre>
 <p>What will be the printed output from this <code>ifelse</code> section?<br></p>
 <details><summary>
 Answer
@@ -145,21 +148,55 @@ x must be less than y
 </details><p><br></p>
 <p>What if we reset <code>x</code> and <code>y</code> to:</p>
 <pre><code>x &lt;- 75
-y &lt;- 9</code></pre>
+y &lt;- 9
+</code></pre>
 <details><summary>
 Answer
 </summary>
 x greater than y
 </details><p><br></p>
 </div>
-<div id="activity---if-else-trace" class="section level2" number="5.3">
+<div id="caveats-1" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">5.3</span> Activity - if else trace<a class="anchor" aria-label="anchor" href="#activity---if-else-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>Importance of parentheses in conditionals
-Example of mismatched or no parentheses
-new lines, intendents, and other syntax standards vary by language (readability vs needs to be there to run properly)</p>
+<div id="order-of-operations" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
+</h3>
+<p>Order of operations is critical for conditionals. The computer will go through each condition <strong>in order</strong>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
+</div>
+<div id="matching-parentheses" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
+</h3>
+<p>For complex nested conditionals, be sure to use parentheses, and sure parentheses are matched properly.</p>
+</div>
+<div id="formatting-may-vary" class="section level3" number="5.3.3">
+<h3>
+<span class="header-section-number">5.3.3</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
+</h3>
+<p>Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.</p>
+<p>For example, Python expects <code>:</code> at the end of each section of an <code>ifelse</code> statement, uses <code>elif</code> for <code>else if</code>, and requires indentation to indicate action of each section:</p>
+<pre><code>if x == y:
+  print("values are equal")
+elif x &gt; y:
+  print("x greater than y")
+else:
+  print("x must be less than y")
+</code></pre>
+<p>In contract, R makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>ifelse</code> statement and while indentation is a convention for readability, it is not technically required for the code to run:</p>
+<pre><code>if (x == y) {
+  print("values are equal")
+} else if (x &gt; y) {
+  print("x greater than y")
+} else {
+  print("x must be less than y")
+}
+</code></pre>
+<p>[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]</p>
 
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -171,7 +208,13 @@ new lines, intendents, and other syntax standards vary by language (readability 
 <li><a class="nav-link" href="#conditionals-and-making-choices"><span class="header-section-number">5</span> Conditionals and Making Choices</a></li>
 <li><a class="nav-link" href="#boolean-operators"><span class="header-section-number">5.1</span> Boolean Operators</a></li>
 <li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">5.2</span> Exercise - ifelse trace</a></li>
-<li><a class="nav-link" href="#activity---if-else-trace"><span class="header-section-number">5.3</span> Activity - if else trace</a></li>
+<li>
+<a class="nav-link" href="#caveats-1"><span class="header-section-number">5.3</span> Caveats</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#order-of-operations"><span class="header-section-number">5.3.1</span> Order of operations</a></li>
+<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">5.3.2</span> Matching parentheses</a></li>
+<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">5.3.3</span> Formatting may vary</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">

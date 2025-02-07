@@ -138,12 +138,16 @@ mean(values, na.rm = TRUE)
 <li>Load or import the library. You will need to do this every time you want to access a function in a library. By convention, libraries are loaded at the top of a script, so you, and other people, can see at a glance what libraries are needed to run the script.</li>
 <li>Use the functions as normal.</li>
 </ol>
-<div id="caveats" class="section level3" number="6.3.1">
+<div id="caveats-2" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>There are a few caveats to be aware of.<br></p>
-<p>First, there are only so many function names that make sense in the English language, so there may be functions from <em>different libraries</em> that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.</p>
+</div>
+<div id="function-names" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Function names<a class="anchor" aria-label="anchor" href="#function-names"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are only so many function names that make sense in the English language, so there may be functions from <em>different libraries</em> that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.</p>
 <p>Let’s say we have two <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> functions, one from library <code>A</code> and one from library <code>B</code>. They differ in their default settings:</p>
 <ul>
 <li>library <code>A</code> defauls to <code>na.rm = TRUE</code>
@@ -177,7 +181,12 @@ B:mean(values)
 
 #result will be `NA`
 </code></pre>
-<p>Second, but less dramatic, is that you may encounter the concept of an “alias” for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.</p>
+</div>
+<div id="aliases" class="section level3" number="6.3.3">
+<h3>
+<span class="header-section-number">6.3.3</span> Aliases<a class="anchor" aria-label="anchor" href="#aliases"><i class="fas fa-link"></i></a>
+</h3>
+<p>You may encounter the concept of an “alias” for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.</p>
 <p>For example, Python uses the <code>import</code> term to load a library (or “package” as Python calls them) and allows setting an alias using <code>import package as alias</code> syntax. By convention, many Python users will use standard aliases for common packages, such as:</p>
 <pre><code>import pandas as pd
 import numpy as np</code></pre>
@@ -210,7 +219,11 @@ Can look up documentation, most should specify arguments in each function and sy
 <li><a class="nav-link" href="#arguments"><span class="header-section-number">6.1</span> Arguments</a></li>
 <li><a class="nav-link" href="#libraries"><span class="header-section-number">6.2</span> Libraries</a></li>
 <li>
-<a class="nav-link" href="#accessing-functions-in-libraries"><span class="header-section-number">6.3</span> Accessing functions in libraries</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#caveats"><span class="header-section-number">6.3.1</span> Caveats</a></li></ul>
+<a class="nav-link" href="#accessing-functions-in-libraries"><span class="header-section-number">6.3</span> Accessing functions in libraries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#caveats-2"><span class="header-section-number">6.3.1</span> Caveats</a></li>
+<li><a class="nav-link" href="#function-names"><span class="header-section-number">6.3.2</span> Function names</a></li>
+<li><a class="nav-link" href="#aliases"><span class="header-section-number">6.3.3</span> Aliases</a></li>
+</ul>
 </li>
 <li><a class="nav-link" href="#activity-reprise-for-functions"><span class="header-section-number">6.4</span> Activity reprise for functions</a></li>
 </ul>

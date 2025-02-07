@@ -225,6 +225,25 @@ Examples of \texttt{for} loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you'll only get the last result (a common problem)
 
+\section{Exercise - loop trace}\label{exercise---loop-trace}
+
+Grab a pen and paper and write out the output of each iteration of the loop:
+
+\begin{verbatim}
+for (x in 0:5) 
+  print(x)
+\end{verbatim}
+
+Loop output
+
+1\\
+2\\
+3\\
+4\\
+5\\
+
+\hfill\break
+
 \section{Exercise - populate an array}\label{exercise---populate-an-array}
 
 Let's use a \texttt{for} loop to populate an array.
@@ -238,10 +257,10 @@ A & B & C & D & E \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-& & & & \\
-& & & & \\
-& & & & \\
-& & & & \\
+~ & ~ & ~ & ~ & ~ \\
+~ & ~ & ~ & ~ & ~ \\
+~ & ~ & ~ & ~ & ~ \\
+~ & ~ & ~ & ~ & ~ \\
 \end{longtable}
 
 Our \texttt{for} loop:
@@ -275,25 +294,6 @@ A & B & C & D & E \\
 16 & 17 & 18 & 19 & 20 \\
 \end{longtable}
 
-\section{Exercise - loop trace}\label{exercise---loop-trace}
-
-Grab a pen and paper and write out the output of each iteration of the loop:
-
-\begin{verbatim}
-for (x in 0:5) 
-  print(x)
-\end{verbatim}
-
-Loop output
-
-1\\
-2\\
-3\\
-4\\
-5\\
-
-\hfill\break
-
 \section{Other Types of Loops}\label{other-types-of-loops}
 
 \begin{itemize}
@@ -306,13 +306,19 @@ Loop output
   until(check at end)
 \end{itemize}
 
+\section{Caveats}\label{caveats}
+
+\subsection{Infinite loops}\label{infinite-loops}
+
+\subsection{Overwriting outputs}\label{overwriting-outputs}
+
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
 Many times in programming, we want to take a certain action only if a certain condition is satisfied.\\
 
 To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an \texttt{if} statement, which is often combined with an \texttt{else} statement.\\
 
-This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement with conditions: ``If condition A is true, do action X. If condition A is not true, do action Y.''\\
+This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement: ``If condition A is true, do action X. If condition A is not true, do action Y.''\\
 
 In programming format, this narrative statement would look like:
 
@@ -321,11 +327,11 @@ IF conditionA == TRUE, do X
 ELSE do Y
 \end{verbatim}
 
-Note that \texttt{else} here is used equivalent to ``if not true'', meaning A == FALSE.\\
+Note that \texttt{else} here is used equivalent to ``if not true'', meaning \texttt{A\ ==\ FALSE}.\\
 
 We are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to ``x if true, y in all other scenarios''.
 
-The \texttt{else\ if} concept allows us to add another sequential check if the \texttt{if} statement is not true. Our updated narrative statement might be: ``If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.''\\
+The \texttt{else\ if} (written as \texttt{elif} in some programming languages) concept allows us to add another sequential check if the \texttt{if} statement is not true. Our updated narrative statement might be: ``If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.''\\
 
 In programming format, this updated narrative statement would look like:
 
@@ -364,13 +370,13 @@ Programming uses Boolean operators such as:\\
 Let's look at some examples of conditional statements in practice.
 
 \begin{verbatim}
-if (x == y) {
+if x == y:
   print("values are equal")
-} else if (x > y) {
+else if x > y:
   print("x greater than y")
-} else {
+else:
   print("x must be less than y")
-}
+  
 \end{verbatim}
 
 For the first trace, we will set the values of \texttt{x} and \texttt{y} as:
@@ -401,11 +407,44 @@ x greater than y
 
 \hfill\break
 
-\section{Activity - if else trace}\label{activity---if-else-trace}
+\section{Caveats}\label{caveats-1}
 
-Importance of parentheses in conditionals
-Example of mismatched or no parentheses
-new lines, intendents, and other syntax standards vary by language (readability vs needs to be there to run properly)
+\subsection{Order of operations}\label{order-of-operations}
+
+Order of operations is critical for conditionals. The computer will go through each condition \textbf{in order}, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
+
+\subsection{Matching parentheses}\label{matching-parentheses}
+
+For complex nested conditionals, be sure to use parentheses, and sure parentheses are matched properly.
+
+\subsection{Formatting may vary}\label{formatting-may-vary}
+
+Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
+
+For example, Python expects \texttt{:} at the end of each section of an \texttt{ifelse} statement, uses \texttt{elif} for \texttt{else\ if}, and requires indentation to indicate action of each section:
+
+\begin{verbatim}
+if x == y:
+  print("values are equal")
+elif x > y:
+  print("x greater than y")
+else:
+  print("x must be less than y")
+\end{verbatim}
+
+In contract, R makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{ifelse} statement and while indentation is a convention for readability, it is not technically required for the code to run:
+
+\begin{verbatim}
+if (x == y) {
+  print("values are equal")
+} else if (x > y) {
+  print("x greater than y")
+} else {
+  print("x must be less than y")
+}
+\end{verbatim}
+
+{[}Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting{]}
 
 \chapter{Functions}\label{functions}
 
@@ -485,11 +524,11 @@ The syntax for accessing functions in libraries varies by programming language b
   Use the functions as normal.
 \end{enumerate}
 
-\subsection{Caveats}\label{caveats}
+\subsection{Caveats}\label{caveats-2}
 
-There are a few caveats to be aware of.\\
+\subsection{Function names}\label{function-names}
 
-First, there are only so many function names that make sense in the English language, so there may be functions from \emph{different libraries} that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
+There are only so many function names that make sense in the English language, so there may be functions from \emph{different libraries} that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
 
 Let's say we have two \texttt{mean()} functions, one from library \texttt{A} and one from library \texttt{B}. They differ in their default settings:
 
@@ -539,7 +578,9 @@ B:mean(values)
 #result will be `NA`
 \end{verbatim}
 
-Second, but less dramatic, is that you may encounter the concept of an ``alias'' for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.
+\subsection{Aliases}\label{aliases}
+
+You may encounter the concept of an ``alias'' for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.
 
 For example, Python uses the \texttt{import} term to load a library (or ``package'' as Python calls them) and allows setting an alias using \texttt{import\ package\ as\ alias} syntax. By convention, many Python users will use standard aliases for common packages, such as:
 
@@ -568,6 +609,8 @@ Can look up documentation, most should specify arguments in each function and sy
 
 Concept of comments, naming of variables and variables
 Briefly touch on common conventions (like \texttt{df} for dataframe); ask about disciplinary conventions for abbreviations or naming
+
+{[}SL: kind of moved this into `caveats' of functions, flagged to discuss{]}
 
 \chapter{Common Issues}\label{common-issues}
 

@@ -9,6 +9,24 @@ Examples of `for` loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)
 
+## Exercise - loop trace
+
+Grab a pen and paper and write out the output of each iteration of the loop:
+
+```
+for (x in 0:5) 
+  print(x)
+```
+<details>
+<summary>Loop output</summary>
+1\
+2\
+3\
+4\
+5\
+</details>\
+
+
 ## Exercise - populate an array
 
 Let's use a `for` loop to populate an array.
@@ -17,10 +35,10 @@ We'll start with an empty array called `table` with 4 rows and columns named A, 
 
 | A | B | C | D | E |
 |---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+| &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+| &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
+| &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
 
 Our `for` loop:
 
@@ -45,29 +63,17 @@ Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) an
 
 </details>
 
-## Exercise - loop trace
-
-Grab a pen and paper and write out the output of each iteration of the loop:
-
-```
-for (x in 0:5) 
-  print(x)
-```
-<details>
-<summary>Loop output</summary>
-1\
-2\
-3\
-4\
-5\
-</details>\
-
 
 ## Other Types of Loops 
 - while(check at beginning)
 - do-while(check at end)
 - until(check at end)
 
+## Caveats
+
+### Infinite loops
+
+### Overwriting outputs
 
 
 
