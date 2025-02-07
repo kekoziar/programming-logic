@@ -1,20 +1,145 @@
 # Functions
-Moving into syntax
-What are functions, arguments in functions (order matters, explicit vs defaults)
-Can make own but many are prebuilt in languages
+
+A "function" in programming is a piece of code that does a specific task. 
+
+Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add each value and divide by the number of values.\
+
+```
+values = (2, 4, 7, 5, 9)
+
+mean_value = (2 + 4 + 7 + 5 + 9) / 5
+```
+\
+On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.
+
+```
+[SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...]
+
+```
+
+## Arguments
+
+In a function, "arguments" are the inputs that you can specify. So for a `mean()` function, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. Optional arguments like this may come with a pre-supplied default, in this case that `na.rm = FALSE` and any `NA`values will be retained, unless this argument is manually changed to `TRUE`.\
+
+It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.\
+
+For example, let's return to the `mean()` function where our arguments are input (mandatory) and handling of `NA` values (optional).
+
+If we only input the mandatory argument of specifying input:
+```
+values <- c(2, 4, 7, 5, 9, NA)
+mean(values)
+
+```
+The output of this function would be `NA`, because if we retain the `NA` values - which we do by default in the `mean()` function, then the mean will necessary be `NA`. For a computer, the sum of a set of values plus `NA` will always be `NA`, and taking the mean of `NA` will also return `NA`.
+
+Conversely, if we specify that we want to remove `NA` values from our mean calculation:
+
+```
+values <- c(2, 4, 7, 5, 9, NA)
+mean(values, na.rm = TRUE)
+
+```
+Now our output is `5.4` which is the mean of `values` exlucding `NA`.
 
 ## Libraries
-Plus concept of libraries/packages - functions that other people have built and you can install/import
+
+Programming languages will have a variety of functions for common tasks ready to use without any additional work. These are called "built in" functions and are available to use right away.\
+
+However, built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.
+
+The good news is that most programming languages will have optional "libraries" (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.\
+
+You can think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\
+
+In the same way, your computer and your programming language of choice doesn't need to always have every single function on hand, which would take up a lot of space. Instead, it can "check out" (load) a "book" (collection of functions) created by another person. You can then use those additional functions the same way you would any function.\
+
+This set up saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference "book" so output should be the same for the same input, across users).\
+
+A good rule of thumb is if it _seems_ like the function you want is broadly useful, then someone has likely created a library containing it. This is also true for niche or domain-specific functions: if the task is one that comes up a lot in analysis, there is likely a library that has functions for those analysis tasks.\
+
+Finding the 'right' library for the function you need can be overwhelming, but a good starting point is the official library collection for a programming language, such as [CRAN for R](https://cran.r-project.org/web/views/) or [PyPI for Python](https://pypi.org/).
+
+## Accessing functions in libraries
+
+The syntax for accessing functions in libraries varies by programming language but follows the general process of:
+
+1. Install the library from the source. You only need to do this once. 
+2. Load or import the library. You will need to do this every time you want to access a function in a library. By convention, libraries are loaded at the top of a script, so you, and other people, can see at a glance what libraries are needed to run the script.
+3. Use the functions as normal.
+
+### Caveats
+
+There are a few caveats to be aware of.\
+
+First, there are only so many function names that make sense in the English language, so there may be functions from _different libraries_ that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
+
+Let's say we have two `mean()` functions, one from library `A` and one from library `B`. They differ in their default settings: 
+
+- library `A` defauls to `na.rm = TRUE`
+- library `B` defaults to `na.rm = FALSE`
+
+If we load libraries in order `A` then `B` and then use `mean()` as a function, we will be using the `mean()` function from library `B`.
+
+```
+load(A)
+load(B)
+
+values <- c(2, 4, 7, 5, 9, NA)
+mean(values)
+
+```
+Our result will be `NA`.
+
+Conversely, if we load library `B` then library `A`, we will use the `mean()` function from library `A`.
+
+```
+load(B)
+load(A)
+
+values <- c(2, 4, 7, 5, 9, NA)
+mean(values)
+
+```
+
+Our value will be `5.4`.
+
+The tricky part is that all this happens invisibly. There may or may not - depending on your programming language - be a warning that two libraries contain functions of the same name. So, keeping track of your order of loading is important. If you get any unexpected results, you can double check which library the function you are using is from.\
+
+An alternative method is to be explicit about which function you are calling. Most programming languages will allow a syntax along the lines of `library:function()` to specify use of a function from a stated library.\
+
+```
+load(B)
+load(A)
+
+values <- c(2, 4, 7, 5, 9, NA)
+B:mean(values)
+
+#result will be `NA`
+
+```
+
+Second, but less dramatic, is that you may encounter the concept of an "alias" for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.
+
+For example, Python uses the `import` term to load a library (or "package" as Python calls them) and allows setting an alias using `import package as alias` syntax. By convention, many Python users will use standard aliases for common packages, such as:
+
+```
+import pandas as pd
+import numpy as np
+```
+
+Functions can then be called using the explicit `package:function` syntax, such as `pd.DataFrame` to designate a `pandas` `DataFrame` object.
+
+
+## Activity reprise for functions
+
+Let's return to the Chapter 2 activity where you created an algorithm to make popcorn. 
+
 Call back to popcorn - if function is make_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
 make_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make_popcorn() with defaults
 import cookbook; cookbook.make_popcorn()
 ### From stephanie import make_popcorn()
 ### From kat import make_popcorn()
-
-## Activity reprise for functions
-
-You can think of programming libraries (or packages, or modules, depending on what term your programming language of choice uses) as similar to actual libraries. You don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more! In the same way, your computer doesn't need to always have every single function on hand (which would take up a lot of space), it can "check out" (load) a "book" (collection of functions) created by another person. This saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference "book" so output should be the same for the same input, across users).\
-
 
 
 Libraries, packages, modules
