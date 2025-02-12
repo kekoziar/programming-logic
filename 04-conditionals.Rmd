@@ -89,9 +89,37 @@ x greater than y
 
 Order of operations is critical for conditionals. The computer will go through each condition __in order__, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
 
+__[[insert example here]]__
+
 ### Matching parentheses
 
-For complex nested conditionals, be sure to use parentheses, and sure parentheses are matched properly.
+For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.
+
+The code below, without a closing parentheses after "equal", will continue to expect input.
+
+```
+if (x == y) 
+  print("values are equal"
+  
+```
+
+As far as the programming language is concerned, you haven't finished this `if` statement. So, it will wait to run until you have "completed your thought", so to speak, and provided the syntax (here, `)`) indicating that this statement is complete and the program is ready to run.
+
+Alternately, if you have mismatched parentheses, the result may be an error.
+
+```
+if (x == y) 
+  print("values are equal"))
+  
+```
+In this case, there is an extra closing parentheses `)` after `print("values are equal")` that doesn't have a matching `(` anywhere in the statement. The resulting error would look like:
+
+```
+Error: unexpected ')' in:
+"if (x == y) {
+    print("values are equal"))"
+    
+```
 
 ### Formatting may vary
 
@@ -122,6 +150,6 @@ if (x == y) {
 
 ```
 
-[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]
+__[[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]]__
 
 

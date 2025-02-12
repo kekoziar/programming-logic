@@ -127,7 +127,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-07}
+\date{2025-02-12}
 
 \begin{document}
 \maketitle
@@ -230,8 +230,9 @@ Also writing out result of each iteration otherwise you'll only get the last res
 Grab a pen and paper and write out the output of each iteration of the loop:
 
 \begin{verbatim}
-for (x in 0:5) 
-  print(x)
+for x in 0 to 5 
+  write x
+  
 \end{verbatim}
 
 Loop output
@@ -263,9 +264,11 @@ A & B & C & D & E \\
 ~ & ~ & ~ & ~ & ~ \\
 \end{longtable}
 
+We want to populate this table with numbers, starting with 1 and increasing sequentially (1, 2, 3, 4, etc.). We want to fill each row completely before moving on to start filling the next row.
+
 Our \texttt{for} loop:
 
-{[}adapt programming logic book exercise for loop{]}
+\textbf{{[}{[}adapt programming logic book exercise for loop{]}{]}}
 
 Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.
 
@@ -296,21 +299,47 @@ A & B & C & D & E \\
 
 \section{Other Types of Loops}\label{other-types-of-loops}
 
-\begin{itemize}
-\tightlist
-\item
-  while(check at beginning)
-\item
-  do-while(check at end)
-\item
-  until(check at end)
-\end{itemize}
+There are other types of loops in addition to the commonly used \texttt{for} loop.~
+
+The \texttt{while} loop uses a condition at the start of the loop to determine, in advance, when the loop will stop. For example, recall the initial for loop:
+
+\begin{verbatim}
+for x in 0 to 5 
+  write x
+  
+\end{verbatim}
+
+An equivalent \texttt{while} loop would look like:
+
+\begin{verbatim}
+
+\end{verbatim}
+
+Another type of loop is a \texttt{do\ while} loop (check at end) and an \texttt{until} loop (check at end).
+
+\begin{verbatim}
+\end{verbatim}
+
+\begin{verbatim}
+\end{verbatim}
 
 \section{Caveats}\label{caveats}
 
+Loops are a frequently encountered concept in programming and come with their own set of common issues.
+
 \subsection{Infinite loops}\label{infinite-loops}
 
+When condition is never false or otherwise has no break
+
 \subsection{Overwriting outputs}\label{overwriting-outputs}
+
+\begin{verbatim}
+for x in 0 to 5 
+  answer = x
+
+write answer
+  
+\end{verbatim}
 
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
@@ -413,9 +442,38 @@ x greater than y
 
 Order of operations is critical for conditionals. The computer will go through each condition \textbf{in order}, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
 
+\textbf{{[}{[}insert example here{]}{]}}
+
 \subsection{Matching parentheses}\label{matching-parentheses}
 
-For complex nested conditionals, be sure to use parentheses, and sure parentheses are matched properly.
+For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.
+
+The code below, without a closing parentheses after ``equal'', will continue to expect input.
+
+\begin{verbatim}
+if (x == y) 
+  print("values are equal"
+  
+\end{verbatim}
+
+As far as the programming language is concerned, you haven't finished this \texttt{if} statement. So, it will wait to run until you have ``completed your thought'', so to speak, and provided the syntax (here, \texttt{)}) indicating that this statement is complete and the program is ready to run.
+
+Alternately, if you have mismatched parentheses, the result may be an error.
+
+\begin{verbatim}
+if (x == y) 
+  print("values are equal"))
+  
+\end{verbatim}
+
+In this case, there is an extra closing parentheses \texttt{)} after \texttt{print("values\ are\ equal")} that doesn't have a matching \texttt{(} anywhere in the statement. The resulting error would look like:
+
+\begin{verbatim}
+Error: unexpected ')' in:
+"if (x == y) {
+    print("values are equal"))"
+    
+\end{verbatim}
 
 \subsection{Formatting may vary}\label{formatting-may-vary}
 
@@ -444,7 +502,7 @@ if (x == y) {
 }
 \end{verbatim}
 
-{[}Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting{]}
+\textbf{{[}{[}Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting{]}{]}}
 
 \chapter{Functions}\label{functions}
 
@@ -615,18 +673,54 @@ Briefly touch on common conventions (like \texttt{df} for dataframe); ask about 
 \chapter{Common Issues}\label{common-issues}
 
 Some common issues
-= vs == (set as equal vs test for equality)
-Closing quotes and parentheses
-Overwriting variable names
-Order of running code matters; variable will be whatever most recently set as
-Spelling and capitalization matters
-`X' is different from `x'
+
+\section{\texorpdfstring{Difference between \texttt{=} and \texttt{==}}{Difference between = and ==}}\label{difference-between-and}
+
+The former, \texttt{=} is used to set something as equal as in \texttt{x\ =\ 5} where
+the variable \texttt{x} is equal to, or has a value of, \texttt{5}. Conversely, the
+double equal \texttt{==} is used to test for equality. For instance, if we set
+a variable x to equal the value 5, the code \texttt{x\ ==\ 5} would return \texttt{True}
+and the code \texttt{x\ ==\ 6} would return \texttt{False}.\\
+
+\section{Spelling and capitalization matter}\label{spelling-and-capitalization-matter}
+
+The variable \texttt{x} is different from the variable \texttt{X}. Likewise, a
+function \texttt{mean()} and a function \texttt{Mean()} would be separate functions.
+
+\section{Special characters and words}\label{special-characters-and-words}
+
+Many programming languages reserve specific words for specific tasks.
+For example, a function called \texttt{sum()} is fairly common across
+languages. While you \emph{could} make your own alternate function called
+\texttt{sum()}, this may lead to unexpected results when using the \texttt{sum()}
+function\\
+
+Similarly, it is best practice to avoid naming variables or objects the
+same as common function names. Again, while you \emph{could} write code like
+\texttt{sum\ =\ sum()}, this will get confusing for you, and may lead to
+unexpected results and code behavior downstream.
+
+The same is true for certain characters. Many programming languages
+treat \texttt{NA} as a special class of missing value. This is \emph{not} the same
+as \texttt{"NA"}, which would instead be a character string containing the
+letters NA.
+
+\section{Ending a code chunk}\label{ending-a-code-chunk}
+
 Ending a statement (needing ; or other conclusion)
-Direct comparison of multiple syntax, so like the same task in R, Python, C, SQL, Stata, Java
-You don't need to memorize specifics!
-Reading and writing data / files
-Syntax is going to be specific to a language, or package within a language
-Missing values may be special class, different between languages
+
+\section{Order of operations}\label{order-of-operations-1}
+
+overwriting/ variable will be whatever most recently set as
+
+\section{Others {[}work in progress{]}}\label{others-work-in-progress}
+
+Closing quotes and parenthese\\
+Direct comparison of multiple syntax, so like the same task in R,
+Python, C, SQL, Stata, Java~ You don't need to memorize specifics!
+Reading and writing data / files\\
+Syntax is going to be specific to a language, or package within a
+language\\
 Show some examples of reading/writing data in R, Python, Stata, SQL
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}

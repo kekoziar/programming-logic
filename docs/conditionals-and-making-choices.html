@@ -165,12 +165,27 @@ x greater than y
 <span class="header-section-number">5.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
 </h3>
 <p>Order of operations is critical for conditionals. The computer will go through each condition <strong>in order</strong>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
+<p><strong>[[insert example here]]</strong></p>
 </div>
 <div id="matching-parentheses" class="section level3" number="5.3.2">
 <h3>
 <span class="header-section-number">5.3.2</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
 </h3>
-<p>For complex nested conditionals, be sure to use parentheses, and sure parentheses are matched properly.</p>
+<p>For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.</p>
+<p>The code below, without a closing parentheses after “equal”, will continue to expect input.</p>
+<pre><code>if (x == y) 
+  print("values are equal"
+  </code></pre>
+<p>As far as the programming language is concerned, you haven’t finished this <code>if</code> statement. So, it will wait to run until you have “completed your thought”, so to speak, and provided the syntax (here, <code>)</code>) indicating that this statement is complete and the program is ready to run.</p>
+<p>Alternately, if you have mismatched parentheses, the result may be an error.</p>
+<pre><code>if (x == y) 
+  print("values are equal"))
+  </code></pre>
+<p>In this case, there is an extra closing parentheses <code>)</code> after <code>print("values are equal")</code> that doesn’t have a matching <code>(</code> anywhere in the statement. The resulting error would look like:</p>
+<pre><code>Error: unexpected ')' in:
+"if (x == y) {
+    print("values are equal"))"
+    </code></pre>
 </div>
 <div id="formatting-may-vary" class="section level3" number="5.3.3">
 <h3>
@@ -194,7 +209,7 @@ else:
   print("x must be less than y")
 }
 </code></pre>
-<p>[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]</p>
+<p><strong>[[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]]</strong></p>
 
 </div>
 </div>
@@ -231,7 +246,7 @@ else:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-07.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

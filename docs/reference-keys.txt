@@ -31,6 +31,12 @@ aliases
 activity-reprise-for-functions
 comments-and-names
 common-issues
+difference-between-and
+spelling-and-capitalization-matter
+special-characters-and-words
+ending-a-code-chunk
+order-of-operations-1
+others-work-in-progress
 recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors

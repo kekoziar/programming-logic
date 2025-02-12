@@ -14,8 +14,9 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 Grab a pen and paper and write out the output of each iteration of the loop:
 
 ```
-for (x in 0:5) 
-  print(x)
+for x in 0 to 5 
+  write x
+  
 ```
 <details>
 <summary>Loop output</summary>
@@ -40,9 +41,11 @@ We'll start with an empty array called `table` with 4 rows and columns named A, 
 | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
 | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  | &nbsp;  |
 
+We want to populate this table with numbers, starting with 1 and increasing sequentially (1, 2, 3, 4, etc.). We want to fill each row completely before moving on to start filling the next row.
+
 Our `for` loop:
 
-[adapt programming logic book exercise for loop]
+__[[adapt programming logic book exercise for loop]]__
     
 
 Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.
@@ -65,15 +68,52 @@ Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) an
 
 
 ## Other Types of Loops 
-- while(check at beginning)
-- do-while(check at end)
-- until(check at end)
+
+There are other types of loops in addition to the commonly used `for` loop.\ 
+
+The `while` loop uses a condition at the start of the loop to determine, in advance, when the loop will stop. For example, recall the initial for loop:
+
+```
+for x in 0 to 5 
+  write x
+  
+```
+
+An equivalent `while` loop would look like:
+
+```
+
+
+```
+
+Another type of loop is a `do while` loop (check at end) and an `until` loop (check at end).
+
+```
+
+```
+
+```
+
+```
 
 ## Caveats
 
+Loops are a frequently encountered concept in programming and come with their own set of common issues.
+
 ### Infinite loops
 
+When condition is never false or otherwise has no break
+
 ### Overwriting outputs
+
+```
+for x in 0 to 5 
+  answer = x
+
+write answer
+  
+```
+
 
 
 

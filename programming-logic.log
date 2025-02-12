@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.13)  7 FEB 2025 14:14
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.13)  12 FEB 2025 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -772,12 +772,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--200
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--244
+Underfull \hbox (badness 10000) in paragraph at lines 240--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
@@ -794,33 +794,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--246
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
-
- []
-
-
-
-[15]
 Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
@@ -830,22 +803,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 368.
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--390
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
+
+ []
+
+
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
+
+ []
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 397.
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
 
  []
 
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
 
  []
 
@@ -854,90 +854,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 408--409
 [17]
 
 [18]
+
+[19]
+
+[20
+
+]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 
-Overfull \hbox (484.5pt too wide) in paragraph at lines 466--466
+Overfull \hbox (484.5pt too wide) in paragraph at lines 524--524
 []\TU/lmtt/m/n/10 [SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
+Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
-
- []
-
-
-
-[19
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
-
- []
-
-
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
 
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 567--568
+Underfull \hbox (badness 10000) in paragraph at lines 554--555
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 
  []
 
 
 
 [22]
-Underfull \hbox (badness 2495) in paragraph at lines 598--603
-\TU/lmr/m/n/10 with defaults import cookbook; cookbook.make_popcorn() ### From
+Underfull \hbox (badness 10000) in paragraph at lines 560--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--565
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
+
  []
 
 
 
 [23]
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
-[24
+ []
 
-]
-Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
+
+ []
+
+
+
+[24]
+Underfull \hbox (badness 2495) in paragraph at lines 656--661
+\TU/lmr/m/n/10 with defaults import cookbook; cookbook.make_popcorn() ### From
+ []
+
 
 
 [25]
@@ -945,7 +941,7 @@ Chapter 7.
 [26
 
 ]
-Chapter 8.
+Chapter 7.
 
 
 [27]
@@ -953,33 +949,51 @@ Chapter 8.
 [28
 
 ]
-Chapter 9.
+Chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--684
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 692--697
+
+ []
+
 
 
 [29]
 
-[30
+[30]
+Chapter 9.
+
+
+[31
+
+]
+
+[32
 
 ]
 Chapter 10.
 
-LaTeX Warning: Reference `methods' on page 31 undefined on input line 658.
+LaTeX Warning: Reference `methods' on page 33 undefined on input line 752.
 
 File: programming-logic_files/figure-latex/nice-fig-1.pdf Graphic file (type pdf)
 <use programming-logic_files/figure-latex/nice-fig-1.pdf>
 
 
-[31]
+[33]
 
-[32]
+[34]
 Chapter 11.
 (./programming-logic.bbl
 
-[33
+[35
 
 ]
 
-[34
+[36
 
 ]
 Underfull \hbox (badness 1668) in paragraph at lines 4--7
@@ -988,7 +1002,7 @@ Underfull \hbox (badness 1668) in paragraph at lines 4--7
 
 )
 
-[35] (./programming-logic.aux)
+[37] (./programming-logic.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
@@ -998,12 +1012,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17591 strings out of 475851
- 322272 string characters out of 5772782
- 857829 words of memory out of 5000000
- 40278 multiletter control sequences out of 15000+600000
+ 17603 strings out of 475851
+ 322467 string characters out of 5772782
+ 858191 words of memory out of 5000000
+ 40290 multiletter control sequences out of 15000+600000
  565344 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,8n,123p,757b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on programming-logic.pdf (35 pages).
+Output written on programming-logic.pdf (37 pages).

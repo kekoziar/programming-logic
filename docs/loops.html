@@ -101,8 +101,9 @@ Also writing out result of each iteration otherwise you’ll only get the last r
 <span class="header-section-number">4.1</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
 </h2>
 <p>Grab a pen and paper and write out the output of each iteration of the loop:</p>
-<pre><code>for (x in 0:5) 
-  print(x)</code></pre>
+<pre><code>for x in 0 to 5 
+  write x
+  </code></pre>
 <details><summary>
 Loop output
 </summary>
@@ -157,8 +158,9 @@ Loop output
 </tr>
 </tbody>
 </table></div>
+<p>We want to populate this table with numbers, starting with 1 and increasing sequentially (1, 2, 3, 4, etc.). We want to fill each row completely before moving on to start filling the next row.</p>
 <p>Our <code>for</code> loop:</p>
-<p>[adapt programming logic book exercise for loop]</p>
+<p><strong>[[adapt programming logic book exercise for loop]]</strong></p>
 <p>Grab and pen and paper (or a spreadsheet program like Google Sheets or Excel) and manually fill in the empty cells in the array.</p>
 <ul>
 <li>What is the number in cell A1?</li>
@@ -211,25 +213,38 @@ Your filled array should look like this
 <h2>
 <span class="header-section-number">4.3</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
 </h2>
-<ul>
-<li>while(check at beginning)</li>
-<li>do-while(check at end)</li>
-<li>until(check at end)</li>
-</ul>
+<p>There are other types of loops in addition to the commonly used <code>for</code> loop. </p>
+<p>The <code>while</code> loop uses a condition at the start of the loop to determine, in advance, when the loop will stop. For example, recall the initial for loop:</p>
+<pre><code>for x in 0 to 5 
+  write x
+  </code></pre>
+<p>An equivalent <code>while</code> loop would look like:</p>
+<pre><code>
+</code></pre>
+<p>Another type of loop is a <code>do while</code> loop (check at end) and an <code>until</code> loop (check at end).</p>
+<pre><code></code></pre>
+<pre><code></code></pre>
 </div>
 <div id="caveats" class="section level2" number="4.4">
 <h2>
 <span class="header-section-number">4.4</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats"><i class="fas fa-link"></i></a>
 </h2>
+<p>Loops are a frequently encountered concept in programming and come with their own set of common issues.</p>
 <div id="infinite-loops" class="section level3" number="4.4.1">
 <h3>
 <span class="header-section-number">4.4.1</span> Infinite loops<a class="anchor" aria-label="anchor" href="#infinite-loops"><i class="fas fa-link"></i></a>
 </h3>
+<p>When condition is never false or otherwise has no break</p>
 </div>
 <div id="overwriting-outputs" class="section level3" number="4.4.2">
 <h3>
 <span class="header-section-number">4.4.2</span> Overwriting outputs<a class="anchor" aria-label="anchor" href="#overwriting-outputs"><i class="fas fa-link"></i></a>
 </h3>
+<pre><code>for x in 0 to 5 
+  answer = x
+
+write answer
+  </code></pre>
 
 </div>
 </div>
@@ -266,7 +281,7 @@ Your filled array should look like this
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-07.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-12.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
