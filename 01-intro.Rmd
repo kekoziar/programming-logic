@@ -12,8 +12,8 @@ The purpose of this workshop isn't just to introduce you to programming logic, i
 
 Syntax is the formal structural of a computer programming language.  Assembly, C/C++, C#, Python, and R all have formal language structures so the computer knows how to read the code.  But, sometimes syntax gets in the way of learning concepts.  Luckily, most programming concepts are the same across all languages.
 
-The syntax we will use for most of the examples will be something called psuedocode.  Pseudocode focuses on concepts and tasks, and not syntax.  You don’t need to worry if there is a semicolon or parenthesis out of place when you write in psuedocode, you'll still know how to interpret what is written.
+The syntax we will use for most of the examples will be something called psuedocode.  Pseudocode focuses on concepts and tasks, not syntax.  You don’t need to worry if there is a semicolon or parenthesis out of place when you write in psuedocode, you'll still know how to interpret what is written.
 
-We will also introduce examples in programming different languages, so you can start to recognize the similarities and differences between the languages. You won’t be an expert by end of this workshop, but we will help you build your skillset so hopefully you’re more comfortable reading known (and unknown) computer languages.
+We will also introduce programming examples in different languages, so you can start to recognize the similarities and differences between the languages. You won’t be an expert by end of this workshop, but we will help you build your skillset so hopefully you’re more comfortable reading known (and unknown) computer languages.
 
 
