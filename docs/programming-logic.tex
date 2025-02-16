@@ -127,7 +127,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-12}
+\date{2025-02-15}
 
 \begin{document}
 \maketitle
@@ -137,10 +137,6 @@
 \tableofcontents
 }
 \chapter{About}\label{about}
-
-\begin{quote}
-Bookdown reference: \url{https://bookdown.org/yihui/bookdown/usage.html}
-\end{quote}
 
 \texttt{BEGIN\ pitch()}
 
@@ -160,37 +156,39 @@ To provide real world examples of programming logic in practice, the workshop wi
 
 \texttt{IF\ attendee\_need\ ==\ “learn\_programming\_logic”:\ print(“register\ for\ this\ workshop!”)}
 
-\section{Keeping this below for easy reference while we get used to the bookdown format}\label{keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format}
-
-\emph{Prerequisites}
-
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
-
-The \textbf{bookdown} package can be installed from CRAN or Github:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{\# or the development version}
-\CommentTok{\# devtools::install\_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
-
 \chapter{Introduction}\label{intro}
 
-New intro for Programming Logic
+This is a different type of programming workshop. One that doesn't require a computer, but instead intends to help you build mental models of how computer programming works. You will learn not only the logic behind programming, but also methods for identifying errors in algorithms and code that the computer doesn't see. The only technology required, besides the ability to view this lesson, is something to write with and a piece of paper.
 
 \section{Building a Mental Model}\label{building-a-mental-model}
 
+Our experience with computational consultations is often student researchers will take someone else's code and try to adapt it for their own research, but they use the code without knowing how it does what it does. This means they're unable to easily update the script, will create errors they don't know how to address, and even import errors already in the script. Sometimes they can't even adapt it to use the original data which is in a different location on their computer. They can't really read the code, but are reliant on the computer reading the code.
+
+The purpose of this workshop isn't just to introduce you to programming logic, it's to provide a safe space to practice thinking through what the computer does by tracing algorithms and code snippets instead of having the computer just do it.
+
 \section{A Note on Syntax}\label{a-note-on-syntax}
+
+Syntax is the formal structural of a computer programming language. Assembly, C/C++, C\#, Python, and R all have formal language structures so the computer knows how to read the code. But, sometimes syntax gets in the way of learning concepts. Luckily, most programming concepts are the same across all languages.
+
+The syntax we will use for most of the examples will be something called psuedocode. Pseudocode focuses on concepts and tasks, not syntax. You don't need to worry if there is a semicolon or parenthesis out of place when you write in psuedocode, you'll still know how to interpret what is written.
+
+We will also introduce programming examples in different languages, so you can start to recognize the similarities and differences between the languages. You won't be an expert by end of this workshop, but we will help you build your skillset so hopefully you're more comfortable reading known (and unknown) computer languages.
 
 \chapter{Algorithms}\label{algorithms}
 
-overview of algorithms and computer code/scripting
+Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you're working with was trained to do what it does. For social media feeds, an algorithm will determine how to select which content is delivered to a user. Algorithms can be very simple or very complex.
+
+A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients. But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn't enough to tell a computer, ``get the data.'' You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use in your script. So let's do an example with a recipe on how to make
+
+\begin{itemize}
+\tightlist
+\item
+  enchiladas?
+\item
+  quesadillas?
+\item
+  cheesy mashed potatoes?
+\end{itemize}
 
 \section{Breakout Activity}\label{breakout-activity}
 
@@ -747,9 +745,13 @@ logic
 
 output
 
-\chapter{BD Demo Introduction}\label{intro-bd}
+\chapter{BD Demo Introduction}\label{bd-demo-intro}
 
-You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
+\begin{quote}
+Bookdown reference: \url{https://bookdown.org/yihui/bookdown/usage.html}
+\end{quote}
+
+You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{bd-demo-methods}.
 
 Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
 
@@ -816,6 +818,26 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{table}
 
 You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
+
+\section{Keeping this below for easy reference while we get used to the bookdown format}\label{keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format}
+
+\emph{Prerequisites}
+
+This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
+
+The \textbf{bookdown} package can be installed from CRAN or Github:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
+\CommentTok{\# or the development version}
+\CommentTok{\# devtools::install\_github("rstudio/bookdown")}
+\end{Highlighting}
+\end{Shaded}
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
 
 \chapter{BD Demo Methods}\label{bd-demo-methods}
 

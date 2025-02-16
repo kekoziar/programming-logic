@@ -1,7 +1,6 @@
 fig:nice-fig
 tab:nice-tab
 about
-keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format
 intro
 building-a-mental-model
 a-note-on-syntax
@@ -40,6 +39,7 @@ others-work-in-progress
 recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors
-intro-bd
+bd-demo-intro
+keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format
 bd-demo-methods
 math-example
