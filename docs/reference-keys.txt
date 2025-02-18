@@ -6,6 +6,8 @@ building-a-mental-model
 a-note-on-syntax
 algorithms
 breakout-activity
+data-types
+exercise---who-knows
 loops
 exercise---loop-trace
 exercise---populate-an-array

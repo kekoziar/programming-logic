@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Functions | Programming Logic for Non-Programmers</title>
+<title>Chapter 7 Functions | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
 <meta name="description" content="A “function” in programming is a piece of code that does a specific task. Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Functions | Programming Logic for Non-Programmers">
+<meta property="og:title" content="Chapter 7 Functions | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
 <meta property="og:description" content="A “function” in programming is a piece of code that does a specific task. Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Functions | Programming Logic for Non-Programmers">
+<meta name="twitter:title" content="Chapter 7 Functions | Programming Logic for Non-Programmers">
 <meta name="twitter:description" content="A “function” in programming is a piece of code that does a specific task. Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -68,14 +68,15 @@
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
-<li><a class="" href="loops.html"><span class="header-section-number">4</span> Loops</a></li>
-<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></li>
-<li><a class="active" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
-<li><a class="" href="comments-and-names.html"><span class="header-section-number">7</span> Comments and Names</a></li>
-<li><a class="" href="common-issues.html"><span class="header-section-number">8</span> Common Issues</a></li>
-<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">9</span> Recap and Consultation Tips</a></li>
-<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">10</span> BD Demo Introduction</a></li>
-<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">11</span> BD Demo Methods</a></li>
+<li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="active" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="comments-and-names.html"><span class="header-section-number">8</span> Comments and Names</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">10</span> Recap and Consultation Tips</a></li>
+<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">11</span> BD Demo Introduction</a></li>
+<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">12</span> BD Demo Methods</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -84,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="7">
 <h1>
-<span class="header-section-number">6</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
 </h1>
 <p>A “function” in programming is a piece of code that does a specific task.</p>
 <p>Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add each value and divide by the number of values.<br></p>
@@ -97,9 +98,9 @@ mean_value = (2 + 4 + 7 + 5 + 9) / 5</code></pre>
 On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.</p>
 <pre><code>[SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...]
 </code></pre>
-<div id="arguments" class="section level2" number="6.1">
+<div id="arguments" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">6.1</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h2>
 <p>In a function, “arguments” are the inputs that you can specify. So for a <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function, the primary argument would be what kind of input to put in: <code>mean(x)</code> where <code>x</code> is a list or vector of values. Another argument might be an option for how to handle missing or <code>NA</code> values: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation. Optional arguments like this may come with a pre-supplied default, in this case that <code>na.rm = FALSE</code> and any <code>NA</code>values will be retained, unless this argument is manually changed to <code>TRUE</code>.<br></p>
 <p>It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.<br></p>
@@ -115,9 +116,9 @@ mean(values, na.rm = TRUE)
 </code></pre>
 <p>Now our output is <code>5.4</code> which is the mean of <code>values</code> exlucding <code>NA</code>.</p>
 </div>
-<div id="libraries" class="section level2" number="6.2">
+<div id="libraries" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">6.2</span> Libraries<a class="anchor" aria-label="anchor" href="#libraries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> Libraries<a class="anchor" aria-label="anchor" href="#libraries"><i class="fas fa-link"></i></a>
 </h2>
 <p>Programming languages will have a variety of functions for common tasks ready to use without any additional work. These are called “built in” functions and are available to use right away.<br></p>
 <p>However, built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.</p>
@@ -128,9 +129,9 @@ mean(values, na.rm = TRUE)
 <p>A good rule of thumb is if it <em>seems</em> like the function you want is broadly useful, then someone has likely created a library containing it. This is also true for niche or domain-specific functions: if the task is one that comes up a lot in analysis, there is likely a library that has functions for those analysis tasks.<br></p>
 <p>Finding the ‘right’ library for the function you need can be overwhelming, but a good starting point is the official library collection for a programming language, such as <a href="https://cran.r-project.org/web/views/">CRAN for R</a> or <a href="https://pypi.org/">PyPI for Python</a>.</p>
 </div>
-<div id="accessing-functions-in-libraries" class="section level2" number="6.3">
+<div id="accessing-functions-in-libraries" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">6.3</span> Accessing functions in libraries<a class="anchor" aria-label="anchor" href="#accessing-functions-in-libraries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Accessing functions in libraries<a class="anchor" aria-label="anchor" href="#accessing-functions-in-libraries"><i class="fas fa-link"></i></a>
 </h2>
 <p>The syntax for accessing functions in libraries varies by programming language but follows the general process of:</p>
 <ol style="list-style-type: decimal">
@@ -138,14 +139,14 @@ mean(values, na.rm = TRUE)
 <li>Load or import the library. You will need to do this every time you want to access a function in a library. By convention, libraries are loaded at the top of a script, so you, and other people, can see at a glance what libraries are needed to run the script.</li>
 <li>Use the functions as normal.</li>
 </ol>
-<div id="caveats-2" class="section level3" number="6.3.1">
+<div id="caveats-2" class="section level3" number="7.3.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.1</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-2"><i class="fas fa-link"></i></a>
 </h3>
 </div>
-<div id="function-names" class="section level3" number="6.3.2">
+<div id="function-names" class="section level3" number="7.3.2">
 <h3>
-<span class="header-section-number">6.3.2</span> Function names<a class="anchor" aria-label="anchor" href="#function-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.2</span> Function names<a class="anchor" aria-label="anchor" href="#function-names"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are only so many function names that make sense in the English language, so there may be functions from <em>different libraries</em> that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.</p>
 <p>Let’s say we have two <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> functions, one from library <code>A</code> and one from library <code>B</code>. They differ in their default settings:</p>
@@ -182,9 +183,9 @@ B:mean(values)
 #result will be `NA`
 </code></pre>
 </div>
-<div id="aliases" class="section level3" number="6.3.3">
+<div id="aliases" class="section level3" number="7.3.3">
 <h3>
-<span class="header-section-number">6.3.3</span> Aliases<a class="anchor" aria-label="anchor" href="#aliases"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.3</span> Aliases<a class="anchor" aria-label="anchor" href="#aliases"><i class="fas fa-link"></i></a>
 </h3>
 <p>You may encounter the concept of an “alias” for a library. This is common in Python, where users can set an alias for a library name, and use that going forward rather than writing out the full library name. This will mostly come up if you are looking for help online, or wondering why you are seeing abbreviations.</p>
 <p>For example, Python uses the <code>import</code> term to load a library (or “package” as Python calls them) and allows setting an alias using <code>import package as alias</code> syntax. By convention, many Python users will use standard aliases for common packages, such as:</p>
@@ -193,9 +194,9 @@ import numpy as np</code></pre>
 <p>Functions can then be called using the explicit <code>package:function</code> syntax, such as <code>pd.DataFrame</code> to designate a <code>pandas</code> <code>DataFrame</code> object.</p>
 </div>
 </div>
-<div id="activity-reprise-for-functions" class="section level2" number="6.4">
+<div id="activity-reprise-for-functions" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">6.4</span> Activity reprise for functions<a class="anchor" aria-label="anchor" href="#activity-reprise-for-functions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Activity reprise for functions<a class="anchor" aria-label="anchor" href="#activity-reprise-for-functions"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s return to the Chapter 2 activity where you created an algorithm to make popcorn.</p>
 <p>Call back to popcorn - if function is make_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
@@ -210,22 +211,22 @@ Can look up documentation, most should specify arguments in each function and sy
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></div>
-<div class="next"><a href="comments-and-names.html"><span class="header-section-number">7</span> Comments and Names</a></div>
+<div class="prev"><a href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></div>
+<div class="next"><a href="comments-and-names.html"><span class="header-section-number">8</span> Comments and Names</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#functions"><span class="header-section-number">6</span> Functions</a></li>
-<li><a class="nav-link" href="#arguments"><span class="header-section-number">6.1</span> Arguments</a></li>
-<li><a class="nav-link" href="#libraries"><span class="header-section-number">6.2</span> Libraries</a></li>
+<li><a class="nav-link" href="#functions"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="nav-link" href="#arguments"><span class="header-section-number">7.1</span> Arguments</a></li>
+<li><a class="nav-link" href="#libraries"><span class="header-section-number">7.2</span> Libraries</a></li>
 <li>
-<a class="nav-link" href="#accessing-functions-in-libraries"><span class="header-section-number">6.3</span> Accessing functions in libraries</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#caveats-2"><span class="header-section-number">6.3.1</span> Caveats</a></li>
-<li><a class="nav-link" href="#function-names"><span class="header-section-number">6.3.2</span> Function names</a></li>
-<li><a class="nav-link" href="#aliases"><span class="header-section-number">6.3.3</span> Aliases</a></li>
+<a class="nav-link" href="#accessing-functions-in-libraries"><span class="header-section-number">7.3</span> Accessing functions in libraries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#caveats-2"><span class="header-section-number">7.3.1</span> Caveats</a></li>
+<li><a class="nav-link" href="#function-names"><span class="header-section-number">7.3.2</span> Function names</a></li>
+<li><a class="nav-link" href="#aliases"><span class="header-section-number">7.3.3</span> Aliases</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#activity-reprise-for-functions"><span class="header-section-number">6.4</span> Activity reprise for functions</a></li>
+<li><a class="nav-link" href="#activity-reprise-for-functions"><span class="header-section-number">7.4</span> Activity reprise for functions</a></li>
 </ul>
 
       <div class="book-extra">
@@ -242,7 +243,7 @@ Can look up documentation, most should specify arguments in each function and sy
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-15.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 Conditionals and Making Choices | Programming Logic for Non-Programmers</title>
+<title>Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
 <meta name="description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
-<meta property="og:title" content="Chapter 5 Conditionals and Making Choices | Programming Logic for Non-Programmers">
+<meta property="og:title" content="Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 Conditionals and Making Choices | Programming Logic for Non-Programmers">
+<meta name="twitter:title" content="Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers">
 <meta name="twitter:description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -68,14 +68,15 @@
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
-<li><a class="" href="loops.html"><span class="header-section-number">4</span> Loops</a></li>
-<li><a class="active" href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
-<li><a class="" href="comments-and-names.html"><span class="header-section-number">7</span> Comments and Names</a></li>
-<li><a class="" href="common-issues.html"><span class="header-section-number">8</span> Common Issues</a></li>
-<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">9</span> Recap and Consultation Tips</a></li>
-<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">10</span> BD Demo Introduction</a></li>
-<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">11</span> BD Demo Methods</a></li>
+<li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="active" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="comments-and-names.html"><span class="header-section-number">8</span> Comments and Names</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">10</span> Recap and Consultation Tips</a></li>
+<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">11</span> BD Demo Introduction</a></li>
+<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">12</span> BD Demo Methods</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -84,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conditionals-and-making-choices" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conditionals-and-making-choices" class="section level1" number="6">
 <h1>
-<span class="header-section-number">5</span> Conditionals and Making Choices<a class="anchor" aria-label="anchor" href="#conditionals-and-making-choices"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> Conditionals and Making Choices<a class="anchor" aria-label="anchor" href="#conditionals-and-making-choices"><i class="fas fa-link"></i></a>
 </h1>
 <p>Many times in programming, we want to take a certain action only if a certain condition is satisfied.<br></p>
 <p>To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an <code>if</code> statement, which is often combined with an <code>else</code> statement.<br></p>
@@ -103,9 +104,9 @@ ELSE do Y
 ELSE IF conditionB == TRUE, do Z
 ELSE do Y
 </code></pre>
-<div id="boolean-operators" class="section level2" number="5.1">
+<div id="boolean-operators" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Boolean Operators<a class="anchor" aria-label="anchor" href="#boolean-operators"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Boolean Operators<a class="anchor" aria-label="anchor" href="#boolean-operators"><i class="fas fa-link"></i></a>
 </h2>
 <p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same.)<br></p>
 <p>Programming uses Boolean operators such as:<br></p>
@@ -124,9 +125,9 @@ ELSE do Y
 </li>
 </ul>
 </div>
-<div id="exercise---ifelse-trace" class="section level2" number="5.2">
+<div id="exercise---ifelse-trace" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s look at some examples of conditional statements in practice.</p>
 <pre><code>if x == y:
@@ -156,20 +157,20 @@ Answer
 x greater than y
 </details><p><br></p>
 </div>
-<div id="caveats-1" class="section level2" number="5.3">
+<div id="caveats-1" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">5.3</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="order-of-operations" class="section level3" number="5.3.1">
+<div id="order-of-operations" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">5.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
 </h3>
 <p>Order of operations is critical for conditionals. The computer will go through each condition <strong>in order</strong>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
 <p><strong>[[insert example here]]</strong></p>
 </div>
-<div id="matching-parentheses" class="section level3" number="5.3.2">
+<div id="matching-parentheses" class="section level3" number="6.3.2">
 <h3>
-<span class="header-section-number">5.3.2</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.2</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
 </h3>
 <p>For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.</p>
 <p>The code below, without a closing parentheses after “equal”, will continue to expect input.</p>
@@ -187,9 +188,9 @@ x greater than y
     print("values are equal"))"
     </code></pre>
 </div>
-<div id="formatting-may-vary" class="section level3" number="5.3.3">
+<div id="formatting-may-vary" class="section level3" number="6.3.3">
 <h3>
-<span class="header-section-number">5.3.3</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.3</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
 </h3>
 <p>Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.</p>
 <p>For example, Python expects <code>:</code> at the end of each section of an <code>ifelse</code> statement, uses <code>elif</code> for <code>else if</code>, and requires indentation to indicate action of each section:</p>
@@ -215,19 +216,19 @@ else:
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="loops.html"><span class="header-section-number">4</span> Loops</a></div>
-<div class="next"><a href="functions.html"><span class="header-section-number">6</span> Functions</a></div>
+<div class="prev"><a href="loops.html"><span class="header-section-number">5</span> Loops</a></div>
+<div class="next"><a href="functions.html"><span class="header-section-number">7</span> Functions</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#conditionals-and-making-choices"><span class="header-section-number">5</span> Conditionals and Making Choices</a></li>
-<li><a class="nav-link" href="#boolean-operators"><span class="header-section-number">5.1</span> Boolean Operators</a></li>
-<li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">5.2</span> Exercise - ifelse trace</a></li>
+<li><a class="nav-link" href="#conditionals-and-making-choices"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="nav-link" href="#boolean-operators"><span class="header-section-number">6.1</span> Boolean Operators</a></li>
+<li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">6.2</span> Exercise - ifelse trace</a></li>
 <li>
-<a class="nav-link" href="#caveats-1"><span class="header-section-number">5.3</span> Caveats</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#order-of-operations"><span class="header-section-number">5.3.1</span> Order of operations</a></li>
-<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">5.3.2</span> Matching parentheses</a></li>
-<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">5.3.3</span> Formatting may vary</a></li>
+<a class="nav-link" href="#caveats-1"><span class="header-section-number">6.3</span> Caveats</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#order-of-operations"><span class="header-section-number">6.3.1</span> Order of operations</a></li>
+<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.3.2</span> Matching parentheses</a></li>
+<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">6.3.3</span> Formatting may vary</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +247,7 @@ else:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-15.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

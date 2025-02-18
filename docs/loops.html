@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Loops | Programming Logic for Non-Programmers</title>
+<title>Chapter 5 Loops | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
 <meta name="description" content="Drawing from Introduction to Programming Logic(Lynne O’Hanlon 2000) Start with for loop as first function term “Populate an array from a for loop” as an early example; pg 376 blank table with good...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Loops | Programming Logic for Non-Programmers">
+<meta property="og:title" content="Chapter 5 Loops | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Drawing from Introduction to Programming Logic(Lynne O’Hanlon 2000) Start with for loop as first function term “Populate an array from a for loop” as an early example; pg 376 blank table with good...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Loops | Programming Logic for Non-Programmers">
+<meta name="twitter:title" content="Chapter 5 Loops | Programming Logic for Non-Programmers">
 <meta name="twitter:description" content="Drawing from Introduction to Programming Logic(Lynne O’Hanlon 2000) Start with for loop as first function term “Populate an array from a for loop” as an early example; pg 376 blank table with good...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -68,14 +68,15 @@
 <li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
-<li><a class="active" href="loops.html"><span class="header-section-number">4</span> Loops</a></li>
-<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">6</span> Functions</a></li>
-<li><a class="" href="comments-and-names.html"><span class="header-section-number">7</span> Comments and Names</a></li>
-<li><a class="" href="common-issues.html"><span class="header-section-number">8</span> Common Issues</a></li>
-<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">9</span> Recap and Consultation Tips</a></li>
-<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">10</span> BD Demo Introduction</a></li>
-<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">11</span> BD Demo Methods</a></li>
+<li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
+<li><a class="active" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="comments-and-names.html"><span class="header-section-number">8</span> Comments and Names</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">10</span> Recap and Consultation Tips</a></li>
+<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">11</span> BD Demo Introduction</a></li>
+<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">12</span> BD Demo Methods</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -84,9 +85,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="loops" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="loops" class="section level1" number="5">
 <h1>
-<span class="header-section-number">4</span> Loops<a class="anchor" aria-label="anchor" href="#loops"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> Loops<a class="anchor" aria-label="anchor" href="#loops"><i class="fas fa-link"></i></a>
 </h1>
 <p>Drawing from Introduction to Programming Logic<span class="citation">(<a href="references.html#ref-lynne_ohanlon_introduction_2000">Lynne O’Hanlon 2000</a>)</span>
 Start with <code>for</code> loop as first function term
@@ -96,9 +97,9 @@ What happens if you don’t tell loop to increase?
 Examples of <code>for</code> loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)</p>
-<div id="exercise---loop-trace" class="section level2" number="4.1">
+<div id="exercise---loop-trace" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">4.1</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
 </h2>
 <p>Grab a pen and paper and write out the output of each iteration of the loop:</p>
 <pre><code>for x in 0 to 5 
@@ -113,9 +114,9 @@ Loop output
 4<br>
 5<br></details><p><br></p>
 </div>
-<div id="exercise---populate-an-array" class="section level2" number="4.2">
+<div id="exercise---populate-an-array" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">4.2</span> Exercise - populate an array<a class="anchor" aria-label="anchor" href="#exercise---populate-an-array"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Exercise - populate an array<a class="anchor" aria-label="anchor" href="#exercise---populate-an-array"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s use a <code>for</code> loop to populate an array.</p>
 <p>We’ll start with an empty array called <code>table</code> with 4 rows and columns named A, B, C, D, and E:</p>
@@ -209,9 +210,9 @@ Your filled array should look like this
 </tbody>
 </table></details>
 </div>
-<div id="other-types-of-loops" class="section level2" number="4.3">
+<div id="other-types-of-loops" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">4.3</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
 </h2>
 <p>There are other types of loops in addition to the commonly used <code>for</code> loop. </p>
 <p>The <code>while</code> loop uses a condition at the start of the loop to determine, in advance, when the loop will stop. For example, recall the initial for loop:</p>
@@ -225,20 +226,20 @@ Your filled array should look like this
 <pre><code></code></pre>
 <pre><code></code></pre>
 </div>
-<div id="caveats" class="section level2" number="4.4">
+<div id="caveats" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">4.4</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats"><i class="fas fa-link"></i></a>
 </h2>
 <p>Loops are a frequently encountered concept in programming and come with their own set of common issues.</p>
-<div id="infinite-loops" class="section level3" number="4.4.1">
+<div id="infinite-loops" class="section level3" number="5.4.1">
 <h3>
-<span class="header-section-number">4.4.1</span> Infinite loops<a class="anchor" aria-label="anchor" href="#infinite-loops"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1</span> Infinite loops<a class="anchor" aria-label="anchor" href="#infinite-loops"><i class="fas fa-link"></i></a>
 </h3>
 <p>When condition is never false or otherwise has no break</p>
 </div>
-<div id="overwriting-outputs" class="section level3" number="4.4.2">
+<div id="overwriting-outputs" class="section level3" number="5.4.2">
 <h3>
-<span class="header-section-number">4.4.2</span> Overwriting outputs<a class="anchor" aria-label="anchor" href="#overwriting-outputs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.2</span> Overwriting outputs<a class="anchor" aria-label="anchor" href="#overwriting-outputs"><i class="fas fa-link"></i></a>
 </h3>
 <pre><code>for x in 0 to 5 
   answer = x
@@ -250,19 +251,19 @@ write answer
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></div>
-<div class="next"><a href="conditionals-and-making-choices.html"><span class="header-section-number">5</span> Conditionals and Making Choices</a></div>
+<div class="prev"><a href="data-types.html"><span class="header-section-number">4</span> Data types</a></div>
+<div class="next"><a href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#loops"><span class="header-section-number">4</span> Loops</a></li>
-<li><a class="nav-link" href="#exercise---loop-trace"><span class="header-section-number">4.1</span> Exercise - loop trace</a></li>
-<li><a class="nav-link" href="#exercise---populate-an-array"><span class="header-section-number">4.2</span> Exercise - populate an array</a></li>
-<li><a class="nav-link" href="#other-types-of-loops"><span class="header-section-number">4.3</span> Other Types of Loops</a></li>
+<li><a class="nav-link" href="#loops"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="nav-link" href="#exercise---loop-trace"><span class="header-section-number">5.1</span> Exercise - loop trace</a></li>
+<li><a class="nav-link" href="#exercise---populate-an-array"><span class="header-section-number">5.2</span> Exercise - populate an array</a></li>
+<li><a class="nav-link" href="#other-types-of-loops"><span class="header-section-number">5.3</span> Other Types of Loops</a></li>
 <li>
-<a class="nav-link" href="#caveats"><span class="header-section-number">4.4</span> Caveats</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#infinite-loops"><span class="header-section-number">4.4.1</span> Infinite loops</a></li>
-<li><a class="nav-link" href="#overwriting-outputs"><span class="header-section-number">4.4.2</span> Overwriting outputs</a></li>
+<a class="nav-link" href="#caveats"><span class="header-section-number">5.4</span> Caveats</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#infinite-loops"><span class="header-section-number">5.4.1</span> Infinite loops</a></li>
+<li><a class="nav-link" href="#overwriting-outputs"><span class="header-section-number">5.4.2</span> Overwriting outputs</a></li>
 </ul>
 </li>
 </ul>
@@ -281,7 +282,7 @@ write answer
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-15.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
