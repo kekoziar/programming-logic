@@ -1,0 +1,10 @@
+# Data types
+
+
+talk about data types and variables.
+
+use food analogy
+
+## Exercise - Who knows
+
+
