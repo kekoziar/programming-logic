@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Practice annotating and understanding unfamiliar code | Programming Logic for Non-Programmers</title>
+  <meta name="description" content="This is a programming logic for non-programmers workshop, with a target audience of data librarians and related data professionals." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Practice annotating and understanding unfamiliar code | Programming Logic for Non-Programmers" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a programming logic for non-programmers workshop, with a target audience of data librarians and related data professionals." />
+  <meta name="github-repo" content="kekoziar/programming-logic" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Practice annotating and understanding unfamiliar code | Programming Logic for Non-Programmers" />
+  
+  <meta name="twitter:description" content="This is a programming logic for non-programmers workshop, with a target audience of data librarians and related data professionals." />
+  
+
+<meta name="author" content="Kat Koziar and Stephanie Labou" />
+
+
+<meta name="date" content="2025-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="common-issues.html"/>
+<link rel="next" href="recap-and-consultation-tips.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Programming Logic for Non-Programmers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#building-a-mental-model"><i class="fa fa-check"></i><b>2.1</b> Building a Mental Model</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#a-note-on-syntax"><i class="fa fa-check"></i><b>2.2</b> A Note on Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="algorithms.html"><a href="algorithms.html"><i class="fa fa-check"></i><b>3</b> Algorithms</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="algorithms.html"><a href="algorithms.html#breakout-activity"><i class="fa fa-check"></i><b>3.1</b> Breakout Activity</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-types.html"><a href="data-types.html"><i class="fa fa-check"></i><b>4</b> Data types</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-types.html"><a href="data-types.html#exercise---who-knows"><i class="fa fa-check"></i><b>4.1</b> Exercise - Who knows</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="loops.html"><a href="loops.html#exercise---loop-trace"><i class="fa fa-check"></i><b>5.1</b> Exercise - loop trace</a></li>
+<li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#exercise---populate-an-array"><i class="fa fa-check"></i><b>5.2</b> Exercise - populate an array</a></li>
+<li class="chapter" data-level="5.3" data-path="loops.html"><a href="loops.html#other-types-of-loops"><i class="fa fa-check"></i><b>5.3</b> Other Types of Loops</a></li>
+<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#caveats"><i class="fa fa-check"></i><b>5.4</b> Caveats</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="loops.html"><a href="loops.html#infinite-loops"><i class="fa fa-check"></i><b>5.4.1</b> Infinite loops</a></li>
+<li class="chapter" data-level="5.4.2" data-path="loops.html"><a href="loops.html#overwriting-outputs"><i class="fa fa-check"></i><b>5.4.2</b> Overwriting outputs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html"><i class="fa fa-check"></i><b>6</b> Conditionals and Making Choices</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#boolean-operators"><i class="fa fa-check"></i><b>6.1</b> Boolean Operators</a></li>
+<li class="chapter" data-level="6.2" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#exercise---ifelse-trace"><i class="fa fa-check"></i><b>6.2</b> Exercise - <code>ifelse</code> trace</a></li>
+<li class="chapter" data-level="6.3" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#caveats-1"><i class="fa fa-check"></i><b>6.3</b> Caveats</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#order-of-operations"><i class="fa fa-check"></i><b>6.3.1</b> Order of operations</a></li>
+<li class="chapter" data-level="6.3.2" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#matching-parentheses"><i class="fa fa-check"></i><b>6.3.2</b> Matching parentheses</a></li>
+<li class="chapter" data-level="6.3.3" data-path="conditionals-and-making-choices.html"><a href="conditionals-and-making-choices.html#formatting-may-vary"><i class="fa fa-check"></i><b>6.3.3</b> Formatting may vary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>7</b> Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="functions.html"><a href="functions.html#arguments"><i class="fa fa-check"></i><b>7.1</b> Arguments</a></li>
+<li class="chapter" data-level="7.2" data-path="functions.html"><a href="functions.html#libraries"><i class="fa fa-check"></i><b>7.2</b> Libraries</a></li>
+<li class="chapter" data-level="7.3" data-path="functions.html"><a href="functions.html#accessing-functions-in-libraries"><i class="fa fa-check"></i><b>7.3</b> Accessing functions in libraries</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="functions.html"><a href="functions.html#caveats-2"><i class="fa fa-check"></i><b>7.3.1</b> Caveats</a></li>
+<li class="chapter" data-level="7.3.2" data-path="functions.html"><a href="functions.html#function-names"><i class="fa fa-check"></i><b>7.3.2</b> Function names</a></li>
+<li class="chapter" data-level="7.3.3" data-path="functions.html"><a href="functions.html#aliases"><i class="fa fa-check"></i><b>7.3.3</b> Aliases</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="functions.html"><a href="functions.html#activity-reprise-for-functions"><i class="fa fa-check"></i><b>7.4</b> Activity reprise for functions</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="functions.html"><a href="functions.html#from-stephanie-import-make_popcorn"><i class="fa fa-check"></i><b>7.4.1</b> From stephanie import make_popcorn()</a></li>
+<li class="chapter" data-level="7.4.2" data-path="functions.html"><a href="functions.html#from-kat-import-make_popcorn"><i class="fa fa-check"></i><b>7.4.2</b> From kat import make_popcorn()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comments-and-names.html"><a href="comments-and-names.html"><i class="fa fa-check"></i><b>8</b> Comments and Names</a></li>
+<li class="chapter" data-level="9" data-path="common-issues.html"><a href="common-issues.html"><i class="fa fa-check"></i><b>9</b> Common Issues</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="common-issues.html"><a href="common-issues.html#difference-between-and"><i class="fa fa-check"></i><b>9.1</b> Difference between <code>=</code> and <code>==</code></a></li>
+<li class="chapter" data-level="9.2" data-path="common-issues.html"><a href="common-issues.html#spelling-and-capitalization-matter"><i class="fa fa-check"></i><b>9.2</b> Spelling and capitalization matter</a></li>
+<li class="chapter" data-level="9.3" data-path="common-issues.html"><a href="common-issues.html#special-characters-and-words"><i class="fa fa-check"></i><b>9.3</b> Special characters and words</a></li>
+<li class="chapter" data-level="9.4" data-path="common-issues.html"><a href="common-issues.html#ending-a-code-chunk"><i class="fa fa-check"></i><b>9.4</b> Ending a code chunk</a></li>
+<li class="chapter" data-level="9.5" data-path="common-issues.html"><a href="common-issues.html#order-of-operations-1"><i class="fa fa-check"></i><b>9.5</b> Order of operations</a></li>
+<li class="chapter" data-level="9.6" data-path="common-issues.html"><a href="common-issues.html#others-work-in-progress"><i class="fa fa-check"></i><b>9.6</b> Others [work in progress]</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="practice-annotating-and-understanding-unfamiliar-code.html"><a href="practice-annotating-and-understanding-unfamiliar-code.html"><i class="fa fa-check"></i><b>10</b> Practice annotating and understanding unfamiliar code</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="practice-annotating-and-understanding-unfamiliar-code.html"><a href="practice-annotating-and-understanding-unfamiliar-code.html#nested-for-loops-and-if-else-statements-in-python"><i class="fa fa-check"></i><b>10.1</b> Nested <code>for</code> loops and <code>if else</code> statements (in Python)</a></li>
+<li class="chapter" data-level="10.2" data-path="practice-annotating-and-understanding-unfamiliar-code.html"><a href="practice-annotating-and-understanding-unfamiliar-code.html#new-types-of-conditions-in-sql"><i class="fa fa-check"></i><b>10.2</b> New types of conditions (in SQL)</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="recap-and-consultation-tips.html"><a href="recap-and-consultation-tips.html"><i class="fa fa-check"></i><b>11</b> Recap and Consultation Tips</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="recap-and-consultation-tips.html"><a href="recap-and-consultation-tips.html#approaching-consultations"><i class="fa fa-check"></i><b>11.1</b> Approaching Consultations</a></li>
+<li class="chapter" data-level="11.2" data-path="recap-and-consultation-tips.html"><a href="recap-and-consultation-tips.html#three-areas-for-errors"><i class="fa fa-check"></i><b>11.2</b> Three Areas For Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="bd-demo-intro.html"><a href="bd-demo-intro.html"><i class="fa fa-check"></i><b>12</b> BD Demo Introduction</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="bd-demo-intro.html"><a href="bd-demo-intro.html#keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format"><i class="fa fa-check"></i><b>12.1</b> Keeping this below for easy reference while we get used to the bookdown format</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="bd-demo-methods.html"><a href="bd-demo-methods.html"><i class="fa fa-check"></i><b>13</b> BD Demo Methods</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="bd-demo-methods.html"><a href="bd-demo-methods.html#math-example"><i class="fa fa-check"></i><b>13.1</b> math example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/kekoziar/programming-logic" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Programming Logic for Non-Programmers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="practice-annotating-and-understanding-unfamiliar-code" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Practice annotating and understanding unfamiliar code<a href="practice-annotating-and-understanding-unfamiliar-code.html#practice-annotating-and-understanding-unfamiliar-code" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="nested-for-loops-and-if-else-statements-in-python" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Nested <code>for</code> loops and <code>if else</code> statements (in Python)<a href="practice-annotating-and-understanding-unfamiliar-code.html#nested-for-loops-and-if-else-statements-in-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses ‘nested’ <code>for</code> loops, meaning a second loop occurs within the first loops. It also uses nested <code>if else</code> statements.</p>
+<p>For this code, can you identify where each <code>for</code> loop and each <code>if else</code> statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?</p>
+<pre><code>1.  base_url = &quot;https://nces.ed.gov/ipeds/datacenter/&quot;
+2.  data_url = &quot;DataFiles.aspx?&quot;
+3.  year_base = &quot;year=&quot;
+4.  years = [&quot;1995&quot;, &quot;1996&quot;, &quot;1997&quot;, &quot;1998&quot;]
+5.  session_id = &quot;&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7&quot;  #you might need to change this
+6. 
+7.  # what type of files do you want to save?
+8.  file_type = [&quot;zip&quot;,&quot;csv&quot;]
+9. 
+10. # where do you want to save locally?
+11. 
+12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 13. because that&#39;s where below is saving to
+14. save_loc = years 
+15. 
+16. # what kind of prefix do you want on your files
+17. save_prefix = &quot;ipeds_&quot; 
+18. 
+19. # scrape
+20. for year in years:
+21.     url = base_url+data_url+year_base+year+session_id 
+22.     webpage = requests.get(url)
+23.     soup = BeautifulSoup(webpage.content, &#39;html.parser&#39;)
+24. 
+25. 
+26.     if os.path.isdir(&quot;./&quot;+year):
+27.         # notice output path has &quot;year&quot; as a variable indicating folders
+28.         output_path = &quot;./&quot;+year+&quot;/&quot;+save_prefix+year+&quot;_&quot;+&quot;.html&quot;
+29.     
+30.         if os.path.exists(output_path):
+31.             print(output_path+&quot; already exists. Did NOT save.&quot;)
+32.         else:
+33.             # saving the html file
+34.             print(&quot;saving &quot;+output_path)
+35.     
+36.             with open(output_path, &#39;wb&#39;) as file:
+37.                 file.write(webpage.content) 
+38.             
+39.         # saving files linked on original html page which meet file type requirement
+40.         for link in soup.find_all(&#39;a&#39;)[0:16]:  
+41.             data_target = link.get(&#39;href&#39;)
+42.             # data_target[-3:]
+43.             if any(extension == data_target[-3:] for extension in file_type):
+44.                 wget_url = base_url+data_target
+45.                 wget_save = &quot;./&quot;+year+&quot;/&quot;+save_prefix+data_target.replace(&quot;/&quot;,&quot;-&quot;)
+46.     
+47.                 if os.path.exists(wget_save):
+48.                     print(wget_save+&quot; already exists. Did NOT save.&quot;)
+49.                 else:
+50.                     print(&quot;SAVING &quot;+ wget_url+ &quot; at local location: &quot;+wget_save)
+51.                     wget.download(wget_url,wget_save)
+52.                     time.sleep(.25) # be kind, don&#39;t look like a DDOS attack
+53.     else:
+54.         print(&quot;\n!!! save directory &quot;+year+&quot; does NOT exist. please create\n&quot;)
+55.     
+56.     
+57. print(&quot;fin.&quot;)
+</code></pre>
+</div>
+<div id="new-types-of-conditions-in-sql" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> New types of conditions (in SQL)<a href="practice-annotating-and-understanding-unfamiliar-code.html#new-types-of-conditions-in-sql" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider the following SQL command:</p>
+<pre><code>SELECT * FROM Customers
+WHERE Country = &#39;Spain&#39; AND (CustomerName LIKE &#39;G%&#39; OR CustomerName LIKE &#39;R%&#39;);
+</code></pre>
+<p>Your preferred approach for navigating and understanding unfamiliar code may vary.<br />
+</p>
+<p>One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:</p>
+<ul>
+<li>What does the <code>Customers</code> term most likely refer to?</li>
+<li>What do you think the <code>SELECT</code> function does?</li>
+<li>What does <code>*</code> indicate, in combination with <code>SELECT</code>?</li>
+<li>Parsing the second line that starts with <code>WHERE</code>, can you make an educated guess about what <code>Country</code> and <code>CustomerName</code> refer to?</li>
+<li>Can you guess (or feel free to use Google) what <code>LIKE 'G%'</code> and <code>LIKE 'R%'</code> would indicate?</li>
+</ul>
+<details>
+<summary>
+Do your answers match these?
+</summary>
+<ul>
+<li>The <code>Customers</code> term here refers to a table or dataframe.</li>
+<li>The <code>SELECT</code> function selects columns from a table.</li>
+<li>The <code>*</code> here indicates that we want to return all columns from the table.</li>
+<li>The <code>Customers</code> table must have columns named <code>Country</code> and <code>CustomerName</code>.</li>
+<li><code>LIKE</code> is used for pattern matching. This code is matching values that start with “G” or with “R”.</li>
+</ul>
+</details>
+<p><br />
+</p>
+<p>Now, can you write out a narrative of what you see the code is trying to do?<br />
+</p>
+<details>
+<summary>
+Example written narrative
+</summary>
+<p>Starting from the <code>Customers</code> table, return all columns but only rows where <code>Country</code> is equal to “Spain” <strong>and</strong> where the <code>CustomerName</code> value starts with “G” or “R”.</p>
+</details>
+<p><br />
+</p>
+<ul>
+<li></li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="common-issues.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="recap-and-consultation-tips.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kekoziar/programming-logic/edit/main/10-practice.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["programming-logic.pdf", "programming-logic.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
