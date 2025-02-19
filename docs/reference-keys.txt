@@ -38,6 +38,9 @@ special-characters-and-words
 ending-a-code-chunk
 order-of-operations-1
 others-work-in-progress
+practice-annotating-and-understanding-unfamiliar-code
+nested-for-loops-and-if-else-statements-in-python
+new-types-of-conditions-in-sql
 recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors

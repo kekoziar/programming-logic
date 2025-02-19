@@ -127,7 +127,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-18}
+\date{2025-02-19}
 
 \begin{document}
 \maketitle
@@ -243,6 +243,7 @@ for x in 0 to 5
 
 Loop output
 
+0\\
 1\\
 2\\
 3\\
@@ -728,6 +729,126 @@ Reading and writing data / files\\
 Syntax is going to be specific to a language, or package within a
 language\\
 Show some examples of reading/writing data in R, Python, Stata, SQL
+
+\chapter{Practice annotating and understanding unfamiliar code}\label{practice-annotating-and-understanding-unfamiliar-code}
+
+\section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
+
+Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses `nested' \texttt{for} loops, meaning a second loop occurs within the first loops. It also uses nested \texttt{if\ else} statements.
+
+For this code, can you identify where each \texttt{for} loop and each \texttt{if\ else} statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?
+
+\begin{verbatim}
+1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
+2.  data_url = "DataFiles.aspx?"
+3.  year_base = "year="
+4.  years = ["1995", "1996", "1997", "1998"]
+5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"  #you might need to change this
+6. 
+7.  # what type of files do you want to save?
+8.  file_type = ["zip","csv"]
+9. 
+10. # where do you want to save locally?
+11. 
+12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 13. because that's where below is saving to
+14. save_loc = years 
+15. 
+16. # what kind of prefix do you want on your files
+17. save_prefix = "ipeds_" 
+18. 
+19. # scrape
+20. for year in years:
+21.     url = base_url+data_url+year_base+year+session_id 
+22.     webpage = requests.get(url)
+23.     soup = BeautifulSoup(webpage.content, 'html.parser')
+24. 
+25. 
+26.     if os.path.isdir("./"+year):
+27.         # notice output path has "year" as a variable indicating folders
+28.         output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
+29.     
+30.         if os.path.exists(output_path):
+31.             print(output_path+" already exists. Did NOT save.")
+32.         else:
+33.             # saving the html file
+34.             print("saving "+output_path)
+35.     
+36.             with open(output_path, 'wb') as file:
+37.                 file.write(webpage.content) 
+38.             
+39.         # saving files linked on original html page which meet file type requirement
+40.         for link in soup.find_all('a')[0:16]:  
+41.             data_target = link.get('href')
+42.             # data_target[-3:]
+43.             if any(extension == data_target[-3:] for extension in file_type):
+44.                 wget_url = base_url+data_target
+45.                 wget_save = "./"+year+"/"+save_prefix+data_target.replace("/","-")
+46.     
+47.                 if os.path.exists(wget_save):
+48.                     print(wget_save+" already exists. Did NOT save.")
+49.                 else:
+50.                     print("SAVING "+ wget_url+ " at local location: "+wget_save)
+51.                     wget.download(wget_url,wget_save)
+52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
+53.     else:
+54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
+55.     
+56.     
+57. print("fin.")
+\end{verbatim}
+
+\section{New types of conditions (in SQL)}\label{new-types-of-conditions-in-sql}
+
+Consider the following SQL command:
+
+\begin{verbatim}
+SELECT * FROM Customers
+WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+\end{verbatim}
+
+Your preferred approach for navigating and understanding unfamiliar code may vary.\\
+
+One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
+
+\begin{itemize}
+\tightlist
+\item
+  What does the \texttt{Customers} term most likely refer to?
+\item
+  What do you think the \texttt{SELECT} function does?
+\item
+  What does \texttt{*} indicate, in combination with \texttt{SELECT}?
+\item
+  Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Country} and \texttt{CustomerName} refer to?
+\item
+  Can you guess (or feel free to use Google) what \texttt{LIKE\ \textquotesingle{}G\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}R\%\textquotesingle{}} would indicate?
+\end{itemize}
+
+Do your answers match these?
+
+\begin{itemize}
+\tightlist
+\item
+  The \texttt{Customers} term here refers to a table or dataframe.
+\item
+  The \texttt{SELECT} function selects columns from a table.
+\item
+  The \texttt{*} here indicates that we want to return all columns from the table.
+\item
+  The \texttt{Customers} table must have columns named \texttt{Country} and \texttt{CustomerName}.
+\item
+  \texttt{LIKE} is used for pattern matching. This code is matching values that start with ``G'' or with ``R''.
+\end{itemize}
+
+\hfill\break
+
+Now, can you write out a narrative of what you see the code is trying to do?\\
+
+Example written narrative
+
+Starting from the \texttt{Customers} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \textbf{and} where the \texttt{CustomerName} value starts with ``G'' or ``R''.
+
+\hfill\break
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 
