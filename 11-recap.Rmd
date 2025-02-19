@@ -1,0 +1,23 @@
+# Recap and Consultation Tips
+
+Recap - you won’t be an expert, the idea is to build up your skillset
+
+## Approaching Consultations
+How you may approach consultations - prepare in advance knowing specific question, evening seeing code in advance; have student talk through their code
+Be clear with what you can and cannot do.
+Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician) 
+Troubleshooting vs consult
+Ok to say you don’t know! Point to documentation and learning resources
+
+
+## Three Areas For Errors
+Code not running at all → often a syntax error
+
+Running unexpectedly / unexpected output
+
+input
+
+logic
+
+output
+
