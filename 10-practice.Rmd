@@ -4,6 +4,8 @@
 
 Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses 'nested' `for` loops, meaning a second loop occurs within the first loops. It also uses nested `if else` statements. 
 
+__SL: we can simplify this example, maybe remove session_id and save_loc__
+
 For this code, can you identify where each `for` loop and each `if else` statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?
 
 ```
@@ -71,8 +73,8 @@ For this code, can you identify where each `for` loop and each `if else` stateme
 Consider the following SQL command:
 
 ```
-SELECT * FROM Customers
-WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+SELECT * FROM OceanBuoys
+WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 
 ```
 
@@ -80,26 +82,60 @@ Your preferred approach for navigating and understanding unfamiliar code may var
 
 One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
 
-- What does the `Customers` term most likely refer to?
+- What does the `OceanBuoys` term most likely refer to?
 - What do you think the `SELECT` function does?
 - What does `*` indicate, in combination with `SELECT`? 
-- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Country` and `CustomerName` refer to?
-- Can you guess (or feel free to use Google) what `LIKE 'G%'` and `LIKE 'R%'` would indicate?
+- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Country` and `BuoyName` refer to?
+- Can you guess (or feel free to use Google) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
 
 <details>
 <summary>Do your answers match these?</summary>
-- The `Customers` term here refers to a table or dataframe. 
+- The `OceanBuoys` term here refers to a table or dataframe. 
 - The `SELECT` function selects columns from a table. 
 - The `*` here indicates that we want to return all columns from the table. 
-- The `Customers` table must have columns named `Country` and `CustomerName`. 
-- `LIKE` is used for pattern matching. This code is matching values that start with "G" or with "R".
+- The `OceanBuoys` table must have columns named `Country` and `BuoyName`. 
+- `LIKE` is used for pattern matching. This code is matching values that start with "S" or with "K".
 </details>\
 
 Now, can you write out a narrative of what you see the code is trying to do?\
 
 <details>
 <summary>Example written narrative</summary>
-Starting from the `Customers` table, return all columns but only rows where `Country` is equal to "Spain" __and__ where the `CustomerName` value starts with "G" or "R".
+Starting from the `OceanBuoys` table, return all columns but only rows where `Country` is equal to "Spain" __and__ where the `BuoyName` value starts with "S" or "K".
 
 </details>\
+
+## add example for C/C++
+
+## Challenge practice: new syntax and terms (in R)
+
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
+
+In the code example below, note the new symbol `%>%` and `%in%` and the new functions `mutate()` and `paste()`. The `select()` function at least is more familiar from the example above, and `ifelse` is an `if else` statement.
+
+```
+1.  df_new <- df %>% 
+2.    select(-respondent_name) %>% 
+3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %>% 
+4.    mutate(survey_type = ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
+  
+```
+Task: go line by line and annotate, in your own words, what that line of code is doing.\
+
+Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below, to guide your annotation.
+
+- Line 1
+  - What is `df_new <- df` doing here?
+  - What does the `%>%` symbol indicate?
+- Line 2
+  - What is the `select()` function likely doing? 
+  - What might it mean that the argument in this function is preceded by `-`?
+- Line 3
+  - Using context clues (and Google) what do you think the `mutate()` function does?
+  - The new `paste()` function has three arguments (`paste(arg1, arg2, arg3)`). What do you think the arguments are for?
+- Line 4
+  - This `ifelse()` statement has a different format than we've covered so far, but the concept is the same. Assuming this `ifelse()` statement has three arguments (`ifelse(condition, mystery1, mystery2)`) what might the two mystery arguments be specifying?
+  - Looking at the section `survey_wave %in% c("first", "second")`, what do you think this would translate to, as a written explanation of the task here?
+
+Finally, it is always important to understand the data type and structure of the data being acted upon. Based on the questions above, what is the structure of the data being used here?
 
