@@ -107,6 +107,7 @@ Starting from the `OceanBuoys` table, return all columns but only rows where `Co
 
 ## add example for C/C++
 
+
 ## Challenge practice: new syntax and terms (in R)
 
 While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
@@ -136,6 +137,15 @@ Each line has a new take on the same logic we've covered in prior sections; a br
 - Line 4
   - This `ifelse()` statement has a different format than we've covered so far, but the concept is the same. Assuming this `ifelse()` statement has three arguments (`ifelse(condition, mystery1, mystery2)`) what might the two mystery arguments be specifying?
   - Looking at the section `survey_wave %in% c("first", "second")`, what do you think this would translate to, as a written explanation of the task here?
+  
+Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
+  
+<details>
+<summary>Example narrative</summary>
+Starting from the table/dataframe called "df", we want to keep (select) all columns _except_ the column named "respondent_name".\
 
-Finally, it is always important to understand the data type and structure of the data being acted upon. Based on the questions above, what is the structure of the data being used here?
+Then, make a new column called "identifier". This new column is created by pasting together the value in the "respondent_id" column and the "survey_wave" column, separated by an underscore.\
 
+Then, make another new column called "survey_type". The values in this column are determined by an `ifelse` statement: if the value in the "survey_wave" column is any of the values specified in the list `("first", "second")` (so if the value is "first" or "second"), then the value in the "survey_type" column will be "phone". Otherwise, the value will be "in person".\
+
+</details>\
