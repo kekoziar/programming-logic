@@ -127,7 +127,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-19}
+\date{2025-02-21}
 
 \begin{document}
 \maketitle
@@ -736,6 +736,8 @@ Show some examples of reading/writing data in R, Python, Stata, SQL
 
 Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses `nested' \texttt{for} loops, meaning a second loop occurs within the first loops. It also uses nested \texttt{if\ else} statements.
 
+\textbf{SL: we can simplify this example, maybe remove session\_id and save\_loc}
+
 For this code, can you identify where each \texttt{for} loop and each \texttt{if\ else} statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?
 
 \begin{verbatim}
@@ -802,8 +804,8 @@ For this code, can you identify where each \texttt{for} loop and each \texttt{if
 Consider the following SQL command:
 
 \begin{verbatim}
-SELECT * FROM Customers
-WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+SELECT * FROM OceanBuoys
+WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 \end{verbatim}
 
 Your preferred approach for navigating and understanding unfamiliar code may vary.\\
@@ -813,15 +815,15 @@ One option is to break down code into its component parts. Here you can separate
 \begin{itemize}
 \tightlist
 \item
-  What does the \texttt{Customers} term most likely refer to?
+  What does the \texttt{OceanBuoys} term most likely refer to?
 \item
   What do you think the \texttt{SELECT} function does?
 \item
   What does \texttt{*} indicate, in combination with \texttt{SELECT}?
 \item
-  Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Country} and \texttt{CustomerName} refer to?
+  Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Country} and \texttt{BuoyName} refer to?
 \item
-  Can you guess (or feel free to use Google) what \texttt{LIKE\ \textquotesingle{}G\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}R\%\textquotesingle{}} would indicate?
+  Can you guess (or feel free to use Google) what \texttt{LIKE\ \textquotesingle{}S\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}K\%\textquotesingle{}} would indicate?
 \end{itemize}
 
 Do your answers match these?
@@ -829,15 +831,15 @@ Do your answers match these?
 \begin{itemize}
 \tightlist
 \item
-  The \texttt{Customers} term here refers to a table or dataframe.
+  The \texttt{OceanBuoys} term here refers to a table or dataframe.
 \item
   The \texttt{SELECT} function selects columns from a table.
 \item
   The \texttt{*} here indicates that we want to return all columns from the table.
 \item
-  The \texttt{Customers} table must have columns named \texttt{Country} and \texttt{CustomerName}.
+  The \texttt{OceanBuoys} table must have columns named \texttt{Country} and \texttt{BuoyName}.
 \item
-  \texttt{LIKE} is used for pattern matching. This code is matching values that start with ``G'' or with ``R''.
+  \texttt{LIKE} is used for pattern matching. This code is matching values that start with ``S'' or with ``K''.
 \end{itemize}
 
 \hfill\break
@@ -846,9 +848,75 @@ Now, can you write out a narrative of what you see the code is trying to do?\\
 
 Example written narrative
 
-Starting from the \texttt{Customers} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \textbf{and} where the \texttt{CustomerName} value starts with ``G'' or ``R''.
+Starting from the \texttt{OceanBuoys} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \textbf{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''.
 
 \hfill\break
+
+\section{add example for C/C++}\label{add-example-for-cc}
+
+\section{Challenge practice: new syntax and terms (in R)}\label{challenge-practice-new-syntax-and-terms-in-r}
+
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\\
+
+In the code example below, note the new symbol \texttt{\%\textgreater{}\%} and \texttt{\%in\%} and the new functions \texttt{mutate()} and \texttt{paste()}. The \texttt{select()} function at least is more familiar from the example above, and \texttt{ifelse} is an \texttt{if\ else} statement.
+
+\begin{verbatim}
+1.  df_new <- df %>% 
+2.    select(-respondent_name) %>% 
+3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %>% 
+4.    mutate(survey_type = ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
+  
+\end{verbatim}
+
+Task: go line by line and annotate, in your own words, what that line of code is doing.\\
+
+Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below, to guide your annotation.
+
+\begin{itemize}
+\tightlist
+\item
+  Line 1
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What is \texttt{df\_new\ \textless{}-\ df} doing here?
+  \item
+    What does the \texttt{\%\textgreater{}\%} symbol indicate?
+  \end{itemize}
+\item
+  Line 2
+
+  \begin{itemize}
+  \tightlist
+  \item
+    What is the \texttt{select()} function likely doing?
+  \item
+    What might it mean that the argument in this function is preceded by \texttt{-}?
+  \end{itemize}
+\item
+  Line 3
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Using context clues (and Google) what do you think the \texttt{mutate()} function does?
+  \item
+    The new \texttt{paste()} function has three arguments (\texttt{paste(arg1,\ arg2,\ arg3)}). What do you think the arguments are for?
+  \end{itemize}
+\item
+  Line 4
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This \texttt{ifelse()} statement has a different format than we've covered so far, but the concept is the same. Assuming this \texttt{ifelse()} statement has three arguments (\texttt{ifelse(condition,\ mystery1,\ mystery2)}) what might the two mystery arguments be specifying?
+  \item
+    Looking at the section \texttt{survey\_wave\ \%in\%\ c("first",\ "second")}, what do you think this would translate to, as a written explanation of the task here?
+  \end{itemize}
+\end{itemize}
+
+Finally, it is always important to understand the data type and structure of the data being acted upon. Based on the questions above, what is the structure of the data being used here?
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 
