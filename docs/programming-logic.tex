@@ -916,7 +916,17 @@ Each line has a new take on the same logic we've covered in prior sections; a br
   \end{itemize}
 \end{itemize}
 
-Finally, it is always important to understand the data type and structure of the data being acted upon. Based on the questions above, what is the structure of the data being used here?
+Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
+
+Example narrative
+
+Starting from the table/dataframe called ``df'', we want to keep (select) all columns \emph{except} the column named ``respondent\_name''.\\
+
+Then, make a new column called ``identifier''. This new column is created by pasting together the value in the ``respondent\_id'' column and the ``survey\_wave'' column, separated by an underscore.\\
+
+Then, make another new column called ``survey\_type''. The values in this column are determined by an \texttt{ifelse} statement: if the value in the ``survey\_wave'' column is any of the values specified in the list \texttt{("first",\ "second")} (so if the value is ``first'' or ``second''), then the value in the ``survey\_type'' column will be ``phone''. Otherwise, the value will be ``in person''.\\
+
+\hfill\break
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 

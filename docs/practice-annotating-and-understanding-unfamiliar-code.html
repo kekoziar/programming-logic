@@ -232,7 +232,13 @@ Example written narrative
 </ul>
 </li>
 </ul>
-<p>Finally, it is always important to understand the data type and structure of the data being acted upon. Based on the questions above, what is the structure of the data being used here?</p>
+<p>Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?</p>
+<details><summary>
+Example narrative
+</summary><p>Starting from the table/dataframe called “df”, we want to keep (select) all columns <em>except</em> the column named “respondent_name”.<br></p>
+<p>Then, make a new column called “identifier”. This new column is created by pasting together the value in the “respondent_id” column and the “survey_wave” column, separated by an underscore.<br></p>
+<p>Then, make another new column called “survey_type”. The values in this column are determined by an <code>ifelse</code> statement: if the value in the “survey_wave” column is any of the values specified in the list <code>("first", "second")</code> (so if the value is “first” or “second”), then the value in the “survey_type” column will be “phone”. Otherwise, the value will be “in person”.<br></p>
+</details><p><br></p>
 
 </div>
 </div>
