@@ -5,6 +5,7 @@ intro
 building-a-mental-model
 a-note-on-syntax
 algorithms
+what-are-algorithms
 breakout-activity
 data-types
 exercise---who-knows

@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 3 Algorithms | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the...">
+<meta name="description" content="3.1 What Are Algorithms Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="Chapter 3 Algorithms | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the...">
+<meta property="og:description" content="3.1 What Are Algorithms Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 3 Algorithms | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the...">
+<meta name="twitter:description" content="3.1 What Are Algorithms Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -90,32 +90,43 @@
 <h1>
 <span class="header-section-number">3</span> Algorithms<a class="anchor" aria-label="anchor" href="#algorithms"><i class="fas fa-link"></i></a>
 </h1>
+<div id="what-are-algorithms" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> What Are Algorithms<a class="anchor" aria-label="anchor" href="#what-are-algorithms"><i class="fas fa-link"></i></a>
+</h2>
 <p>Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does. For social media feeds, an algorithm will determine how to select which content is delivered to a user. Algorithms can be very simple or very complex.</p>
 <p>A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients. But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn’t enough to tell a computer, “get the data.” You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use in your script. So let’s do an example with a recipe on how to make cheesy mashed potatoes.</p>
-<p>The steps are easy enough.
-1. Take potatoes and boil them until they’re done.
-2. Drain.
-3. Add butter, milk, salt/pepper to taste.
-4. Mash.
-5. Fold in cheese.
-6. Eat.</p>
+<p>The steps are easy enough.</p>
+<ol style="list-style-type: decimal">
+<li>Take potatoes and boil them until they’re done.</li>
+<li>Drain.</li>
+<li>Add butter, milk, salt/pepper to taste.</li>
+<li>Mash.</li>
+<li>Fold in cheese.</li>
+<li>Eat.</li>
+</ol>
 <p>Most of us would know how to do this because we infer the instructions that are missing. But, computers are stupid. They need to be explicitly told how to do something.</p>
 <p>How many potatoes? What does <em>boil</em> mean? What does <em>done</em> mean? (which is also a question I asked my mom when reading my grandmother’s recipes.)</p>
-<p>Ingredients
-3 pounds russet potatoes, peeled and cut into chunks
-8 tablespoons (1 stick) butter
-1/2 cup milk
-Salt and freshly ground pepper
-1 cup shredded cheddar</p>
-<p><em>Algorithm for making Cheesy Mashed Potatoes</em></p>
+<p>Computer code needs to be explicit and complete. Let’s see what that looks like with the first part of an algorithm.</p>
+<p><strong>Algorithm for peeling potatoes for Cheesy Mashed Potatoes</strong></p>
 <ol style="list-style-type: decimal">
-<li>Place the potatoes in a large pot and cover with water by an inch. Bring to a boil over high heat, then reduce to simmer. Cook until the potatoes are fork tender, 25 to 30 minutes. Drain.</li>
-<li>Return the potatoes to the pot and add the butter, milk and some salt and pepper. Mash the potatoes to the desired consistency. While still hot, fold the cheese into the mash and stir to melt.</li>
+<li>Get three pounds of russet potatoes.</li>
+<li>Get bowl large enough to hold three pounds of russet potatoes.</li>
+<li>Get a vegetable peeler.</li>
+<li>Take one potato.</li>
+<li>Peel potato.</li>
+<li>Rinse potato with water.</li>
+<li>Place peeled potato in bowl</li>
+<li>Repeat 4-7 until all potatoes are washed and peeled</li>
 </ol>
-<div id="breakout-activity" class="section level2" number="3.1">
+<p>When you start breaking down the process into specific actions it can get quite long, but what we’re doing is listing a large complex overall task into simple ones that can be done one action at a time.</p>
+<p>Essentially, that’s what computer processors do - one action at a time. Computers with multi-core processors can do multiple actions at simultaneously, one action for each core. It’s just the computer is so fast, it looks like it’s doing everything at once, but it still just executes commands step by step.</p>
+</div>
+<div id="breakout-activity" class="section level2" number="3.2">
 <h2>
-<span class="header-section-number">3.1</span> Breakout Activity<a class="anchor" aria-label="anchor" href="#breakout-activity"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2</span> Breakout Activity<a class="anchor" aria-label="anchor" href="#breakout-activity"><i class="fas fa-link"></i></a>
 </h2>
+<p>(20 Min?)</p>
 <p>For this activity, you will write an algorithm to make popcorn. </p>
 <p>Sounds simple, right? “Make popcorn” is something most people have at least a general understanding of how to do. But in this scenario, you’re providing step-by-step directions for a computer to understand how to make popcorn and a computer would need to be told <strong>every action</strong> to take, in order to successfully make popcorn.<br></p>
 <p>Your task is to write out each step needed to make popcorn.</p>
@@ -135,7 +146,8 @@ Salt and freshly ground pepper
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#algorithms"><span class="header-section-number">3</span> Algorithms</a></li>
-<li><a class="nav-link" href="#breakout-activity"><span class="header-section-number">3.1</span> Breakout Activity</a></li>
+<li><a class="nav-link" href="#what-are-algorithms"><span class="header-section-number">3.1</span> What Are Algorithms</a></li>
+<li><a class="nav-link" href="#breakout-activity"><span class="header-section-number">3.2</span> Breakout Activity</a></li>
 </ul>
 
       <div class="book-extra">

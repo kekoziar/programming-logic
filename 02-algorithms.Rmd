@@ -1,5 +1,7 @@
 # Algorithms
 
+## What Are Algorithms
+
 Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm?  An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does.  For social media feeds, an algorithm will determine how to select which content is delivered to a user.  Algorithms can be very simple or very complex.
 
 A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients.  But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn’t enough to tell a computer, “get the data.” You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use  in your script. So let’s do an example with a recipe on how to make cheesy mashed potatoes.
@@ -17,20 +19,28 @@ Most of us would know how to do this because we infer the instructions that are 
 
 How many potatoes?  What does _boil_ mean?  What does _done_ mean? (which is also a question I asked my mom when reading my grandmother's recipes.)
 
-Ingredients
-3 pounds russet potatoes, peeled and cut into chunks
-8 tablespoons (1 stick) butter
-1/2 cup milk 
-Salt and freshly ground pepper 
-1 cup shredded cheddar 
+Computer code needs to be explicit and complete.  Let's see what that looks like with the first part of an algorithm.
 
-*Algorithm for making Cheesy Mashed Potatoes*
 
-1. Place the potatoes in a large pot and cover with water by an inch. Bring to a boil over high heat, then reduce to simmer. Cook until the potatoes are fork tender, 25 to 30 minutes. Drain.
-2. Return the potatoes to the pot and add the butter, milk and some salt and pepper. Mash the potatoes to the desired consistency. While still hot, fold the cheese into the mash and stir to melt.
+**Algorithm for peeling potatoes for Cheesy Mashed Potatoes**
+
+1. Get three pounds of russet potatoes.
+2. Get bowl large enough to hold three pounds of russet potatoes.
+2. Get a vegetable peeler.
+3. Take one potato.
+5. Peel potato.
+4. Rinse potato with water.
+7. Place peeled potato in bowl
+8. Repeat 4-7 until all potatoes are washed and peeled
+
+When you start breaking down the process into specific actions it can get quite long, but what we're doing is listing a large complex overall task into simple ones that can be done one action at a time.  
+
+Essentially, that's what computer processors do - one action at a time.  Computers with multi-core processors can do multiple actions at simultaneously, one action for each core.  It's just the computer is so fast, it looks like it's doing everything at once, but it still just executes commands step by step. 
 
 
 ## Breakout Activity
+
+(20 Min?)
 
 For this activity, you will write an algorithm to make popcorn.\ 
 
