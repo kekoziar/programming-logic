@@ -260,6 +260,10 @@ As you write out the steps with your group, consider:
 
 \chapter{Data types}\label{data-types}
 
+\section{Variables}\label{variables}
+
+Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures (data structures might be too early, but maybe not.)
+
 A word that people use a lot when referring to computer code is \emph{variables}, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code.
 
 \texttt{ingredients\ \textless{}-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}
@@ -270,7 +274,16 @@ We use variables to represent the data that are being used to because it's easy 
 
 and also easy to build a mental model of how the different variables interrelate.
 
-A most simple example of this is to use variables to describe an equation. A common rule for naming variables is they should represent what the data are.
+\begin{verbatim}
+ingredients <- smoked gouda cheese, potatoes, milk, salt, butter
+ingredient_quantities <- all, 3 lb, 0.5 c, to taste, 8 tbsp
+\end{verbatim}
+
+\subsection{Pro-tip}\label{pro-tip}
+
+A common rule for naming variables is they should describe they data they represent. If we used the term \texttt{x} - which is commonly used as a variable in math equations - we wouldn't know what it represents. Using the word \texttt{ingredients} is descriptive, so you know at a glance what it represents.
+
+\section{Data Types}\label{data-types-1}
 
 talk about data types and variables.
 

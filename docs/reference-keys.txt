@@ -8,6 +8,9 @@ algorithms
 what-are-algorithms
 breakout-activity
 data-types
+variables
+pro-tip
+data-types-1
 exercise---who-knows
 loops
 exercise---loop-trace

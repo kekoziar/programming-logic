@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 4 Data types | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="A word that people use a lot when referring to computer code is variables, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code. ingredients...">
+<meta name="description" content="4.1 Variables Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="Chapter 4 Data types | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="A word that people use a lot when referring to computer code is variables, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code. ingredients...">
+<meta property="og:description" content="4.1 Variables Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 4 Data types | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="A word that people use a lot when referring to computer code is variables, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code. ingredients...">
+<meta name="twitter:description" content="4.1 Variables Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -90,18 +90,36 @@
 <h1>
 <span class="header-section-number">4</span> Data types<a class="anchor" aria-label="anchor" href="#data-types"><i class="fas fa-link"></i></a>
 </h1>
+<div id="variables" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Variables<a class="anchor" aria-label="anchor" href="#variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures (data structures might be too early, but maybe not.)</p>
 <p>A word that people use a lot when referring to computer code is <em>variables</em>, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code.</p>
 <p><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</code></p>
 <p>We use variables to represent the data that are being used to because it’s easy to change it,</p>
 <p><code>ingredients &lt;- smoked gouda cheese, potatoes, milk, salt, butter</code></p>
 <p>and also easy to build a mental model of how the different variables interrelate.</p>
-<p>A most simple example of this is to use variables to describe an equation. A common rule for naming variables is they should represent what the data are.</p>
+<pre><code>ingredients &lt;- smoked gouda cheese, potatoes, milk, salt, butter
+ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
+<div id="pro-tip" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> Pro-tip<a class="anchor" aria-label="anchor" href="#pro-tip"><i class="fas fa-link"></i></a>
+</h3>
+<p>A common rule for naming variables is they should describe they data they represent. If we used the term <code>x</code> - which is commonly used as a variable in math equations - we wouldn’t know what it represents. Using the word <code>ingredients</code> is descriptive, so you know at a glance what it represents.</p>
+</div>
+</div>
+<div id="data-types-1" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Data Types<a class="anchor" aria-label="anchor" href="#data-types-1"><i class="fas fa-link"></i></a>
+</h2>
 <p>talk about data types and variables.</p>
 <p>data types and data structures.</p>
 <p>use food analogy</p>
-<div id="exercise---who-knows" class="section level2" number="4.1">
+</div>
+<div id="exercise---who-knows" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">4.1</span> Exercise - Who knows<a class="anchor" aria-label="anchor" href="#exercise---who-knows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> Exercise - Who knows<a class="anchor" aria-label="anchor" href="#exercise---who-knows"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -113,7 +131,11 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#data-types"><span class="header-section-number">4</span> Data types</a></li>
-<li><a class="nav-link" href="#exercise---who-knows"><span class="header-section-number">4.1</span> Exercise - Who knows</a></li>
+<li>
+<a class="nav-link" href="#variables"><span class="header-section-number">4.1</span> Variables</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#pro-tip"><span class="header-section-number">4.1.1</span> Pro-tip</a></li></ul>
+</li>
+<li><a class="nav-link" href="#data-types-1"><span class="header-section-number">4.2</span> Data Types</a></li>
+<li><a class="nav-link" href="#exercise---who-knows"><span class="header-section-number">4.3</span> Exercise - Who knows</a></li>
 </ul>
 
       <div class="book-extra">
