@@ -1,7 +1,23 @@
 # Data types
 
+A word that people use a lot when referring to computer code is _variables_, but what is a variable?  A variable is a placeholder for some type of data that will be used in computer code.  
+
+`ingredients <- cheddar cheese, potatoes, milk, salt, butter`
+
+We use variables to represent the data that are being used to because it's easy to change it, 
+
+`ingredients <- smoked gouda cheese, potatoes, milk, salt, butter`
+
+and also easy to build a mental model of how the different variables interrelate.  
+
+
+
+A most simple example of this is to use variables to describe an equation.  A common rule for naming variables is they should represent what the data are.
+
 
 talk about data types and variables.
+
+data types and data structures. 
 
 use food analogy
 

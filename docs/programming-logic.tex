@@ -178,17 +178,37 @@ We will also introduce programming examples in different languages, so you can s
 
 Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you're working with was trained to do what it does. For social media feeds, an algorithm will determine how to select which content is delivered to a user. Algorithms can be very simple or very complex.
 
-A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients. But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn't enough to tell a computer, ``get the data.'' You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use in your script. So let's do an example with a recipe on how to make
+A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients. But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn't enough to tell a computer, ``get the data.'' You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use in your script. So let's do an example with a recipe on how to make cheesy mashed potatoes.
 
-\begin{itemize}
+The steps are easy enough.
+1. Take potatoes and boil them until they're done.
+2. Drain.
+3. Add butter, milk, salt/pepper to taste.
+4. Mash.
+5. Fold in cheese.
+6. Eat.
+
+Most of us would know how to do this because we infer the instructions that are missing. But, computers are stupid. They need to be explicitly told how to do something.
+
+How many potatoes? What does \emph{boil} mean? What does \emph{done} mean? (which is also a question I asked my mom when reading my grandmother's recipes.)
+
+Ingredients
+3 pounds russet potatoes, peeled and cut into chunks
+8 tablespoons (1 stick) butter
+1/2 cup milk
+Salt and freshly ground pepper
+1 cup shredded cheddar
+
+\emph{Algorithm for making Cheesy Mashed Potatoes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  enchiladas?
+  Place the potatoes in a large pot and cover with water by an inch. Bring to a boil over high heat, then reduce to simmer. Cook until the potatoes are fork tender, 25 to 30 minutes. Drain.
 \item
-  quesadillas?
-\item
-  cheesy mashed potatoes?
-\end{itemize}
+  Return the potatoes to the pot and add the butter, milk and some salt and pepper. Mash the potatoes to the desired consistency. While still hot, fold the cheese into the mash and stir to melt.
+\end{enumerate}
 
 \section{Breakout Activity}\label{breakout-activity}
 
@@ -214,7 +234,21 @@ As you write out the steps with your group, consider:
 
 \chapter{Data types}\label{data-types}
 
+A word that people use a lot when referring to computer code is \emph{variables}, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code.
+
+\texttt{ingredients\ \textless{}-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}
+
+We use variables to represent the data that are being used to because it's easy to change it,
+
+\texttt{ingredients\ \textless{}-\ smoked\ gouda\ cheese,\ potatoes,\ milk,\ salt,\ butter}
+
+and also easy to build a mental model of how the different variables interrelate.
+
+A most simple example of this is to use variables to describe an equation. A common rule for naming variables is they should represent what the data are.
+
 talk about data types and variables.
+
+data types and data structures.
 
 use food analogy
 
