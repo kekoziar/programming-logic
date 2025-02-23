@@ -131,8 +131,8 @@ For our workshop, we will use 1 as the first element of an array, because that's
 
 For the next items in review, we want you to type the answer, but don't press enter until we tell you.  We'll say, _3, 2, 1, enter_ then you press enter when we say _enter_.
 
-1. In chat, assign a variable a value, then type the data type in parentheses
-2. For the following array `cheese <- [Cheddar, Gouda, Parmesan, Muenster]`, what is the value of `cheese[4]`
+1. In chat, assign a variable a value, then type the data type in parentheses.<br> _e.g. quantity = 1.5 (float)_ <br><br>
+2. For the following array `cheese <- [Cheddar, Gouda, Parmesan, Muenster]`, what is the value of `cheese[4]` <br><br>
 3. For the following array, <br>\begin{equation}
 potatoes =
 \begin{bmatrix}
