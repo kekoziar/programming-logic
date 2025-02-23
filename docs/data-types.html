@@ -109,12 +109,13 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <p>A common rule for what name to use for a variable is the name should describe what the data represent. If we used the term <code>x</code> - which is commonly used as a variable in math equations - we wouldn’t know what it represents. Using the word <code>ingredients</code> is descriptive, so you have an idea what the data are in the variable, and what it represents.</p>
 <p>Something I’d commonly do when helping researchers with their code, especially when I’d see variable names which are abbreviations, is I’d ask them if the abbreviation is something which is commonly used in their field. My questions would usually go something like this:</p>
 <ul>
-<li>So you know, I’m not an expert in your field. You’re the expert. Can you help me understand a little more about what you’re trying to do in the code?</li>
-<li>What does <code>w_f</code> represent?</li>
-<li>Is that something someone who is knowledgeable in your field would recognize?</li>
-<li>It’s good practice to use self-describing variables which someone in the field would recognize. It’s also a good idea to keep track of information about your data and related variables in a README or data dictionary. Honestly, I’ve heard a lot of different terms to describe them, but it’s basically a file that describes your data. I can give you an example if you want.</li>
+<li><em>So you know, I’m not an expert in your field. You’re the expert. Can you help me understand a little more about what you’re trying to do in the code?</em></li>
+<li><em>What does <code>w_f</code> represent?</em></li>
+<li><em>Is that something someone who is knowledgeable in your field would recognize?</em></li>
+<li><em>It’s good practice to use self-describing variables which someone in the field would recognize. It’s also a good idea to keep track of information about your data in a README or data dictionary. Honestly, I’ve heard a lot of different terms to describe them, but it’s basically a file that describes your data. I can give you an example if you want.</em></li>
 <li>Kat’s favorite dataset example: Leaf Dataset in UCI Data Science Repository <span class="citation">(<a href="references.html#ref-leaf_288">Silva and Maral 2013</a>)</span>
 </li>
+<li><em>At the top of your code when you define your variables, if the variable name doesn’t exactly correlate to something in your dataset’s README file, you can add a comment with the exact term.</em></li>
 </ul>
 </div>
 </div>
@@ -122,14 +123,63 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <h2>
 <span class="header-section-number">4.2</span> Data Types<a class="anchor" aria-label="anchor" href="#data-types-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>talk about data types and variables.</p>
-<p>data types and data structures.</p>
+<p>As we already stated, variables hold some value. (I won’t go into the details of <em>how</em> that happens on a computer, though if you’re interested, I could tell you after the workshop, or at a separate time.) It’s enough for us to know that whenever you see a variable, it correlates with some sort of data.</p>
+<p>You know how before you can do math, you have to define numbers? Or, more commonly, before you can write and spell a word, you have to define the alphabet the word uses? Or, to use our recipe analogy, before you can cook, you have to define (or identify) food? Computer programming is the same way. Before you can use data, you have to define data types.</p>
+<p>There are three data types which are ubiquitous across most programming languages.</p>
+<p>The first two are related to <strong>numbers</strong>:</p>
+<p><strong>Integers</strong> (<code>int</code>) which are whole numbers: positive, negative, and zero.</p>
+<p><strong>Floats</strong> (<code>float</code>) or floating point numbers, which are real numbers, or numbers with decimals.</p>
+<p>And the third is related to <strong>words</strong> and <strong>text</strong>.</p>
+<p><strong>Characters</strong> (<code>char</code>) which by themselves are a single character, but can be connected together to create a <strong>string</strong> (<code>str</code>), which is basically text.</p>
+<p>Most data types specific to any particular language is a special case of one or more of these three data types (such as how a <strong>string</strong> is a special case of a <strong>character</strong>).</p>
+</div>
+<div id="data-structures" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Data Structures<a class="anchor" aria-label="anchor" href="#data-structures"><i class="fas fa-link"></i></a>
+</h2>
+<p>A data structure is a special framework which holds your data. Again, there are a lot of different types of data structures, but we’ll describe some of the common ones.</p>
+<p>A single value isn’t strictly a data structure, but it’s worth mentioning they exist.</p>
+<hr>
+<p>A <strong>list</strong> is just that, a list of data elements. The nice thing about lists is it can contain a multitude of different data types, and also different data structures.</p>
+<p><code>cheeses &lt;- (8, smoked gouda, 0, milk, 16, cheddar, .25, limburger)</code></p>
+<hr>
+<p>An <strong>Array</strong> is a common data structure, which at its base is a single-dimension structure. You’ll commonly see them represented with square brackets. The data in all cells (or elements) of an Array needs to be the same. So, you can have a text (or string) array.</p>
+<p><code>ingredients = [cheese, potatoes, milk, salt, butter]</code></p>
+<p>Or an array of integers</p>
+<p><code>quantities &lt;- [16, 32, 8, 0, 4]</code></p>
+<p>or floats</p>
+<p><code>quantities = [16, 32, 8, 0.125, 4]</code></p>
+<p>Most computer languages will automatically convert integers to floats, but not the other way around.</p>
+<hr>
+<p>A <strong>Matrix</strong> is a multi-dimensional array and has the same restrictions. Honestly, it depends on who you’re talking to for how they refer to arrays and matrices, and it’s likely highly dependent on the type of math they’re using in their research.</p>
+<p>A matrix will have both rows and columns. The number of elements in each row needs to be the same, and the same with the number of elements in each column.</p>
+<p>Below is a matrix with size <span class="math inline">\(i\)</span> by <span class="math inline">\(j\)</span>, which means that there are <span class="math inline">\(i\)</span> number of rows, and <span class="math inline">\(j\)</span> number of columns. The matrix below also demonstrates what is called an <em>index</em> which is basically the address of any particular element in the matrix.</p>
+<span class="math display">\[\begin{equation}
+\begin{bmatrix}
+  index_{1,1} &amp; index_{1,2} &amp; \cdots &amp; index_{1,j} \\
+  index_{2,1} &amp; index_{2,2} &amp; \cdots &amp; index_{2,j} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  index_{i,1} &amp; index_{i,2} &amp; \cdots &amp; index_{i,j}
+\end{bmatrix}
+\end{equation}\]</span>
+<hr>
+<p>Using an index for a one-dimensional array is pretty easy.</p>
+<p>for <code>ingredients &lt;- [cheese, potatoes, milk, salt, butter]</code></p>
+<p>the value in <code>ingredients[1]</code> is <code>cheese</code></p>
+<p>but, I want to share that I’ve been programming for a long time, and have done all of the math, and I <em>still</em> will have to double-check that the index I’m referring to in multidimensional arrays or matrices is listed in the correct order.</p>
+<hr>
+<div id="to-make-things-more-confusing-a-note-on-indices" class="section level3" number="4.3.1">
+<h3>
+<span class="header-section-number">4.3.1</span> To make things more confusing: A note on indices<a class="anchor" aria-label="anchor" href="#to-make-things-more-confusing-a-note-on-indices"><i class="fas fa-link"></i></a>
+</h3>
 <p>use food analogy</p>
 </div>
-<div id="exercise---who-knows" class="section level2" number="4.3">
+</div>
+<div id="exercise---who-knows" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">4.3</span> Exercise - Who knows<a class="anchor" aria-label="anchor" href="#exercise---who-knows"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> Exercise - Who knows<a class="anchor" aria-label="anchor" href="#exercise---who-knows"><i class="fas fa-link"></i></a>
 </h2>
+<p>something here.</p>
 
 </div>
 </div>
@@ -144,7 +194,10 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <a class="nav-link" href="#variables"><span class="header-section-number">4.1</span> Variables</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#pro-tip"><span class="header-section-number">4.1.1</span> Pro-tip</a></li></ul>
 </li>
 <li><a class="nav-link" href="#data-types-1"><span class="header-section-number">4.2</span> Data Types</a></li>
-<li><a class="nav-link" href="#exercise---who-knows"><span class="header-section-number">4.3</span> Exercise - Who knows</a></li>
+<li>
+<a class="nav-link" href="#data-structures"><span class="header-section-number">4.3</span> Data Structures</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#to-make-things-more-confusing-a-note-on-indices"><span class="header-section-number">4.3.1</span> To make things more confusing: A note on indices</a></li></ul>
+</li>
+<li><a class="nav-link" href="#exercise---who-knows"><span class="header-section-number">4.4</span> Exercise - Who knows</a></li>
 </ul>
 
       <div class="book-extra">

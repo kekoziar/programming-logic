@@ -24,26 +24,98 @@ A common rule for what name to use for a variable is the name should describe wh
 
 Something I'd commonly do when helping researchers with their code, especially when I'd see variable names which are abbreviations, is I'd ask them if the abbreviation is something which is commonly used in their field.  My questions would usually go something like this:
 
-- So you know, I'm not an expert in your field.  You're the expert.  Can you help me understand a little more about what you're trying to do in the code?
-- What does `w_f` represent?
-- Is that something someone who is knowledgeable in your field would recognize?
-- It's good practice to use self-describing variables which someone in the field would recognize.  It's also a good idea to keep track of information about your data and related variables in a README or data dictionary.  Honestly, I've heard a lot of different terms to describe them, but it's basically a file that describes your data.  I can give you an example if you want. 
+- _So you know, I'm not an expert in your field.  You're the expert.  Can you help me understand a little more about what you're trying to do in the code?_
+- _What does `w_f` represent?_
+- _Is that something someone who is knowledgeable in your field would recognize?_
+- _It's good practice to use self-describing variables which someone in the field would recognize.  It's also a good idea to keep track of information about your data in a README or data dictionary.  Honestly, I've heard a lot of different terms to describe them, but it's basically a file that describes your data.  I can give you an example if you want._
 - Kat's favorite dataset example: Leaf Dataset in UCI Data Science Repository [@leaf_288]
+- _At the top of your code when you define your variables, if the variable name doesn't exactly correlate to something in your dataset's README file, you can add a comment with the exact term._
 
 ## Data Types
 
+As we already stated, variables hold some value. (I won't go into the details of _how_ that happens on a computer, though if you're interested, I could tell you after the workshop, or at a separate time.) It's enough for us to know that whenever you see a variable, it correlates with some sort of data.
+
+You know how before you can do math, you have to define numbers?  Or, more commonly, before you can write and spell a word, you have to define the alphabet the word uses?  Or, to use our recipe analogy, before you can cook, you have to define (or identify) food?  Computer programming is the same way.  Before you can use data, you have to define data types.
+
+There are three data types which are ubiquitous across most programming languages. 
+
+The first two are related to __numbers__:
+
+**Integers** (`int`) which are whole numbers: positive, negative, and zero.
+
+**Floats** (`float`) or floating point numbers, which are real numbers, or numbers with decimals.
+
+And the third is related to __words__ and __text__.
+
+**Characters** (`char`) which by themselves are a single character, but can be connected together to create a **string** (`str`), which is basically text.
+
+Most data types specific to any particular language is a special case of one or more of these three data types (such as how a **string** is a special case of a **character**).
+
+## Data Structures
+
+A data structure is a special framework which holds your data.  Again, there are a lot of different types of data structures, but we'll describe some of the common ones.
+
+A single value isn't strictly a data structure, but it's worth mentioning they exist.
+
+<hr>
+A **list** is just that, a list of data elements.  The nice thing about lists is it can contain a multitude of different data types, and also different data structures.
+
+`cheeses <- (8, smoked gouda, 0, milk, 16, cheddar, .25, limburger)`
+
+<hr>
+
+An **Array** is a common data structure, which at its base is a single-dimension structure. You'll commonly see them represented with square brackets.  The data in all cells (or elements) of an Array needs to be the same. So, you can have a text (or string) array.
+
+`ingredients = [cheese, potatoes, milk, salt, butter]`
+
+Or an array of integers
+
+`quantities <- [16, 32, 8, 0, 4]`
+
+or floats
+
+`quantities = [16, 32, 8, 0.125, 4]`
+
+Most computer languages will automatically convert integers to floats, but not the other way around.
+
+<hr>
+
+A **Matrix** is a multi-dimensional array and has the same restrictions.  Honestly, it depends on who you're talking to for how they refer to arrays and matrices, and it's likely highly dependent on the type of math they're using in their research.
+
+A matrix will have both rows and columns. The number of elements in each row needs to be the same, and the same with the number of elements in each column.
+
+Below is a matrix with size $i$ by $j$, which means that there are $i$ number of rows, and $j$ number of columns.  The matrix below also demonstrates what is called an _index_ which is basically the address of any particular element in the matrix. 
+
+\begin{equation}
+\begin{bmatrix}
+  index_{1,1} & index_{1,2} & \cdots & index_{1,j} \\
+  index_{2,1} & index_{2,2} & \cdots & index_{2,j} \\
+  \vdots  & \vdots  & \ddots & \vdots  \\
+  index_{i,1} & index_{i,2} & \cdots & index_{i,j} 
+\end{bmatrix}
+\end{equation}
+<hr>
+
+Using an index for a one-dimensional array is pretty easy.
+
+for `ingredients <- [cheese, potatoes, milk, salt, butter]`
+
+the value in `ingredients[1]` is `cheese`
+
+but, I want to share that I've been programming for a long time, and have done all of the math, and I *still* will have to double-check that the index I'm referring to in multidimensional arrays or matrices is listed in the correct order.
 
 
 
+<hr>
+
+### To make things more confusing: A note on indices
 
 
-
-talk about data types and variables.
-
-data types and data structures. 
 
 use food analogy
 
 ## Exercise - Who knows
+
+something here.
 
 
