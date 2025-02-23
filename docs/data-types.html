@@ -166,13 +166,25 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <p>Using an index for a one-dimensional array is pretty easy.</p>
 <p>for <code>ingredients &lt;- [cheese, potatoes, milk, salt, butter]</code></p>
 <p>the value in <code>ingredients[1]</code> is <code>cheese</code></p>
-<p>but, I want to share that I’ve been programming for a long time, and have done all of the math, and I <em>still</em> will have to double-check that the index I’m referring to in multidimensional arrays or matrices is listed in the correct order.</p>
+<p>if we expand it into an array</p>
+<p><span class="math display">\[\begin{equation}
+ingredients =
+\begin{bmatrix}
+  potatoes &amp; milk &amp; heavy\text{ }cream &amp; butter \\
+  Cheddar &amp; Gouda &amp; Parmesan &amp;  Muenster \\
+  salt &amp; rosemary &amp; thyme &amp; sage
+\end{bmatrix}
+\end{equation}\]</span></p>
+<p>the value in <code>ingredients[2,4]</code> is <span class="math inline">\(Muenster\)</span></p>
+<p>I want to share that I’ve been programming for a long time, and have done all of the math, and I <em>still</em> will have to double-check that the index I’m referring to in multidimensional arrays or matrices is listed in the correct order.</p>
 <hr>
 <div id="to-make-things-more-confusing-a-note-on-indices" class="section level3" number="4.3.1">
 <h3>
 <span class="header-section-number">4.3.1</span> To make things more confusing: A note on indices<a class="anchor" aria-label="anchor" href="#to-make-things-more-confusing-a-note-on-indices"><i class="fas fa-link"></i></a>
 </h3>
-<p>use food analogy</p>
+<p>A fun <em>“feature”</em> of programming languages is different languages will start their index with different numbers, either 1 or 0. Python is a zero-indexed language, meaning the index of the first element of an array or list is 0, while R is a normal language, I mean, not a zero-indexed language, meaning the index of the first element of an array in R is 1.</p>
+<p>I like to pretend that this is an extension of mathematicians having arguments over which is the first number, zero or one (yes, I’ve seen these debates). But, I think it has to do with ease of memory management in computers, which is something most researchers who come to us for consultations will not have questions on. So, right now it’s just a quirk.</p>
+<p>For our workshop, we will use 1 as the first element of an array, because that’s easier to learn logically.</p>
 </div>
 </div>
 <div id="exercise---who-knows" class="section level2" number="4.4">
