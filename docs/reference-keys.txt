@@ -13,7 +13,7 @@ pro-tip
 data-types-1
 data-structures
 to-make-things-more-confusing-a-note-on-indices
-exercise---who-knows
+review
 loops
 exercise---loop-trace
 exercise---populate-an-array
