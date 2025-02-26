@@ -88,6 +88,7 @@ library(flextable)
 library(officer)
 library(shiny)
 library(dplyr)
+library(ftExtra) #https://ardata-fr.github.io/flextable-book/extensions.html#ftextra
 
 small_border = fp_border(color="gray", width = 1)
 
@@ -100,7 +101,7 @@ ingredients_trace <- data.frame(one=c("", "", "", "", ""),
                                 three=c("", "", "", "", ""),
                                 ingredient=c("cheddar cheese", "potatoes", "milk", "salt", "butter"),
                                 five=c("", "", "", "", ""),
-                                write=c("cheddar cheese", "potatoes", "milk", "salt", "butter"),
+                                write=c("cheddar cheese", "potatoes", "milk *(yes, this is a little redundant)*", "salt *(acknowledge the redunancy)*", "butter *(is there an equivalent to horizontal ditto marks?)*"),
                                 seven=c("", "", "", "", "")
                                   )
 colnames(ingredients_trace) <- cName
@@ -112,7 +113,8 @@ ft <- flextable((ingredients_trace)) %>%
   border_outer(part="all", border = small_border ) %>%
   add_footer_lines(values = c("\n\n ", "\n\n"), top = FALSE) %>%
   border_outer(part="footer", border = small_border ) %>%
-  border_inner_h(border = small_border, part = "all")
+  border_inner_h(border = small_border, part = "all") %>% 
+  colformat_md()
 
 ft
 ```
