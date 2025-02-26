@@ -12,9 +12,11 @@ library(dplyr)
 
 num_rows = 4
 num_col = 5
+row_names <- list()
 
 matrix_demo <- matrix(nrow=num_rows, ncol = num_col)
 for (i in 1:num_rows){
+  row_names[i] <- paste0("Row ",i)
   for (j in 1:num_col){
     matrix_demo[i,j] <- i+j
   }# end j for loop
@@ -26,7 +28,7 @@ for (j in 1:(num_col)){
 }
 col_names <- c("Index", col_names)
 
-table_demo <-   data.frame(index = c('row 1','row 2','row 3','row 4'),
+table_demo <-   data.frame(index = unlist(row_names),
                          j1 = matrix_demo[,1],
                          j2 = matrix_demo[,2],
                          j3 = matrix_demo[,3],
