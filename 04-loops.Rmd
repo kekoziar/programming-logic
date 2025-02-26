@@ -9,6 +9,70 @@ Examples of `for` loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)
 
+
+The nice thing about the language used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
+
+The for loop is probably the most common type of loop.  It executes a chunk of code _for_ a certain number of times. The common structure of most for loops is
+
+```
+for variable in a range or collection
+  do something
+```
+
+Let's see what this looks like in action using our list of cheesy mashed potatoes ingredients
+
+```
+ingredients <- cheddar cheese, potatoes, milk, salt, butter
+
+for ingredient in ingredents
+  write(ingredient)
+```
+
+If we asked a computer to do this using the R language, it would look something like this
+
+```{r loop-ingredients}
+ingredients <- c("cheddar cheese", "potatoes", "milk", "salt", "butter")
+for(ingredient in ingredients){
+  print(ingredient)
+}
+```
+
+But, we want to practice a method of tracing it without the computer doing the work for us. The base set up is like this.  For the original psuedocode, 
+```
+ingredients <- cheddar cheese, potatoes, milk, salt, butter
+
+for ingredient in ingredents
+  write(ingredient)
+```
+at the top of the paper, write out the `ingredients` assignment, then right below that create headers for all of the variables used within the for loop code block, and add term `write` and another term `loop iteration`.  As you were rewriting this, you may have noticed the typo `ingredents` in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
+
+Your paper should look something like this
+
+
+
+```{r loop-ingredients-flextable, echo = FALSE, message=FALSE}
+library(flextable)
+
+small_border = fp_border(color="grey", width = 1)
+
+ingredients_text <- c("\ningredients <- cheddar cheese, potatoes, milk, salt, butter\n\n")
+
+cName <- c("   ", "loop iteration", " ","ingredient", "  ", "write(ingredient)", "     ") 
+
+ingredients_trace <- matrix(data= " ", nrow = 4, ncol=length(cName))
+colnames(ingredients_trace) <- cName
+ft <- flextable(as.data.frame(ingredients_trace)) %>%
+  align(align = "center", part = "all") %>%
+  add_header_row(values=ingredients_text, top=TRUE, colwidths = length(cName)) %>%
+  border_remove() %>%
+  border_outer(part="all", border = small_border ) %>%
+  add_footer_lines(values = c("\n\n ", "\n\n ", "\n\n ", "\n\n "), top = FALSE) %>%
+  border_outer(part="footer", border = small_border ) %>%
+  border_inner_h(border = small_border, part = "footer")
+
+ft
+```
+
 ## Exercise - loop trace
 
 Grab a pen and paper and write out the output of each iteration of the loop:
