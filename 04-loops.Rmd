@@ -1,6 +1,6 @@
 # Loops
 
-The nice thing about the language used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
+The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
 
 The `for` loop is probably the most common type of loop.  It executes a chunk of code _for_ a certain number of times. The common structure of most `for` loops is
 
