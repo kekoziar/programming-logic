@@ -37,7 +37,9 @@ for(ingredient in ingredients){
 }
 ```
 
-But, we want to practice a method of tracing it without the computer doing the work for us. The base set up is like this.  For the original psuedocode, 
+But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.  
+
+The base set up is like this.  For the original psuedocode, 
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
@@ -52,8 +54,11 @@ Your paper should look something like this
 
 ```{r loop-ingredients-flextable, echo = FALSE, message=FALSE}
 library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
 
-small_border = fp_border(color="grey", width = 1)
+small_border = fp_border(color="gray", width = 1)
 
 ingredients_text <- c("\ningredients <- cheddar cheese, potatoes, milk, salt, butter\n\n")
 

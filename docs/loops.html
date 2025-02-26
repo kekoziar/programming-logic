@@ -100,7 +100,95 @@ What happens if you don’t tell loop to increase?
 Examples of <code>for</code> loops in multiple languages (Python, C, R)?
 To decide: all theory and then all practice, or theory/practice/theory/practice?
 Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)</p>
-<p>The nice thing about L</p>
+<p>The nice thing about the language used for the control structures in most programming languages is they are usually self-describing. We’re going to talk about loops now. Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It’s what researchers use when they want to apply a statistical method over several data files.</p>
+<p>The for loop is probably the most common type of loop. It executes a chunk of code <em>for</em> a certain number of times. The common structure of most for loops is</p>
+<pre><code>for variable in a range or collection
+  do something</code></pre>
+<p>Let’s see what this looks like in action using our list of cheesy mashed potatoes ingredients</p>
+<pre><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter
+
+for ingredient in ingredents
+  write(ingredient)</code></pre>
+<p>If we asked a computer to do this using the R language, it would look something like this</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ingredients</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cheddar cheese"</span>, <span class="st">"potatoes"</span>, <span class="st">"milk"</span>, <span class="st">"salt"</span>, <span class="st">"butter"</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">ingredient</span> <span class="kw">in</span> <span class="va">ingredients</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">ingredient</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<pre><code>## [1] "cheddar cheese"
+## [1] "potatoes"
+## [1] "milk"
+## [1] "salt"
+## [1] "butter"</code></pre>
+<p>But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.</p>
+<p>The base set up is like this. For the original psuedocode,</p>
+<pre><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter
+
+for ingredient in ingredents
+  write(ingredient)</code></pre>
+<p>at the top of the paper, write out the <code>ingredients</code> assignment, then right below that create headers for all of the variables used within the for loop code block, and add term <code>write</code> and another term <code>loop iteration</code>. As you were rewriting this, you may have noticed the typo <code>ingredents</code> in the for loop. The nice thing about using pseudocode is you don’t need to worry about why your code isn’t running if there are typos!</p>
+<p>Your paper should look something like this</p>
+<div class="tabwid">
+<style>.cl-bcb19618{}.cl-bcac7c96{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bcaed4be{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bcaed4c8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bcaee8be{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8c8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8c9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8ca{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8d2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8d3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8d4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8dc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8dd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8de{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8df{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8e6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8e7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8e8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bcaee8f0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-bcb19618">
+<thead>
+<tr style="overflow-wrap:break-word;"><th colspan="7" class="cl-bcaee8be"><p class="cl-bcaed4be"><br><span class="cl-bcac7c96">ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</span><br><br></p></th></tr>
+<tr style="overflow-wrap:break-word;">
+<th class="cl-bcaee8ca"><p class="cl-bcaed4be"><span class="cl-bcac7c96">   </span></p></th>
+<th class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96">loop iteration</span></p></th>
+<th class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></th>
+<th class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96">ingredient</span></p></th>
+<th class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96">  </span></p></th>
+<th class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96">write(ingredient)</span></p></th>
+<th class="cl-bcaee8d3"><p class="cl-bcaed4be"><span class="cl-bcac7c96">     </span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-bcaee8d4"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dd"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-bcaee8d4"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dd"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-bcaee8d4"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dc"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8dd"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-bcaee8ca"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d2"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+<td class="cl-bcaee8d3"><p class="cl-bcaed4be"><span class="cl-bcac7c96"> </span></p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-bcaee8de"><p class="cl-bcaed4c8"><br><br><span class="cl-bcac7c96"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-bcaee8e7"><p class="cl-bcaed4c8"><br><br><span class="cl-bcac7c96"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-bcaee8e7"><p class="cl-bcaed4c8"><br><br><span class="cl-bcac7c96"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-bcaee8e7"><p class="cl-bcaed4c8"><br><br><span class="cl-bcac7c96"> </span></p></td></tr>
+</tfoot>
+</table></div>
+</div>
 <div id="exercise---loop-trace" class="section level2" number="5.1">
 <h2>
 <span class="header-section-number">5.1</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
