@@ -92,16 +92,23 @@
 <h1>
 <span class="header-section-number">5</span> Loops<a class="anchor" aria-label="anchor" href="#loops"><i class="fas fa-link"></i></a>
 </h1>
-<p>The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing. We’re going to talk about loops now. Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It’s what researchers use when they want to apply a statistical method over several data files.</p>
+<p>The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing. We’re going to talk about loops now.</p>
+<p>Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It’s what researchers use when they want to apply a statistical method over several data files.</p>
+<div id="for-loops" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> <code>for</code> loops<a class="anchor" aria-label="anchor" href="#for-loops"><i class="fas fa-link"></i></a>
+</h2>
 <p>The <code>for</code> loop is probably the most common type of loop. It executes a chunk of code <em>for</em> a certain number of times. The common structure of most <code>for</code> loops is</p>
-<pre><code>for variable in a range or collection
+<pre><code>for variable in a collection
   do something</code></pre>
+<p>Now, a collection can be a list of items, like our ingredients, really kind of data structure that has an index, but it can also be a range of numbers, like <code>1 to 5</code> (which is literally short for 1 2 3 4 5) or <code>7 to 13</code> (which is 7 8 9 10 11 12 13).</p>
 <p>Let’s see what this looks like in action using our list of cheesy mashed potatoes ingredients</p>
 <pre><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)</code></pre>
-<p>If we asked a computer to do this using the R language, it would look something like this</p>
+If we asked a computer to do this using the R language, it would look something like this
+<hr>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ingredients</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cheddar cheese"</span>, <span class="st">"potatoes"</span>, <span class="st">"milk"</span>, <span class="st">"salt"</span>, <span class="st">"butter"</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">ingredient</span> <span class="kw">in</span> <span class="va">ingredients</span><span class="op">)</span><span class="op">{</span></span>
@@ -112,98 +119,336 @@ for ingredient in ingredents
 ## [1] "milk"
 ## [1] "salt"
 ## [1] "butter"</code></pre>
+<hr>
+</div>
+<div id="practicing-a-trace" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Practicing a Trace<a class="anchor" aria-label="anchor" href="#practicing-a-trace"><i class="fas fa-link"></i></a>
+</h2>
 <p>But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.</p>
 <p>The base set up is like this. For the original psuedocode,</p>
 <pre><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)</code></pre>
-<p>at the top of your paper, write out the <code>ingredients</code> assignment. On the line below that we’re going to create create headers for all of the variables used within the for loop code block. Starting on the left going right, write the term <code>loop iteration</code>, then <code>ingredient</code> in the center of the line, then the term <code>write</code> on the right of the line.</p>
+<p>at the top of your paper, write out the <code>ingredients</code> assignment. On the line below that we’re going to create headers for all of the variables used within the <code>for</code> loop code block. Starting on the left, write the term <code>loop iteration</code>, then <code>ingredient</code> in the center of the line, then the term <code>write</code> on the right of the line.</p>
 <p>Your paper should look something like this</p>
 <div class="tabwid">
-<style>.cl-f1e8593c{}.cl-f1e32b10{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f1e58e96{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f1e58e97{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f1e5a2dc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2dd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2e6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2e7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2e8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2e9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2f0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2f1{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2f2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2f3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2fa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2fb{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2fc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a2fd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1e5a304{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-f1e8593c">
+<style>.cl-cf71a698{}.cl-cf6c7006{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cf6edfb2{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cf6edfbc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cf6ef3c6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3d0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3d1{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3da{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3db{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3e4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3e5{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3e6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3ee{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3ef{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3f0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3f8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3f9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef3fa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf6ef402{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-cf71a698">
 <thead>
-<tr style="overflow-wrap:break-word;"><th colspan="7" class="cl-f1e5a2dc"><p class="cl-f1e58e96"><br><span class="cl-f1e32b10">ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</span><br><br></p></th></tr>
+<tr style="overflow-wrap:break-word;"><th colspan="7" class="cl-cf6ef3c6"><p class="cl-cf6edfb2"><br><span class="cl-cf6c7006">ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</span><br><br></p></th></tr>
 <tr style="overflow-wrap:break-word;">
-<th class="cl-f1e5a2e7"><p class="cl-f1e58e96"><span class="cl-f1e32b10">   </span></p></th>
-<th class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10">loop iteration</span></p></th>
-<th class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></th>
-<th class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10">ingredient</span></p></th>
-<th class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10">  </span></p></th>
-<th class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10">write(ingredient)</span></p></th>
-<th class="cl-f1e5a2e9"><p class="cl-f1e58e96"><span class="cl-f1e32b10">     </span></p></th>
+<th class="cl-cf6ef3da"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">   </span></p></th>
+<th class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">loop iteration</span></p></th>
+<th class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></th>
+<th class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">ingredient</span></p></th>
+<th class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">  </span></p></th>
+<th class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">write(ingredient)</span></p></th>
+<th class="cl-cf6ef3e4"><p class="cl-cf6edfb2"><span class="cl-cf6c7006">     </span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-f1e5a2f0"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f2"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
+<td class="cl-cf6ef3e5"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3ee"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-f1e5a2f0"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f2"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
+<td class="cl-cf6ef3e5"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3ee"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-f1e5a2f0"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f1"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2f2"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
+<td class="cl-cf6ef3e5"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e6"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3ee"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-f1e5a2e7"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e8"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
-<td class="cl-f1e5a2e9"><p class="cl-f1e58e96"><span class="cl-f1e32b10"> </span></p></td>
+<td class="cl-cf6ef3da"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3db"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
+<td class="cl-cf6ef3e4"><p class="cl-cf6edfb2"><span class="cl-cf6c7006"> </span></p></td>
 </tr>
 </tbody>
 <tfoot>
-<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-f1e5a2f3"><p class="cl-f1e58e97"><br><br><span class="cl-f1e32b10"> </span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-f1e5a2fc"><p class="cl-f1e58e97"><br><br><span class="cl-f1e32b10"> </span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-f1e5a2fc"><p class="cl-f1e58e97"><br><br><span class="cl-f1e32b10"> </span></p></td></tr>
-<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-f1e5a2fc"><p class="cl-f1e58e97"><br><br><span class="cl-f1e32b10"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf6ef3ef"><p class="cl-cf6edfbc"><br><br><span class="cl-cf6c7006"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf6ef3f9"><p class="cl-cf6edfbc"><br><br><span class="cl-cf6c7006"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf6ef3f9"><p class="cl-cf6edfbc"><br><br><span class="cl-cf6c7006"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf6ef3f9"><p class="cl-cf6edfbc"><br><br><span class="cl-cf6c7006"> </span></p></td></tr>
 </tfoot>
 </table></div>
 </div>
 <p>As you were rewriting this, you may have noticed the typo <code>ingredents</code> in the for loop. The nice thing about using pseudocode is you don’t need to worry about why your code isn’t running if there are typos!</p>
-<div id="exercise---loop-trace" class="section level2" number="5.1">
-<h2>
-<span class="header-section-number">5.1</span> Exercise - loop trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
-</h2>
+<p>Your paper is formatted so it’s easy to see what’s going on with variable during each loop iteration. This is called a trace, and is often used in software development to help debug the program. But, I think it’s a good exercise to help build mental muscles to read code. So, the next is to fill in the values for each iteration of the loop.</p>
+<p>Your paper will now look something like this</p>
+<div class="tabwid">
+<style>.cl-cf919cb4{}.cl-cf8d0b86{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cf8f30f0{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cf8f30fa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cf8f4220{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4221{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4222{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f422a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f422b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f422c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4234{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4235{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4236{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f423e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f423f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4248{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cf8f4249{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-cf919cb4">
+<thead>
+<tr style="overflow-wrap:break-word;"><th colspan="7" class="cl-cf8f4220"><p class="cl-cf8f30f0"><br><span class="cl-cf8d0b86">ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</span><br><br></p></th></tr>
+<tr style="overflow-wrap:break-word;">
+<th class="cl-cf8f422a"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">   </span></p></th>
+<th class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">loop iteration</span></p></th>
+<th class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"> </span></p></th>
+<th class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">ingredient</span></p></th>
+<th class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">  </span></p></th>
+<th class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">write(ingredient)</span></p></th>
+<th class="cl-cf8f4222"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">     </span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cf8f422b"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f422c"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">1</span></p></td>
+<td class="cl-cf8f422c"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f422c"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">cheddar cheese</span></p></td>
+<td class="cl-cf8f422c"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f422c"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">cheddar cheese</span></p></td>
+<td class="cl-cf8f4234"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cf8f422a"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">2</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">potatoes</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">potatoes</span></p></td>
+<td class="cl-cf8f4222"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cf8f422a"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">3</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">milk</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">milk</span></p></td>
+<td class="cl-cf8f4222"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cf8f422a"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">4</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">salt</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">salt</span></p></td>
+<td class="cl-cf8f4222"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cf8f422a"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">5</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">butter</span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+<td class="cl-cf8f4221"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86">butter</span></p></td>
+<td class="cl-cf8f4222"><p class="cl-cf8f30f0"><span class="cl-cf8d0b86"></span></p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf8f4235"><p class="cl-cf8f30fa"><br><br><span class="cl-cf8d0b86"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cf8f423f"><p class="cl-cf8f30fa"><br><br></p></td></tr>
+</tfoot>
+</table></div>
+</div>
+<p>Now that we’ve written a text list together, let’s practice using ranges. Remember <code>2 to 7</code> represents 2 3 4 5 6 7.</p>
+<div id="exercise---loop-trace" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Exercise - Loop Trace<a class="anchor" aria-label="anchor" href="#exercise---loop-trace"><i class="fas fa-link"></i></a>
+</h3>
 <p>Grab a pen and paper and write out the output of each iteration of the loop:</p>
 <pre><code>for x in 0 to 5 
   write x
+  write x*2
   </code></pre>
 <details><summary>
-Loop output
-</summary>
-0<br>
-1<br>
-2<br>
-3<br>
-4<br>
-5<br></details><p><br></p>
+Loop Trace
+</summary><div class="tabwid">
+<style>.cl-cfa76b3e{}.cl-cfa318ea{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cfa4cfc8{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cfa4cfd2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cfa4e1ca{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1d4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1d5{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1d6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1de{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1df{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1e8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1e9{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1f2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1f3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1fc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 1pt solid rgba(190, 190, 190, 1.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e1fd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfa4e206{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(190, 190, 190, 1.00);border-top: 1pt solid rgba(190, 190, 190, 1.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 1pt solid rgba(190, 190, 190, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-cfa76b3e">
+<thead>
+<tr style="overflow-wrap:break-word;"><th colspan="7" class="cl-cfa4e1ca"><p class="cl-cfa4cfc8"><br><span class="cl-cfa318ea">Range 0 to 5 is 0 1 2 3 4 5</span><br><br></p></th></tr>
+<tr style="overflow-wrap:break-word;">
+<th class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">   </span></p></th>
+<th class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">loop iteration</span></p></th>
+<th class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"> </span></p></th>
+<th class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">write(x)</span></p></th>
+<th class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">  </span></p></th>
+<th class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">write(x*2)</span></p></th>
+<th class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">     </span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1de"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1df"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">1</span></p></td>
+<td class="cl-cfa4e1df"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1df"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">0</span></p></td>
+<td class="cl-cfa4e1df"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1df"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">0</span></p></td>
+<td class="cl-cfa4e1e8"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">2</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">1</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">2</span></p></td>
+<td class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">3</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">2</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">4</span></p></td>
+<td class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">4</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">3</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">6</span></p></td>
+<td class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">5</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">4</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">8</span></p></td>
+<td class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfa4e1d6"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">6</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">5</span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+<td class="cl-cfa4e1d4"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea">10</span></p></td>
+<td class="cl-cfa4e1d5"><p class="cl-cfa4cfc8"><span class="cl-cfa318ea"></span></p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cfa4e1e9"><p class="cl-cfa4cfd2"><br><br><span class="cl-cfa318ea"> </span></p></td></tr>
+<tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-cfa4e1fc"><p class="cl-cfa4cfd2"><br><br></p></td></tr>
+</tfoot>
+</table></div>
 </div>
-<div id="exercise---populate-an-array" class="section level2" number="5.2">
-<h2>
-<span class="header-section-number">5.2</span> Exercise - populate an array<a class="anchor" aria-label="anchor" href="#exercise---populate-an-array"><i class="fas fa-link"></i></a>
-</h2>
+</details><p><br></p>
+</div>
+<div id="exercise---trace-nested-for-loops" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Exercise - Trace Nested <code>for</code> Loops<a class="anchor" aria-label="anchor" href="#exercise---trace-nested-for-loops"><i class="fas fa-link"></i></a>
+</h3>
+<p>The following matrix is created using two <code>for</code> loops</p>
+<div class="tabwid">
+<style>.cl-cfb5ec54{}.cl-cfb1744e{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cfb317fe{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cfb32a32{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a3c{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a3d{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a46{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a47{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a50{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a5a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a5b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a5c{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a64{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a65{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a6e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a6f{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a70{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a78{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cfb32a79{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-cfb5ec54">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-cfb32a32"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Index</span></p></th>
+<th class="cl-cfb32a3c"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Column 1</span></p></th>
+<th class="cl-cfb32a3d"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Column 2</span></p></th>
+<th class="cl-cfb32a46"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Column 3</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfb32a47"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Row 1</span></p></td>
+<td class="cl-cfb32a50"><p class="cl-cfb317fe"><span class="cl-cfb1744e">2</span></p></td>
+<td class="cl-cfb32a5a"><p class="cl-cfb317fe"><span class="cl-cfb1744e">4</span></p></td>
+<td class="cl-cfb32a5b"><p class="cl-cfb317fe"><span class="cl-cfb1744e">6</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfb32a5c"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Row 2</span></p></td>
+<td class="cl-cfb32a64"><p class="cl-cfb317fe"><span class="cl-cfb1744e">5</span></p></td>
+<td class="cl-cfb32a65"><p class="cl-cfb317fe"><span class="cl-cfb1744e">7</span></p></td>
+<td class="cl-cfb32a6e"><p class="cl-cfb317fe"><span class="cl-cfb1744e">9</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfb32a5c"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Row 3</span></p></td>
+<td class="cl-cfb32a64"><p class="cl-cfb317fe"><span class="cl-cfb1744e">8</span></p></td>
+<td class="cl-cfb32a65"><p class="cl-cfb317fe"><span class="cl-cfb1744e">10</span></p></td>
+<td class="cl-cfb32a6e"><p class="cl-cfb317fe"><span class="cl-cfb1744e">12</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-cfb32a6f"><p class="cl-cfb317fe"><span class="cl-cfb1744e">Row 4</span></p></td>
+<td class="cl-cfb32a70"><p class="cl-cfb317fe"><span class="cl-cfb1744e">11</span></p></td>
+<td class="cl-cfb32a78"><p class="cl-cfb317fe"><span class="cl-cfb1744e">13</span></p></td>
+<td class="cl-cfb32a79"><p class="cl-cfb317fe"><span class="cl-cfb1744e">15</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>The pseudocode for it is as follows:</p>
+<pre><code>num_rows = 4
+num_col = 3
+
+matrix &lt;- []
+
+for (i in 1 to num_rows)
+  for (j in 1 to num_col)
+    matrix[i,j] &lt;- (3*(i-1))+(j*2)
+</code></pre>
+<p>Before creating the table to help trace the code, answer the following</p>
+<ul>
+<li>What variables need to be traced?</li>
+<li>What are the ranges that are used?</li>
+<li>What calculations do you need to keep track of?</li>
+<li>Is there anything else?</li>
+</ul>
+<details><summary>
+Answers
+</summary><ul>
+<li>What variables need to be traced?
+<ul>
+<li>
+<code>i</code>, <code>j</code>, <code>loop iteration</code>
+</li>
+</ul>
+</li>
+<li>What are the ranges that are used?
+<ul>
+<li>1 to 4 and 1 to 3</li>
+</ul>
+</li>
+<li>What calculations do you need to keep track of?
+<ul>
+<li><code>(3*(i-1))+(j*2)</code></li>
+</ul>
+</li>
+<li>Is there anything else?
+<ul>
+<li>With a small enough matrix, it’s okay to make an empty one and fill it in<br>
+</li>
+</ul>
+</li>
+</ul></details><p><br></p>
+Label columns and sketch out a matrix to fill in the variables as the loop iterates.
+<hr>
+</div>
+<div id="previous-exercise" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> Previous exercise<a class="anchor" aria-label="anchor" href="#previous-exercise"><i class="fas fa-link"></i></a>
+</h3>
 <p>Let’s use a <code>for</code> loop to populate an array.</p>
 <p>We’ll start with an empty array called <code>table</code> with 4 rows and columns named A, B, C, D, and E:</p>
 <div class="inline-table"><table class="table table-sm">
@@ -296,6 +541,7 @@ Your filled array should look like this
 </tbody>
 </table></details>
 </div>
+</div>
 <div id="other-types-of-loops" class="section level2" number="5.3">
 <h2>
 <span class="header-section-number">5.3</span> Other Types of Loops<a class="anchor" aria-label="anchor" href="#other-types-of-loops"><i class="fas fa-link"></i></a>
@@ -358,8 +604,14 @@ write answer
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#loops"><span class="header-section-number">5</span> Loops</a></li>
-<li><a class="nav-link" href="#exercise---loop-trace"><span class="header-section-number">5.1</span> Exercise - loop trace</a></li>
-<li><a class="nav-link" href="#exercise---populate-an-array"><span class="header-section-number">5.2</span> Exercise - populate an array</a></li>
+<li><a class="nav-link" href="#for-loops"><span class="header-section-number">5.1</span> for loops</a></li>
+<li>
+<a class="nav-link" href="#practicing-a-trace"><span class="header-section-number">5.2</span> Practicing a Trace</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#exercise---loop-trace"><span class="header-section-number">5.2.1</span> Exercise - Loop Trace</a></li>
+<li><a class="nav-link" href="#exercise---trace-nested-for-loops"><span class="header-section-number">5.2.2</span> Exercise - Trace Nested for Loops</a></li>
+<li><a class="nav-link" href="#previous-exercise"><span class="header-section-number">5.2.3</span> Previous exercise</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#other-types-of-loops"><span class="header-section-number">5.3</span> Other Types of Loops</a></li>
 <li>
 <a class="nav-link" href="#caveats"><span class="header-section-number">5.4</span> Caveats</a><ul class="nav navbar-nav">

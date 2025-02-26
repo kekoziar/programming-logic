@@ -427,14 +427,20 @@ For the next items in review, we want you to type the answer, but don't press en
 
 \chapter{Loops}\label{loops}
 
-The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing. We're going to talk about loops now. Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It's what researchers use when they want to apply a statistical method over several data files.
+The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing. We're going to talk about loops now.
+
+Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It's what researchers use when they want to apply a statistical method over several data files.
+
+\section{\texorpdfstring{\texttt{for} loops}{for loops}}\label{for-loops}
 
 The \texttt{for} loop is probably the most common type of loop. It executes a chunk of code \emph{for} a certain number of times. The common structure of most \texttt{for} loops is
 
 \begin{verbatim}
-for variable in a range or collection
+for variable in a collection
   do something
 \end{verbatim}
+
+Now, a collection can be a list of items, like our ingredients, really kind of data structure that has an index, but it can also be a range of numbers, like \texttt{1\ to\ 5} (which is literally short for 1 2 3 4 5) or \texttt{7\ to\ 13} (which is 7 8 9 10 11 12 13).
 
 Let's see what this looks like in action using our list of cheesy mashed potatoes ingredients
 
@@ -464,6 +470,8 @@ If we asked a computer to do this using the R language, it would look something 
 ## [1] "butter"
 \end{verbatim}
 
+\section{Practicing a Trace}\label{practicing-a-trace}
+
 But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.
 
 The base set up is like this. For the original psuedocode,
@@ -475,7 +483,7 @@ for ingredient in ingredents
   write(ingredient)
 \end{verbatim}
 
-at the top of your paper, write out the \texttt{ingredients} assignment. On the line below that we're going to create create headers for all of the variables used within the for loop code block. Starting on the left going right, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
+at the top of your paper, write out the \texttt{ingredients} assignment. On the line below that we're going to create headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
 
 Your paper should look something like this
 
@@ -583,28 +591,375 @@ Your paper should look something like this
 
 As you were rewriting this, you may have noticed the typo \texttt{ingredents} in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
-\section{Exercise - loop trace}\label{exercise---loop-trace}
+Your paper is formatted so it's easy to see what's going on with variable during each loop iteration. This is called a trace, and is often used in software development to help debug the program. But, I think it's a good exercise to help build mental muscles to read code. So, the next is to fill in the values for each iteration of the loop.
+
+Your paper will now look something like this
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{ingredients\ <-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{loop\ iteration}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{ingredient}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(ingredient)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ \ \ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endfirsthead 
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{ingredients\ <-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{loop\ iteration}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{ingredient}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(ingredient)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ \ \ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endhead
+
+
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\raggedright}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\raggedright}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endlastfoot
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{cheddar\ cheese}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{cheddar\ cheese}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{potatoes}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{potatoes}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{milk}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{milk}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{salt}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{salt}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{butter}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{butter}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+Now that we've written a text list together, let's practice using ranges. Remember \texttt{2\ to\ 7} represents 2 3 4 5 6 7.
+
+\subsection{Exercise - Loop Trace}\label{exercise---loop-trace}
 
 Grab a pen and paper and write out the output of each iteration of the loop:
 
 \begin{verbatim}
 for x in 0 to 5 
   write x
+  write x*2
   
 \end{verbatim}
 
-Loop output
+Loop Trace
 
-0\\
-1\\
-2\\
-3\\
-4\\
-5\\
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Range\ 0\ to\ 5\ is\ 0\ 1\ 2\ 3\ 4\ 5}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{loop\ iteration}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(x)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(x*2)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ \ \ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endfirsthead 
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Range\ 0\ to\ 5\ is\ 0\ 1\ 2\ 3\ 4\ 5}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{loop\ iteration}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(x)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{write(x*2)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ \ \ \ \ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endhead
+
+
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\raggedright}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\ }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{7}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\raggedright}m{\dimexpr 5.25in+12\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{\linebreak }}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}\endlastfoot
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\multicolumn{1}{!{\color[HTML]{BEBEBE}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{10}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{BEBEBE}\vrule width 1pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+
+\ascline{1pt}{BEBEBE}{1-7}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \hfill\break
 
-\section{Exercise - populate an array}\label{exercise---populate-an-array}
+\subsection{\texorpdfstring{Exercise - Trace Nested \texttt{for} Loops}{Exercise - Trace Nested for Loops}}\label{exercise---trace-nested-for-loops}
+
+The following matrix is created using two \texttt{for} loops
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 3}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endfirsthead 
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Column\ 3}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Row\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Row\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{9}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Row\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{8}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{10}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{12}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Row\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{11}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{13}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{15}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+The pseudocode for it is as follows:
+
+\begin{verbatim}
+num_rows = 4
+num_col = 3
+
+matrix <- []
+
+for (i in 1 to num_rows)
+  for (j in 1 to num_col)
+    matrix[i,j] <- (3*(i-1))+(j*2)
+\end{verbatim}
+
+Before creating the table to help trace the code, answer the following
+
+\begin{itemize}
+\tightlist
+\item
+  What variables need to be traced?
+\item
+  What are the ranges that are used?
+\item
+  What calculations do you need to keep track of?
+\item
+  Is there anything else?
+\end{itemize}
+
+Answers
+
+\begin{itemize}
+\tightlist
+\item
+  What variables need to be traced?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{i}, \texttt{j}, \texttt{loop\ iteration}
+  \end{itemize}
+\item
+  What are the ranges that are used?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    1 to 4 and 1 to 3
+  \end{itemize}
+\item
+  What calculations do you need to keep track of?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{(3*(i-1))+(j*2)}
+  \end{itemize}
+\item
+  Is there anything else?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    With a small enough matrix, it's okay to make an empty one and fill it in\\
+  \end{itemize}
+\end{itemize}
+
+Label columns and sketch out a matrix to fill in the variables as the loop iterates.
+
+\subsection{Previous exercise}\label{previous-exercise}
 
 Let's use a \texttt{for} loop to populate an array.
 

@@ -15,8 +15,11 @@ data-structures
 to-make-things-more-confusing-a-note-on-indices
 review
 loops
+for-loops
+practicing-a-trace
 exercise---loop-trace
-exercise---populate-an-array
+exercise---trace-nested-for-loops
+previous-exercise
 other-types-of-loops
 caveats
 infinite-loops

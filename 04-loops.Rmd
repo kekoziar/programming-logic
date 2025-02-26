@@ -1,13 +1,19 @@
 # Loops
 
-The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
+The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  
+
+Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
+
+## `for` loops
 
 The `for` loop is probably the most common type of loop.  It executes a chunk of code _for_ a certain number of times. The common structure of most `for` loops is
 
 ```
-for variable in a range or collection
+for variable in a collection
   do something
 ```
+
+Now, a collection can be a list of items, like our ingredients, really kind of data structure that has an index, but it can also be a range of numbers, like `1 to 5` (which is literally short for 1 2 3 4 5) or `7 to 13` (which is 7 8 9 10 11 12 13).
 
 Let's see what this looks like in action using our list of cheesy mashed potatoes ingredients
 
@@ -19,6 +25,7 @@ for ingredient in ingredents
 ```
 
 If we asked a computer to do this using the R language, it would look something like this
+<hr>
 
 ```{r loop-ingredients}
 ingredients <- c("cheddar cheese", "potatoes", "milk", "salt", "butter")
@@ -26,6 +33,9 @@ for(ingredient in ingredients){
   print(ingredient)
 }
 ```
+<hr>
+
+## Practicing a Trace
 
 But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.  
 
@@ -36,7 +46,7 @@ ingredients <- cheddar cheese, potatoes, milk, salt, butter
 for ingredient in ingredents
   write(ingredient)
 ```
-at the top of your paper, write out the `ingredients` assignment.  On the line below that we're going to create create headers for all of the variables used within the for loop code block.  Starting on the left going right, write the term `loop iteration`, then `ingredient` in the center of the line, then the term `write` on the right of the line. 
+at the top of your paper, write out the `ingredients` assignment.  On the line below that we're going to create headers for all of the variables used within the `for` loop code block.  Starting on the left, write the term `loop iteration`, then `ingredient` in the center of the line, then the term `write` on the right of the line. 
 
 Your paper should look something like this
 
@@ -68,28 +78,191 @@ ft
 
 As you were rewriting this, you may have noticed the typo `ingredents` in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
+Your paper is formatted so it's easy to see what's going on with variable during each loop iteration.  This is called a trace, and is often used in software development to help debug the program.  But, I think it's a good exercise to help build mental muscles to read code.  So, the next is to fill in the values for each iteration of the loop.
 
-## Exercise - loop trace
+Your paper will now look something like this
+
+
+```{r loop-ingredients-flextable-mid, echo = FALSE, message=FALSE}
+library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
+
+small_border = fp_border(color="gray", width = 1)
+
+ingredients_text <- c("\ningredients <- cheddar cheese, potatoes, milk, salt, butter\n\n")
+
+cName <- c("   ", "loop iteration", " ","ingredient", "  ", "write(ingredient)", "     ") 
+
+ingredients_trace <- data.frame(one=c("", "", "", "", ""),
+                                loop=c("1", "2", "3", "4", "5"),
+                                three=c("", "", "", "", ""),
+                                ingredient=c("cheddar cheese", "potatoes", "milk", "salt", "butter"),
+                                five=c("", "", "", "", ""),
+                                write=c("cheddar cheese", "potatoes", "milk", "salt", "butter"),
+                                seven=c("", "", "", "", "")
+                                  )
+colnames(ingredients_trace) <- cName
+
+ft <- flextable((ingredients_trace)) %>%
+  align(align = "center", part = "all") %>%
+  add_header_row(values=ingredients_text, top=TRUE, colwidths = length(cName)) %>%
+  border_remove() %>%
+  border_outer(part="all", border = small_border ) %>%
+  add_footer_lines(values = c("\n\n ", "\n\n"), top = FALSE) %>%
+  border_outer(part="footer", border = small_border ) %>%
+  border_inner_h(border = small_border, part = "all")
+
+ft
+```
+
+
+Now that we've written a text list together, let's practice using ranges.  Remember `2 to 7` represents 2 3 4 5 6 7.
+
+
+### Exercise - Loop Trace
 
 Grab a pen and paper and write out the output of each iteration of the loop:
 
 ```
 for x in 0 to 5 
   write x
+  write x*2
   
 ```
 <details>
-<summary>Loop output</summary>
-0\
-1\
-2\
-3\
-4\
-5\
+<summary>Loop Trace</summary>
+```{r loop-exercise-1, echo = FALSE, message=FALSE}
+library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
+
+small_border = fp_border(color="gray", width = 1)
+
+exercise1_text <- c("\nRange 0 to 5 is 0 1 2 3 4 5\n\n")
+
+cName <- c("   ", "loop iteration", " ","write(x)", "  ", "write(x*2)", "     ") 
+
+exercise1_trace <- data.frame(one=c("", "", "", "", "",""),
+                                loop=c("1", "2", "3", "4", "5","6"),
+                                three=c("", "", "", "","", ""),
+                                x=c("0", "1", "2", "3", "4", "5"),
+                                five=c("", "", "", "", "",""),
+                                write=c("0", "2", "4", "6", "8", "10"),
+                                seven=c("", "", "", "", "","")
+                                  )
+colnames(exercise1_trace) <- cName
+
+ft <- flextable((exercise1_trace)) %>%
+  align(align = "center", part = "all") %>%
+  add_header_row(values=exercise1_text, top=TRUE, colwidths = length(cName)) %>%
+  border_remove() %>%
+  border_outer(part="all", border = small_border ) %>%
+  add_footer_lines(values = c("\n\n ", "\n\n"), top = FALSE) %>%
+  border_outer(part="footer", border = small_border ) %>%
+  border_inner_h(border = small_border, part = "all")
+
+ft
+```
 </details>\
 
 
-## Exercise - populate an array
+### Exercise - Trace Nested `for` Loops
+
+The following matrix is created using two `for` loops
+
+```{r loop-exercise-2, echo = FALSE}
+library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
+
+# reference: https://davidgohel.github.io/flextable/reference/bg.html
+
+num_rows = 4
+num_col = 3
+row_names <- list()
+matrix_demo <- matrix(nrow=num_rows, ncol = num_col)
+for (i in 1:num_rows){
+  row_names[i] <- paste0("Row ",i)
+  for (j in 1:num_col){
+    matrix_demo[i,j] <- (3*(i-1))+(j*2)
+  }# end j for loop
+}# end i for loop
+
+col_names <- list()
+for (j in 1:(num_col)){
+  col_names[j] <- paste0("Column ",j)
+}
+col_names <- c("Index", col_names)
+
+
+table_demo <-   data.frame(index = unlist(row_names),
+                         j1 = matrix_demo[,1],
+                         j2 = matrix_demo[,2],
+                         j3 = matrix_demo[,3]
+                         )
+
+colnames(table_demo) <- col_names
+
+# print(table_demo)
+
+big_border = fp_border(color="black", width = 2)
+small_border = fp_border(color="black", width = 1)
+
+ft <- flextable(table_demo) %>% 
+      border_remove() %>%
+      border_outer(part="all", border = big_border ) %>%
+      border_inner_h(part="all", border = small_border ) %>% 
+      border_inner_v(part="all", border = small_border ) %>% 
+      align(align = "center", part = "all") %>%
+      bg(j="Index", bg="gray90", part="body") %>%
+      bg(bg="gray90", part="header") %>%
+      vline(j="Index", border = big_border, part = "all")
+ft 
+```
+
+
+The pseudocode for it is as follows:
+
+```
+num_rows = 4
+num_col = 3
+
+matrix <- []
+
+for (i in 1 to num_rows)
+  for (j in 1 to num_col)
+    matrix[i,j] <- (3*(i-1))+(j*2)
+
+```
+
+Before creating the table to help trace the code, answer the following
+
+- What variables need to be traced?
+- What are the ranges that are used?
+- What calculations do you need to keep track of?
+- Is there anything else?
+
+<details>
+<summary>Answers</summary>
+- What variables need to be traced?
+  - `i`, `j`, `loop iteration`
+
+- What are the ranges that are used?
+  - 1 to 4 and 1 to 3
+
+- What calculations do you need to keep track of?
+  - `(3*(i-1))+(j*2)`
+- Is there anything else?  
+  - With a small enough matrix, it's okay to make an empty one and fill it in  
+</details><br>
+
+Label columns and sketch out a matrix to fill in the variables as the loop iterates.
+<hr>
+### Previous exercise
 
 Let's use a `for` loop to populate an array.
 
