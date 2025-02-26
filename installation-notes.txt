@@ -20,8 +20,7 @@ renders under Build
 
 install.packages("servr")
 
-bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE,
-           in_session = TRUE, quiet = FALSE)
+bookdown::serve_book(dir = ".", output_dir = "_book", preview = TRUE, in_session = TRUE, quiet = FALSE)
 
 ## publishing book
 while the serve_book will allow local update, it doesn't update the files in docs. to do that, use "install package" or "Build All" under "Build" in the menu

@@ -52,6 +52,7 @@ challenge-practice-new-syntax-and-terms-in-r
 recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors
+flextables
 bd-demo-intro
 keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format
 bd-demo-methods

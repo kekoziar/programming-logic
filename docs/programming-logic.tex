@@ -111,6 +111,18 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{hhline}
+\newlength\Oldarrayrulewidth
+\newlength\Oldtabcolsep
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -127,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-22}
+\date{2025-02-25}
 
 \begin{document}
 \maketitle
@@ -397,7 +409,7 @@ For the next items in review, we want you to type the answer, but don't press en
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  In chat, assign a variable a value, then type the data type in parentheses
+  In chat, assign a variable a value, then type the data type in parentheses. \emph{e.g.~quantity = 1.5 (float)}
 \item
   For the following array \texttt{cheese\ \textless{}-\ {[}Cheddar,\ Gouda,\ Parmesan,\ Muenster{]}}, what is the value of \texttt{cheese{[}4{]}}
 \item
@@ -1144,6 +1156,176 @@ input
 logic
 
 output
+
+\chapter{Flextables}\label{flextables}
+
+This reflects nested for loops of \texttt{row+column}
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endfirsthead 
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{row\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{row\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{7}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{row\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{7}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{8}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{row\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{7}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{8}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{9}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+This reflects nested for loops of \texttt{(5*(row-1))+column}
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endfirsthead 
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Index}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Column\ 5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Row\ 1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{1}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Row\ 2}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{7}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{8}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{9}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{10}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Row\ 3}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{11}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{12}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{13}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{14}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{15}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Row\ 4}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{16}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{17}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{18}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{19}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{20}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Row\ 5}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{21}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{22}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{23}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{24}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{25}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \chapter{BD Demo Introduction}\label{bd-demo-intro}
 

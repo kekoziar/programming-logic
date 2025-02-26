@@ -10,6 +10,7 @@ biblio-style: apalike
 link-citations: yes
 github-repo: kekoziar/programming-logic
 description: "This is a programming logic for non-programmers workshop, with a target audience of data librarians and related data professionals."
+always_allow_html: yes
 ---
 
 # About

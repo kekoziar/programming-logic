@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 12 Flextables | Programming Logic for Non-Programmers</title>
+<meta name="author" content="Kat Koziar and Stephanie Labou">
+<meta name="description" content="This reflects nested for loops of row+column .cl-e19c7bae{}.cl-e195b9d6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0,...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Flextables | Programming Logic for Non-Programmers">
+<meta property="og:type" content="book">
+<meta property="og:description" content="This reflects nested for loops of row+column .cl-e19c7bae{}.cl-e195b9d6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 12 Flextables | Programming Logic for Non-Programmers">
+<meta name="twitter:description" content="This reflects nested for loops of row+column .cl-e19c7bae{}.cl-e195b9d6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Programming Logic for Non-Programmers</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
+<li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="comments-and-names.html"><span class="header-section-number">8</span> Comments and Names</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></li>
+<li><a class="" href="practice-annotating-and-understanding-unfamiliar-code.html"><span class="header-section-number">10</span> Practice annotating and understanding unfamiliar code</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">11</span> Recap and Consultation Tips</a></li>
+<li><a class="active" href="flextables.html"><span class="header-section-number">12</span> Flextables</a></li>
+<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">13</span> BD Demo Introduction</a></li>
+<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">14</span> BD Demo Methods</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="flextables" class="section level1" number="12">
+<h1>
+<span class="header-section-number">12</span> Flextables<a class="anchor" aria-label="anchor" href="#flextables"><i class="fas fa-link"></i></a>
+</h1>
+<p>This reflects nested for loops of <code>row+column</code></p>
+<div class="tabwid">
+<style>.cl-e19c7bae{}.cl-e195b9d6{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e1987e14{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e19890e8{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890e9{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890ea{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890f2{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890f3{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890f4{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890fc{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890fd{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890fe{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e19890ff{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1989106{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1989107{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1989108{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1989109{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e198910a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1989110{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e19c7bae">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e19890e8"><p class="cl-e1987e14"><span class="cl-e195b9d6">Index</span></p></th>
+<th class="cl-e19890e9"><p class="cl-e1987e14"><span class="cl-e195b9d6">Column 1</span></p></th>
+<th class="cl-e19890ea"><p class="cl-e1987e14"><span class="cl-e195b9d6">Column 2</span></p></th>
+<th class="cl-e19890ea"><p class="cl-e1987e14"><span class="cl-e195b9d6">Column 3</span></p></th>
+<th class="cl-e19890ea"><p class="cl-e1987e14"><span class="cl-e195b9d6">Column 4</span></p></th>
+<th class="cl-e19890f2"><p class="cl-e1987e14"><span class="cl-e195b9d6">Column 5</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e19890f3"><p class="cl-e1987e14"><span class="cl-e195b9d6">row 1</span></p></td>
+<td class="cl-e19890f4"><p class="cl-e1987e14"><span class="cl-e195b9d6">2</span></p></td>
+<td class="cl-e19890fc"><p class="cl-e1987e14"><span class="cl-e195b9d6">3</span></p></td>
+<td class="cl-e19890fc"><p class="cl-e1987e14"><span class="cl-e195b9d6">4</span></p></td>
+<td class="cl-e19890fc"><p class="cl-e1987e14"><span class="cl-e195b9d6">5</span></p></td>
+<td class="cl-e19890fd"><p class="cl-e1987e14"><span class="cl-e195b9d6">6</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e19890fe"><p class="cl-e1987e14"><span class="cl-e195b9d6">row 2</span></p></td>
+<td class="cl-e19890ff"><p class="cl-e1987e14"><span class="cl-e195b9d6">3</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">4</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">5</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">6</span></p></td>
+<td class="cl-e1989107"><p class="cl-e1987e14"><span class="cl-e195b9d6">7</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e19890fe"><p class="cl-e1987e14"><span class="cl-e195b9d6">row 3</span></p></td>
+<td class="cl-e19890ff"><p class="cl-e1987e14"><span class="cl-e195b9d6">4</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">5</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">6</span></p></td>
+<td class="cl-e1989106"><p class="cl-e1987e14"><span class="cl-e195b9d6">7</span></p></td>
+<td class="cl-e1989107"><p class="cl-e1987e14"><span class="cl-e195b9d6">8</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1989108"><p class="cl-e1987e14"><span class="cl-e195b9d6">row 4</span></p></td>
+<td class="cl-e1989109"><p class="cl-e1987e14"><span class="cl-e195b9d6">5</span></p></td>
+<td class="cl-e198910a"><p class="cl-e1987e14"><span class="cl-e195b9d6">6</span></p></td>
+<td class="cl-e198910a"><p class="cl-e1987e14"><span class="cl-e195b9d6">7</span></p></td>
+<td class="cl-e198910a"><p class="cl-e1987e14"><span class="cl-e195b9d6">8</span></p></td>
+<td class="cl-e1989110"><p class="cl-e1987e14"><span class="cl-e195b9d6">9</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>This reflects nested for loops of <code>(5*(row-1))+column</code></p>
+<div class="tabwid">
+<style>.cl-e1b256d6{}.cl-e1ac072c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e1ae3902{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e1ae4ad2{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4adc{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4add{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4ade{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4adf{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4ae6{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4ae7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4af0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4af1{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4af2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4af3{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4afa{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4afb{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4b04{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4b05{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e1ae4b06{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e1b256d6">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e1ae4ad2"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Index</span></p></th>
+<th class="cl-e1ae4adc"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Column 1</span></p></th>
+<th class="cl-e1ae4add"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Column 2</span></p></th>
+<th class="cl-e1ae4add"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Column 3</span></p></th>
+<th class="cl-e1ae4add"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Column 4</span></p></th>
+<th class="cl-e1ae4ade"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Column 5</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1ae4adf"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Row 1</span></p></td>
+<td class="cl-e1ae4ae6"><p class="cl-e1ae3902"><span class="cl-e1ac072c">1</span></p></td>
+<td class="cl-e1ae4ae7"><p class="cl-e1ae3902"><span class="cl-e1ac072c">2</span></p></td>
+<td class="cl-e1ae4ae7"><p class="cl-e1ae3902"><span class="cl-e1ac072c">3</span></p></td>
+<td class="cl-e1ae4ae7"><p class="cl-e1ae3902"><span class="cl-e1ac072c">4</span></p></td>
+<td class="cl-e1ae4af0"><p class="cl-e1ae3902"><span class="cl-e1ac072c">5</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1ae4af1"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Row 2</span></p></td>
+<td class="cl-e1ae4af2"><p class="cl-e1ae3902"><span class="cl-e1ac072c">6</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">7</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">8</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">9</span></p></td>
+<td class="cl-e1ae4afa"><p class="cl-e1ae3902"><span class="cl-e1ac072c">10</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1ae4af1"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Row 3</span></p></td>
+<td class="cl-e1ae4af2"><p class="cl-e1ae3902"><span class="cl-e1ac072c">11</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">12</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">13</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">14</span></p></td>
+<td class="cl-e1ae4afa"><p class="cl-e1ae3902"><span class="cl-e1ac072c">15</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1ae4af1"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Row 4</span></p></td>
+<td class="cl-e1ae4af2"><p class="cl-e1ae3902"><span class="cl-e1ac072c">16</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">17</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">18</span></p></td>
+<td class="cl-e1ae4af3"><p class="cl-e1ae3902"><span class="cl-e1ac072c">19</span></p></td>
+<td class="cl-e1ae4afa"><p class="cl-e1ae3902"><span class="cl-e1ac072c">20</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e1ae4afb"><p class="cl-e1ae3902"><span class="cl-e1ac072c">Row 5</span></p></td>
+<td class="cl-e1ae4b04"><p class="cl-e1ae3902"><span class="cl-e1ac072c">21</span></p></td>
+<td class="cl-e1ae4b05"><p class="cl-e1ae3902"><span class="cl-e1ac072c">22</span></p></td>
+<td class="cl-e1ae4b05"><p class="cl-e1ae3902"><span class="cl-e1ac072c">23</span></p></td>
+<td class="cl-e1ae4b05"><p class="cl-e1ae3902"><span class="cl-e1ac072c">24</span></p></td>
+<td class="cl-e1ae4b06"><p class="cl-e1ae3902"><span class="cl-e1ac072c">25</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="recap-and-consultation-tips.html"><span class="header-section-number">11</span> Recap and Consultation Tips</a></div>
+<div class="next"><a href="bd-demo-intro.html"><span class="header-section-number">13</span> BD Demo Introduction</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#flextables"><span class="header-section-number">12</span> Flextables</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
