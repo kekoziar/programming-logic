@@ -21,6 +21,7 @@ other-types-of-loops
 caveats
 infinite-loops
 overwriting-outputs
+from-our-notes
 conditionals-and-making-choices
 boolean-operators
 exercise---ifelse-trace

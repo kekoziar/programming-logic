@@ -427,18 +427,9 @@ For the next items in review, we want you to type the answer, but don't press en
 
 \chapter{Loops}\label{loops}
 
-Drawing from Introduction to Programming Logic\citep{lynne_ohanlon_introduction_2000}
-Start with \texttt{for} loop as first function term
-``Populate an array from a for loop'' as an early example; pg 376 blank table with good early exercise.
-Side note about infinite loop, importance of settling bounds
-What happens if you don't tell loop to increase?
-Examples of \texttt{for} loops in multiple languages (Python, C, R)?
-To decide: all theory and then all practice, or theory/practice/theory/practice?
-Also writing out result of each iteration otherwise you'll only get the last result (a common problem)
-
 The nice thing about the language used for the control structures in most programming languages is they are usually self-describing. We're going to talk about loops now. Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It's what researchers use when they want to apply a statistical method over several data files.
 
-The for loop is probably the most common type of loop. It executes a chunk of code \emph{for} a certain number of times. The common structure of most for loops is
+The \texttt{for} loop is probably the most common type of loop. It executes a chunk of code \emph{for} a certain number of times. The common structure of most \texttt{for} loops is
 
 \begin{verbatim}
 for variable in a range or collection
@@ -484,7 +475,7 @@ for ingredient in ingredents
   write(ingredient)
 \end{verbatim}
 
-at the top of the paper, write out the \texttt{ingredients} assignment, then right below that create headers for all of the variables used within the for loop code block, and add term \texttt{write} and another term \texttt{loop\ iteration}. As you were rewriting this, you may have noticed the typo \texttt{ingredents} in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
+at the top of your paper, write out the \texttt{ingredients} assignment. On the line below that we're going to create create headers for all of the variables used within the for loop code block. Starting on the left going right, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
 
 Your paper should look something like this
 
@@ -589,6 +580,8 @@ Your paper should look something like this
 \global\setlength{\tabcolsep}{\Oldtabcolsep}
 
 \renewcommand*{\arraystretch}{1}
+
+As you were rewriting this, you may have noticed the typo \texttt{ingredents} in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
 \section{Exercise - loop trace}\label{exercise---loop-trace}
 
@@ -706,6 +699,28 @@ for x in 0 to 5
 write answer
   
 \end{verbatim}
+
+\subsection{from our notes}\label{from-our-notes}
+
+\begin{itemize}
+\tightlist
+\item
+  Drawing from Introduction to Programming Logic \citep{lynne_ohanlon_introduction_2000}
+\item
+  Start with \texttt{for} loop as first function term
+\item
+  ``Populate an array from a for loop'' as an early example; pg 376 blank table with good early exercise.
+\item
+  Side note about infinite loop, importance of settling bounds
+\item
+  What happens if you don't tell loop to increase?
+\item
+  Examples of \texttt{for} loops in multiple languages (Python, C, R)?
+\item
+  To decide: all theory and then all practice, or theory/practice/theory/practice?
+\item
+  Also writing out result of each iteration otherwise you'll only get the last result (a common problem)
+\end{itemize}
 
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
