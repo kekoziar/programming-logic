@@ -190,11 +190,13 @@ We will also introduce programming examples in different languages, so you can s
 
 \section{What Are Algorithms}\label{what-are-algorithms}
 
-Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm? An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you're working with was trained to do what it does. For social media feeds, an algorithm will determine how to select which content is delivered to a user. Algorithms can be very simple or very complex.
+Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm?
+
+An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you're working with was trained to do what it does. For social media feeds, an algorithm will determine how to select which content is delivered to a user. Algorithms can be very simple or very complex.
 
 A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients. But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn't enough to tell a computer, ``get the data.'' You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use in your script. So let's do an example with a recipe on how to make cheesy mashed potatoes.
 
-The steps are easy enough.
+The steps are easy enough:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -213,7 +215,7 @@ The steps are easy enough.
   Eat.
 \end{enumerate}
 
-Most of us would know how to do this because we infer the instructions that are missing. But, computers are stupid. They need to be explicitly told how to do something.
+Most of us would know how to do this because we infer the instructions that are missing. But, computers aren't intelligent like humans. They need to be explicitly told how to do something.
 
 How many potatoes? What does \emph{boil} mean? What does \emph{done} mean? (which is also a question I asked my mom when reading my grandmother's recipes.)
 
@@ -242,19 +244,17 @@ Computer code needs to be explicit and complete. Let's see what that looks like 
   Repeat 4-7 until all potatoes are washed and peeled
 \end{enumerate}
 
-When you start breaking down the process into specific actions it can get quite long, but what we're doing is listing a large complex overall task into simple ones that can be done one action at a time.
+When you start breaking down the process into specific actions, the instructions can get quite lengthy! But this is what we need to do in order to ``instruct'' the computer what we want to do: splitting a large complex overall task into simple tasks that can be done one action at a time.
 
-Essentially, that's what computer processors do - one action at a time. Computers with multi-core processors can do multiple actions at simultaneously, one action for each core. It's just the computer is so fast, it looks like it's doing everything at once, but it still just executes commands step by step.
+Essentially, that's what computer processors do - one action at a time. Computers with multi-core processors can do multiple actions simultaneously, one action for each core. It's just the computer is so fast, it looks like it's doing everything at once, but it still executes commands step by step.
 
 \section{Breakout Activity}\label{breakout-activity}
 
-(20 Min?)
+\emph{Timing: 15 minutes of breakout group work, followed by 10 minutes of full group discussion.}
 
-For this activity, you will write an algorithm to make popcorn.~
+For this activity, your group will write an algorithm to make popcorn.~
 
-Sounds simple, right? ``Make popcorn'' is something most people have at least a general understanding of how to do. But in this scenario, you're providing step-by-step directions for a computer to understand how to make popcorn and a computer would need to be told \textbf{every action} to take, in order to successfully make popcorn.\\
-
-Your task is to write out each step needed to make popcorn.
+``Make popcorn'' is something most people have at least a general understanding of how to do (even more so than making cheesy mashed potatoes) but remember: in this scenario, your group needs to provide step-by-step directions for a \emph{computer} to understand how to make popcorn.
 
 As you write out the steps with your group, consider:
 
@@ -263,11 +263,11 @@ As you write out the steps with your group, consider:
 \item
   Are you opening a container at any point?
 \item
-  Are you making microwave popcorn, or using a stove?
+  Are you making microwave popcorn, or using a stove, and does that impact the directions?
 \item
-  How much time is needed to make popcorn?
+  Is time needed to make popcorn consistent, or does this depend on other factors?
 \item
-  What should the computer do if the popcorn starts burning?
+  Is there something the computer should do if the popcorn starts burning, or other ``errors'' arise?
 \end{itemize}
 
 \chapter{Data types}\label{data-types}
@@ -429,7 +429,7 @@ For the next items in review, we want you to type the answer, but don't press en
 
 The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing. We're going to talk about loops now.
 
-Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It's what researchers use when they want to apply a statistical method over several data files.
+Loops are common events in programming scripts. It is what the computer uses to listen for user-input. It's also what researchers use when they want to apply a statistical method over several data files, or several columns within a data table.
 
 \section{\texorpdfstring{\texttt{for} loops}{for loops}}\label{for-loops}
 
@@ -438,54 +438,55 @@ The \texttt{for} loop is probably the most common type of loop. It executes a ch
 \begin{verbatim}
 for variable in a collection
   do something
+  
 \end{verbatim}
 
-Now, a collection can be a list of items, like our ingredients, really kind of data structure that has an index, but it can also be a range of numbers, like \texttt{1\ to\ 5} (which is literally short for 1 2 3 4 5) or \texttt{7\ to\ 13} (which is 7 8 9 10 11 12 13).
+Now, a collection can be a list of text items, such as cheesy mashed potato ingredients, but it can also be a range of numbers, like \texttt{1\ to\ 5} (which is programming speak for 1 2 3 4 5) or \texttt{7\ to\ 13} (which is 7 8 9 10 11 12 13).
 
-Let's see what this looks like in action using our list of cheesy mashed potatoes ingredients
+Let's see what this looks like in action using a basic list of cheesy mashed potatoes ingredients:
 
 \begin{verbatim}
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)
+  
 \end{verbatim}
 
-If we asked a computer to do this using the R language, it would look something like this
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{ingredients }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cheddar cheese"}\NormalTok{, }\StringTok{"potatoes"}\NormalTok{, }\StringTok{"milk"}\NormalTok{, }\StringTok{"salt"}\NormalTok{, }\StringTok{"butter"}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{(ingredient }\ControlFlowTok{in}\NormalTok{ ingredients)\{}
-  \FunctionTok{print}\NormalTok{(ingredient)}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] "cheddar cheese"
-## [1] "potatoes"
-## [1] "milk"
-## [1] "salt"
-## [1] "butter"
-\end{verbatim}
+Before we look at any real world code, we will manually go through some example loops, without the computer doing the work for us. Practicing a trace on tasks that are simple, like writing each ingredient in a collection, will help us build skills for, and comfort with, reading complex code.
 
 \section{Practicing a Trace}\label{practicing-a-trace}
 
-But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.
+\emph{Timing: 10 minutes}
+\emph{You will need: a piece of paper and writing implement}
 
-The base set up is like this. For the original psuedocode,
+Let's set up our trace exercise. The example loop is:
 
 \begin{verbatim}
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)
+  
 \end{verbatim}
 
-at the top of your paper, write out the \texttt{ingredients} assignment. On the line below that we're going to create headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
+At the top of your paper, write out the \texttt{ingredients} assignment (\texttt{ingredients\ \textless{}-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}).
 
-Your paper should look something like this
+On the line below that we're going to create headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
+
+Your paper should look something like this:
+
+\begin{verbatim}
+## Warning: package 'flextable' was built under R version 4.4.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'officer' was built under R version 4.4.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'shiny' was built under R version 4.4.2
+\end{verbatim}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -591,9 +592,15 @@ Your paper should look something like this
 
 As you were rewriting this, you may have noticed the typo \texttt{ingredents} in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
-Your paper is formatted so it's easy to see what's going on with variable during each loop iteration. This is called a trace, and is often used in software development to help debug the program. But, I think it's a good exercise to help build mental muscles to read code. So, the next is to fill in the values for each iteration of the loop.
+Your paper is formatted so it's easy to see what's going on with variable during each loop iteration. This is called a trace, and is often used in software development to help debug the program. It is also a good exercise to help build mental muscles to read code.
 
-Your paper will now look something like this
+The next step is to fill in the values for each iteration of the loop.
+
+Your paper will now look something like this:
+
+\begin{verbatim}
+## Warning: package 'ftExtra' was built under R version 4.4.2
+\end{verbatim}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -691,20 +698,46 @@ Your paper will now look something like this
 
 \renewcommand*{\arraystretch}{1}
 
-It's okay if you didn't completely fill out both the variable \texttt{ingredient} and the function \texttt{write\ ingredient} because in this case they are the same. But, it's important to check what actions are happening to variables when you do a trace.
+Note: It's okay if you didn't completely fill out both the variable \texttt{ingredient} and the function \texttt{write\ ingredient} because in this case they are the same. But, it's important to check what actions are happening to variables when you do a trace.
+
+Youv'e now completed the first trace exercise of a pseudocode example. Congratulations! In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at ``real'' code doing the same task, to further build out your mental model.
+
+If we asked a computer to do the same task we did, using the R language, it would look something like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ingredients }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"cheddar cheese"}\NormalTok{, }\StringTok{"potatoes"}\NormalTok{, }\StringTok{"milk"}\NormalTok{, }\StringTok{"salt"}\NormalTok{, }\StringTok{"butter"}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(ingredient }\ControlFlowTok{in}\NormalTok{ ingredients)\{}
+  \FunctionTok{print}\NormalTok{(ingredient)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "cheddar cheese"
+## [1] "potatoes"
+## [1] "milk"
+## [1] "salt"
+## [1] "butter"
+\end{verbatim}
 
 \subsection{Exercise - Loop Trace}\label{exercise---loop-trace}
 
-Now that we've written a text list together, let's practice using ranges. Remember \texttt{2\ to\ 7} represents 2 3 4 5 6 7.
+Now that we've practiced a trace using text, let's practice using number ranges Remember that to a computer, the range written as \texttt{2\ to\ 7} represents numbers 2 3 4 5 6 7.
 
-Grab a pen and paper and write out the output of each iteration of the loop:
+For this loop trace, you'll write out the output of each iteration of this loop:
 
 \begin{verbatim}
+
 for x in 0 to 5 
   write x
   write x*2
   
 \end{verbatim}
+
+Like in the ingredients trace example, you'll create a table with headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{write(x)} in the center of the line, then the term \texttt{write(x*2)} on the right of the line.
+
+Then, fill out the table for each iteration of \texttt{for\ x\ in\ 0\ to\ 5}.
 
 Loop Trace
 
@@ -812,9 +845,13 @@ Loop Trace
 
 \hfill\break
 
+By this point, you're probably thinking that doing a manual trace is a bit tedious. And it is! But again - this is a good way to strengthen your mental model of how loops work, and get you comfortable with thinking through what a chunk of code is trying to do.
+
 \subsection{\texorpdfstring{Exercise - Trace Nested \texttt{for} Loops}{Exercise - Trace Nested for Loops}}\label{exercise---trace-nested-for-loops}
 
-The following matrix is created using two \texttt{for} loops
+So far, we've tackled one loop at a time. But loops are flexible and can be ``nested'', or embedded within each other.
+
+Let's look at an example the following matrix, which is created using two \texttt{for} loops
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -894,7 +931,7 @@ The following matrix is created using two \texttt{for} loops
 
 \renewcommand*{\arraystretch}{1}
 
-The pseudocode for it is as follows:
+The pseudocode for how this matrix was created is as follows:
 
 \begin{verbatim}
 num_rows = 4
@@ -1709,74 +1746,9 @@ Syntax is going to be specific to a language, or package within a
 language\\
 Show some examples of reading/writing data in R, Python, Stata, SQL
 
-\chapter{Practice annotating and understanding unfamiliar code}\label{practice-annotating-and-understanding-unfamiliar-code}
+\chapter{Practice}\label{practice}
 
-\section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
-
-Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses `nested' \texttt{for} loops, meaning a second loop occurs within the first loops. It also uses nested \texttt{if\ else} statements.
-
-\textbf{SL: we can simplify this example, maybe remove session\_id and save\_loc}
-
-For this code, can you identify where each \texttt{for} loop and each \texttt{if\ else} statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?
-
-\begin{verbatim}
-1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
-2.  data_url = "DataFiles.aspx?"
-3.  year_base = "year="
-4.  years = ["1995", "1996", "1997", "1998"]
-5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"  #you might need to change this
-6. 
-7.  # what type of files do you want to save?
-8.  file_type = ["zip","csv"]
-9. 
-10. # where do you want to save locally?
-11. 
-12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 13. because that's where below is saving to
-14. save_loc = years 
-15. 
-16. # what kind of prefix do you want on your files
-17. save_prefix = "ipeds_" 
-18. 
-19. # scrape
-20. for year in years:
-21.     url = base_url+data_url+year_base+year+session_id 
-22.     webpage = requests.get(url)
-23.     soup = BeautifulSoup(webpage.content, 'html.parser')
-24. 
-25. 
-26.     if os.path.isdir("./"+year):
-27.         # notice output path has "year" as a variable indicating folders
-28.         output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
-29.     
-30.         if os.path.exists(output_path):
-31.             print(output_path+" already exists. Did NOT save.")
-32.         else:
-33.             # saving the html file
-34.             print("saving "+output_path)
-35.     
-36.             with open(output_path, 'wb') as file:
-37.                 file.write(webpage.content) 
-38.             
-39.         # saving files linked on original html page which meet file type requirement
-40.         for link in soup.find_all('a')[0:16]:  
-41.             data_target = link.get('href')
-42.             # data_target[-3:]
-43.             if any(extension == data_target[-3:] for extension in file_type):
-44.                 wget_url = base_url+data_target
-45.                 wget_save = "./"+year+"/"+save_prefix+data_target.replace("/","-")
-46.     
-47.                 if os.path.exists(wget_save):
-48.                     print(wget_save+" already exists. Did NOT save.")
-49.                 else:
-50.                     print("SAVING "+ wget_url+ " at local location: "+wget_save)
-51.                     wget.download(wget_url,wget_save)
-52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
-53.     else:
-54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
-55.     
-56.     
-57. print("fin.")
-\end{verbatim}
+In this section, we'll work on understanding and annotating unfamiliar code.
 
 \section{New types of conditions (in SQL)}\label{new-types-of-conditions-in-sql}
 
@@ -1827,13 +1799,211 @@ Now, can you write out a narrative of what you see the code is trying to do?\\
 
 Example written narrative
 
-Starting from the \texttt{OceanBuoys} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \textbf{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''.
+Starting from the \texttt{OceanBuoys} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \emph{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''.
 
 \hfill\break
 
-\section{add example for C/C++}\label{add-example-for-cc}
+\section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
 
-\section{Challenge practice: new syntax and terms (in R)}\label{challenge-practice-new-syntax-and-terms-in-r}
+Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses `nested' \texttt{for} loops, meaning a second loop occurs within the first loops. It also uses nested \texttt{if\ else} statements with the \texttt{for} loops and within other \texttt{if\ else} statements.\\
+
+In this example, we're less concerned about understanding every detail about what the code is doing, and more about understanding where each loop beings and ends. This is a useful skill - looking at code and understanding where the boundaries are for each self-contained function. It is especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\\
+
+\textbf{Exercise}: Review the code chunk below and identify on which line each \texttt{for} loop and each \texttt{if\ else} statement starts and ends?
+
+\begin{itemize}
+\item
+  First \texttt{for} loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Second \texttt{for} loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  (sneaky third for in line 43?)
+\item
+  First \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Second \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Third \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Fourth \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\end{itemize}
+
+\begin{verbatim}
+# Code to scrape data from website
+
+1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
+2.  data_url = "DataFiles.aspx?"
+3.  year_base = "year="
+4.  years = ["1995", "1996", "1997", "1998"]
+5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"
+6. 
+7.  # what type of files do you want to save?
+8.  file_type = ["zip","csv"]
+9. 
+10. # where do you want to save locally?
+11. 
+12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 
+13. # because that's where below is saving to
+14. save_loc = years 
+15. 
+16. # what kind of prefix do you want on your files
+17. save_prefix = "ipeds_" 
+18. 
+19. # scrape
+20. for year in years:
+21.     url = base_url+data_url+year_base+year+session_id 
+22.     webpage = requests.get(url)
+23.     soup = BeautifulSoup(webpage.content, 'html.parser')
+24. 
+25. 
+26.     if os.path.isdir("./"+year):
+27.         # notice output path has "year" as a variable indicating folders
+28.         output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
+29.     
+30.         if os.path.exists(output_path):
+31.             print(output_path+" already exists. Did NOT save.")
+32.         else:
+33.             # saving the html file
+34.             print("saving "+output_path)
+35.     
+36.             with open(output_path, 'wb') as file:
+37.                 file.write(webpage.content) 
+38.             
+39.         # saving files linked on original html page which meet file type requirement
+40.         for link in soup.find_all('a')[0:16]:  
+41.             data_target = link.get('href')
+42.             # data_target[-3:]
+43.             if any(extension == data_target[-3:] for extension in file_type):
+44.                 wget_url = base_url+data_target
+45.                 wget_save = "./"+year+"/"+save_prefix+data_target.replace("/","-")
+46.     
+47.                 if os.path.exists(wget_save):
+48.                     print(wget_save+" already exists. Did NOT save.")
+49.                 else:
+50.                     print("SAVING "+ wget_url+ " at local location: "+wget_save)
+51.                     wget.download(wget_url,wget_save)
+52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
+53.     else:
+54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
+\end{verbatim}
+
+\textbf{This needs a color coded image to clarify}
+
+Start and end locations
+
+\begin{itemize}
+\tightlist
+\item
+  First loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 20
+  \item
+    Ends on line: 54 (encompasses entire code block line 20 until end of line 54)
+  \end{itemize}
+\item
+  Second loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 40
+  \item
+    Ends on line: 52 (encompasses entire code block line 40 until end of line 52)
+  \end{itemize}
+\item
+  First \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 26
+  \item
+    Ends on line: 54 (the matching \texttt{else} is on line 53, with end of action on line 54)
+  \end{itemize}
+\item
+  Second \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 30
+  \item
+    Ends on line: 37 (matching \texttt{else} is on line 32, with end of action on line 37)
+  \end{itemize}
+\item
+  Third \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 43
+  \item
+    Ends on line: 45 (no matching \texttt{else}, ends on line 45 and goes into next \texttt{if})
+  \end{itemize}
+\item
+  Fourth \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 47
+  \item
+    Ends on line: 52 (matching \texttt{else} is on line 49, with end of action on line 52)
+  \end{itemize}
+\end{itemize}
+
+\section{New syntax and terms (in R)}\label{new-syntax-and-terms-in-r}
 
 While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\\
 
@@ -1906,6 +2076,8 @@ Then, make a new column called ``identifier''. This new column is created by pas
 Then, make another new column called ``survey\_type''. The values in this column are determined by an \texttt{ifelse} statement: if the value in the ``survey\_wave'' column is any of the values specified in the list \texttt{("first",\ "second")} (so if the value is ``first'' or ``second''), then the value in the ``survey\_type'' column will be ``phone''. Otherwise, the value will be ``in person''.\\
 
 \hfill\break
+
+\section{add example for C/C++}\label{add-example-for-cc}
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 
