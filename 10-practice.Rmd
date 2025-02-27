@@ -1,26 +1,96 @@
-# Practice annotating and understanding unfamiliar code
+# Practice 
+
+In this section, we'll work on understanding and annotating unfamiliar code.
+
+## New types of conditions (in SQL)
+
+Consider the following SQL command:
+
+```
+SELECT * FROM OceanBuoys
+WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
+
+```
+
+Your preferred approach for navigating and understanding unfamiliar code may vary.\
+
+One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
+
+- What does the `OceanBuoys` term most likely refer to?
+- What do you think the `SELECT` function does?
+- What does `*` indicate, in combination with `SELECT`? 
+- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Country` and `BuoyName` refer to?
+- Can you guess (or feel free to use Google) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
+
+<details>
+<summary>Do your answers match these?</summary>
+
+- The `OceanBuoys` term here refers to a table or dataframe. 
+- The `SELECT` function selects columns from a table. 
+- The `*` here indicates that we want to return all columns from the table. 
+- The `OceanBuoys` table must have columns named `Country` and `BuoyName`. 
+- `LIKE` is used for pattern matching. This code is matching values that start with "S" or with "K".
+</details>\
+
+Now, can you write out a narrative of what you see the code is trying to do?\
+
+<details>
+<summary>Example written narrative</summary>
+
+Starting from the `OceanBuoys` table, return all columns but only rows where `Country` is equal to "Spain" _and_ where the `BuoyName` value starts with "S" or "K".
+
+</details>\
 
 ## Nested `for` loops and `if else` statements (in Python)
 
-Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses 'nested' `for` loops, meaning a second loop occurs within the first loops. It also uses nested `if else` statements. 
+Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses 'nested' `for` loops, meaning a second loop occurs within the first loops. It also uses nested `if else` statements with the `for` loops and within other `if else` statements.\
 
-__SL: we can simplify this example, maybe remove session_id and save_loc__
+In this example, we're less concerned about understanding every detail about what the code is doing, and more about understanding where each loop beings and ends. This is a useful skill - looking at code and understanding where the boundaries are for each self-contained function. It is especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\
 
-For this code, can you identify where each `for` loop and each `if else` statement ends? Or put another way, can you figure out on which lines (numbered in code chunk below) each statement starts and stops?
+__Exercise__: Review the code chunk below and identify on which line each `for` loop and each `if else` statement starts and ends? 
+
+- First `for` loop
+  - Starts on line:
+  - Ends on line:
+  
+- Second `for` loop
+  - Starts on line:
+  - Ends on line:
+  
+- (sneaky third for in line 43?)
+  
+- First `if else` statement
+  - Starts on line:
+  - Ends on line:
+  
+- Second `if else` statement
+  - Starts on line:
+  - Ends on line:
+  
+- Third `if else` statement
+  - Starts on line:
+  - Ends on line:
+  
+- Fourth `if else` statement
+  - Starts on line:
+  - Ends on line:
 
 ```
+# Code to scrape data from website
+
 1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
 2.  data_url = "DataFiles.aspx?"
 3.  year_base = "year="
 4.  years = ["1995", "1996", "1997", "1998"]
-5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"  #you might need to change this
+5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"
 6. 
 7.  # what type of files do you want to save?
 8.  file_type = ["zip","csv"]
 9. 
 10. # where do you want to save locally?
 11. 
-12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 13. because that's where below is saving to
+12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 
+13. # because that's where below is saving to
 14. save_loc = years 
 15. 
 16. # what kind of prefix do you want on your files
@@ -62,53 +132,40 @@ For this code, can you identify where each `for` loop and each `if else` stateme
 52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
 53.     else:
 54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
-55.     
-56.     
-57. print("fin.")
 
 ```
-
-## New types of conditions (in SQL)
-
-Consider the following SQL command:
-
-```
-SELECT * FROM OceanBuoys
-WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
-
-```
-
-Your preferred approach for navigating and understanding unfamiliar code may vary.\
-
-One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
-
-- What does the `OceanBuoys` term most likely refer to?
-- What do you think the `SELECT` function does?
-- What does `*` indicate, in combination with `SELECT`? 
-- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Country` and `BuoyName` refer to?
-- Can you guess (or feel free to use Google) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
+__This needs a color coded image to clarify__
 
 <details>
-<summary>Do your answers match these?</summary>
-- The `OceanBuoys` term here refers to a table or dataframe. 
-- The `SELECT` function selects columns from a table. 
-- The `*` here indicates that we want to return all columns from the table. 
-- The `OceanBuoys` table must have columns named `Country` and `BuoyName`. 
-- `LIKE` is used for pattern matching. This code is matching values that start with "S" or with "K".
-</details>\
+<summary>Start and end locations</summary>
 
-Now, can you write out a narrative of what you see the code is trying to do?\
+- First loop
+  - Starts on line: 20
+  - Ends on line: 54 (encompasses entire code block line 20 until end of line 54)
+  
+- Second loop
+  - Starts on line: 40
+  - Ends on line: 52 (encompasses entire code block line 40 until end of line 52)
+  
+- First `if else` statement
+  - Starts on line: 26
+  - Ends on line: 54 (the matching `else` is on line 53, with end of action on line 54)
+  
+- Second `if else` statement
+  - Starts on line: 30
+  - Ends on line: 37 (matching `else` is on line 32, with end of action on line 37)
+  
+- Third `if else` statement
+  - Starts on line: 43
+  - Ends on line: 45 (no matching `else`, ends on line 45 and goes into next `if`)
+  
+- Fourth `if else` statement
+  - Starts on line: 47
+  - Ends on line: 52 (matching `else` is on line 49, with end of action on line 52)
 
-<details>
-<summary>Example written narrative</summary>
-Starting from the `OceanBuoys` table, return all columns but only rows where `Country` is equal to "Spain" __and__ where the `BuoyName` value starts with "S" or "K".
+</details>
 
-</details>\
-
-## add example for C/C++
-
-
-## Challenge practice: new syntax and terms (in R)
+## New syntax and terms (in R)
 
 While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
 
@@ -142,6 +199,7 @@ Finally, it is always important to understand the data type and structure of the
   
 <details>
 <summary>Example narrative</summary>
+
 Starting from the table/dataframe called "df", we want to keep (select) all columns _except_ the column named "respondent_name".\
 
 Then, make a new column called "identifier". This new column is created by pasting together the value in the "respondent_id" column and the "survey_wave" column, separated by an underscore.\
@@ -149,3 +207,8 @@ Then, make a new column called "identifier". This new column is created by pasti
 Then, make another new column called "survey_type". The values in this column are determined by an `ifelse` statement: if the value in the "survey_wave" column is any of the values specified in the list `("first", "second")` (so if the value is "first" or "second"), then the value in the "survey_type" column will be "phone". Otherwise, the value will be "in person".\
 
 </details>\
+
+
+## add example for C/C++
+
+
