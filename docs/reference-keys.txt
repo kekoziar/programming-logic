@@ -17,8 +17,8 @@ for-loops
 practicing-a-trace
 exercise---loop-trace
 exercise---trace-nested-for-loops
-previous-exercise
 other-types-of-loops
+while-trace
 caveats
 infinite-loops
 overwriting-outputs
