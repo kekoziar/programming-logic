@@ -2,7 +2,7 @@
 
 The nice thing about the terms used for the control structures in most programming languages is they are usually self-describing.  We're going to talk about loops now.  
 
-Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's what researchers use when they want to apply a statistical method over several data files.
+Loops are common events in programming scripts.  It is what the computer uses to listen for user-input.  It's also what researchers use when they want to apply a statistical method over several data files, or several columns within a data table.
 
 ## `for` loops
 
@@ -11,44 +11,41 @@ The `for` loop is probably the most common type of loop.  It executes a chunk of
 ```
 for variable in a collection
   do something
+  
 ```
 
-Now, a collection can be a list of items, like our ingredients, really kind of data structure that has an index, but it can also be a range of numbers, like `1 to 5` (which is literally short for 1 2 3 4 5) or `7 to 13` (which is 7 8 9 10 11 12 13).
+Now, a collection can be a list of text items, such as cheesy mashed potato ingredients, but it can also be a range of numbers, like `1 to 5` (which is programming speak for 1 2 3 4 5) or `7 to 13` (which is 7 8 9 10 11 12 13).
 
-Let's see what this looks like in action using our list of cheesy mashed potatoes ingredients
+Let's see what this looks like in action using a basic list of cheesy mashed potatoes ingredients:
 
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)
+  
 ```
-
-If we asked a computer to do this using the R language, it would look something like this
-<hr>
-
-```{r loop-ingredients}
-ingredients <- c("cheddar cheese", "potatoes", "milk", "salt", "butter")
-for(ingredient in ingredients){
-  print(ingredient)
-}
-```
-<hr>
+Before we look at any real world code, we will manually go through some example loops, without the computer doing the work for us. Practicing a trace on tasks that are simple, like writing each ingredient in a collection, will help us build skills for, and comfort with, reading complex code. 
 
 ## Practicing a Trace
 
-But, we want to practice a method of tracing it without the computer doing the work for us. Practicing a trace on things that are simple will help us read complex code without needing to write it down.  
+_Timing: 10 minutes_
+_You will need: a piece of paper and writing implement_
 
-The base set up is like this.  For the original psuedocode, 
+Let's set up our trace exercise. The example loop is: 
+
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredents
   write(ingredient)
+  
 ```
-at the top of your paper, write out the `ingredients` assignment.  On the line below that we're going to create headers for all of the variables used within the `for` loop code block.  Starting on the left, write the term `loop iteration`, then `ingredient` in the center of the line, then the term `write` on the right of the line. 
+At the top of your paper, write out the `ingredients` assignment (`ingredients <- cheddar cheese, potatoes, milk, salt, butter`).  
 
-Your paper should look something like this
+On the line below that we're going to create headers for all of the variables used within the `for` loop code block.  Starting on the left, write the term `loop iteration`, then `ingredient` in the center of the line, then the term `write` on the right of the line. 
+
+Your paper should look something like this:
 
 ```{r loop-ingredients-flextable, echo = FALSE, message=FALSE}
 library(flextable)
@@ -78,10 +75,11 @@ ft
 
 As you were rewriting this, you may have noticed the typo `ingredents` in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
-Your paper is formatted so it's easy to see what's going on with variable during each loop iteration.  This is called a trace, and is often used in software development to help debug the program.  But, I think it's a good exercise to help build mental muscles to read code.  So, the next is to fill in the values for each iteration of the loop.
+Your paper is formatted so it's easy to see what's going on with variable during each loop iteration.  This is called a trace, and is often used in software development to help debug the program.  It is also a good exercise to help build mental muscles to read code.  
 
-Your paper will now look something like this
+The next step is to fill in the values for each iteration of the loop.
 
+Your paper will now look something like this:
 
 ```{r loop-ingredients-flextable-mid, echo = FALSE, message=FALSE}
 library(flextable)
@@ -119,20 +117,39 @@ ft <- flextable((ingredients_trace)) %>%
 ft
 ```
 
-It's okay if you didn't completely fill out both the variable `ingredient` and the function `write ingredient` because in this case they are the same.  But, it's important to check what actions are happening to variables when you do a trace.
+Note: It's okay if you didn't completely fill out both the variable `ingredient` and the function `write ingredient` because in this case they are the same.  But, it's important to check what actions are happening to variables when you do a trace.
+
+Youv'e now completed the first trace exercise of a pseudocode example. Congratulations! In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at "real" code doing the same task, to further build out your mental model.
+
+If we asked a computer to do the same task we did, using the R language, it would look something like this:
+<hr>
+
+```{r loop-ingredients}
+ingredients <- c("cheddar cheese", "potatoes", "milk", "salt", "butter")
+for(ingredient in ingredients){
+  print(ingredient)
+}
+```
+<hr>
 
 ### Exercise - Loop Trace
 
-Now that we've written a text list together, let's practice using ranges.  Remember `2 to 7` represents 2 3 4 5 6 7.
+Now that we've practiced a trace using text, let's practice using number ranges  Remember that to a computer, the range written as `2 to 7` represents numbers 2 3 4 5 6 7.
 
-Grab a pen and paper and write out the output of each iteration of the loop:
+For this loop trace, you'll write out the output of each iteration of this loop:
 
 ```
+
 for x in 0 to 5 
   write x
   write x*2
   
 ```
+
+Like in the ingredients trace example, you'll create a table with headers for all of the variables used within the `for` loop code block.  Starting on the left, write the term `loop iteration`, then `write(x)` in the center of the line, then the term `write(x*2)` on the right of the line.
+
+Then, fill out the table for each iteration of `for x in 0 to 5`.
+
 <details>
 <summary>Loop Trace</summary>
 ```{r loop-exercise-1, echo = FALSE, message=FALSE}
@@ -170,10 +187,14 @@ ft
 ```
 </details>\
 
+By this point, you're probably thinking that doing a manual trace is a bit tedious. And it is! But again - this is a good way to strengthen your mental model of how loops work, and get you comfortable with thinking through what a chunk of code is trying to do.
+
 
 ### Exercise - Trace Nested `for` Loops
 
-The following matrix is created using two `for` loops
+So far, we've tackled one loop at a time. But loops are flexible and can be "nested", or embedded within each other.
+
+Let's look at an example the following matrix, which is created using two `for` loops
 
 ```{r loop-exercise-2, echo = FALSE}
 library(flextable)
@@ -227,7 +248,7 @@ ft
 ```
 
 
-The pseudocode for it is as follows:
+The pseudocode for how this matrix was created is as follows:
 
 ```
 num_rows = 4
