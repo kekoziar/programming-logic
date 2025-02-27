@@ -461,33 +461,33 @@ while (i < condition_check):
 
 ```
 
+I'll give you all a few minutes to write out your trace.  Once you're done, 
+type the largest number you traced in the write statement, but don't press enter until I give the signal.
 
+<hr>
+<hr>
 ## Caveats
 
-Loops are a frequently encountered concept in programming and come with their own set of common issues.
+As you've just experienced, loops come with their own set of common issues.  
+Since loops are a frequently encountered concept in programming, we'll go over the common problems.
 
 ### Infinite loops
 
-When condition is never false or otherwise has no break
+What you all just experienced in the previous exercise is called an infinite loop.  Infinite loops happen when the condition check is never false.  In the case
+of the above while loop, the check variable was never incremented, so the loop would go through the same process until the programmer interrupts it, the computer fails, or time ends (whichever comes first). 
 
 ### Overwriting outputs
 
 ```
-for x in 0 to 5 
-  answer = x
-
-write answer
-  
+for x in files(1 to 500) 
+  rename_file(x, "test-case")
 ```
 
-### from our notes
-- Drawing from Introduction to Programming Logic [@lynne_ohanlon_introduction_2000]
-- Start with `for` loop as first function term
-- “Populate an array from a for loop” as an early example; pg 376 blank table with good early exercise.
-- Side note about infinite loop, importance of settling bounds
-- What happens if you don’t tell loop to increase?
-- Examples of `for` loops in multiple languages (Python, C, R)?
-- To decide: all theory and then all practice, or theory/practice/theory/practice?
-- Also writing out result of each iteration otherwise you’ll only get the last result (a common problem)
+Often when researchers are developing a script, they will use test case to develop their algorithm and work out the bugs.  In this way, if mistakes are made, it's on a small scale and easy to correct.  Most development is the following.
 
+1. Develop code for a single case
+2. Test on a few cases
+3. Use on all of the cases
+
+If a step is missed, it can be disastrous.  I can attest. I wrote a script to rename about 500 files, and in my hubris of being an awesome coder, forgot to test it on a few cases before using it on all of the files. I forgot to change the single rename `("test-case")` to something that incorporated the loop `("test-case"+x)` and when the loop was finished, wondered why I went from 500 to only one file in the folder.  Luckily, I always backup my data files, so it was an easy mistake to remedy _(and makes for a good story on the importance of data backup)_.
 
