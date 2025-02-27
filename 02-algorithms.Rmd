@@ -2,11 +2,13 @@
 
 ## What Are Algorithms
 
-Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm?  An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does.  For social media feeds, an algorithm will determine how to select which content is delivered to a user.  Algorithms can be very simple or very complex.
+Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm?
+
+An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does.  For social media feeds, an algorithm will determine how to select which content is delivered to a user.  Algorithms can be very simple or very complex.
 
 A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients.  But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn’t enough to tell a computer, “get the data.” You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use  in your script. So let’s do an example with a recipe on how to make cheesy mashed potatoes.
 
-The steps are easy enough. 
+The steps are easy enough: 
 
 1. Take potatoes and boil them until they're done. 
 2. Drain. 
@@ -15,7 +17,7 @@ The steps are easy enough.
 5. Fold in cheese. 
 6. Eat.
 
-Most of us would know how to do this because we infer the instructions that are missing.  But, computers are stupid.  They need to be explicitly told how to do something. 
+Most of us would know how to do this because we infer the instructions that are missing.  But, computers aren't intelligent like humans.  They need to be explicitly told how to do something. 
 
 How many potatoes?  What does _boil_ mean?  What does _done_ mean? (which is also a question I asked my mom when reading my grandmother's recipes.)
 
@@ -33,24 +35,22 @@ Computer code needs to be explicit and complete.  Let's see what that looks like
 7. Place peeled potato in bowl
 8. Repeat 4-7 until all potatoes are washed and peeled
 
-When you start breaking down the process into specific actions it can get quite long, but what we're doing is listing a large complex overall task into simple ones that can be done one action at a time.  
+When you start breaking down the process into specific actions, the instructions can get quite lengthy! But this is what we need to do in order to "instruct" the computer what we want to do: splitting a large complex overall task into simple tasks that can be done one action at a time.  
 
-Essentially, that's what computer processors do - one action at a time.  Computers with multi-core processors can do multiple actions at simultaneously, one action for each core.  It's just the computer is so fast, it looks like it's doing everything at once, but it still just executes commands step by step. 
+Essentially, that's what computer processors do - one action at a time.  Computers with multi-core processors can do multiple actions simultaneously, one action for each core.  It's just the computer is so fast, it looks like it's doing everything at once, but it still  executes commands step by step. 
 
 
 ## Breakout Activity
 
-(20 Min?)
+_Timing: 15 minutes of breakout group work, followed by 10 minutes of full group discussion._
 
-For this activity, you will write an algorithm to make popcorn.\ 
+For this activity, your group will write an algorithm to make popcorn.\ 
 
-Sounds simple, right? "Make popcorn" is something most people have at least a general understanding of how to do. But in this scenario, you're providing step-by-step directions for a computer to understand how to make popcorn and a computer would need to be told __every action__ to take, in order to successfully make popcorn.\
-
-Your task is to write out each step needed to make popcorn. 
+"Make popcorn" is something most people have at least a general understanding of how to do (even more so than making cheesy mashed potatoes) but remember: in this scenario, your group needs to provide step-by-step directions for a _computer_ to understand how to make popcorn.
 
 As you write out the steps with your group, consider:
 
 - Are you opening a container at any point?
-- Are you making microwave popcorn, or using a stove?
-- How much time is needed to make popcorn?
-- What should the computer do if the popcorn starts burning?
+- Are you making microwave popcorn, or using a stove, and does that impact the directions?
+- Is time needed to make popcorn consistent, or does this depend on other factors?
+- Is there something the computer should do if the popcorn starts burning, or other "errors" arise?
