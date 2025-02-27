@@ -78,8 +78,9 @@
 <li><a class="" href="practice-annotating-and-understanding-unfamiliar-code.html"><span class="header-section-number">10</span> Practice annotating and understanding unfamiliar code</a></li>
 <li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">11</span> Recap and Consultation Tips</a></li>
 <li><a class="" href="flextables.html"><span class="header-section-number">12</span> Flextables</a></li>
-<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">13</span> BD Demo Introduction</a></li>
-<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">14</span> BD Demo Methods</a></li>
+<li><a class="" href="resources.html"><span class="header-section-number">13</span> Resources</a></li>
+<li><a class="" href="bd-demo-intro.html"><span class="header-section-number">14</span> BD Demo Introduction</a></li>
+<li><a class="" href="bd-demo-methods.html"><span class="header-section-number">15</span> BD Demo Methods</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -94,11 +95,22 @@
 </h1>
 <p>Many times in programming, we want to take a certain action only if a certain condition is satisfied.<br></p>
 <p>To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an <code>if</code> statement, which is often combined with an <code>else</code> statement.<br></p>
-<p>This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement: “If condition A is true, do action X. If condition A is not true, do action Y.”<br></p>
+<p>This structure tells the computer to check a condition and the next step depends on whether the condition is true or false.</p>
+<p>It takes the basic form of</p>
+<pre><code>IF (condition A is TRUE)
+  do something
+ELSE 
+  do something different</code></pre>
+<p>In terms of our cheesy mashed potatoes algorithm, an <code>if</code> statement might look like this</p>
+<pre><code>ingredient &lt;- cheddar cheese
+
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)</code></pre>
 <p>In programming format, this narrative statement would look like:</p>
-<pre><code>IF conditionA == TRUE, do X
-ELSE do Y
-</code></pre>
+<pre><code>IF (condition A is TRUE)
+  do something
+ELSE 
+  do something different</code></pre>
 <p>Note that <code>else</code> here is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
 <p>We are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to “x if true, y in all other scenarios”.</p>
 <p>The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true. Our updated narrative statement might be: “If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.”<br></p>
@@ -250,7 +262,7 @@ else:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-26.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-27.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

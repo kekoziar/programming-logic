@@ -4,14 +4,34 @@ Many times in programming, we want to take a certain action only if a certain co
 
 To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an `if` statement, which is often combined with an `else` statement.\
 
-This structure tells the program to check a condition and the next step depends on whether the condition is true, or false. We can think of this as a narrative statement: "If condition A is true, do action X. If condition A is not true, do action Y."\
+This structure tells the computer to check a condition and the next step depends on whether the condition is true or false. 
+
+It takes the basic form of
+
+```
+IF (condition A is TRUE)
+  do something
+ELSE 
+  do something different
+```
+
+In terms of our cheesy mashed potatoes algorithm, an `if` statement might look like this
+
+```
+ingredient <- cheddar cheese
+
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+```
+
 
 In programming format, this narrative statement would look like: 
 
 ```
-IF conditionA == TRUE, do X
-ELSE do Y
-
+IF (condition A is TRUE)
+  do something
+ELSE 
+  do something different
 ```
 
 Note that `else` here is used equivalent to "if not true", meaning `A == FALSE`.\

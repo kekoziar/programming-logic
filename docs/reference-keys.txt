@@ -54,6 +54,7 @@ recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors
 flextables
+resources
 bd-demo-intro
 keeping-this-below-for-easy-reference-while-we-get-used-to-the-bookdown-format
 bd-demo-methods

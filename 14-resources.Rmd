@@ -1,0 +1,5 @@
+# Resources
+
+Here's a list of resources, cheat sheets, reference materials, and stuff we really like and recommend.
+
+- Introduction to Programming Logic [@lynne_ohanlon_introduction_2000]
