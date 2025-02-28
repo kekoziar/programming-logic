@@ -12,18 +12,32 @@ mean_value = (2 + 4 + 7 + 5 + 9) / 5
 \
 On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.
 
-```
-[SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...]
+**draft example, needs work**
 
 ```
+values = (2, 4, 7, 5, 9)
+
+sum = 0
+
+for x in 1 to length(values)
+  sum = sum + x
+  
+mean = sum / length(values)
+```
+
+In our cheesy mashed potatoes example, a function would be equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients. In programming parlance, these raw ingredients would be the "arguments".
 
 ## Arguments
 
-In a function, "arguments" are the inputs that you can specify. So for a `mean()` function, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. Optional arguments like this may come with a pre-supplied default, in this case that `na.rm = FALSE` and any `NA`values will be retained, unless this argument is manually changed to `TRUE`.\
+In a function, "arguments" are the inputs that you can specify. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or how many servings you want to make.
+
+For our `mean()` function example, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
+
+Optional arguments like this may come with a pre-supplied default, in this case that `na.rm = FALSE` and any `NA`values will be retained, unless this argument is manually changed to `TRUE`.\
 
 It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.\
 
-For example, let's return to the `mean()` function where our arguments are input (mandatory) and handling of `NA` values (optional).
+Putting this into practice, let's return to the `mean()` function where our arguments are input (mandatory) and handling of `NA` values (optional).
 
 If we only input the mandatory argument of specifying input:
 ```
@@ -40,7 +54,7 @@ values <- c(2, 4, 7, 5, 9, NA)
 mean(values, na.rm = TRUE)
 
 ```
-Now our output is `5.4` which is the mean of `values` exlucding `NA`.
+Now our output is `5.4` which is the mean of `values` excluding `NA`.
 
 ## Libraries
 
@@ -50,7 +64,9 @@ However, built in functions are often limited to basic tasks and do not include 
 
 The good news is that most programming languages will have optional "libraries" (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.\
 
-You can think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\
+_It gets a bit tricky to extend our cheesy mashed potatoes example to more complex topics like this, but libraries are kind of like this: You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created instant mashed potatoes, so all you have to do is add boiling water and stir. You can add your own flair to the resulting potatoes if you want, but the important part is that someone else has done a lot of the work and you can build off it, rather than doing it all yourself._
+
+You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\
 
 In the same way, your computer and your programming language of choice doesn't need to always have every single function on hand, which would take up a lot of space. Instead, it can "check out" (load) a "book" (collection of functions) created by another person. You can then use those additional functions the same way you would any function.\
 
@@ -134,15 +150,31 @@ Functions can then be called using the explicit `package:function` syntax, such 
 
 ## Activity reprise for functions
 
-Let's return to the Chapter 2 activity where you created an algorithm to make popcorn. 
+Let's return to the section 2 activity where your group created an algorithm to make popcorn. 
 
-Call back to popcorn - if function is make_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
-make_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make_popcorn() with defaults
-import cookbook; cookbook.make_popcorn()
-### From stephanie import make_popcorn()
-### From kat import make_popcorn()
+- How would you adapt your step by step narrative algorithm to be a function called `make_popcorn()`? 
+- What arguments would be included, and would you have any default values set?
+- Does your function look different than others in your group? How would you tell the computer which function you wanted to use?
 
 
-Libraries, packages, modules
-Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
-Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments 
+<details>
+<summary>Example functions</summary>
+
+```
+# specify which library we want to get a function from, in this case instructor Steph
+
+from Steph import make_popcorn()
+
+# set arguments and defaults
+
+make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, seasoning = TRUE)
+
+# example in use
+# keeping all defaults, but changing time because this microwave 
+# is known to burn popcorn at recommended time
+
+make_popcorn(time = 1.5 minutes)
+```
+</details>
+
+
