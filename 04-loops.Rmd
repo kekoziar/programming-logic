@@ -21,7 +21,7 @@ Let's see what this looks like in action using a basic list of cheesy mashed pot
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
   
 ```
@@ -37,7 +37,7 @@ Let's set up our trace exercise. The example loop is:
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
   
 ```
@@ -72,8 +72,6 @@ ft <- flextable(as.data.frame(ingredients_trace)) %>%
 
 ft
 ```
-
-As you were rewriting this, you may have noticed the typo `ingredents` in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
 
 Your paper is formatted so it's easy to see what's going on with variable during each loop iteration.  This is called a trace, and is often used in software development to help debug the program.  It is also a good exercise to help build mental muscles to read code.  
 
@@ -119,7 +117,9 @@ ft
 
 Note: It's okay if you didn't completely fill out both the variable `ingredient` and the function `write ingredient` because in this case they are the same.  But, it's important to check what actions are happening to variables when you do a trace.
 
-Youv'e now completed the first trace exercise of a pseudocode example. Congratulations! In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at "real" code doing the same task, to further build out your mental model.
+You've now completed the first trace exercise of a pseudocode example. Congratulations! 
+
+In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at "real" code doing the same task, to further build out your mental model.
 
 If we asked a computer to do the same task we did, using the R language, it would look something like this:
 <hr>
@@ -413,7 +413,7 @@ For example, recall the initial for loop:
 ```
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
 ```
 
