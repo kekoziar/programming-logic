@@ -139,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-02-27}
+\date{2025-02-28}
 
 \begin{document}
 \maketitle
@@ -448,7 +448,7 @@ Let's see what this looks like in action using a basic list of cheesy mashed pot
 \begin{verbatim}
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
   
 \end{verbatim}
@@ -465,7 +465,7 @@ Let's set up our trace exercise. The example loop is:
 \begin{verbatim}
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
   
 \end{verbatim}
@@ -590,8 +590,6 @@ Your paper should look something like this:
 
 \renewcommand*{\arraystretch}{1}
 
-As you were rewriting this, you may have noticed the typo \texttt{ingredents} in the for loop. The nice thing about using pseudocode is you don't need to worry about why your code isn't running if there are typos!
-
 Your paper is formatted so it's easy to see what's going on with variable during each loop iteration. This is called a trace, and is often used in software development to help debug the program. It is also a good exercise to help build mental muscles to read code.
 
 The next step is to fill in the values for each iteration of the loop.
@@ -700,7 +698,9 @@ Your paper will now look something like this:
 
 Note: It's okay if you didn't completely fill out both the variable \texttt{ingredient} and the function \texttt{write\ ingredient} because in this case they are the same. But, it's important to check what actions are happening to variables when you do a trace.
 
-Youv'e now completed the first trace exercise of a pseudocode example. Congratulations! In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at ``real'' code doing the same task, to further build out your mental model.
+You've now completed the first trace exercise of a pseudocode example. Congratulations!
+
+In this workshop, we're focused on the programming logic underlying code, rather than specific syntax, but it can be helpful to look at ``real'' code doing the same task, to further build out your mental model.
 
 If we asked a computer to do the same task we did, using the R language, it would look something like this:
 
@@ -1234,7 +1234,7 @@ For example, recall the initial for loop:
 \begin{verbatim}
 ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
-for ingredient in ingredents
+for ingredient in ingredients
   write(ingredient)
 \end{verbatim}
 
@@ -1352,13 +1352,12 @@ To do this, we can use conditional statements. The most commonly used format of 
 
 This structure tells the computer to check a condition and the next step depends on whether the condition is true or false.
 
-It takes the basic form of
+It takes the basic form of:
 
 \begin{verbatim}
 IF (condition A is TRUE)
   do something
-ELSE 
-  do something different
+  
 \end{verbatim}
 
 In terms of our cheesy mashed potatoes algorithm, an \texttt{if} statement might look like this
@@ -1368,34 +1367,84 @@ ingredient <- cheddar cheese
 
 IF (ingredient is (a type of hard cheese))
   grate(ingredient)
+  
 \end{verbatim}
 
-In programming format, this narrative statement would look like:
+In that example, we've told the computer what to do \emph{if} the condition is true. We can also specify what to do if the condition is false.
+
+For our cheesy mashed potatoes algorithm, we may want to cut cheese into cubes if it is not a hard cheese:
+
+\begin{verbatim}
+ingredient <- cheddar cheese
+
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE
+  cube(ingredient)
+  
+\end{verbatim}
+
+In a generic programming format, a complete \texttt{if\ else} statement would look like:
 
 \begin{verbatim}
 IF (condition A is TRUE)
   do something
 ELSE 
   do something different
+  
 \end{verbatim}
 
-Note that \texttt{else} here is used equivalent to ``if not true'', meaning \texttt{A\ ==\ FALSE}.\\
+Here, \texttt{else} is used equivalent to ``if not true'', meaning \texttt{A\ ==\ FALSE}.\\
 
-We are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to ``x if true, y in all other scenarios''.
+Furthermore, we are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to ``do something if true, in all other scenarios do something different''. The \texttt{else\ if} (written as \texttt{elif} in some programming languages) concept allows us to add another sequential check if the \texttt{if} statement is not true.
 
-The \texttt{else\ if} (written as \texttt{elif} in some programming languages) concept allows us to add another sequential check if the \texttt{if} statement is not true. Our updated narrative statement might be: ``If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.''\\
-
-In programming format, this updated narrative statement would look like:
+An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don't put it in the potatoes.
 
 \begin{verbatim}
-IF conditionA == TRUE, do X
-ELSE IF conditionB == TRUE, do Z
-ELSE do Y
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE IF (ingredient is (a type of soft cheese))
+  cube(ingredient)
+ELSE
+  don't use
+  
 \end{verbatim}
+
+In generic programming format, this updated statement would look like:
+
+\begin{verbatim}
+IF (condition A is TRUE)
+  do something
+ELSE IF (condition B is true)
+  do something different
+ELSE 
+  do something even more different
+  
+\end{verbatim}
+
+\textbf{Exercise}: Let's try a similar example with the popcorn algorithm from section 2.
+
+Write out an \texttt{if\ else} statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
+Write out an \texttt{if,\ else\ if,\ else} statement that includes an air fry scenario.
+
+Example statement
+
+\begin{verbatim}
+IF (popcorn_type is microwave)
+  use microwave
+ELSE IF (popcorn_type is stovetop)
+  use stove
+ELSE 
+  use air fryer
+\end{verbatim}
+
+Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.
+
+\hfill\break
 
 \section{Boolean Operators}\label{boolean-operators}
 
-In programming, most things boil down to \texttt{true} or \texttt{false}. (Sometimes you may see true/false capitalized as \texttt{TRUE} and \texttt{FALSE}, but the concept is the same.)\\
+In programming, most things boil down to \texttt{true} or \texttt{false}. (Sometimes you may see true/false capitalized as \texttt{TRUE} and \texttt{FALSE}, but the concept is the same. We'll use both ways throughout.)\\
 
 Programming uses Boolean operators such as:\\
 
@@ -1419,9 +1468,34 @@ Programming uses Boolean operators such as:\\
 
 \section{\texorpdfstring{Exercise - \texttt{ifelse} trace}{Exercise - ifelse trace}}\label{exercise---ifelse-trace}
 
-Let's look at some examples of conditional statements in practice.
+Let's look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.
+
+First, for our recipe example:
 
 \begin{verbatim}
+if cheese == hard:
+  print("Grate the cheese.")
+else if cheese == hard:
+  print("Cube the cheese.")
+else:
+  print("Do not use this in this recipe.")
+  
+\end{verbatim}
+
+If we have \texttt{cheese\ \textless{}-\ parmesan} we would expect this statement to print out \texttt{Grate\ the\ cheese}. If we have \texttt{cheese\ \textless{}-\ brie} we would expect the output to be \texttt{Cube\ the\ cheese}. And if we have \texttt{cheese\ \textless{}-\ broccoli} we would expect the output to be \texttt{Do\ not\ use\ this\ in\ the\ recipe}.
+
+\emph{Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we're using our cheese-based expertise to draw conclusions, but as we've covered, we would never assume a computer would know which cheeses were hard or soft!}
+
+\textbf{Exercise}
+
+\emph{For this exercise, want you to type the answer in the chat, but don't press enter until we tell you. We'll say, \emph{3, 2, 1, enter} then you press enter when we say \emph{enter}.}
+
+For the code below, what will be the printed output?
+
+\begin{verbatim}
+x <- 37
+y <- 42
+
 if x == y:
   print("values are equal")
 else if x > y:
@@ -1431,26 +1505,24 @@ else:
   
 \end{verbatim}
 
-For the first trace, we will set the values of \texttt{x} and \texttt{y} as:
-
-\begin{verbatim}
-x <- 37
-y <- 42
-\end{verbatim}
-
-What will be the printed output from this \texttt{ifelse} section?\\
-
 Answer
 
 x must be less than y
 
 \hfill\break
 
-What if we reset \texttt{x} and \texttt{y} to:
+What would be the answer if we instead set \texttt{x} and \texttt{y} to:
 
 \begin{verbatim}
 x <- 75
 y <- 9
+
+if x == y:
+  print("values are equal")
+else if x > y:
+  print("x greater than y")
+else:
+  print("x must be less than y")
 \end{verbatim}
 
 Answer
@@ -1463,7 +1535,7 @@ x greater than y
 
 \subsection{Order of operations}\label{order-of-operations}
 
-Order of operations is critical for conditionals. The computer will go through each condition \textbf{in order}, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
+Order of operations is critical for conditionals. The computer will go through each condition \emph{in order}, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
 
 \textbf{{[}{[}insert example here{]}{]}}
 
@@ -1759,22 +1831,24 @@ SELECT * FROM OceanBuoys
 WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 \end{verbatim}
 
-Your preferred approach for navigating and understanding unfamiliar code may vary.\\
+One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do.
 
-One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
+\textbf{Exercise}: Using what we've learned in prior sections, try to answer the following questions.
 
 \begin{itemize}
 \tightlist
 \item
-  What does the \texttt{OceanBuoys} term most likely refer to?
+  What does the \texttt{OceanBuoys} term most likely refer to - object/variable, or function?
 \item
-  What do you think the \texttt{SELECT} function does?
+  Assuming that \texttt{SELECT} is a function, what might it do?
 \item
-  What does \texttt{*} indicate, in combination with \texttt{SELECT}?
+  The \texttt{*} character is new. What might \texttt{*} indicate, in combination with \texttt{SELECT}?
 \item
-  Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Country} and \texttt{BuoyName} refer to?
+  Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Ocean} and \texttt{BuoyName} refer to, in terms of variables?
 \item
   Can you guess (or feel free to use Google) what \texttt{LIKE\ \textquotesingle{}S\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}K\%\textquotesingle{}} would indicate?
+\item
+  Note the \texttt{;} at the end of the line starting with \texttt{WHERE}. What might this mean?
 \end{itemize}
 
 Do your answers match these?
@@ -1782,34 +1856,46 @@ Do your answers match these?
 \begin{itemize}
 \tightlist
 \item
-  The \texttt{OceanBuoys} term here refers to a table or dataframe.
+  The \texttt{OceanBuoys} term here refers to a table or dataframe or matrix (really, any kind of tabular format).
 \item
-  The \texttt{SELECT} function selects columns from a table.
+  The \texttt{SELECT} function selects columns from the \texttt{OceanBuoys} table.
 \item
-  The \texttt{*} here indicates that we want to return all columns from the table.
+  The \texttt{*} is a wildcard matching symbol. It indicates that we want to return \emph{all} columns from the table, no matter what their column names are.
 \item
-  The \texttt{OceanBuoys} table must have columns named \texttt{Country} and \texttt{BuoyName}.
+  The \texttt{OceanBuoys} table must have columns named \texttt{Ocean} and \texttt{BuoyName}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If we wanted to return only these columns, the syntax could be: \texttt{SELECT\ Ocean,\ BuoyName\ FROM\ OceanBuoys}
+  \end{itemize}
 \item
   \texttt{LIKE} is used for pattern matching. This code is matching values that start with ``S'' or with ``K''.
 \end{itemize}
 
 \hfill\break
+- The conditions after \texttt{WHERE} are the row-based conditions for what will be returned, analogous to \texttt{SELECT} for the column-specific condition.
+- The \texttt{;} is used to indicate the end of a statement in SQL. It tells the computer that the `thought' is finished, and the action of \emph{doing} the thought can commence.
 
 Now, can you write out a narrative of what you see the code is trying to do?\\
 
 Example written narrative
 
-Starting from the \texttt{OceanBuoys} table, return all columns but only rows where \texttt{Country} is equal to ``Spain'' \emph{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''.
+This code is returning a subset of data from the \texttt{OceanBuoys} table. Starting from the full \texttt{OceanBuoys} table, return all the columns from this table, but keep only rows where \texttt{Ocean} is equal to ``Atlantic'' \emph{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''. The returned data should be tabular, with the same number of columns as the full \texttt{OceanBuoys} table, but likely with less rows (only those that met the condition).
 
 \hfill\break
 
 \section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
 
-Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses `nested' \texttt{for} loops, meaning a second loop occurs within the first loops. It also uses nested \texttt{if\ else} statements with the \texttt{for} loops and within other \texttt{if\ else} statements.\\
+Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.
 
-In this example, we're less concerned about understanding every detail about what the code is doing, and more about understanding where each loop beings and ends. This is a useful skill - looking at code and understanding where the boundaries are for each self-contained function. It is especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\\
+This is a useful skill and especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\\
 
-\textbf{Exercise}: Review the code chunk below and identify on which line each \texttt{for} loop and each \texttt{if\ else} statement starts and ends?
+Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested \texttt{for} loops, and nested \texttt{if\ else} statements with the \texttt{for} loops and within other \texttt{if\ else} statements.\\
+
+The code may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends.
+
+\textbf{Exercise}: Review the code chunk below and identify on which line each \texttt{for} loop and each \texttt{if\ else} statement starts and ends.
 
 \begin{itemize}
 \item
@@ -2005,9 +2091,9 @@ Start and end locations
 
 \section{New syntax and terms (in R)}\label{new-syntax-and-terms-in-r}
 
-While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\\
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\\
 
-In the code example below, note the new symbol \texttt{\%\textgreater{}\%} and \texttt{\%in\%} and the new functions \texttt{mutate()} and \texttt{paste()}. The \texttt{select()} function at least is more familiar from the example above, and \texttt{ifelse} is an \texttt{if\ else} statement.
+Here is an example of R code:
 
 \begin{verbatim}
 1.  df_new <- df %>% 
@@ -2017,7 +2103,7 @@ In the code example below, note the new symbol \texttt{\%\textgreater{}\%} and \
   
 \end{verbatim}
 
-Task: go line by line and annotate, in your own words, what that line of code is doing.\\
+\textbf{Exercise}: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.\\
 
 Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below, to guide your annotation.
 
@@ -2063,9 +2149,9 @@ Each line has a new take on the same logic we've covered in prior sections; a br
   \item
     Looking at the section \texttt{survey\_wave\ \%in\%\ c("first",\ "second")}, what do you think this would translate to, as a written explanation of the task here?
   \end{itemize}
+\item
+  Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
 \end{itemize}
-
-Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
 
 Example narrative
 

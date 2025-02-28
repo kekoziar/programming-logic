@@ -96,34 +96,68 @@
 <p>Many times in programming, we want to take a certain action only if a certain condition is satisfied.<br></p>
 <p>To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an <code>if</code> statement, which is often combined with an <code>else</code> statement.<br></p>
 <p>This structure tells the computer to check a condition and the next step depends on whether the condition is true or false.</p>
-<p>It takes the basic form of</p>
+<p>It takes the basic form of:</p>
 <pre><code>IF (condition A is TRUE)
   do something
-ELSE 
-  do something different</code></pre>
+  </code></pre>
 <p>In terms of our cheesy mashed potatoes algorithm, an <code>if</code> statement might look like this</p>
 <pre><code>ingredient &lt;- cheddar cheese
 
 IF (ingredient is (a type of hard cheese))
-  grate(ingredient)</code></pre>
-<p>In programming format, this narrative statement would look like:</p>
+  grate(ingredient)
+  </code></pre>
+<p>In that example, we’ve told the computer what to do <em>if</em> the condition is true. We can also specify what to do if the condition is false.</p>
+<p>For our cheesy mashed potatoes algorithm, we may want to cut cheese into cubes if it is not a hard cheese:</p>
+<pre><code>ingredient &lt;- cheddar cheese
+
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE
+  cube(ingredient)
+  </code></pre>
+<p>In a generic programming format, a complete <code>if else</code> statement would look like:</p>
 <pre><code>IF (condition A is TRUE)
   do something
 ELSE 
-  do something different</code></pre>
-<p>Note that <code>else</code> here is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
-<p>We are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to “x if true, y in all other scenarios”.</p>
-<p>The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true. Our updated narrative statement might be: “If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y.”<br></p>
-<p>In programming format, this updated narrative statement would look like:</p>
-<pre><code>IF conditionA == TRUE, do X
-ELSE IF conditionB == TRUE, do Z
-ELSE do Y
+  do something different
+  </code></pre>
+<p>Here, <code>else</code> is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
+<p>Furthermore, we are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to “do something if true, in all other scenarios do something different”. The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true.</p>
+<p>An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don’t put it in the potatoes.</p>
+<pre><code>IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE IF (ingredient is (a type of soft cheese))
+  cube(ingredient)
+ELSE
+  don't use
+  </code></pre>
+<p>In generic programming format, this updated statement would look like:</p>
+<pre><code>IF (condition A is TRUE)
+  do something
+ELSE IF (condition B is true)
+  do something different
+ELSE 
+  do something even more different
+  </code></pre>
+<p><strong>Exercise</strong>: Let’s try a similar example with the popcorn algorithm from section 2.</p>
+<p>Write out an <code>if else</code> statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
+Write out an <code>if, else if, else</code> statement that includes an air fry scenario.</p>
+<details><summary>
+Example statement
+</summary><pre><code>IF (popcorn_type is microwave)
+  use microwave
+ELSE IF (popcorn_type is stovetop)
+  use stove
+ELSE 
+  use air fryer
 </code></pre>
+<p>Your version may look different, and that’s fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.</p>
+</details><p><br></p>
 <div id="boolean-operators" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> Boolean Operators<a class="anchor" aria-label="anchor" href="#boolean-operators"><i class="fas fa-link"></i></a>
 </h2>
-<p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same.)<br></p>
+<p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same. We’ll use both ways throughout.)<br></p>
 <p>Programming uses Boolean operators such as:<br></p>
 <ul>
 <li>
@@ -144,32 +178,48 @@ ELSE do Y
 <h2>
 <span class="header-section-number">6.2</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
 </h2>
-<p>Let’s look at some examples of conditional statements in practice.</p>
-<pre><code>if x == y:
+<p>Let’s look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.</p>
+<p>First, for our recipe example:</p>
+<pre><code>if cheese == hard:
+  print("Grate the cheese.")
+else if cheese == hard:
+  print("Cube the cheese.")
+else:
+  print("Do not use this in this recipe.")
+  </code></pre>
+<p>If we have <code>cheese &lt;- parmesan</code> we would expect this statement to print out <code>Grate the cheese</code>. If we have <code>cheese &lt;- brie</code> we would expect the output to be <code>Cube the cheese</code>. And if we have <code>cheese &lt;- broccoli</code> we would expect the output to be <code>Do not use this in the recipe</code>.</p>
+<p><em>Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we’re using our cheese-based expertise to draw conclusions, but as we’ve covered, we would never assume a computer would know which cheeses were hard or soft!</em></p>
+<p><strong>Exercise</strong></p>
+<p><em>For this exercise, want you to type the answer in the chat, but don’t press enter until we tell you. We’ll say, <em>3, 2, 1, enter</em> then you press enter when we say <em>enter</em>.</em></p>
+<p>For the code below, what will be the printed output?</p>
+<pre><code>x &lt;- 37
+y &lt;- 42
+
+if x == y:
   print("values are equal")
 else if x &gt; y:
   print("x greater than y")
 else:
   print("x must be less than y")
   </code></pre>
-<p>For the first trace, we will set the values of <code>x</code> and <code>y</code> as:</p>
-<pre><code>x &lt;- 37
-y &lt;- 42
-</code></pre>
-<p>What will be the printed output from this <code>ifelse</code> section?<br></p>
 <details><summary>
 Answer
-</summary>
-x must be less than y
+</summary><p>x must be less than y</p>
 </details><p><br></p>
-<p>What if we reset <code>x</code> and <code>y</code> to:</p>
+<p>What would be the answer if we instead set <code>x</code> and <code>y</code> to:</p>
 <pre><code>x &lt;- 75
 y &lt;- 9
+
+if x == y:
+  print("values are equal")
+else if x &gt; y:
+  print("x greater than y")
+else:
+  print("x must be less than y")
 </code></pre>
 <details><summary>
 Answer
-</summary>
-x greater than y
+</summary><p>x greater than y</p>
 </details><p><br></p>
 </div>
 <div id="caveats-1" class="section level2" number="6.3">
@@ -180,7 +230,7 @@ x greater than y
 <h3>
 <span class="header-section-number">6.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
 </h3>
-<p>Order of operations is critical for conditionals. The computer will go through each condition <strong>in order</strong>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
+<p>Order of operations is critical for conditionals. The computer will go through each condition <em>in order</em>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
 <p><strong>[[insert example here]]</strong></p>
 </div>
 <div id="matching-parentheses" class="section level3" number="6.3.2">
@@ -262,7 +312,7 @@ else:
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-27.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
