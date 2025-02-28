@@ -39,7 +39,6 @@ ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredients
   write(ingredient)
-  
 ```
 At the top of your paper, write out the `ingredients` assignment (`ingredients <- cheddar cheese, potatoes, milk, salt, butter`).  
 
@@ -139,11 +138,9 @@ Now that we've practiced a trace using text, let's practice using number ranges 
 For this loop trace, you'll write out the output of each iteration of this loop:
 
 ```
-
 for x in 0 to 5 
   write x
   write x*2
-  
 ```
 
 Like in the ingredients trace example, you'll create a table with headers for all of the variables used within the `for` loop code block.  Starting on the left, write the term `loop iteration`, then `write(x)` in the center of the line, then the term `write(x*2)` on the right of the line.
@@ -194,7 +191,7 @@ By this point, you're probably thinking that doing a manual trace is a bit tedio
 
 So far, we've tackled one loop at a time. But loops are flexible and can be "nested", or embedded within each other.
 
-Let's look at an example the following matrix, which is created using two `for` loops
+Let's look at an example the following dataframe, which is created using two `for` loops
 
 ```{r loop-exercise-2, echo = FALSE}
 library(flextable)
@@ -248,7 +245,7 @@ ft
 ```
 
 
-The pseudocode for how this matrix was created is as follows:
+The pseudocode for how this dataframe was created is as follows:
 
 ```
 num_rows = 4
@@ -259,7 +256,6 @@ matrix <- []
 for (i in 1 to num_rows)
   for (j in 1 to num_col)
     matrix[i,j] <- (3*(i-1))+(j*2)
-
 ```
 
 Before creating the table to help trace the code, answer the following
@@ -451,7 +447,6 @@ Two other types of loops are a `do while` loop (check at end) and an `until` loo
 do
   something
 while (condition is TRUE)
-
 ```
 
 The logic in the `do while` loop is while a condition is true, the loop will run.  
@@ -463,7 +458,6 @@ For the `until` loop, it's slightly different. The loop structure is like this
 do
   something
 until (condition is TRUE)
-
 ```
 
 The logic is opposite of a `do while` loop.  It will run while the condition is false, and will only exit when the condition is true.
@@ -479,7 +473,6 @@ i <- 1
 while (i < condition_check):
   for j in 1 to 3:
     write (i*j)+i
-
 ```
 
 I'll give you all a few minutes to write out your trace.  Once you're done, 
