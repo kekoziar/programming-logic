@@ -343,11 +343,13 @@ A \textbf{list} is just that, a list of data elements. The nice thing about list
 
 \texttt{cheeses\ \textless{}-\ (8,\ smoked\ gouda,\ 0,\ milk,\ 16,\ cheddar,\ .25,\ limburger)}
 
-An \textbf{Array} is a common data structure, which at its base is a single-dimension structure. You'll commonly see them represented with square brackets. The data in all cells (or elements) of an Array needs to be the same. So, you can have a text (or string) array.
+An \textbf{array} is a common data structure, which at its base is a single-dimension structure. You'll commonly see an array represented with square brackets.
+
+You may encounter text elements in an array
 
 \texttt{ingredients\ =\ {[}cheese,\ potatoes,\ milk,\ salt,\ butter{]}}
 
-Or an array of integers
+or an array of integers
 
 \texttt{quantities\ \textless{}-\ {[}16,\ 32,\ 8,\ 0,\ 4{]}}
 
@@ -355,9 +357,11 @@ or floats
 
 \texttt{quantities\ =\ {[}16,\ 32,\ 8,\ 0.125,\ 4{]}}
 
-Most computer languages will automatically convert integers to floats, but not the other way around.
+The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. Most computer languages will automatically convert integers to floats, but not the other way around.
 
-A \textbf{Matrix} is a multi-dimensional array and has the same restrictions. Honestly, it depends on who you're talking to for how they refer to arrays and matrices, and it's likely highly dependent on the type of math they're using in their research.
+You may also see this data structure called a \textbf{vector}.
+
+A \textbf{matrix} is a multi-dimensional array and has the same restrictions as an array, in terms of same data type used throughout. Honestly, it depends on who you're talking to for how they refer to arrays and matrices, and it's likely highly dependent on the type of math they're using in their research.
 
 A matrix will have both rows and columns. The number of elements in each row needs to be the same, and the same with the number of elements in each column.
 
@@ -378,7 +382,7 @@ for \texttt{ingredients\ \textless{}-\ {[}cheese,\ potatoes,\ milk,\ salt,\ butt
 
 the value in \texttt{ingredients{[}1{]}} is \texttt{cheese}
 
-if we expand it into an array
+if we expand it into a matrix
 
 \begin{equation}
 ingredients =
@@ -392,6 +396,94 @@ ingredients =
 the value in \texttt{ingredients{[}2,4{]}} is \(Muenster\)
 
 I want to share that I've been programming for a long time, and have done all of the math, and I \emph{still} will have to double-check that the index I'm referring to in multidimensional arrays or matrices is listed in the correct order.
+
+A \textbf{dataframe} is a tabular form with rows and columns, much like a matrix. However, dataframes can contain mixed data types, for instance a column of integers, a column of strings, and another column of floats. Dataframes can also have column names and row names.
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}}
+
+
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{ingredients}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{quantities}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{importance}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endfirsthead 
+
+\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{ingredients}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{quantities}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{importance}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{FFFFFF}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{smoked\ gouda\ cheese}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{all}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{FFFFFF}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{potatoes}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3\ lb}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{1}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{FFFFFF}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{milk}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.5\ c}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{FFFFFF}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{salt}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{to\ taste}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=1pt}-}
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\cellcolor[HTML]{FFFFFF}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{butter}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 2pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{8\ tbsp}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 1pt}>{\centering}m{\dimexpr 0.75in+0\tabcolsep}!{\color[HTML]{000000}\vrule width 2pt}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{2}}}} \\
+
+\noalign{\global\arrayrulewidth 2pt}\arrayrulecolor[HTML]{000000}
+
+\hhline{|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-|>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \subsection{To make things more confusing: A note on indices}\label{to-make-things-more-confusing-a-note-on-indices}
 
@@ -413,7 +505,7 @@ For the next items in review, we want you to type the answer, but don't press en
 \item
   For the following array \texttt{cheese\ \textless{}-\ {[}Cheddar,\ Gouda,\ Parmesan,\ Muenster{]}}, what is the value of \texttt{cheese{[}4{]}}
 \item
-  For the following array, \begin{equation}
+  For the following matrix, \begin{equation}
   potatoes =
   \begin{bmatrix}
   Yukon\text{ }Gold & Red\text{ }Gold & Gala \\
@@ -467,7 +559,6 @@ ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredients
   write(ingredient)
-  
 \end{verbatim}
 
 At the top of your paper, write out the \texttt{ingredients} assignment (\texttt{ingredients\ \textless{}-\ cheddar\ cheese,\ potatoes,\ milk,\ salt,\ butter}).
@@ -475,18 +566,6 @@ At the top of your paper, write out the \texttt{ingredients} assignment (\texttt
 On the line below that we're going to create headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{ingredient} in the center of the line, then the term \texttt{write} on the right of the line.
 
 Your paper should look something like this:
-
-\begin{verbatim}
-## Warning: package 'flextable' was built under R version 4.4.2
-\end{verbatim}
-
-\begin{verbatim}
-## Warning: package 'officer' was built under R version 4.4.2
-\end{verbatim}
-
-\begin{verbatim}
-## Warning: package 'shiny' was built under R version 4.4.2
-\end{verbatim}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -728,11 +807,9 @@ Now that we've practiced a trace using text, let's practice using number ranges 
 For this loop trace, you'll write out the output of each iteration of this loop:
 
 \begin{verbatim}
-
 for x in 0 to 5 
   write x
   write x*2
-  
 \end{verbatim}
 
 Like in the ingredients trace example, you'll create a table with headers for all of the variables used within the \texttt{for} loop code block. Starting on the left, write the term \texttt{loop\ iteration}, then \texttt{write(x)} in the center of the line, then the term \texttt{write(x*2)} on the right of the line.
@@ -851,7 +928,7 @@ By this point, you're probably thinking that doing a manual trace is a bit tedio
 
 So far, we've tackled one loop at a time. But loops are flexible and can be ``nested'', or embedded within each other.
 
-Let's look at an example the following matrix, which is created using two \texttt{for} loops
+Let's look at an example the following dataframe, which is created using two \texttt{for} loops
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -931,7 +1008,7 @@ Let's look at an example the following matrix, which is created using two \textt
 
 \renewcommand*{\arraystretch}{1}
 
-The pseudocode for how this matrix was created is as follows:
+The pseudocode for how this dataframe was created is as follows:
 
 \begin{verbatim}
 num_rows = 4
@@ -1614,17 +1691,32 @@ mean_value = (2 + 4 + 7 + 5 + 9) / 5
 \hfill\break
 On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.
 
+\textbf{draft example, needs work}
+
 \begin{verbatim}
-[SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...]
+values = (2, 4, 7, 5, 9)
+
+sum = 0
+
+for x in 1 to length(values)
+  sum = sum + x
+  
+mean = sum / length(values)
 \end{verbatim}
+
+In our cheesy mashed potatoes example, a function would be equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients. In programming parlance, these raw ingredients would be the ``arguments''.
 
 \section{Arguments}\label{arguments}
 
-In a function, ``arguments'' are the inputs that you can specify. So for a \texttt{mean()} function, the primary argument would be what kind of input to put in: \texttt{mean(x)} where \texttt{x} is a list or vector of values. Another argument might be an option for how to handle missing or \texttt{NA} values: \texttt{mean(x,\ na.rm\ =\ FALSE)} where the default value of \texttt{na.rm} is \texttt{FALSE}, indicating that \texttt{NA} values will \emph{not} be removed from the calculation. Optional arguments like this may come with a pre-supplied default, in this case that \texttt{na.rm\ =\ FALSE} and any \texttt{NA}values will be retained, unless this argument is manually changed to \texttt{TRUE}.\\
+In a function, ``arguments'' are the inputs that you can specify. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or how many servings you want to make.
+
+For our \texttt{mean()} function example, the primary argument would be what kind of input to put in: \texttt{mean(x)} where \texttt{x} is a list or vector of values. Another argument might be an option for how to handle missing or \texttt{NA} values: \texttt{mean(x,\ na.rm\ =\ FALSE)} where the default value of \texttt{na.rm} is \texttt{FALSE}, indicating that \texttt{NA} values will \emph{not} be removed from the calculation.
+
+Optional arguments like this may come with a pre-supplied default, in this case that \texttt{na.rm\ =\ FALSE} and any \texttt{NA}values will be retained, unless this argument is manually changed to \texttt{TRUE}.\\
 
 It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.\\
 
-For example, let's return to the \texttt{mean()} function where our arguments are input (mandatory) and handling of \texttt{NA} values (optional).
+Putting this into practice, let's return to the \texttt{mean()} function where our arguments are input (mandatory) and handling of \texttt{NA} values (optional).
 
 If we only input the mandatory argument of specifying input:
 
@@ -1642,7 +1734,7 @@ values <- c(2, 4, 7, 5, 9, NA)
 mean(values, na.rm = TRUE)
 \end{verbatim}
 
-Now our output is \texttt{5.4} which is the mean of \texttt{values} exlucding \texttt{NA}.
+Now our output is \texttt{5.4} which is the mean of \texttt{values} excluding \texttt{NA}.
 
 \section{Libraries}\label{libraries}
 
@@ -1652,7 +1744,9 @@ However, built in functions are often limited to basic tasks and do not include 
 
 The good news is that most programming languages will have optional ``libraries'' (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.\\
 
-You can think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\\
+\emph{It gets a bit tricky to extend our cheesy mashed potatoes example to more complex topics like this, but libraries are kind of like this: You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created instant mashed potatoes, so all you have to do is add boiling water and stir. You can add your own flair to the resulting potatoes if you want, but the important part is that someone else has done a lot of the work and you can build off it, rather than doing it all yourself.}
+
+You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\\
 
 In the same way, your computer and your programming language of choice doesn't need to always have every single function on hand, which would take up a lot of space. Instead, it can ``check out'' (load) a ``book'' (collection of functions) created by another person. You can then use those additional functions the same way you would any function.\\
 
@@ -1746,17 +1840,35 @@ Functions can then be called using the explicit \texttt{package:function} syntax
 
 \section{Activity reprise for functions}\label{activity-reprise-for-functions}
 
-Let's return to the Chapter 2 activity where you created an algorithm to make popcorn.
+Let's return to the section 2 activity where your group created an algorithm to make popcorn.
 
-Call back to popcorn - if function is make\_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
-make\_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make\_popcorn() with defaults
-import cookbook; cookbook.make\_popcorn()
-\#\#\# From stephanie import make\_popcorn()
-\#\#\# From kat import make\_popcorn()
+\begin{itemize}
+\tightlist
+\item
+  How would you adapt your step by step narrative algorithm to be a function called \texttt{make\_popcorn()}?
+\item
+  What arguments would be included, and would you have any default values set?
+\item
+  Does your function look different than others in your group? How would you tell the computer which function you wanted to use?
+\end{itemize}
 
-Libraries, packages, modules
-Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
-Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments
+Example functions
+
+\begin{verbatim}
+# specify which library we want to get a function from, in this case instructor Steph
+
+from Steph import make_popcorn()
+
+# set arguments and defaults
+
+make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, seasoning = TRUE)
+
+# example in use
+# keeping all defaults, but changing time because this microwave 
+# is known to burn popcorn at recommended time
+
+make_popcorn(time = 1.5 minutes)
+\end{verbatim}
 
 \chapter{Comments and Names}\label{comments-and-names}
 
@@ -2164,6 +2276,22 @@ Then, make another new column called ``survey\_type''. The values in this column
 \hfill\break
 
 \section{add example for C/C++}\label{add-example-for-cc}
+
+\section{New functions in Stata}\label{new-functions-in-stata}
+
+We'll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor's experience, Stata is not user-friendly, but your mileage may vary!)
+
+So, relying on what we've learned so far and context clues, what is the code below doing?
+
+\begin{verbatim}
+replace variable = variable[_n-1] if missing(variable)
+\end{verbatim}
+
+What is Stata doing?
+
+This is a bit of code to replace any missing values of \texttt{variable} with with previous (n-1) value of `variable.
+
+There are \href{https://www.stata.com/support/faqs/data-management/replacing-missing-values/}{many ways to replace missing values in Stata}, this is one.
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 

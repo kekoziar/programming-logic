@@ -100,15 +100,25 @@
 mean_value = (2 + 4 + 7 + 5 + 9) / 5</code></pre>
 <p><br>
 On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.</p>
-<pre><code>[SL:insert pseucode to calculate mean without using sum() or len(), use a for loop maybe to call back? although I keep coming back to using len() at least...]
-</code></pre>
+<p><strong>draft example, needs work</strong></p>
+<pre><code>values = (2, 4, 7, 5, 9)
+
+sum = 0
+
+for x in 1 to length(values)
+  sum = sum + x
+  
+mean = sum / length(values)</code></pre>
+<p>In our cheesy mashed potatoes example, a function would be equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients. In programming parlance, these raw ingredients would be the “arguments”.</p>
 <div id="arguments" class="section level2" number="7.1">
 <h2>
 <span class="header-section-number">7.1</span> Arguments<a class="anchor" aria-label="anchor" href="#arguments"><i class="fas fa-link"></i></a>
 </h2>
-<p>In a function, “arguments” are the inputs that you can specify. So for a <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function, the primary argument would be what kind of input to put in: <code>mean(x)</code> where <code>x</code> is a list or vector of values. Another argument might be an option for how to handle missing or <code>NA</code> values: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation. Optional arguments like this may come with a pre-supplied default, in this case that <code>na.rm = FALSE</code> and any <code>NA</code>values will be retained, unless this argument is manually changed to <code>TRUE</code>.<br></p>
+<p>In a function, “arguments” are the inputs that you can specify. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or how many servings you want to make.</p>
+<p>For our <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function example, the primary argument would be what kind of input to put in: <code>mean(x)</code> where <code>x</code> is a list or vector of values. Another argument might be an option for how to handle missing or <code>NA</code> values: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation.</p>
+<p>Optional arguments like this may come with a pre-supplied default, in this case that <code>na.rm = FALSE</code> and any <code>NA</code>values will be retained, unless this argument is manually changed to <code>TRUE</code>.<br></p>
 <p>It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.<br></p>
-<p>For example, let’s return to the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function where our arguments are input (mandatory) and handling of <code>NA</code> values (optional).</p>
+<p>Putting this into practice, let’s return to the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function where our arguments are input (mandatory) and handling of <code>NA</code> values (optional).</p>
 <p>If we only input the mandatory argument of specifying input:</p>
 <pre><code>values &lt;- c(2, 4, 7, 5, 9, NA)
 mean(values)
@@ -118,7 +128,7 @@ mean(values)
 <pre><code>values &lt;- c(2, 4, 7, 5, 9, NA)
 mean(values, na.rm = TRUE)
 </code></pre>
-<p>Now our output is <code>5.4</code> which is the mean of <code>values</code> exlucding <code>NA</code>.</p>
+<p>Now our output is <code>5.4</code> which is the mean of <code>values</code> excluding <code>NA</code>.</p>
 </div>
 <div id="libraries" class="section level2" number="7.2">
 <h2>
@@ -127,7 +137,8 @@ mean(values, na.rm = TRUE)
 <p>Programming languages will have a variety of functions for common tasks ready to use without any additional work. These are called “built in” functions and are available to use right away.<br></p>
 <p>However, built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.</p>
 <p>The good news is that most programming languages will have optional “libraries” (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.<br></p>
-<p>You can think of programming libraries as serving a role similar to actual libraries. For instance, you don’t need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!<br></p>
+<p><em>It gets a bit tricky to extend our cheesy mashed potatoes example to more complex topics like this, but libraries are kind of like this: You want to make cheesy mashed potatoes from scratch, but don’t have the time to do so. Luckily someone else has created instant mashed potatoes, so all you have to do is add boiling water and stir. You can add your own flair to the resulting potatoes if you want, but the important part is that someone else has done a lot of the work and you can build off it, rather than doing it all yourself.</em></p>
+<p>You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don’t need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!<br></p>
 <p>In the same way, your computer and your programming language of choice doesn’t need to always have every single function on hand, which would take up a lot of space. Instead, it can “check out” (load) a “book” (collection of functions) created by another person. You can then use those additional functions the same way you would any function.<br></p>
 <p>This set up saves computer disk space, ensures you don’t have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference “book” so output should be the same for the same input, across users).<br></p>
 <p>A good rule of thumb is if it <em>seems</em> like the function you want is broadly useful, then someone has likely created a library containing it. This is also true for niche or domain-specific functions: if the task is one that comes up a lot in analysis, there is likely a library that has functions for those analysis tasks.<br></p>
@@ -202,16 +213,28 @@ import numpy as np</code></pre>
 <h2>
 <span class="header-section-number">7.4</span> Activity reprise for functions<a class="anchor" aria-label="anchor" href="#activity-reprise-for-functions"><i class="fas fa-link"></i></a>
 </h2>
-<p>Let’s return to the Chapter 2 activity where you created an algorithm to make popcorn.</p>
-<p>Call back to popcorn - if function is make_popcorn - what is that for? What are your arguments - is it kernels or is it a bag, what time?
-make_popcorn(type = kernels, time = 15 minutes, butter = TRUE, salt = TRUE) vs make_popcorn() with defaults
-import cookbook; cookbook.make_popcorn()
-### From stephanie import make_popcorn()
-### From kat import make_popcorn()</p>
-<p>Libraries, packages, modules
-Example: min (R), max (Python), mean (SQL), regression (R, Python, Stata)
-Can look up documentation, most should specify arguments in each function and syntax, as well as defaults for arguments</p>
+<p>Let’s return to the section 2 activity where your group created an algorithm to make popcorn.</p>
+<ul>
+<li>How would you adapt your step by step narrative algorithm to be a function called <code>make_popcorn()</code>?</li>
+<li>What arguments would be included, and would you have any default values set?</li>
+<li>Does your function look different than others in your group? How would you tell the computer which function you wanted to use?</li>
+</ul>
+<details><summary>
+Example functions
+</summary><pre><code># specify which library we want to get a function from, in this case instructor Steph
 
+from Steph import make_popcorn()
+
+# set arguments and defaults
+
+make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, seasoning = TRUE)
+
+# example in use
+# keeping all defaults, but changing time because this microwave 
+# is known to burn popcorn at recommended time
+
+make_popcorn(time = 1.5 minutes)</code></pre>
+</details>
 </div>
 </div>
   <div class="chapter-nav">

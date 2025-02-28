@@ -339,7 +339,19 @@ Example narrative
 <h2>
 <span class="header-section-number">10.4</span> add example for C/C++<a class="anchor" aria-label="anchor" href="#add-example-for-cc"><i class="fas fa-link"></i></a>
 </h2>
-
+</div>
+<div id="new-functions-in-stata" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
+</h2>
+<p>We’ll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
+<p>So, relying on what we’ve learned so far and context clues, what is the code below doing?</p>
+<pre><code>replace variable = variable[_n-1] if missing(variable)</code></pre>
+<details><summary>
+What is Stata doing?
+</summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (n-1) value of `variable.</p>
+There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
+</details>
 </div>
 </div>
   <div class="chapter-nav">
@@ -353,6 +365,7 @@ Example narrative
 <li><a class="nav-link" href="#nested-for-loops-and-if-else-statements-in-python"><span class="header-section-number">10.2</span> Nested for loops and if else statements (in Python)</a></li>
 <li><a class="nav-link" href="#new-syntax-and-terms-in-r"><span class="header-section-number">10.3</span> New syntax and terms (in R)</a></li>
 <li><a class="nav-link" href="#add-example-for-cc"><span class="header-section-number">10.4</span> add example for C/C++</a></li>
+<li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">10.5</span> New functions in Stata</a></li>
 </ul>
 
       <div class="book-extra">

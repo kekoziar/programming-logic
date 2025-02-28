@@ -146,15 +146,17 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <p>A <strong>list</strong> is just that, a list of data elements. The nice thing about lists is it can contain a multitude of different data types, and also different data structures.</p>
 <p><code>cheeses &lt;- (8, smoked gouda, 0, milk, 16, cheddar, .25, limburger)</code></p>
 <hr>
-<p>An <strong>Array</strong> is a common data structure, which at its base is a single-dimension structure. You’ll commonly see them represented with square brackets. The data in all cells (or elements) of an Array needs to be the same. So, you can have a text (or string) array.</p>
+<p>An <strong>array</strong> is a common data structure, which at its base is a single-dimension structure. You’ll commonly see an array represented with square brackets.</p>
+<p>You may encounter text elements in an array</p>
 <p><code>ingredients = [cheese, potatoes, milk, salt, butter]</code></p>
-<p>Or an array of integers</p>
+<p>or an array of integers</p>
 <p><code>quantities &lt;- [16, 32, 8, 0, 4]</code></p>
 <p>or floats</p>
 <p><code>quantities = [16, 32, 8, 0.125, 4]</code></p>
-<p>Most computer languages will automatically convert integers to floats, but not the other way around.</p>
+<p>The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. Most computer languages will automatically convert integers to floats, but not the other way around.</p>
+<p>You may also see this data structure called a <strong>vector</strong>.</p>
 <hr>
-<p>A <strong>Matrix</strong> is a multi-dimensional array and has the same restrictions. Honestly, it depends on who you’re talking to for how they refer to arrays and matrices, and it’s likely highly dependent on the type of math they’re using in their research.</p>
+<p>A <strong>matrix</strong> is a multi-dimensional array and has the same restrictions as an array, in terms of same data type used throughout. Honestly, it depends on who you’re talking to for how they refer to arrays and matrices, and it’s likely highly dependent on the type of math they’re using in their research.</p>
 <p>A matrix will have both rows and columns. The number of elements in each row needs to be the same, and the same with the number of elements in each column.</p>
 <p>Below is a matrix with size <span class="math inline">\(i\)</span> by <span class="math inline">\(j\)</span>, which means that there are <span class="math inline">\(i\)</span> number of rows, and <span class="math inline">\(j\)</span> number of columns. The matrix below also demonstrates what is called an <em>index</em> which is basically the address of any particular element in the matrix.</p>
 <span class="math display">\[\begin{equation}
@@ -169,7 +171,7 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <p>Using an index for a one-dimensional array is pretty easy.</p>
 <p>for <code>ingredients &lt;- [cheese, potatoes, milk, salt, butter]</code></p>
 <p>the value in <code>ingredients[1]</code> is <code>cheese</code></p>
-<p>if we expand it into an array</p>
+<p>if we expand it into a matrix</p>
 <p><span class="math display">\[\begin{equation}
 ingredients =
 \begin{bmatrix}
@@ -180,6 +182,45 @@ ingredients =
 \end{equation}\]</span></p>
 <p>the value in <code>ingredients[2,4]</code> is <span class="math inline">\(Muenster\)</span></p>
 <p>I want to share that I’ve been programming for a long time, and have done all of the math, and I <em>still</em> will have to double-check that the index I’m referring to in multidimensional arrays or matrices is listed in the correct order.</p>
+<hr>
+<p>A <strong>dataframe</strong> is a tabular form with rows and columns, much like a matrix. However, dataframes can contain mixed data types, for instance a column of integers, a column of strings, and another column of floats. Dataframes can also have column names and row names.</p>
+<div class="tabwid">
+<style>.cl-e9bd94c0{}.cl-e9b71bea{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e9b9cfb6{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e9b9e2ee{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2f8{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2f9{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2fa{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e302{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e303{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e304{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e305{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e306{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e307{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e30c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e30d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e9bd94c0">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-e9b9e2ee"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">ingredients</span></p></th>
+<th class="cl-e9b9e2f8"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">quantities</span></p></th>
+<th class="cl-e9b9e2f9"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">importance</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e9b9e2fa"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">smoked gouda cheese</span></p></td>
+<td class="cl-e9b9e302"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">all</span></p></td>
+<td class="cl-e9b9e303"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">5</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">potatoes</span></p></td>
+<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">3 lb</span></p></td>
+<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">1</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">milk</span></p></td>
+<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">0.5 c</span></p></td>
+<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">3</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">salt</span></p></td>
+<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">to taste</span></p></td>
+<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">4</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-e9b9e307"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">butter</span></p></td>
+<td class="cl-e9b9e30c"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">8 tbsp</span></p></td>
+<td class="cl-e9b9e30d"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">2</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
 <hr>
 <div id="to-make-things-more-confusing-a-note-on-indices" class="section level3" number="4.3.1">
 <h3>
@@ -200,7 +241,7 @@ ingredients =
 </li>
 <li>For the following array <code>cheese &lt;- [Cheddar, Gouda, Parmesan, Muenster]</code>, what is the value of <code>cheese[4]</code> <br><br>
 </li>
-<li>For the following array, <br><span class="math display">\[\begin{equation}
+<li>For the following matrix, <br><span class="math display">\[\begin{equation}
 potatoes =
 \begin{bmatrix}
 Yukon\text{ }Gold &amp; Red\text{ }Gold &amp; Gala \\

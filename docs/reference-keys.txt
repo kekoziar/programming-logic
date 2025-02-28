@@ -50,6 +50,7 @@ new-types-of-conditions-in-sql
 nested-for-loops-and-if-else-statements-in-python
 new-syntax-and-terms-in-r
 add-example-for-cc
+new-functions-in-stata
 recap-and-consultation-tips
 approaching-consultations
 three-areas-for-errors

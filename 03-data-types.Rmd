@@ -126,7 +126,7 @@ I want to share that I've been programming for a long time, and have done all of
 
 A **dataframe** is a tabular form with rows and columns, much like a matrix. However, dataframes can contain mixed data types, for instance a column of integers, a column of strings, and another column of floats. Dataframes can also have column names and row names.
 
-```{r loop-exercise-2, echo = FALSE, message = FALSE, warning = FALSE}
+```{r df_example, echo = FALSE, message = FALSE, warning = FALSE}
 
 library(flextable)
 library(officer)
