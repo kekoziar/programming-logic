@@ -12,42 +12,50 @@ WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 
 ```
 
-Your preferred approach for navigating and understanding unfamiliar code may vary.\
+One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do. 
 
-One option is to break down code into its component parts. Here you can separate out functions (common tasks across programming languages) from data-specific variables and names. Can you identify:
+__Exercise__: Using what we've learned in prior sections, try to answer the following questions.
 
-- What does the `OceanBuoys` term most likely refer to?
-- What do you think the `SELECT` function does?
-- What does `*` indicate, in combination with `SELECT`? 
-- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Country` and `BuoyName` refer to?
+- What does the `OceanBuoys` term most likely refer to - object/variable, or function?
+- Assuming that `SELECT` is a function, what might it do?
+- The `*` character is new. What might `*` indicate, in combination with `SELECT`? 
+- Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Ocean` and `BuoyName` refer to, in terms of variables?
 - Can you guess (or feel free to use Google) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
+- Note the `;` at the end of the line starting with `WHERE`. What might this mean?
 
 <details>
 <summary>Do your answers match these?</summary>
 
-- The `OceanBuoys` term here refers to a table or dataframe. 
-- The `SELECT` function selects columns from a table. 
-- The `*` here indicates that we want to return all columns from the table. 
-- The `OceanBuoys` table must have columns named `Country` and `BuoyName`. 
+- The `OceanBuoys` term here refers to a table or dataframe or matrix (really, any kind of tabular format). 
+- The `SELECT` function selects columns from the `OceanBuoys` table. 
+- The `*` is a wildcard matching symbol. It indicates that we want to return _all_ columns from the table, no matter what their column names are. 
+- The `OceanBuoys` table must have columns named `Ocean` and `BuoyName`. 
+  - If we wanted to return only these columns, the syntax could be: `SELECT Ocean, BuoyName FROM OceanBuoys`
 - `LIKE` is used for pattern matching. This code is matching values that start with "S" or with "K".
 </details>\
+  - The conditions after `WHERE` are the row-based conditions for what will be returned, analogous to `SELECT` for the column-specific condition.
+- The `;` is used to indicate the end of a statement in SQL. It tells the computer that the 'thought' is finished, and the action of _doing_ the thought can commence.
 
 Now, can you write out a narrative of what you see the code is trying to do?\
 
 <details>
 <summary>Example written narrative</summary>
 
-Starting from the `OceanBuoys` table, return all columns but only rows where `Country` is equal to "Spain" _and_ where the `BuoyName` value starts with "S" or "K".
+This code is returning a subset of data from the `OceanBuoys` table. Starting from the full `OceanBuoys` table, return all the columns from this table, but keep only rows where `Ocean` is equal to "Atlantic" _and_ where the `BuoyName` value starts with "S" or "K". The returned data should be tabular, with the same number of columns as the full `OceanBuoys` table, but likely with less rows (only those that met the condition).
 
 </details>\
 
 ## Nested `for` loops and `if else` statements (in Python)
 
-Here is an example of code that is scraping content from a set of website pages and saving that content locally. It uses 'nested' `for` loops, meaning a second loop occurs within the first loops. It also uses nested `if else` statements with the `for` loops and within other `if else` statements.\
+Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.
 
-In this example, we're less concerned about understanding every detail about what the code is doing, and more about understanding where each loop beings and ends. This is a useful skill - looking at code and understanding where the boundaries are for each self-contained function. It is especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\
+This is a useful skill and especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\
 
-__Exercise__: Review the code chunk below and identify on which line each `for` loop and each `if else` statement starts and ends? 
+Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested `for` loops, and nested `if else` statements with the `for` loops and within other `if else` statements.\
+
+The code may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends. 
+
+__Exercise__: Review the code chunk below and identify on which line each `for` loop and each `if else` statement starts and ends. 
 
 - First `for` loop
   - Starts on line:
@@ -167,9 +175,9 @@ __This needs a color coded image to clarify__
 
 ## New syntax and terms (in R)
 
-While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. But don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
 
-In the code example below, note the new symbol `%>%` and `%in%` and the new functions `mutate()` and `paste()`. The `select()` function at least is more familiar from the example above, and `ifelse` is an `if else` statement.
+Here is an example of R code:
 
 ```
 1.  df_new <- df %>% 
@@ -178,7 +186,7 @@ In the code example below, note the new symbol `%>%` and `%in%` and the new func
 4.    mutate(survey_type = ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
   
 ```
-Task: go line by line and annotate, in your own words, what that line of code is doing.\
+__Exercise__: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.\
 
 Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below, to guide your annotation.
 
@@ -194,8 +202,7 @@ Each line has a new take on the same logic we've covered in prior sections; a br
 - Line 4
   - This `ifelse()` statement has a different format than we've covered so far, but the concept is the same. Assuming this `ifelse()` statement has three arguments (`ifelse(condition, mystery1, mystery2)`) what might the two mystery arguments be specifying?
   - Looking at the section `survey_wave %in% c("first", "second")`, what do you think this would translate to, as a written explanation of the task here?
-  
-Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
+- Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
   
 <details>
 <summary>Example narrative</summary>
