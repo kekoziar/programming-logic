@@ -76,9 +76,31 @@ ELSE
   
 ```
 
+__Exercise__: Let's try a similar example with the popcorn algorithm from section 2. 
+
+Write out an `if else` statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
+Write out an `if, else if, else` statement that includes an air fry scenario.
+
+<details>
+<summary>Example statement</summary>
+
+```
+IF (popcorn_type is microwave)
+  use microwave
+ELSE IF (popcorn_type is stovetop)
+  use stove
+ELSE 
+  use air fryer
+
+```
+Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.
+
+</details>\
+
+
 ## Boolean Operators
 
-In programming, most things boil down to `true` or `false`. (Sometimes you may see true/false capitalized as `TRUE` and `FALSE`, but the concept is the same.)\
+In programming, most things boil down to `true` or `false`. (Sometimes you may see true/false capitalized as `TRUE` and `FALSE`, but the concept is the same. We'll use both ways throughout.)\
 
 Programming uses Boolean operators such as:\
 
@@ -91,9 +113,35 @@ Programming uses Boolean operators such as:\
 
 ## Exercise - `ifelse` trace 
 
-Let's look at some examples of conditional statements in practice.
+Let's look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.
+
+First, for our recipe example:
 
 ```
+if cheese == hard:
+  print("Grate the cheese.")
+else if cheese == hard:
+  print("Cube the cheese.")
+else:
+  print("Do not use this in this recipe.")
+  
+```
+
+If we have `cheese <- parmesan` we would expect this statement to print out `Grate the cheese`. If we have `cheese <- brie` we would expect the output to be `Cube the cheese`. And if we have `cheese <- broccoli` we would expect the output to be `Do not use this in the recipe`. 
+
+_Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we're using our cheese-based expertise to draw conclusions, but as we've covered, we would never assume a computer would know which cheeses were hard or soft!_
+
+
+__Exercise__
+
+_For this exercise, want you to type the answer in the chat, but don't press enter until we tell you.  We'll say, _3, 2, 1, enter_ then you press enter when we say _enter_._
+
+For the code below, what will be the printed output? 
+
+```
+x <- 37
+y <- 42
+
 if x == y:
   print("values are equal")
 else if x > y:
@@ -102,39 +150,41 @@ else:
   print("x must be less than y")
   
 ```
-For the first trace, we will set the values of `x` and `y` as:
-
-```
-x <- 37
-y <- 42
-
-```
-
-What will be the printed output from this `ifelse` section?\
 
 <details>
 <summary>Answer</summary>
+
 x must be less than y 
+
 </details>\
 
-What if we reset `x` and `y` to:
+What would be the answer if we instead set `x` and `y` to:
 
 ```
 x <- 75
 y <- 9
 
+if x == y:
+  print("values are equal")
+else if x > y:
+  print("x greater than y")
+else:
+  print("x must be less than y")
+
 ```
 
 <details>
 <summary>Answer</summary>
+
 x greater than y
+
 </details>\
 
 ## Caveats
 
 ### Order of operations
 
-Order of operations is critical for conditionals. The computer will go through each condition __in order__, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
+Order of operations is critical for conditionals. The computer will go through each condition _in order_, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
 
 __[[insert example here]]__
 
