@@ -218,4 +218,18 @@ Then, make another new column called "survey_type". The values in this column ar
 
 ## add example for C/C++
 
+## New functions in Stata
 
+We'll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor's experience, Stata is not user-friendly, but your mileage may vary!)
+
+So, relying on what we've learned so far and context clues, what is the code below doing?
+
+```
+replace variable = variable[_n-1] if missing(variable)
+```
+<details>
+<summary>What is Stata doing?</summary>
+This is a bit of code to replace any missing values of `variable` with with previous (n-1) value of `variable. 
+
+There are [many ways to replace missing values in Stata](https://www.stata.com/support/faqs/data-management/replacing-missing-values/), this is one.
+</details>
