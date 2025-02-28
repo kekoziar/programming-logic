@@ -6,13 +6,12 @@ To do this, we can use conditional statements. The most commonly used format of 
 
 This structure tells the computer to check a condition and the next step depends on whether the condition is true or false. 
 
-It takes the basic form of
+It takes the basic form of:
 
 ```
 IF (condition A is TRUE)
   do something
-ELSE 
-  do something different
+  
 ```
 
 In terms of our cheesy mashed potatoes algorithm, an `if` statement might look like this
@@ -22,31 +21,59 @@ ingredient <- cheddar cheese
 
 IF (ingredient is (a type of hard cheese))
   grate(ingredient)
+  
 ```
 
+In that example, we've told the computer what to do _if_ the condition is true. We can also specify what to do if the condition is false. 
 
-In programming format, this narrative statement would look like: 
+For our cheesy mashed potatoes algorithm, we may want to cut cheese into cubes if it is not a hard cheese:
+
+```
+ingredient <- cheddar cheese
+
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE
+  cube(ingredient)
+  
+```
+
+In a generic programming format, a complete `if else` statement would look like: 
 
 ```
 IF (condition A is TRUE)
   do something
 ELSE 
   do something different
+  
 ```
 
-Note that `else` here is used equivalent to "if not true", meaning `A == FALSE`.\
+Here, `else` is used equivalent to "if not true", meaning `A == FALSE`.\
 
-We are not limited to a single `TRUE`/`FALSE` check in an `if else` statement, where actions are limited to "x if true, y in all other scenarios".
+Furthermore, we are not limited to a single `TRUE`/`FALSE` check in an `if else` statement, where actions are limited to "do something if true, in all other scenarios do something different". The `else if` (written as `elif` in some programming languages) concept allows us to add another sequential check if the `if` statement is not true. 
 
-The `else if` (written as `elif` in some programming languages) concept allows us to add another sequential check if the `if` statement is not true. Our updated narrative statement might be: "If condition A is true, do action X. If condition B is true, do action Z. If neither condition A or condition B are true, do action Y."\
-
-In programming format, this updated narrative statement would look like: 
+An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don't put it in the potatoes.
 
 ```
-IF conditionA == TRUE, do X
-ELSE IF conditionB == TRUE, do Z
-ELSE do Y
+IF (ingredient is (a type of hard cheese))
+  grate(ingredient)
+ELSE IF (ingredient is (a type of soft cheese))
+  cube(ingredient)
+ELSE
+  don't use
+  
+```
 
+In generic programming format, this updated statement would look like: 
+
+```
+IF (condition A is TRUE)
+  do something
+ELSE IF (condition B is true)
+  do something different
+ELSE 
+  do something even more different
+  
 ```
 
 ## Boolean Operators
