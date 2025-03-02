@@ -11,7 +11,6 @@ The `for` loop is probably the most common type of loop.  It executes a chunk of
 ```
 for variable in a collection
   do something
-  
 ```
 
 Now, a collection can be a list of text items, such as cheesy mashed potato ingredients, but it can also be a range of numbers, like `1 to 5` (which is programming speak for 1 2 3 4 5) or `7 to 13` (which is 7 8 9 10 11 12 13).
@@ -23,8 +22,8 @@ ingredients <- cheddar cheese, potatoes, milk, salt, butter
 
 for ingredient in ingredients
   write(ingredient)
-  
 ```
+
 Before we look at any real world code, we will manually go through some example loops, without the computer doing the work for us. Practicing a trace on tasks that are simple, like writing each ingredient in a collection, will help us build skills for, and comfort with, reading complex code. 
 
 ## Practicing a Trace
@@ -56,7 +55,7 @@ small_border = fp_border(color="gray", width = 1)
 
 ingredients_text <- c("\ningredients <- cheddar cheese, potatoes, milk, salt, butter\n\n")
 
-cName <- c("   ", "loop iteration", " ","ingredient", "  ", "write(ingredient)", "     ") 
+cName <- c("  ", "loop iteration", " ","ingredient", "   ", "write(ingredient)", "    ") 
 
 ingredients_trace <- matrix(data= " ", nrow = 4, ncol=length(cName))
 colnames(ingredients_trace) <- cName
@@ -395,14 +394,17 @@ ft
 
 There are other types of loops in addition to the commonly used `for` loop.\ 
 
-The `while` loop uses a condition at the start of the loop to determine, in advance, when the loop will stop. 
+The `while` loop uses a condition that the computer checks if it is `TRUE` or `FALSE` at the start of the loop to determine if the code chunk inside the loop will execute. 
 
 ```
 while (condition is TRUE)
   do something
 ```
+This is different from a `for` loop, because while a `for` loop will execute a predetermined number of times, the `while` loop will execute upon a condition being met.
 
 For this loop to work, you need to set the condition *before* the loop, and change it *in* the loop.
+
+You can write a `for` loop into a `while` loop by using a variable which will increment by one for each time the loop is run.  This usually isn't done, but we want to show something you're already familiar with.
 
 For example, recall the initial for loop:
 
@@ -437,6 +439,34 @@ while(i < condition_check){
   print(ingredients[i])
   i <- i + 1
 }
+```
+
+When we identify the variables to keep track of in a `while` loop trace, we need to add one to check if the condition for entering the loop is met.  
+
+```{r while-loop-ingredients-flextable, echo = FALSE, message=FALSE}
+library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
+
+small_border = fp_border(color="gray", width = 1)
+
+ingredients_text <- c("\ningredients <- cheddar cheese, potatoes, milk, salt, butter\n\ncondition_check = length(ingredients) = 6\n\n")
+
+cName <- c(" ", "loop iteration", "  ", "i", "   ",  "ingredients[i]", "    ", "i < condition_check", "     ") 
+
+ingredients_trace <- matrix(data= " ", nrow = 4, ncol=length(cName))
+colnames(ingredients_trace) <- cName
+ft <- flextable(as.data.frame(ingredients_trace)) %>%
+  align(align = "center", part = "all") %>%
+  add_header_row(values=ingredients_text, top=TRUE, colwidths = length(cName)) %>%
+  border_remove() %>%
+  border_outer(part="all", border = small_border ) %>%
+  add_footer_lines(values = c("\n\n ", "\n\n ", "\n\n ", "\n\n "), top = FALSE) %>%
+  border_outer(part="footer", border = small_border ) %>%
+  border_inner_h(border = small_border, part = "footer")
+
+ft
 ```
 
 <hr>

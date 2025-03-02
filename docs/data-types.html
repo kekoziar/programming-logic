@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="4.1 Variables Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -97,10 +97,10 @@
 <h2>
 <span class="header-section-number">4.1</span> Variables<a class="anchor" aria-label="anchor" href="#variables"><i class="fas fa-link"></i></a>
 </h2>
-<p>Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures (data structures might be too early, but maybe not.)</p>
+<p>Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures <em>(Kat’s note: data structures might be too early, but maybe not.)</em></p>
 <p>A word that people use a lot when referring to computer code is <em>variable</em>, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code.</p>
 <p><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</code></p>
-<p>We use variables to represent the data that are being used to because it’s easy to change it,</p>
+<p>We use variables to represent the data that are being used within a program because it’s easy to change it,</p>
 <p><code>ingredients &lt;- smoked gouda cheese, potatoes, milk, salt, butter</code></p>
 <p>and also easy to build a mental model of how the different variables interrelate.</p>
 <pre><code>ingredients &lt;- smoked gouda cheese, potatoes, milk, salt, butter
@@ -109,7 +109,7 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <h3>
 <span class="header-section-number">4.1.1</span> Pro-tip<a class="anchor" aria-label="anchor" href="#pro-tip"><i class="fas fa-link"></i></a>
 </h3>
-<p>A common rule for what name to use for a variable is the name should describe what the data represent. If we used the term <code>x</code> - which is commonly used as a variable in math equations - we wouldn’t know what it represents. Using the word <code>ingredients</code> is descriptive, so you have an idea what the data are in the variable, and what it represents.</p>
+<p>A common rule to help decide what name to use for a variable is, the name should describe what the data represent. If we used the term <code>x</code> - which is commonly used as a variable in math equations - we wouldn’t know what it represents. Using the word <code>ingredients</code> is descriptive, so you have an idea what the data are in the variable - it describes what the variable represents.</p>
 <p>Something I’d commonly do when helping researchers with their code, especially when I’d see variable names which are abbreviations, is I’d ask them if the abbreviation is something which is commonly used in their field. My questions would usually go something like this:</p>
 <ul>
 <li><em>So you know, I’m not an expert in your field. You’re the expert. Can you help me understand a little more about what you’re trying to do in the code?</em></li>
@@ -153,8 +153,8 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <p><code>quantities &lt;- [16, 32, 8, 0, 4]</code></p>
 <p>or floats</p>
 <p><code>quantities = [16, 32, 8, 0.125, 4]</code></p>
-<p>The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. Most computer languages will automatically convert integers to floats, but not the other way around.</p>
-<p>You may also see this data structure called a <strong>vector</strong>.</p>
+<p>The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. If an array is created with different data types, many computer languages, such as R or Python, will automatically convert the data to a single data type. This is formally called <em>coercion</em>. Numeric values with text will be coerced to all text, and integers with real numbers to floats, but not the other way around.</p>
+<p>You may also see this data structure called a <strong>vector</strong> <em>(which is different than vectors used in math or physics).</em></p>
 <hr>
 <p>A <strong>matrix</strong> is a multi-dimensional array and has the same restrictions as an array, in terms of same data type used throughout. Honestly, it depends on who you’re talking to for how they refer to arrays and matrices, and it’s likely highly dependent on the type of math they’re using in their research.</p>
 <p>A matrix will have both rows and columns. The number of elements in each row needs to be the same, and the same with the number of elements in each column.</p>
@@ -185,38 +185,38 @@ ingredients =
 <hr>
 <p>A <strong>dataframe</strong> is a tabular form with rows and columns, much like a matrix. However, dataframes can contain mixed data types, for instance a column of integers, a column of strings, and another column of floats. Dataframes can also have column names and row names.</p>
 <div class="tabwid">
-<style>.cl-e9bd94c0{}.cl-e9b71bea{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e9b9cfb6{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e9b9e2ee{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2f8{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2f9{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e2fa{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e302{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e303{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e304{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e305{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e306{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e307{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e30c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9b9e30d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e9bd94c0">
+<style>.cl-4e8ce83e{}.cl-4e87a9be{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4e899026{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4e89a3e0{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3e1{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3e2{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3ea{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3eb{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3ec{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3f4{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3f5{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3fe{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a3ff{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a400{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4e89a408{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-4e8ce83e">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e9b9e2ee"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">ingredients</span></p></th>
-<th class="cl-e9b9e2f8"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">quantities</span></p></th>
-<th class="cl-e9b9e2f9"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">importance</span></p></th>
+<th class="cl-4e89a3e0"><p class="cl-4e899026"><span class="cl-4e87a9be">ingredients</span></p></th>
+<th class="cl-4e89a3e1"><p class="cl-4e899026"><span class="cl-4e87a9be">quantities</span></p></th>
+<th class="cl-4e89a3e2"><p class="cl-4e899026"><span class="cl-4e87a9be">importance</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9b9e2fa"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">smoked gouda cheese</span></p></td>
-<td class="cl-e9b9e302"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">all</span></p></td>
-<td class="cl-e9b9e303"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">5</span></p></td>
+<td class="cl-4e89a3ea"><p class="cl-4e899026"><span class="cl-4e87a9be">smoked gouda cheese</span></p></td>
+<td class="cl-4e89a3eb"><p class="cl-4e899026"><span class="cl-4e87a9be">all</span></p></td>
+<td class="cl-4e89a3ec"><p class="cl-4e899026"><span class="cl-4e87a9be">5</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">potatoes</span></p></td>
-<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">3 lb</span></p></td>
-<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">1</span></p></td>
+<td class="cl-4e89a3f4"><p class="cl-4e899026"><span class="cl-4e87a9be">potatoes</span></p></td>
+<td class="cl-4e89a3f5"><p class="cl-4e899026"><span class="cl-4e87a9be">3 lb</span></p></td>
+<td class="cl-4e89a3fe"><p class="cl-4e899026"><span class="cl-4e87a9be">1</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">milk</span></p></td>
-<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">0.5 c</span></p></td>
-<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">3</span></p></td>
+<td class="cl-4e89a3f4"><p class="cl-4e899026"><span class="cl-4e87a9be">milk</span></p></td>
+<td class="cl-4e89a3f5"><p class="cl-4e899026"><span class="cl-4e87a9be">0.5 c</span></p></td>
+<td class="cl-4e89a3fe"><p class="cl-4e899026"><span class="cl-4e87a9be">3</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9b9e304"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">salt</span></p></td>
-<td class="cl-e9b9e305"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">to taste</span></p></td>
-<td class="cl-e9b9e306"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">4</span></p></td>
+<td class="cl-4e89a3f4"><p class="cl-4e899026"><span class="cl-4e87a9be">salt</span></p></td>
+<td class="cl-4e89a3f5"><p class="cl-4e899026"><span class="cl-4e87a9be">to taste</span></p></td>
+<td class="cl-4e89a3fe"><p class="cl-4e899026"><span class="cl-4e87a9be">4</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9b9e307"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">butter</span></p></td>
-<td class="cl-e9b9e30c"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">8 tbsp</span></p></td>
-<td class="cl-e9b9e30d"><p class="cl-e9b9cfb6"><span class="cl-e9b71bea">2</span></p></td>
+<td class="cl-4e89a3ff"><p class="cl-4e899026"><span class="cl-4e87a9be">butter</span></p></td>
+<td class="cl-4e89a400"><p class="cl-4e899026"><span class="cl-4e87a9be">8 tbsp</span></p></td>
+<td class="cl-4e89a408"><p class="cl-4e899026"><span class="cl-4e87a9be">2</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -227,7 +227,7 @@ ingredients =
 <span class="header-section-number">4.3.1</span> To make things more confusing: A note on indices<a class="anchor" aria-label="anchor" href="#to-make-things-more-confusing-a-note-on-indices"><i class="fas fa-link"></i></a>
 </h3>
 <p>A fun <em>“feature”</em> of programming languages is different languages will start their index with different numbers, either 1 or 0. Python is a zero-indexed language, meaning the index of the first element of an array or list is 0, while R is a normal language, I mean, not a zero-indexed language, meaning the index of the first element of an array in R is 1.</p>
-<p>I like to pretend that this is an extension of mathematicians having arguments over which is the first number, zero or one (yes, I’ve seen these debates). But, I think it has to do with ease of memory management in computers, which is something most researchers who come to us for consultations will not have questions on. So, right now it’s just a quirk.</p>
+<p>I like to pretend that this is an extension of mathematicians having arguments over which is the first number, zero or one (yes, I’ve seen these debates). But, I think it has to do with ease of memory management in computers, which is something most researchers who come to us for consultations will not have questions on. So right now, it’s just a quirk.</p>
 <p>For our workshop, we will use 1 as the first element of an array, because that’s easier to learn logically.</p>
 </div>
 </div>
@@ -285,7 +285,7 @@ Carola &amp; Nicola &amp; Canela\text{ }Russet
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-02-28.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
