@@ -30,7 +30,8 @@ caveats-1
 order-of-operations-in-conditionals
 clarity-and-order-of-operations-in-math-statements
 matching-parentheses
-formatting-may-vary
+language-examples-formatting-may-vary
+challenge
 functions
 arguments
 libraries

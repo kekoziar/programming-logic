@@ -295,25 +295,24 @@ Or if you have mismatched parentheses, the computer might give you an error mess
     print("values are equal"))"
     </code></pre>
 </div>
-<div id="formatting-may-vary" class="section level3" number="6.4.4">
-<h3>
-<span class="header-section-number">6.4.4</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
-</h3>
+</div>
+<div id="language-examples-formatting-may-vary" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Language examples: Formatting may vary<a class="anchor" aria-label="anchor" href="#language-examples-formatting-may-vary"><i class="fas fa-link"></i></a>
+</h2>
 <p>Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.</p>
-<p>Python uses indentation for code blocks. Programming structures, such as <code>if</code>, <code>else</code>, <code>elif</code>, or <code>for</code> expects <code>:</code> at the end of each statement with the subsequent code block intented by one</p>
+<p><strong>Python</strong> requires indentation for code blocks. Code blocks in different structures must be aligned with the same indentation.</p>
+<p>Programming structures, such as <code>if</code>, <code>else</code>, <code>elif</code>, or <code>for</code> expects <code>:</code> at the end of each statement with the subsequent code block intented by one</p>
 <pre><code>if x == y:
   print("values are equal")
-
-  for i in range(10):
-    print("notice the indentations! " + i)
-
 elif x &gt; y:
   print("x greater than y")
-
 else:
   print("x must be less than y")
 </code></pre>
-<p>R makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>if else</code> statement and while indentation is a convention for readability, it is not technically required for the code to run:</p>
+<hr>
+<p>The next language examples do not require indentation for code blocks; however, indentation is used because it’s easier for humans to read!</p>
+<p><strong>R</strong> makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>if else</code> statement.</p>
 <pre><code>if (x == y) {
   print("values are equal")
 } else if (x &gt; y) {
@@ -322,7 +321,8 @@ else:
   print("x must be less than y")
 }
 </code></pre>
-<p>One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)</p>
+<hr>
+<p>One big difference between <strong>C/C++</strong> and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).</p>
 <pre><code>if (x == y) {
   cout &lt;&lt; "values are equal";
 } else if (x &gt; y) {
@@ -330,7 +330,8 @@ else:
 } else {
   cout &lt;&lt; "x must be less than y";
 }</code></pre>
-<p>PHP is very similar to C/C++, but is used for web development.</p>
+<hr>
+<p><strong>PHP</strong> is very similar to C/C++, but is used for web development.</p>
 <pre><code>if (x == y) {
   echo "values are equal";
 } elseif (x &gt; y) {
@@ -338,7 +339,31 @@ else:
 } else {
   echo "x must be less than y";
 }</code></pre>
-
+<hr>
+<p>With <strong>Bash</strong>, you need to be careful of spaces around your operators and parentheses. (cheatsheets <a href="https://ss64.com/bash/if.html" class="uri">https://ss64.com/bash/if.html</a> <a href="https://devhints.io/bash#conditionals" class="uri">https://devhints.io/bash#conditionals</a>)</p>
+<p>This compares numbers</p>
+<pre><code>if (( $x == $y )) ; then
+  echo "values are equal"
+elif (( $x &gt; $y )) ; then
+  echo "x greater than y"
+else
+  echo "x must be less than y"
+fi</code></pre>
+<p>This compares text</p>
+<pre><code>if  [[ "$x" == "$y" ]] ; then
+  echo "the text in x is the same as y"
+else
+  echo "the text in x is not the same as y"
+fi</code></pre>
+<hr>
+<div id="challenge" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Challenge<a class="anchor" aria-label="anchor" href="#challenge"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>What are some of the differences you can spot between the different languages?</li>
+<li>What are the similarities?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -357,8 +382,10 @@ else:
 <li><a class="nav-link" href="#order-of-operations-in-conditionals"><span class="header-section-number">6.4.1</span> Order of operations in conditionals</a></li>
 <li><a class="nav-link" href="#clarity-and-order-of-operations-in-math-statements"><span class="header-section-number">6.4.2</span> Clarity and Order of Operations in math statements</a></li>
 <li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.4.3</span> Matching parentheses</a></li>
-<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">6.4.4</span> Formatting may vary</a></li>
 </ul>
+</li>
+<li>
+<a class="nav-link" href="#language-examples-formatting-may-vary"><span class="header-section-number">6.5</span> Language examples: Formatting may vary</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#challenge"><span class="header-section-number">6.5.1</span> Challenge</a></li></ul>
 </li>
 </ul>
 

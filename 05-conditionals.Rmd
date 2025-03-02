@@ -259,27 +259,27 @@ Error: unexpected ')' in:
     
 ```
 
-### Formatting may vary
+## Language examples: Formatting may vary
 
 Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
-Python uses indentation for code blocks.  Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block intented by one
+**Python** requires indentation for code blocks.  Code blocks in different structures must be aligned with the same indentation.
+
+Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block intented by one
 ```
 if x == y:
   print("values are equal")
-
-  for i in range(10):
-    print("notice the indentations! " + i)
-
 elif x > y:
   print("x greater than y")
-
 else:
   print("x must be less than y")
 
 ```
+<hr>
 
-R makes use of curly brackets `{}` to indicate each section of an `if else` statement and while indentation is a convention for readability, it is not technically required for the code to run:
+The next language examples do not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
+
+**R** makes use of curly brackets `{}` to indicate each section of an `if else` statement.
 
 ```
 if (x == y) {
@@ -291,8 +291,9 @@ if (x == y) {
 }
 
 ```
+<hr>
 
-One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)
+One big difference between **C/C++** and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
 ```
 if (x == y) {
@@ -303,8 +304,9 @@ if (x == y) {
   cout << "x must be less than y";
 }
 ```
+<hr>
 
-PHP is very similar to C/C++, but is used for web development.
+**PHP** is very similar to C/C++, but is used for web development.
 
 ```
 if (x == y) {
@@ -315,5 +317,35 @@ if (x == y) {
   echo "x must be less than y";
 }
 ```
+<hr>
 
+With **Bash**, you need to be careful of spaces around your operators and parentheses. (cheatsheets https://ss64.com/bash/if.html https://devhints.io/bash#conditionals)
+
+This compares numbers
+
+```
+if (( $x == $y )) ; then
+  echo "values are equal"
+elif (( $x > $y )) ; then
+  echo "x greater than y"
+else
+  echo "x must be less than y"
+fi
+```
+
+This compares text
+
+```
+if  [[ "$x" == "$y" ]] ; then
+  echo "the text in x is the same as y"
+else
+  echo "the text in x is not the same as y"
+fi
+```
+
+<hr>
+### Challenge
+
+- What are some of the differences you can spot between the different languages?
+- What are the similarities?
 

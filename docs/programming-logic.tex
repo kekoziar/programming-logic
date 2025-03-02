@@ -1801,27 +1801,26 @@ Error: unexpected ')' in:
     
 \end{verbatim}
 
-\subsection{Formatting may vary}\label{formatting-may-vary}
+\section{Language examples: Formatting may vary}\label{language-examples-formatting-may-vary}
 
 Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
-Python uses indentation for code blocks. Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block intented by one
+\textbf{Python} requires indentation for code blocks. Code blocks in different structures must be aligned with the same indentation.
+
+Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block intented by one
 
 \begin{verbatim}
 if x == y:
   print("values are equal")
-
-  for i in range(10):
-    print("notice the indentations! " + i)
-
 elif x > y:
   print("x greater than y")
-
 else:
   print("x must be less than y")
 \end{verbatim}
 
-R makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement and while indentation is a convention for readability, it is not technically required for the code to run:
+The next language examples do not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
+
+\textbf{R} makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement.
 
 \begin{verbatim}
 if (x == y) {
@@ -1833,7 +1832,7 @@ if (x == y) {
 }
 \end{verbatim}
 
-One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)
+One big difference between \textbf{C/C++} and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
 \begin{verbatim}
 if (x == y) {
@@ -1845,7 +1844,7 @@ if (x == y) {
 }
 \end{verbatim}
 
-PHP is very similar to C/C++, but is used for web development.
+\textbf{PHP} is very similar to C/C++, but is used for web development.
 
 \begin{verbatim}
 if (x == y) {
@@ -1856,6 +1855,40 @@ if (x == y) {
   echo "x must be less than y";
 }
 \end{verbatim}
+
+With \textbf{Bash}, you need to be careful of spaces around your operators and parentheses. (cheatsheets \url{https://ss64.com/bash/if.html} \url{https://devhints.io/bash\#conditionals})
+
+This compares numbers
+
+\begin{verbatim}
+if (( $x == $y )) ; then
+  echo "values are equal"
+elif (( $x > $y )) ; then
+  echo "x greater than y"
+else
+  echo "x must be less than y"
+fi
+\end{verbatim}
+
+This compares text
+
+\begin{verbatim}
+if  [[ "$x" == "$y" ]] ; then
+  echo "the text in x is the same as y"
+else
+  echo "the text in x is not the same as y"
+fi
+\end{verbatim}
+
+\subsection{Challenge}\label{challenge}
+
+\begin{itemize}
+\tightlist
+\item
+  What are some of the differences you can spot between the different languages?
+\item
+  What are the similarities?
+\end{itemize}
 
 \chapter{Functions}\label{functions}
 
