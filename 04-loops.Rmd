@@ -190,7 +190,7 @@ By this point, you're probably thinking that doing a manual trace is a bit tedio
 
 So far, we've tackled one loop at a time. But loops are flexible and can be "nested", or embedded within each other.
 
-Let's look at an example the following dataframe, which is created using two `for` loops
+Let's look at an example the following matrix, which is created using two `for` loops
 
 ```{r loop-exercise-2, echo = FALSE}
 library(flextable)
@@ -244,7 +244,7 @@ ft
 ```
 
 
-The pseudocode for how this dataframe was created is as follows:
+The pseudocode for how this matrix was created is as follows:
 
 ```
 num_rows = 4
