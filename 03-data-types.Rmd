@@ -2,13 +2,13 @@
 
 ## Variables
 
-Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures (data structures might be too early, but maybe not.)
+Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures _(Kat's note: data structures might be too early, but maybe not.)_
 
 A word that people use a lot when referring to computer code is _variable_, but what is a variable?  A variable is a placeholder for some type of data that will be used in computer code.  
 
 `ingredients <- cheddar cheese, potatoes, milk, salt, butter`
 
-We use variables to represent the data that are being used to because it's easy to change it, 
+We use variables to represent the data that are being used within a program because it's easy to change it, 
 
 `ingredients <- smoked gouda cheese, potatoes, milk, salt, butter`
 
@@ -20,7 +20,7 @@ ingredient_quantities <- all, 3 lb, 0.5 c, to taste, 8 tbsp
 ```
 ### Pro-tip
 
-A common rule for what name to use for a variable is the name should describe what the data represent.  If we used the term `x` - which is commonly used as a variable in math equations - we wouldn't know what it represents.  Using the word `ingredients` is descriptive, so you have an idea what the data are in the variable, and what it represents.
+A common rule to help decide what name to use for a variable is, the name should describe what the data represent.  If we used the term `x` - which is commonly used as a variable in math equations - we wouldn't know what it represents.  Using the word `ingredients` is descriptive, so you have an idea what the data are in the variable - it describes what the variable represents.
 
 Something I'd commonly do when helping researchers with their code, especially when I'd see variable names which are abbreviations, is I'd ask them if the abbreviation is something which is commonly used in their field.  My questions would usually go something like this:
 
@@ -79,9 +79,9 @@ or floats
 `quantities = [16, 32, 8, 0.125, 4]`
 
 
-The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. Most computer languages will automatically convert integers to floats, but not the other way around.
+The data in all cells (or elements) of an array needs to be the same type, which is part of what makes an array different than a list. If an array is created with different data types, many computer languages, such as R or Python, will automatically convert the data to a single data type. This is formally called _coercion_. Numeric values with text will be coerced to all text, and integers with real numbers to floats, but not the other way around.
 
-You may also see this data structure called a **vector**.
+You may also see this data structure called a **vector** _(which is different than vectors used in math or physics)._
 
 <hr>
 
@@ -166,7 +166,7 @@ ft
 
 A fun _"feature"_ of programming languages is different languages will start their index with different numbers, either 1 or 0.  Python is a zero-indexed language, meaning the index of the first element of an array or list is 0, while R is a normal language, I mean, not a zero-indexed language, meaning the index of the first element of an array in R is 1.  
 
-I like to pretend that this is an extension of mathematicians having arguments over which is the first number, zero or one (yes, I've seen these debates).  But, I think it has to do with ease of memory management in computers, which is something most researchers who come to us for consultations will not have questions on.  So, right now it's just a quirk. 
+I like to pretend that this is an extension of mathematicians having arguments over which is the first number, zero or one (yes, I've seen these debates).  But, I think it has to do with ease of memory management in computers, which is something most researchers who come to us for consultations will not have questions on.  So right now, it's just a quirk. 
 
 For our workshop, we will use 1 as the first element of an array, because that's easier to learn logically.
 

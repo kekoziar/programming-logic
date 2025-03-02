@@ -4,7 +4,7 @@
 
 Most people have heard the term algorithm, especially in relation to AI or social media feeds, but what is an algorithm?
 
-An algorithm is a set of instructions for how to do something. For AI, the term algorithm is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does.  For social media feeds, an algorithm will determine how to select which content is delivered to a user.  Algorithms can be very simple or very complex.
+An algorithm is a set of instructions for how to do something. For AI, the term _algorithm_ is often used as a term to represent the overall way that whatever AI that you’re working with was trained to do what it does.  For social media feeds, an algorithm will determine how the platform selects which content is delivered to a user.  Algorithms can be very simple or very complex.
 
 A common analogy for an algorithm is a recipe. A recipe includes a set of ingredients, which are like the variables in your code, then lists instructions on what to do with the ingredients.  But, a big difference between common recipes that you are used to seeing and an algorithm is you have to be very exact and specific when you tell a computer to do something. It isn’t enough to tell a computer, “get the data.” You have to tell it where the data is located, what format it is in, how to read it, and what format you want the data in for use  in your script. So let’s do an example with a recipe on how to make cheesy mashed potatoes.
 

@@ -1,6 +1,6 @@
 # Introduction {#intro}
 
-This is a different type of programming workshop. One that doesn't require a computer, but instead intends to help you build mental models of how computer programming works.  You will learn not only the logic behind programming, but also methods for identifying errors in algorithms and code that the computer doesn’t see.  The only technology required, besides the ability to view this lesson, is something to write with and a piece of paper.
+This is a different type of programming workshop. One that doesn't require a computer, but instead intends to help you build mental models of how computer programming works.  You will learn the logic behind programming, and also methods for identifying errors in algorithms and code that the computer doesn’t see.  The only technology required, besides the ability to view this lesson, is something to write with and a piece of paper.
 
 ## Building a Mental Model
 
@@ -10,7 +10,7 @@ The purpose of this workshop isn't just to introduce you to programming logic, i
 
 ## A Note on Syntax
 
-Syntax is the formal structural of a computer programming language.  Assembly, C/C++, C#, Python, and R all have formal language structures so the computer knows how to read the code.  But, sometimes syntax gets in the way of learning concepts.  Luckily, most programming concepts are the same across all languages.
+Syntax is the formal structure of a computer programming language.  Assembly, C/C++, C#, Python, and R all have formal language structures so the computer knows how to read the code.  But, sometimes syntax gets in the way of learning concepts.  Luckily, most programming concepts are the same across all languages.
 
 The syntax we will use for most of the examples will be something called psuedocode.  Pseudocode focuses on concepts and tasks, not syntax.  You don’t need to worry if there is a semicolon or parenthesis out of place when you write in psuedocode, you'll still know how to interpret what is written.
 
