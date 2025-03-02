@@ -1525,6 +1525,8 @@ If a step is missed, it can be disastrous. I can attest. I wrote a script to ren
 
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
+\section{\texorpdfstring{\texttt{if} Statements}{if Statements}}\label{if-statements}
+
 Many times in programming, we want to take a certain action only if a certain condition is satisfied.\\
 
 To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an \texttt{if} statement, which is often combined with an \texttt{else} statement.\\
@@ -1575,7 +1577,7 @@ ELSE
 
 Here, \texttt{else} is used equivalent to ``if not true'', meaning \texttt{A\ ==\ FALSE}.\\
 
-Furthermore, we are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to ``do something if true, in all other scenarios do something different''. The \texttt{else\ if} (written as \texttt{elif} in some programming languages) concept allows us to add another sequential check if the \texttt{if} statement is not true.
+Furthermore, we are not limited to a single \texttt{TRUE}/\texttt{FALSE} check in an \texttt{if\ else} statement, where actions are limited to \emph{``do something if true, in \textbf{all} other scenarios do something different''}. The \texttt{else\ if} (written as \texttt{elif} in some programming languages) concept allows us to add another sequential check if the \texttt{if} statement is not true.
 
 An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don't put it in the potatoes.
 
@@ -1621,27 +1623,49 @@ Your version may look different, and that's fine! The fun of pseudocode is pract
 
 \hfill\break
 
-\section{Boolean Operators}\label{boolean-operators}
+\section{Comparing Things and Booleans}\label{comparing-things-and-booleans}
 
-In programming, most things boil down to \texttt{true} or \texttt{false}. (Sometimes you may see true/false capitalized as \texttt{TRUE} and \texttt{FALSE}, but the concept is the same. We'll use both ways throughout.)\\
+In programming, most things boil down to \texttt{true} or \texttt{false}. (Sometimes you may see true/false capitalized as \texttt{TRUE} and \texttt{FALSE}, but the concept is the same. We'll use both ways throughout.). \texttt{TRUE} and \texttt{FALSE} are formally a boolean data type. Programming languages use boolean operators and comparison operators to determine if a statement is \texttt{TRUE} or \texttt{FALSE} in order to make actions.
 
-Programming uses Boolean operators such as:\\
+Common Boolean operators are:\\
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{and} (may also see \texttt{\&} used)
+  \texttt{and} (may also see the ampersand, \texttt{\&} or \texttt{\&\&} used)
 \item
-  \texttt{or} (may also see \texttt{\textbar{}} used)
+  \texttt{or} (may also see the pipe symbol, \texttt{\textbar{}} or \texttt{\textbar{}\textbar{}} used)
 \item
   \texttt{not} (may also see \texttt{!} to indicate negation, for instance \texttt{!=} for ``not equal'')
+\end{itemize}
+
+Common comparison operators are:
+
+\begin{itemize}
+\tightlist
 \item
-  \texttt{equals} (also \texttt{==})
+  \texttt{\textgreater{}} for Greater-than
+\item
+  \texttt{\textless{}} for Less-than
+\item
+  \texttt{\textgreater{}=} for Greater-than or equal-to
+\item
+  \texttt{\textless{}=} for Less-than or equal-to
+\item
+  \texttt{==} for \emph{is equal to}
 
   \begin{itemize}
   \tightlist
   \item
-    {[}SL note: most Boolean operator lists include AND, OR, NOT - should we include EQUALS here or keep as separate part of testing true/false?{]}
+    you should note that \texttt{==} is very different from \texttt{=}. \texttt{==} is the comparison operator, while \texttt{=} is an assignment operator. Another assignment operator you may have noticed us using is \texttt{\textless{}-} which is commonly used in R.
+  \item
+    To practice, you can replace the words ``is equal to'' or ``is assigned the value of'' appropriately.
+  \item
+    \texttt{A\ =\ 6} (\texttt{A} is assigned the value of \texttt{6})
+  \item
+    \texttt{B\ \textless{}-\ 8} (\texttt{B} is assigned the value of \texttt{8})
+  \item
+    \texttt{B\ ==\ 7} (``\texttt{B} is equal to \texttt{7}'', where the statement is then evaluated to be \texttt{true} or \texttt{false}. In this case, it is \texttt{false})
   \end{itemize}
 \end{itemize}
 
@@ -1712,11 +1736,37 @@ x greater than y
 
 \section{Caveats}\label{caveats-1}
 
-\subsection{Order of operations}\label{order-of-operations}
+We're going to cover some more formal processes and syntax. While this won't impact working with pseudocode, it is important to know when working with the computer.
 
-Order of operations is critical for conditionals. The computer will go through each condition \emph{in order}, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
+\subsection{Order of operations in conditionals}\label{order-of-operations-in-conditionals}
 
-\textbf{{[}{[}insert example here{]}{]}}
+Order of operations is critical for conditionals. The computer will go through each condition \emph{in order}, so if an early condition is found as \texttt{true}, the statement will conclude there and not check the other conditions.
+
+\begin{verbatim}
+if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
+  print("This is cheesy")
+  
+\end{verbatim}
+
+In this case, because \texttt{cheddar\ ==\ cheese} is \texttt{true}, the computer doesn't bother checking the other two statements.
+
+\subsection{Clarity and Order of Operations in math statements}\label{clarity-and-order-of-operations-in-math-statements}
+
+Most of us know the standard order of operation in a math problem (PEMDAS), and most computer languages do, too.
+
+\texttt{3\ +\ 10\ *\ 2} is solved as \texttt{23} (and not \texttt{26})
+
+and so we don't need parentheses, but it is good practice to use parentheses to make your code more readable and clear.
+
+\texttt{3\ +\ (10\ *\ 2)} is preferred over \texttt{3\ +\ 10\ *\ 2}
+
+just as
+
+\texttt{(cheddar\ ==\ cheese)\ OR\ (brie\ ==\ cheese)\ OR\ (broccoli\ ==\ cheese)}
+
+is easier to read than
+
+\texttt{cheddar\ ==\ cheese\ OR\ brie\ ==\ cheese\ OR\ broccoli\ ==\ cheese}
 
 \subsection{Matching parentheses}\label{matching-parentheses}
 
@@ -1730,9 +1780,11 @@ if (x == y)
   
 \end{verbatim}
 
-As far as the programming language is concerned, you haven't finished this \texttt{if} statement. So, it will wait to run until you have ``completed your thought'', so to speak, and provided the syntax (here, \texttt{)}) indicating that this statement is complete and the program is ready to run.
+As far as the programming language is concerned, you haven't finished this \texttt{if} statement. So, depending on the language, it might wait to run until you have ``completed your thought'', so to speak, and provided the syntax (here the end paren \texttt{)}) indicating that this statement is complete and the program is ready to run.
 
-Alternately, if you have mismatched parentheses, the result may be an error.
+Or if you have mismatched parentheses, the computer might give you an error message.
+
+Here's another example of fun with parentheses:
 
 \begin{verbatim}
 if (x == y) 
@@ -1753,18 +1805,23 @@ Error: unexpected ')' in:
 
 Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
-For example, Python expects \texttt{:} at the end of each section of an \texttt{ifelse} statement, uses \texttt{elif} for \texttt{else\ if}, and requires indentation to indicate action of each section:
+Python uses indentation for code blocks. Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block intented by one
 
 \begin{verbatim}
 if x == y:
   print("values are equal")
+
+  for i in range(10):
+    print("notice the indentations! " + i)
+
 elif x > y:
   print("x greater than y")
+
 else:
   print("x must be less than y")
 \end{verbatim}
 
-In contract, R makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{ifelse} statement and while indentation is a convention for readability, it is not technically required for the code to run:
+R makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement and while indentation is a convention for readability, it is not technically required for the code to run:
 
 \begin{verbatim}
 if (x == y) {
@@ -1776,7 +1833,29 @@ if (x == y) {
 }
 \end{verbatim}
 
-\textbf{{[}{[}Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting{]}{]}}
+One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)
+
+\begin{verbatim}
+if (x == y) {
+  cout << "values are equal";
+} else if (x > y) {
+  cout << "x greater than y";
+} else {
+  cout << "x must be less than y";
+}
+\end{verbatim}
+
+PHP is very similar to C/C++, but is used for web development.
+
+\begin{verbatim}
+if (x == y) {
+  echo "values are equal";
+} elseif (x > y) {
+  echo "x greater than y";
+} else {
+  echo "x must be less than y";
+}
+\end{verbatim}
 
 \chapter{Functions}\label{functions}
 
@@ -2018,7 +2097,7 @@ letters NA.
 
 Ending a statement (needing ; or other conclusion)
 
-\section{Order of operations}\label{order-of-operations-1}
+\section{Order of operations}\label{order-of-operations}
 
 overwriting/ variable will be whatever most recently set as
 

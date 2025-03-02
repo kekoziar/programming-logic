@@ -23,10 +23,12 @@ caveats
 infinite-loops
 overwriting-outputs
 conditionals-and-making-choices
-boolean-operators
+if-statements
+comparing-things-and-booleans
 exercise---ifelse-trace
 caveats-1
-order-of-operations
+order-of-operations-in-conditionals
+clarity-and-order-of-operations-in-math-statements
 matching-parentheses
 formatting-may-vary
 functions
@@ -43,7 +45,7 @@ difference-between-and
 spelling-and-capitalization-matter
 special-characters-and-words
 ending-a-code-chunk
-order-of-operations-1
+order-of-operations
 others-work-in-progress
 practice
 new-types-of-conditions-in-sql

@@ -1,5 +1,7 @@
 # Conditionals and Making Choices
 
+## `if` Statements
+
 Many times in programming, we want to take a certain action only if a certain condition is satisfied.\
 
 To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an `if` statement, which is often combined with an `else` statement.\
@@ -50,7 +52,7 @@ ELSE
 
 Here, `else` is used equivalent to "if not true", meaning `A == FALSE`.\
 
-Furthermore, we are not limited to a single `TRUE`/`FALSE` check in an `if else` statement, where actions are limited to "do something if true, in all other scenarios do something different". The `else if` (written as `elif` in some programming languages) concept allows us to add another sequential check if the `if` statement is not true. 
+Furthermore, we are not limited to a single `TRUE`/`FALSE` check in an `if else` statement, where actions are limited to _"do something if true, in **all** other scenarios do something different"_. The `else if` (written as `elif` in some programming languages) concept allows us to add another sequential check if the `if` statement is not true. 
 
 An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don't put it in the potatoes.
 
@@ -98,17 +100,28 @@ Your version may look different, and that's fine! The fun of pseudocode is pract
 </details>\
 
 
-## Boolean Operators
+## Comparing Things and Booleans
 
-In programming, most things boil down to `true` or `false`. (Sometimes you may see true/false capitalized as `TRUE` and `FALSE`, but the concept is the same. We'll use both ways throughout.)\
+In programming, most things boil down to `true` or `false`. (Sometimes you may see true/false capitalized as `TRUE` and `FALSE`, but the concept is the same. We'll use both ways throughout.). `TRUE` and `FALSE` are formally a boolean data type.  Programming languages use boolean operators and comparison operators to determine if a statement is `TRUE` or `FALSE` in order to make actions.
 
-Programming uses Boolean operators such as:\
+Common Boolean operators are:\
 
-- `and` (may also see `&` used)
-- `or` (may also see `|` used)
+- `and` (may also see the ampersand, `&` or `&&` used)
+- `or` (may also see the pipe symbol, `|` or `||` used)
 - `not` (may also see `!` to indicate negation, for instance `!=` for "not equal")
-- `equals` (also `==`) 
-  - [SL note: most Boolean operator lists include AND, OR, NOT - should we include EQUALS here or keep as separate part of testing true/false?]
+
+Common comparison operators are:
+
+- `>` for Greater-than
+- `<` for Less-than
+- `>=` for Greater-than or equal-to
+- `<=` for Less-than or equal-to
+- `==` for *is equal to*
+  - you should note that `==` is very different from `=`. `==` is the comparison operator, while `=` is an assignment operator. Another assignment operator you may have noticed us using is `<-` which is commonly used in R.
+  - To practice, you can replace the words "is equal to" or "is assigned the value of" appropriately.
+  - `A = 6` (`A` is assigned the value of `6`)
+  - `B <- 8` (`B` is assigned the value of `8`)
+  - `B == 7` ("`B` is equal to `7`", where the statement is then evaluated to be `true` or `false`.  In this case, it is `false`)
 
 
 ## Exercise - `ifelse` trace 
@@ -182,11 +195,37 @@ x greater than y
 
 ## Caveats
 
-### Order of operations
+We're going to cover some more formal processes and syntax.  While this won't impact working with pseudocode, it is important to know when working with the computer.
 
-Order of operations is critical for conditionals. The computer will go through each condition _in order_, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.
+### Order of operations in conditionals
 
-__[[insert example here]]__
+Order of operations is critical for conditionals. The computer will go through each condition _in order_, so if an early condition is found as `true`, the statement will conclude there and not check the other conditions.
+
+```
+if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
+  print("This is cheesy")
+  
+```
+In this case, because `cheddar == cheese` is `true`, the computer doesn't bother checking the other two statements.
+
+
+### Clarity and Order of Operations in math statements
+
+Most of us know the standard order of operation in a math problem (PEMDAS), and most computer languages do, too.  
+
+` 3 + 10 * 2` is solved as `23` (and not `26`)
+
+and so we don't need parentheses, but it is good practice to use parentheses to make your code more readable and clear. 
+
+` 3 + (10 * 2)` is preferred over ` 3 + 10 * 2`
+
+just as 
+
+`(cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese)`
+
+is easier to read than 
+
+`cheddar == cheese OR brie == cheese OR broccoli == cheese`
 
 ### Matching parentheses
 
@@ -200,9 +239,11 @@ if (x == y)
   
 ```
 
-As far as the programming language is concerned, you haven't finished this `if` statement. So, it will wait to run until you have "completed your thought", so to speak, and provided the syntax (here, `)`) indicating that this statement is complete and the program is ready to run.
+As far as the programming language is concerned, you haven't finished this `if` statement. So, depending on the language, it might wait to run until you have "completed your thought", so to speak, and provided the syntax (here the end paren `)`) indicating that this statement is complete and the program is ready to run.
 
-Alternately, if you have mismatched parentheses, the result may be an error.
+Or if you have mismatched parentheses, the computer might give you an error message.
+<hr>
+Here's another example of fun with parentheses:
 
 ```
 if (x == y) 
@@ -222,19 +263,23 @@ Error: unexpected ')' in:
 
 Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
-For example, Python expects `:` at the end of each section of an `ifelse` statement, uses `elif` for `else if`, and requires indentation to indicate action of each section:
-
+Python uses indentation for code blocks.  Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block intented by one
 ```
 if x == y:
   print("values are equal")
+
+  for i in range(10):
+    print("notice the indentations! " + i)
+
 elif x > y:
   print("x greater than y")
+
 else:
   print("x must be less than y")
 
 ```
 
-In contract, R makes use of curly brackets `{}` to indicate each section of an `ifelse` statement and while indentation is a convention for readability, it is not technically required for the code to run:
+R makes use of curly brackets `{}` to indicate each section of an `if else` statement and while indentation is a convention for readability, it is not technically required for the code to run:
 
 ```
 if (x == y) {
@@ -247,6 +292,28 @@ if (x == y) {
 
 ```
 
-__[[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]]__
+One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)
+
+```
+if (x == y) {
+  cout << "values are equal";
+} else if (x > y) {
+  cout << "x greater than y";
+} else {
+  cout << "x must be less than y";
+}
+```
+
+PHP is very similar to C/C++, but is used for web development.
+
+```
+if (x == y) {
+  echo "values are equal";
+} elseif (x > y) {
+  echo "x greater than y";
+} else {
+  echo "x must be less than y";
+}
+```
 
 

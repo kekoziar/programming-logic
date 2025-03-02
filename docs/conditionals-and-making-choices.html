@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
+<meta name="description" content="6.1 if Statements Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
+<meta property="og:description" content="6.1 if Statements Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 Conditionals and Making Choices | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format of a conditional...">
+<meta name="twitter:description" content="6.1 if Statements Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -93,6 +93,10 @@
 <h1>
 <span class="header-section-number">6</span> Conditionals and Making Choices<a class="anchor" aria-label="anchor" href="#conditionals-and-making-choices"><i class="fas fa-link"></i></a>
 </h1>
+<div id="if-statements" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> <code>if</code> Statements<a class="anchor" aria-label="anchor" href="#if-statements"><i class="fas fa-link"></i></a>
+</h2>
 <p>Many times in programming, we want to take a certain action only if a certain condition is satisfied.<br></p>
 <p>To do this, we can use conditional statements. The most commonly used format of a conditional statement in programming is an <code>if</code> statement, which is often combined with an <code>else</code> statement.<br></p>
 <p>This structure tells the computer to check a condition and the next step depends on whether the condition is true or false.</p>
@@ -122,7 +126,7 @@ ELSE
   do something different
   </code></pre>
 <p>Here, <code>else</code> is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
-<p>Furthermore, we are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to “do something if true, in all other scenarios do something different”. The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true.</p>
+<p>Furthermore, we are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to <em>“do something if true, in <strong>all</strong> other scenarios do something different”</em>. The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true.</p>
 <p>An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don’t put it in the potatoes.</p>
 <pre><code>IF (ingredient is (a type of hard cheese))
   grate(ingredient)
@@ -153,30 +157,49 @@ ELSE
 </code></pre>
 <p>Your version may look different, and that’s fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.</p>
 </details><p><br></p>
-<div id="boolean-operators" class="section level2" number="6.1">
+</div>
+<div id="comparing-things-and-booleans" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">6.1</span> Boolean Operators<a class="anchor" aria-label="anchor" href="#boolean-operators"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Comparing Things and Booleans<a class="anchor" aria-label="anchor" href="#comparing-things-and-booleans"><i class="fas fa-link"></i></a>
 </h2>
-<p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same. We’ll use both ways throughout.)<br></p>
-<p>Programming uses Boolean operators such as:<br></p>
+<p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same. We’ll use both ways throughout.). <code>TRUE</code> and <code>FALSE</code> are formally a boolean data type. Programming languages use boolean operators and comparison operators to determine if a statement is <code>TRUE</code> or <code>FALSE</code> in order to make actions.</p>
+<p>Common Boolean operators are:<br></p>
 <ul>
 <li>
-<code>and</code> (may also see <code>&amp;</code> used)</li>
+<code>and</code> (may also see the ampersand, <code>&amp;</code> or <code>&amp;&amp;</code> used)</li>
 <li>
-<code>or</code> (may also see <code>|</code> used)</li>
+<code>or</code> (may also see the pipe symbol, <code>|</code> or <code>||</code> used)</li>
 <li>
 <code>not</code> (may also see <code>!</code> to indicate negation, for instance <code>!=</code> for “not equal”)</li>
-<li>
-<code>equals</code> (also <code>==</code>)
+</ul>
+<p>Common comparison operators are:</p>
 <ul>
-<li>[SL note: most Boolean operator lists include AND, OR, NOT - should we include EQUALS here or keep as separate part of testing true/false?]</li>
+<li>
+<code>&gt;</code> for Greater-than</li>
+<li>
+<code>&lt;</code> for Less-than</li>
+<li>
+<code>&gt;=</code> for Greater-than or equal-to</li>
+<li>
+<code>&lt;=</code> for Less-than or equal-to</li>
+<li>
+<code>==</code> for <em>is equal to</em>
+<ul>
+<li>you should note that <code>==</code> is very different from <code>=</code>. <code>==</code> is the comparison operator, while <code>=</code> is an assignment operator. Another assignment operator you may have noticed us using is <code>&lt;-</code> which is commonly used in R.</li>
+<li>To practice, you can replace the words “is equal to” or “is assigned the value of” appropriately.</li>
+<li>
+<code>A = 6</code> (<code>A</code> is assigned the value of <code>6</code>)</li>
+<li>
+<code>B &lt;- 8</code> (<code>B</code> is assigned the value of <code>8</code>)</li>
+<li>
+<code>B == 7</code> (“<code>B</code> is equal to <code>7</code>”, where the statement is then evaluated to be <code>true</code> or <code>false</code>. In this case, it is <code>false</code>)</li>
 </ul>
 </li>
 </ul>
 </div>
-<div id="exercise---ifelse-trace" class="section level2" number="6.2">
+<div id="exercise---ifelse-trace" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">6.2</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.</p>
 <p>First, for our recipe example:</p>
@@ -222,28 +245,47 @@ Answer
 </summary><p>x greater than y</p>
 </details><p><br></p>
 </div>
-<div id="caveats-1" class="section level2" number="6.3">
+<div id="caveats-1" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">6.3</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="order-of-operations" class="section level3" number="6.3.1">
+<p>We’re going to cover some more formal processes and syntax. While this won’t impact working with pseudocode, it is important to know when working with the computer.</p>
+<div id="order-of-operations-in-conditionals" class="section level3" number="6.4.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.1</span> Order of operations in conditionals<a class="anchor" aria-label="anchor" href="#order-of-operations-in-conditionals"><i class="fas fa-link"></i></a>
 </h3>
-<p>Order of operations is critical for conditionals. The computer will go through each condition <em>in order</em>, so if an early condition is satisfied, the statement will conclude there and not check the other conditions.</p>
-<p><strong>[[insert example here]]</strong></p>
+<p>Order of operations is critical for conditionals. The computer will go through each condition <em>in order</em>, so if an early condition is found as <code>true</code>, the statement will conclude there and not check the other conditions.</p>
+<pre><code>if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
+  print("This is cheesy")
+  </code></pre>
+<p>In this case, because <code>cheddar == cheese</code> is <code>true</code>, the computer doesn’t bother checking the other two statements.</p>
 </div>
-<div id="matching-parentheses" class="section level3" number="6.3.2">
+<div id="clarity-and-order-of-operations-in-math-statements" class="section level3" number="6.4.2">
 <h3>
-<span class="header-section-number">6.3.2</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.2</span> Clarity and Order of Operations in math statements<a class="anchor" aria-label="anchor" href="#clarity-and-order-of-operations-in-math-statements"><i class="fas fa-link"></i></a>
+</h3>
+<p>Most of us know the standard order of operation in a math problem (PEMDAS), and most computer languages do, too.</p>
+<p><code>3 + 10 * 2</code> is solved as <code>23</code> (and not <code>26</code>)</p>
+<p>and so we don’t need parentheses, but it is good practice to use parentheses to make your code more readable and clear.</p>
+<p><code>3 + (10 * 2)</code> is preferred over <code>3 + 10 * 2</code></p>
+<p>just as</p>
+<p><code>(cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese)</code></p>
+<p>is easier to read than</p>
+<p><code>cheddar == cheese OR brie == cheese OR broccoli == cheese</code></p>
+</div>
+<div id="matching-parentheses" class="section level3" number="6.4.3">
+<h3>
+<span class="header-section-number">6.4.3</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
 </h3>
 <p>For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.</p>
 <p>The code below, without a closing parentheses after “equal”, will continue to expect input.</p>
 <pre><code>if (x == y) 
   print("values are equal"
   </code></pre>
-<p>As far as the programming language is concerned, you haven’t finished this <code>if</code> statement. So, it will wait to run until you have “completed your thought”, so to speak, and provided the syntax (here, <code>)</code>) indicating that this statement is complete and the program is ready to run.</p>
-<p>Alternately, if you have mismatched parentheses, the result may be an error.</p>
+<p>As far as the programming language is concerned, you haven’t finished this <code>if</code> statement. So, depending on the language, it might wait to run until you have “completed your thought”, so to speak, and provided the syntax (here the end paren <code>)</code>) indicating that this statement is complete and the program is ready to run.</p>
+Or if you have mismatched parentheses, the computer might give you an error message.
+<hr>
+<p>Here’s another example of fun with parentheses:</p>
 <pre><code>if (x == y) 
   print("values are equal"))
   </code></pre>
@@ -253,20 +295,25 @@ Answer
     print("values are equal"))"
     </code></pre>
 </div>
-<div id="formatting-may-vary" class="section level3" number="6.3.3">
+<div id="formatting-may-vary" class="section level3" number="6.4.4">
 <h3>
-<span class="header-section-number">6.3.3</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4.4</span> Formatting may vary<a class="anchor" aria-label="anchor" href="#formatting-may-vary"><i class="fas fa-link"></i></a>
 </h3>
 <p>Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.</p>
-<p>For example, Python expects <code>:</code> at the end of each section of an <code>ifelse</code> statement, uses <code>elif</code> for <code>else if</code>, and requires indentation to indicate action of each section:</p>
+<p>Python uses indentation for code blocks. Programming structures, such as <code>if</code>, <code>else</code>, <code>elif</code>, or <code>for</code> expects <code>:</code> at the end of each statement with the subsequent code block intented by one</p>
 <pre><code>if x == y:
   print("values are equal")
+
+  for i in range(10):
+    print("notice the indentations! " + i)
+
 elif x &gt; y:
   print("x greater than y")
+
 else:
   print("x must be less than y")
 </code></pre>
-<p>In contract, R makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>ifelse</code> statement and while indentation is a convention for readability, it is not technically required for the code to run:</p>
+<p>R makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>if else</code> statement and while indentation is a convention for readability, it is not technically required for the code to run:</p>
 <pre><code>if (x == y) {
   print("values are equal")
 } else if (x &gt; y) {
@@ -275,7 +322,22 @@ else:
   print("x must be less than y")
 }
 </code></pre>
-<p><strong>[[Note to self: add another 1 or 2 language examples here to show similarities and differences in formatting]]</strong></p>
+<p>One big difference between C/C++ and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons)</p>
+<pre><code>if (x == y) {
+  cout &lt;&lt; "values are equal";
+} else if (x &gt; y) {
+  cout &lt;&lt; "x greater than y";
+} else {
+  cout &lt;&lt; "x must be less than y";
+}</code></pre>
+<p>PHP is very similar to C/C++, but is used for web development.</p>
+<pre><code>if (x == y) {
+  echo "values are equal";
+} elseif (x &gt; y) {
+  echo "x greater than y";
+} else {
+  echo "x must be less than y";
+}</code></pre>
 
 </div>
 </div>
@@ -287,13 +349,15 @@ else:
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#conditionals-and-making-choices"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
-<li><a class="nav-link" href="#boolean-operators"><span class="header-section-number">6.1</span> Boolean Operators</a></li>
-<li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">6.2</span> Exercise - ifelse trace</a></li>
+<li><a class="nav-link" href="#if-statements"><span class="header-section-number">6.1</span> if Statements</a></li>
+<li><a class="nav-link" href="#comparing-things-and-booleans"><span class="header-section-number">6.2</span> Comparing Things and Booleans</a></li>
+<li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">6.3</span> Exercise - ifelse trace</a></li>
 <li>
-<a class="nav-link" href="#caveats-1"><span class="header-section-number">6.3</span> Caveats</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#order-of-operations"><span class="header-section-number">6.3.1</span> Order of operations</a></li>
-<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.3.2</span> Matching parentheses</a></li>
-<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">6.3.3</span> Formatting may vary</a></li>
+<a class="nav-link" href="#caveats-1"><span class="header-section-number">6.4</span> Caveats</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#order-of-operations-in-conditionals"><span class="header-section-number">6.4.1</span> Order of operations in conditionals</a></li>
+<li><a class="nav-link" href="#clarity-and-order-of-operations-in-math-statements"><span class="header-section-number">6.4.2</span> Clarity and Order of Operations in math statements</a></li>
+<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.4.3</span> Matching parentheses</a></li>
+<li><a class="nav-link" href="#formatting-may-vary"><span class="header-section-number">6.4.4</span> Formatting may vary</a></li>
 </ul>
 </li>
 </ul>
