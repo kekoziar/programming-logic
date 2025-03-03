@@ -1832,7 +1832,9 @@ if (x == y) {
 }
 \end{verbatim}
 
-One big difference between \textbf{C/C++} and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
+The following example is \textbf{C/C++} syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
+
+\textbf{C/C++} syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
 \begin{verbatim}
 if (x == y) {
@@ -1858,7 +1860,7 @@ if (x == y) {
 
 With \textbf{Bash}, you need to be careful of spaces around your operators and parentheses. (cheatsheets \url{https://ss64.com/bash/if.html} \url{https://devhints.io/bash\#conditionals})
 
-This compares numbers
+This Bash script example compares numbers
 
 \begin{verbatim}
 if (( $x == $y )) ; then
@@ -1870,7 +1872,7 @@ else
 fi
 \end{verbatim}
 
-This compares text
+This Bash script example compares text
 
 \begin{verbatim}
 if  [[ "$x" == "$y" ]] ; then

@@ -322,7 +322,8 @@ else:
 }
 </code></pre>
 <hr>
-<p>One big difference between <strong>C/C++</strong> and R is C/C++ requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).</p>
+<p>The following example is <strong>C/C++</strong> syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.</p>
+<p><strong>C/C++</strong> syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).</p>
 <pre><code>if (x == y) {
   cout &lt;&lt; "values are equal";
 } else if (x &gt; y) {
@@ -341,7 +342,7 @@ else:
 }</code></pre>
 <hr>
 <p>With <strong>Bash</strong>, you need to be careful of spaces around your operators and parentheses. (cheatsheets <a href="https://ss64.com/bash/if.html" class="uri">https://ss64.com/bash/if.html</a> <a href="https://devhints.io/bash#conditionals" class="uri">https://devhints.io/bash#conditionals</a>)</p>
-<p>This compares numbers</p>
+<p>This Bash script example compares numbers</p>
 <pre><code>if (( $x == $y )) ; then
   echo "values are equal"
 elif (( $x &gt; $y )) ; then
@@ -349,7 +350,7 @@ elif (( $x &gt; $y )) ; then
 else
   echo "x must be less than y"
 fi</code></pre>
-<p>This compares text</p>
+<p>This Bash script example compares text</p>
 <pre><code>if  [[ "$x" == "$y" ]] ; then
   echo "the text in x is the same as y"
 else
