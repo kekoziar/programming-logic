@@ -69,7 +69,7 @@ peeler <- "swiss peeler"
 bowl <- [] // empty array
 
 for potato in potatoes:
-  bowl <- bowl+peel_vegetable(potato)
+  bowl <- bowl+peel_vegetable(potato, peeler)
 
 // end for-statement  
 ```

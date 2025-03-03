@@ -673,10 +673,6 @@ The next step is to fill in the values for each iteration of the loop.
 
 Your paper will now look something like this:
 
-\begin{verbatim}
-## Warning: package 'ftExtra' was built under R version 4.4.2
-\end{verbatim}
-
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
 \global\setlength{\Oldtabcolsep}{\tabcolsep}
@@ -1993,7 +1989,7 @@ peeler <- "swiss peeler"
 bowl <- [] // empty array
 
 for potato in potatoes:
-  bowl <- bowl+peel_vegetable(potato)
+  bowl <- bowl+peel_vegetable(potato, peeler)
 
 // end for-statement  
 \end{verbatim}
