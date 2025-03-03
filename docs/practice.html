@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 10 Practice | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="In this section, we’ll work on understanding and annotating unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta name="description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="Chapter 10 Practice | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="In this section, we’ll work on understanding and annotating unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta property="og:description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 10 Practice | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="In this section, we’ll work on understanding and annotating unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta name="twitter:description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -93,7 +93,7 @@
 <h1>
 <span class="header-section-number">10</span> Practice<a class="anchor" aria-label="anchor" href="#practice"><i class="fas fa-link"></i></a>
 </h1>
-<p>In this section, we’ll work on understanding and annotating unfamiliar code.</p>
+<p>In this section, we’ll work on annotating and understanding unfamiliar code.</p>
 <div id="new-types-of-conditions-in-sql" class="section level2" number="10.1">
 <h2>
 <span class="header-section-number">10.1</span> New types of conditions (in SQL)<a class="anchor" aria-label="anchor" href="#new-types-of-conditions-in-sql"><i class="fas fa-link"></i></a>
@@ -297,7 +297,8 @@ Start and end locations
 <pre><code>1.  df_new &lt;- df %&gt;% 
 2.    select(-respondent_name) %&gt;% 
 3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %&gt;% 
-4.    mutate(survey_type = ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
+4.    mutate(survey_type = 
+5.           ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
   </code></pre>
 <p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
 <p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below, to guide your annotation.</p>
@@ -320,7 +321,7 @@ Start and end locations
 <li>The new <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> function has three arguments (<code>paste(arg1, arg2, arg3)</code>). What do you think the arguments are for?</li>
 </ul>
 </li>
-<li>Line 4
+<li>Line 4 &amp; 5 (note: new line not strictly necessary, only to fit in page width without needing scroll)
 <ul>
 <li>This <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has a different format than we’ve covered so far, but the concept is the same. Assuming this <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has three arguments (<code>ifelse(condition, mystery1, mystery2)</code>) what might the two mystery arguments be specifying?</li>
 <li>Looking at the section <code>survey_wave %in% c("first", "second")</code>, what do you think this would translate to, as a written explanation of the task here?</li>
@@ -335,23 +336,24 @@ Example narrative
 <p>Then, make another new column called “survey_type”. The values in this column are determined by an <code>ifelse</code> statement: if the value in the “survey_wave” column is any of the values specified in the list <code>("first", "second")</code> (so if the value is “first” or “second”), then the value in the “survey_type” column will be “phone”. Otherwise, the value will be “in person”.<br></p>
 </details><p><br></p>
 </div>
-<div id="add-example-for-cc" class="section level2" number="10.4">
+<div id="new-functions-in-stata" class="section level2" number="10.4">
 <h2>
-<span class="header-section-number">10.4</span> add example for C/C++<a class="anchor" aria-label="anchor" href="#add-example-for-cc"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="new-functions-in-stata" class="section level2" number="10.5">
-<h2>
-<span class="header-section-number">10.5</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.4</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
 </h2>
 <p>We’ll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
-<p>So, relying on what we’ve learned so far and context clues, what is the code below doing?</p>
+<p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
 <pre><code>replace variable = variable[_n-1] if missing(variable)</code></pre>
 <details><summary>
-What is Stata doing?
+What is this code doing?
 </summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (n-1) value of `variable.</p>
 There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
 </details>
+</div>
+<div id="add-example-for-cc" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> add example for C/C++<a class="anchor" aria-label="anchor" href="#add-example-for-cc"><i class="fas fa-link"></i></a>
+</h2>
+
 </div>
 </div>
   <div class="chapter-nav">
@@ -364,8 +366,8 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <li><a class="nav-link" href="#new-types-of-conditions-in-sql"><span class="header-section-number">10.1</span> New types of conditions (in SQL)</a></li>
 <li><a class="nav-link" href="#nested-for-loops-and-if-else-statements-in-python"><span class="header-section-number">10.2</span> Nested for loops and if else statements (in Python)</a></li>
 <li><a class="nav-link" href="#new-syntax-and-terms-in-r"><span class="header-section-number">10.3</span> New syntax and terms (in R)</a></li>
-<li><a class="nav-link" href="#add-example-for-cc"><span class="header-section-number">10.4</span> add example for C/C++</a></li>
-<li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">10.5</span> New functions in Stata</a></li>
+<li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">10.4</span> New functions in Stata</a></li>
+<li><a class="nav-link" href="#add-example-for-cc"><span class="header-section-number">10.5</span> add example for C/C++</a></li>
 </ul>
 
       <div class="book-extra">

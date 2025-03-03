@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="6.1 if Statements Many times in programming, we want to take a certain action only if a certain condition is satisfied. To do this, we can use conditional statements. The most commonly used format...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -143,7 +143,13 @@ ELSE IF (condition B is true)
 ELSE 
   do something even more different
   </code></pre>
-<p><strong>Exercise</strong>: Let’s try a similar example with the popcorn algorithm from section 2.</p>
+</div>
+<div id="exercise---popcorn-if-else-pseudocode" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Exercise - Popcorn <code>if else</code> pseudocode<a class="anchor" aria-label="anchor" href="#exercise---popcorn-if-else-pseudocode"><i class="fas fa-link"></i></a>
+</h2>
+<p><em>Timing: 5 minutes</em></p>
+<p>Let’s try a similar example with the popcorn algorithm from section 2.</p>
 <p>Write out an <code>if else</code> statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
 Write out an <code>if, else if, else</code> statement that includes an air fry scenario.</p>
 <details><summary>
@@ -158,9 +164,9 @@ ELSE
 <p>Your version may look different, and that’s fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.</p>
 </details><p><br></p>
 </div>
-<div id="comparing-things-and-booleans" class="section level2" number="6.2">
+<div id="comparing-things-and-booleans" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">6.2</span> Comparing Things and Booleans<a class="anchor" aria-label="anchor" href="#comparing-things-and-booleans"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Comparing Things and Booleans<a class="anchor" aria-label="anchor" href="#comparing-things-and-booleans"><i class="fas fa-link"></i></a>
 </h2>
 <p>In programming, most things boil down to <code>true</code> or <code>false</code>. (Sometimes you may see true/false capitalized as <code>TRUE</code> and <code>FALSE</code>, but the concept is the same. We’ll use both ways throughout.). <code>TRUE</code> and <code>FALSE</code> are formally a boolean data type. Programming languages use boolean operators and comparison operators to determine if a statement is <code>TRUE</code> or <code>FALSE</code> in order to make actions.</p>
 <p>Common Boolean operators are:<br></p>
@@ -197,9 +203,9 @@ ELSE
 </li>
 </ul>
 </div>
-<div id="exercise---ifelse-trace" class="section level2" number="6.3">
+<div id="conditional-statements-in-practice" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">6.3</span> Exercise - <code>ifelse</code> trace<a class="anchor" aria-label="anchor" href="#exercise---ifelse-trace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Conditional Statements in Practice<a class="anchor" aria-label="anchor" href="#conditional-statements-in-practice"><i class="fas fa-link"></i></a>
 </h2>
 <p>Let’s look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.</p>
 <p>First, for our recipe example:</p>
@@ -211,8 +217,12 @@ else:
   print("Do not use this in this recipe.")
   </code></pre>
 <p>If we have <code>cheese &lt;- parmesan</code> we would expect this statement to print out <code>Grate the cheese</code>. If we have <code>cheese &lt;- brie</code> we would expect the output to be <code>Cube the cheese</code>. And if we have <code>cheese &lt;- broccoli</code> we would expect the output to be <code>Do not use this in the recipe</code>.</p>
-<p><em>Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we’re using our cheese-based expertise to draw conclusions, but as we’ve covered, we would never assume a computer would know which cheeses were hard or soft!</em></p>
-<p><strong>Exercise</strong></p>
+<p>Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we’re using our cheese-based expertise to draw conclusions, but as we’ve covered, we would never assume a computer would know which cheeses were hard or soft!</p>
+<div id="exercise-ifelse-trace" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> Exercise: <code>ifelse</code> Trace<a class="anchor" aria-label="anchor" href="#exercise-ifelse-trace"><i class="fas fa-link"></i></a>
+</h3>
+<p><em>Timing: 5 minutes</em></p>
 <p><em>For this exercise, want you to type the answer in the chat, but don’t press enter until we tell you. We’ll say, <em>3, 2, 1, enter</em> then you press enter when we say <em>enter</em>.</em></p>
 <p>For the code below, what will be the printed output?</p>
 <pre><code>x &lt;- 37
@@ -245,14 +255,15 @@ Answer
 </summary><p>x greater than y</p>
 </details><p><br></p>
 </div>
-<div id="caveats-1" class="section level2" number="6.4">
+</div>
+<div id="caveats-1" class="section level2" number="6.5">
 <h2>
-<span class="header-section-number">6.4</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5</span> Caveats<a class="anchor" aria-label="anchor" href="#caveats-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>We’re going to cover some more formal processes and syntax. While this won’t impact working with pseudocode, it is important to know when working with the computer.</p>
-<div id="order-of-operations-in-conditionals" class="section level3" number="6.4.1">
+<div id="order-of-operations-in-conditionals" class="section level3" number="6.5.1">
 <h3>
-<span class="header-section-number">6.4.1</span> Order of operations in conditionals<a class="anchor" aria-label="anchor" href="#order-of-operations-in-conditionals"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.1</span> Order of operations in conditionals<a class="anchor" aria-label="anchor" href="#order-of-operations-in-conditionals"><i class="fas fa-link"></i></a>
 </h3>
 <p>Order of operations is critical for conditionals. The computer will go through each condition <em>in order</em>, so if an early condition is found as <code>true</code>, the statement will conclude there and not check the other conditions.</p>
 <pre><code>if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
@@ -260,9 +271,9 @@ Answer
   </code></pre>
 <p>In this case, because <code>cheddar == cheese</code> is <code>true</code>, the computer doesn’t bother checking the other two statements.</p>
 </div>
-<div id="clarity-and-order-of-operations-in-math-statements" class="section level3" number="6.4.2">
+<div id="clarity-and-order-of-operations-in-math-statements" class="section level3" number="6.5.2">
 <h3>
-<span class="header-section-number">6.4.2</span> Clarity and Order of Operations in math statements<a class="anchor" aria-label="anchor" href="#clarity-and-order-of-operations-in-math-statements"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.2</span> Clarity and Order of Operations in math statements<a class="anchor" aria-label="anchor" href="#clarity-and-order-of-operations-in-math-statements"><i class="fas fa-link"></i></a>
 </h3>
 <p>Most of us know the standard order of operation in a math problem (PEMDAS), and most computer languages do, too.</p>
 <p><code>3 + 10 * 2</code> is solved as <code>23</code> (and not <code>26</code>)</p>
@@ -273,9 +284,9 @@ Answer
 <p>is easier to read than</p>
 <p><code>cheddar == cheese OR brie == cheese OR broccoli == cheese</code></p>
 </div>
-<div id="matching-parentheses" class="section level3" number="6.4.3">
+<div id="matching-parentheses" class="section level3" number="6.5.3">
 <h3>
-<span class="header-section-number">6.4.3</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5.3</span> Matching parentheses<a class="anchor" aria-label="anchor" href="#matching-parentheses"><i class="fas fa-link"></i></a>
 </h3>
 <p>For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.</p>
 <p>The code below, without a closing parentheses after “equal”, will continue to expect input.</p>
@@ -296,9 +307,9 @@ Or if you have mismatched parentheses, the computer might give you an error mess
     </code></pre>
 </div>
 </div>
-<div id="language-examples-formatting-may-vary" class="section level2" number="6.5">
+<div id="language-examples-formatting-may-vary" class="section level2" number="6.6">
 <h2>
-<span class="header-section-number">6.5</span> Language examples: Formatting may vary<a class="anchor" aria-label="anchor" href="#language-examples-formatting-may-vary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.6</span> Language examples: Formatting may vary<a class="anchor" aria-label="anchor" href="#language-examples-formatting-may-vary"><i class="fas fa-link"></i></a>
 </h2>
 <p>Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.</p>
 <p><strong>Python</strong> requires indentation for code blocks. Code blocks in different structures must be aligned with the same indentation.</p>
@@ -357,9 +368,9 @@ else
   echo "the text in x is not the same as y"
 fi</code></pre>
 <hr>
-<div id="challenge" class="section level3" number="6.5.1">
+<div id="challenge" class="section level3" number="6.6.1">
 <h3>
-<span class="header-section-number">6.5.1</span> Challenge<a class="anchor" aria-label="anchor" href="#challenge"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.6.1</span> Challenge<a class="anchor" aria-label="anchor" href="#challenge"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>What are some of the differences you can spot between the different languages?</li>
@@ -376,17 +387,20 @@ fi</code></pre>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#conditionals-and-making-choices"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
 <li><a class="nav-link" href="#if-statements"><span class="header-section-number">6.1</span> if Statements</a></li>
-<li><a class="nav-link" href="#comparing-things-and-booleans"><span class="header-section-number">6.2</span> Comparing Things and Booleans</a></li>
-<li><a class="nav-link" href="#exercise---ifelse-trace"><span class="header-section-number">6.3</span> Exercise - ifelse trace</a></li>
+<li><a class="nav-link" href="#exercise---popcorn-if-else-pseudocode"><span class="header-section-number">6.2</span> Exercise - Popcorn if else pseudocode</a></li>
+<li><a class="nav-link" href="#comparing-things-and-booleans"><span class="header-section-number">6.3</span> Comparing Things and Booleans</a></li>
 <li>
-<a class="nav-link" href="#caveats-1"><span class="header-section-number">6.4</span> Caveats</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#order-of-operations-in-conditionals"><span class="header-section-number">6.4.1</span> Order of operations in conditionals</a></li>
-<li><a class="nav-link" href="#clarity-and-order-of-operations-in-math-statements"><span class="header-section-number">6.4.2</span> Clarity and Order of Operations in math statements</a></li>
-<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.4.3</span> Matching parentheses</a></li>
+<a class="nav-link" href="#conditional-statements-in-practice"><span class="header-section-number">6.4</span> Conditional Statements in Practice</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise-ifelse-trace"><span class="header-section-number">6.4.1</span> Exercise: ifelse Trace</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#caveats-1"><span class="header-section-number">6.5</span> Caveats</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#order-of-operations-in-conditionals"><span class="header-section-number">6.5.1</span> Order of operations in conditionals</a></li>
+<li><a class="nav-link" href="#clarity-and-order-of-operations-in-math-statements"><span class="header-section-number">6.5.2</span> Clarity and Order of Operations in math statements</a></li>
+<li><a class="nav-link" href="#matching-parentheses"><span class="header-section-number">6.5.3</span> Matching parentheses</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#language-examples-formatting-may-vary"><span class="header-section-number">6.5</span> Language examples: Formatting may vary</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#challenge"><span class="header-section-number">6.5.1</span> Challenge</a></li></ul>
+<a class="nav-link" href="#language-examples-formatting-may-vary"><span class="header-section-number">6.6</span> Language examples: Formatting may vary</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#challenge"><span class="header-section-number">6.6.1</span> Challenge</a></li></ul>
 </li>
 </ul>
 
