@@ -18,3 +18,5 @@ if (x == y) {
 } else {
   print("x must be less than y");
 }
+
+ingredients_list <- c("cheese", "potatoes", "milk", "salt", "butter")

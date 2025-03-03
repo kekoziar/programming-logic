@@ -98,7 +98,7 @@
 <span class="header-section-number">7.1</span> What is a function?<a class="anchor" aria-label="anchor" href="#what-is-a-function"><i class="fas fa-link"></i></a>
 </h2>
 <p>A “function” in programming is a piece of code that does a specific task with a single line of code. We’ve already been using examples of informal functions - such as when we would include the <code>write</code> statement - and formal functions, such as <code>print</code>, <code>cout</code>, or <code>echo</code> statements we just saw in the conditional examples at the end of the previous chapter.</p>
-<p>The <code>print</code> function does something very simple, which is provide output either on the R or Python console or interface that people can read. It’s quite simple to use, but internal code that creates the print function is a little more complex (to say the least). But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.</p>
+<p>The <code>print</code> function does something very simple, which is provide output, either on the R or Python console or interface, that people can read. It’s quite simple to use, but internal code that creates the print function is a little more complex (to say the least). But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.</p>
 <p>Really, functions are created when you know you’re going to do the same task over and over again.</p>
 <p>Functions can do something very simple or very complex. Take our cheesy mashed potatoes example, a simple function might be something like <code>peel_potatoes()</code>, while a complex function would be <code>make_cheesy_mashed_potatoes()</code>, which is the equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients.</p>
 <pre><code>make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)</code></pre>
@@ -110,7 +110,17 @@
 </h2>
 <p>Functions will have inputs <em>(usually)</em> and outputs. The function inputs are formally called “arguments,” and are specified by the programmer, entered within the parentheses as part of the function call. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or the quantity of each ingredient.</p>
 <p>While our example is in pseudocode, luckily function calls look the same across most languages.</p>
-<pre><code>cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)</code></pre>
+<pre><code># these variables have quantities in oz
+cheese &lt;- 16
+potatoes &lt;- 32
+milk &lt;- 8
+salt &lt;- 0.125
+butter &lt;- 4
+
+make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
+
+paste("this function uses", cheese, "oz of cheese")
+</code></pre>
 <p>For our <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function example, the primary argument would be what kind of input to put in: <code>mean(x)</code> where <code>x</code> is a list or vector of values. Another argument might be an option for how to handle missing or <code>NA</code> values: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation.</p>
 <p>Optional arguments like this may come with a pre-supplied default, in this case that <code>na.rm = FALSE</code> and any <code>NA</code>values will be retained, unless this argument is manually changed to <code>TRUE</code>.<br></p>
 <p>It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.<br></p>

@@ -4,7 +4,7 @@
 
 A "function" in programming is a piece of code that does a specific task with a single line of code.  We've already been using examples of informal functions - such as when we would include the `write` statement - and formal functions, such as `print`, `cout`, or `echo` statements we just saw in the conditional examples at the end of the previous chapter.  
 
-The `print` function does something very simple, which is provide output either on the R or Python console or interface that people can read.  It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least).  But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.
+The `print` function does something very simple, which is provide output, either on the R or Python console or interface, that people can read.  It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least).  But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.
 
 Really, functions are created when you know you're going to do the same task over and over again.  
 
@@ -22,7 +22,17 @@ Functions will have inputs _(usually)_ and outputs. The function inputs are form
 While our example is in pseudocode, luckily function calls look the same across most languages.  
 
 ```
-cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
+# these variables have quantities in oz
+cheese <- 16
+potatoes <- 32
+milk <- 8
+salt <- 0.125
+butter <- 4
+
+make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
+
+paste("this function uses", cheese, "oz of cheese")
+
 ```
 
 For our `mean()` function example, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
