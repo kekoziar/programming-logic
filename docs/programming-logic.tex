@@ -139,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-03-02}
+\date{2025-03-03}
 
 \begin{document}
 \maketitle
@@ -1896,13 +1896,142 @@ fi
 
 \section{What is a function?}\label{what-is-a-function}
 
-A ``function'' in programming is a piece of code that does a specific task with a single line of code. We've already been using examples of informal functions - such as when we would include the \texttt{write} statement - and formal functions, such as \texttt{print}, \texttt{cout}, or \texttt{echo} statements we just saw in the conditional examples at the end of the previous chapter.
+A ``function'' in programming is a piece of code that does a specific task, but packages it so it can be called with a single line of code. Functions can be predefined by developers, and also may be custom to any script.
 
-The \texttt{print} function does something very simple, which is provide output, either on the R or Python console or interface, that people can read. It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least). But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.
+We've already been using examples of functions in our psuedocode - such as when we would include the \texttt{write} statement - and formal functions, such as the \texttt{print}, \texttt{cout}, or \texttt{echo} statements we saw in the conditional examples at the end of the previous chapter.
+
+The \texttt{print} function does something very simple, which is provide output, either on the R or Python console or interface, that people can read. It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least). Since communicating output is ubiquitous in all computer languages, each language has some sort of print function as a built in function so it makes it easier for programmers to focus on their particular code.
 
 Really, functions are created when you know you're going to do the same task over and over again.
 
-Functions can do something very simple or very complex. Take our cheesy mashed potatoes example, a simple function might be something like \texttt{peel\_potatoes()}, while a complex function would be \texttt{make\_cheesy\_mashed\_potatoes()}, which is the equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients.
+Functions can do something very simple or very complex, and there are a few terms you need to learn, which are ubiquitous across all languages, but it might be easier to show you what a function is then define those terms later.
+
+Take our cheesy mashed potatoes example, a simple function might be something like \texttt{peel\_potato()}, which would take our first example algorithm on peeling potatoes, and create a function.
+
+The original algorithm
+\textbf{Algorithm for peeling potatoes for Cheesy Mashed Potatoes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Get three pounds of russet potatoes.
+\item
+  Get bowl large enough to hold three pounds of russet potatoes.
+\item
+  Get a vegetable peeler.
+\item
+  Take one potato.
+\item
+  Peel potato.
+\item
+  Rinse potato with water.
+\item
+  Place peeled potato in bowl
+\item
+  Repeat 4-7 until all potatoes are washed and peeled
+\end{enumerate}
+
+But, we don't want to create a function for the whole thing. We want to create a function that allows us to easily execute what needs to be repeat, Steps 4-7. So the function might look like
+
+\begin{verbatim}
+define function peel_potato(potato, peeler):
+
+  while(potato has skin):
+    location <- on potato, locate skin
+    potato <- at location on potato, with peeler remove strip of skin
+    potato <- rotate potato
+  // end-while (this is a comment, it begins with // )
+  
+  potato <- rinse potato with water
+  
+  return (potato)
+// end function definition
+\end{verbatim}
+
+A bonus of functions, is you can make them generic if you know the action can be applied over many objects. Perhaps you want to peel both potatoes and carrots, you can make a function for that.
+
+\begin{verbatim}
+define function peel_vegetable(vegetable, peeler):
+
+  while(vegetable has skin):
+    location <- on vegetable, locate skin
+    vegetable <- at location on vegetable, with peeler remove strip of skin
+    vegetable <- rotate(vegetable)
+  // end-while
+  
+  vegetable <- rinse_with_water(vegetable)
+  
+  return (vegetable)
+// end function definition
+\end{verbatim}
+
+Now the \texttt{peel\_vegetable} function can be used with multiple objects - well, it could before, but using the variable or argument \texttt{potato} would be confusing when applied to something else.
+
+Now that we've created a function for peeling vegetables, our algorithm might look like this
+
+\begin{verbatim}
+potatoes <- 16
+peeler <- "swiss peeler"
+bowl <- [] // empty array
+
+for potato in potatoes:
+  bowl <- bowl+peel_vegetable(potato)
+
+// end for-statement  
+\end{verbatim}
+
+\subsection{Programming Concepts}\label{programming-concepts}
+
+You may have noticed a couple of statements that adds a variable to something and saves it to itself or does something to a variable and saves it to itself. These commonly occur in programming.
+
+\subsubsection{Adding to a Variable}\label{adding-to-a-variable}
+
+These two examples add to something that already exists
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{bowl\ \textless{}-\ bowl+peel\_vegetable(potato)}
+\item
+  \texttt{x\ \textless{}-\ 0;\ x\ \textless{}-\ x\ +\ 1}
+\end{itemize}
+
+A key piece of info here is the original variable needs to be of a data type that can accept the new piece of data. We defined the bowl as an array \texttt{{[}{]}}, so we can keep adding the same data type (potato, maybe vegetable) to the array. This happens so often that some languages, such as C/C++ will combine assignment operators with math functions, such as \texttt{+=} so \texttt{x\ +=\ 1} is the same as \texttt{x\ =\ x\ +\ 1}
+
+If we tried to add two different data types
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{x\ \textless{}-\ "zero";\ x\ \textless{}-\ x\ +\ 1}
+\end{itemize}
+
+The computer would return an error message.
+
+\subsubsection{Modifying a Variable}\label{modifying-a-variable}
+
+For this statement
+
+\texttt{vegetable\ \textless{}-\ rotate(vegetable)}
+
+the vegetable is rotating, and being reassigned to the same variable name. This is a little more tricky and in need of caution, because you're completely rewriting the value in \texttt{vegetable} instead of modifying it. If it were to be modified to a different data type accidentally, the program would still execute with no error message for this assignment, because it simply sees a variable assignment.
+
+\begin{verbatim}
+x <- 123
+x <- as.text(x) // accidentally uses the wrong function
+// now the data type of x is a string
+
+// many lines of code later
+
+x <- x + 1  // this will cause an error in the code
+\end{verbatim}
+
+The error will happen because a string and a numeric value can't be added together but it's harder to find because the error will point to this location in the code, but the actual error was the assignment which happened many lines above the error.
+
+\section{Back to Functions}\label{back-to-functions}
+
+A complex function might be something like \texttt{make\_cheesy\_mashed\_potatoes()}, which is the equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients.
 
 \begin{verbatim}
 make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
@@ -2104,12 +2233,15 @@ make_popcorn(time = 1.5 minutes)
 \end{verbatim}
 
 \begin{verbatim}
-# specify which library we want to get a function from, in this case instructor Kat
+
+# specify which library we want to get a function from, 
+# in this case instructor Kat
 
 from Kat import make_popcorn()
 
 # The arguments and defaults for this library is
-# make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, butter = TRUE, salt = "light")
+# make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, 
+#              butter = TRUE, salt = "light")
 # where quantity is in tbsp
 
 # example in use

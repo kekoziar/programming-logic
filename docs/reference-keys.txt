@@ -34,6 +34,10 @@ language-examples-formatting-may-vary
 challenge
 functions
 what-is-a-function
+programming-concepts
+adding-to-a-variable
+modifying-a-variable
+back-to-functions
 arguments
 libraries
 accessing-functions-in-libraries
