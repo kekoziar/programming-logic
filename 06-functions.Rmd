@@ -1,35 +1,29 @@
 # Functions
 
-A "function" in programming is a piece of code that does a specific task. 
+## What is a function?
 
-Consider the example of calculating the mean of a set of values. On the one hand, you could write out code to manually add each value and divide by the number of values.\
+A "function" in programming is a piece of code that does a specific task with a single line of code.  We've already been using examples of informal functions - such as when we would include the `write` statement - and formal functions, such as `print`, `cout`, or `echo` statements we just saw in the conditional examples at the end of the previous chapter.  
 
-```
-values = (2, 4, 7, 5, 9)
+The `print` function does something very simple, which is provide output either on the R or Python console or interface that people can read.  It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least).  But, communicating output is ubiquitous in all computer languages, so each language has some sort of print function as a built in function.
 
-mean_value = (2 + 4 + 7 + 5 + 9) / 5
-```
-\
-On the other hand, if you plan to take the mean of a set of values often, it would be easier to have a function that could do this task without you needing manually write it out every time.
+Really, functions are created when you know you're going to do the same task over and over again.  
 
-**draft example, needs work**
+Functions can do something very simple or very complex.  Take our cheesy mashed potatoes example, a simple function might be something like `peel_potatoes()`, while a complex function would be `make_cheesy_mashed_potatoes()`, which is the equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients. 
 
 ```
-values = (2, 4, 7, 5, 9)
-
-sum = 0
-
-for x in 1 to length(values)
-  sum = sum + x
-  
-mean = sum / length(values)
+make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
 ```
-
-In our cheesy mashed potatoes example, a function would be equivalent to having an in-home chef who can make you cheesy mashed potatoes on demand, as long as you provide the raw ingredients. In programming parlance, these raw ingredients would be the "arguments".
-
+In programming parlance, these ingredients listed `(cheese, potatoes, milk, salt, butter)` would be the "arguments".
+ 
 ## Arguments
 
-In a function, "arguments" are the inputs that you can specify. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or how many servings you want to make.
+Functions will have inputs _(usually)_ and outputs. The function inputs are formally called "arguments," and are specified by the programmer, entered within the parentheses as part of the function call. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or the quantity of each ingredient. 
+
+While our example is in pseudocode, luckily function calls look the same across most languages.  
+
+```
+cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
+```
 
 For our `mean()` function example, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
 

@@ -33,6 +33,7 @@ matching-parentheses
 language-examples-formatting-may-vary
 challenge
 functions
+what-is-a-function
 arguments
 libraries
 accessing-functions-in-libraries
