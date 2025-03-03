@@ -121,29 +121,33 @@ make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
 
 paste("this function uses", cheese, "oz of cheese")
 </code></pre>
-<p>For our <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function example, the primary argument would be what kind of input to put in: <code>mean(x)</code> where <code>x</code> is a list or vector of values. Another argument might be an option for how to handle missing or <code>NA</code> values: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation.</p>
+<p>We already mentioned that <code>print</code> is a common built-in function. Most languages a number of built-in functions which are commonly used, such as the <code>paste</code> function in R, represented above. Let’s look at another built in function that is common to both R and Python: <code><a href="https://rdrr.io/r/base/Round.html">round()</a></code></p>
+<p>Built-in functions have help pages which will allow you to see the syntax and arguments. The help files will include definitions of the arguments, if they’re required or have a default, and examples for use.</p>
+<p>The syntax for Python is <code>round(number, ndigits=None)</code></p>
+<p>The syntax for R is <code>round(x, digits = 0, ...)</code>, where <code>x</code> is a numeric vector.</p>
+<p><a href="https://search.r-project.org/R/refmans/base/html/Round.html" class="uri">https://search.r-project.org/R/refmans/base/html/Round.html</a>
+<a href="https://docs.python.org/3/library/functions.html#round" class="uri">https://docs.python.org/3/library/functions.html#round</a></p>
+<p>The second argument for both languages indicates the number of digits along with the default value. Since there’s a default value, you don’t necessarily need to include the argument in the function call.</p>
+<p>An example in R is</p>
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.4</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1 2 4</code></pre>
+<p>Another argument common in many functions which deal with statistics is how to handle missing or <code>NA</code> values, for example, the function <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation.</p>
 <p>Optional arguments like this may come with a pre-supplied default, in this case that <code>na.rm = FALSE</code> and any <code>NA</code>values will be retained, unless this argument is manually changed to <code>TRUE</code>.<br></p>
-<p>It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.<br></p>
-<p>Putting this into practice, let’s return to the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function where our arguments are input (mandatory) and handling of <code>NA</code> values (optional).</p>
-<p>If we only input the mandatory argument of specifying input:</p>
-<pre><code>values &lt;- c(2, 4, 7, 5, 9, NA)
-mean(values)
-</code></pre>
-<p>The output of this function would be <code>NA</code>, because if we retain the <code>NA</code> values - which we do by default in the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function, then the mean will necessary be <code>NA</code>. For a computer, the sum of a set of values plus <code>NA</code> will always be <code>NA</code>, and taking the mean of <code>NA</code> will also return <code>NA</code>.</p>
-<p>Conversely, if we specify that we want to remove <code>NA</code> values from our mean calculation:</p>
-<pre><code>values &lt;- c(2, 4, 7, 5, 9, NA)
-mean(values, na.rm = TRUE)
-</code></pre>
-<p>Now our output is <code>5.4</code> which is the mean of <code>values</code> excluding <code>NA</code>.</p>
+<p>When working with functions, which is the vast majority of programming, it is important to keep in mind a two things</p>
+<ol style="list-style-type: decimal">
+<li>The arguments in a function</li>
+<li>Which arguments are optional, and what are their defaults</li>
+</ol>
+<p>A function will run as long as the required arguments are provided, but the resulting output may not match expectations unless you recognize which optional arguments were included with default values.</p>
 </div>
 <div id="libraries" class="section level2" number="7.3">
 <h2>
 <span class="header-section-number">7.3</span> Libraries<a class="anchor" aria-label="anchor" href="#libraries"><i class="fas fa-link"></i></a>
 </h2>
-<p>Programming languages will have a variety of functions for common tasks ready to use without any additional work. These are called “built in” functions and are available to use right away.<br></p>
-<p>However, built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.</p>
+<p>We’ve already discussed built-in functions. Built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.</p>
 <p>The good news is that most programming languages will have optional “libraries” (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.<br></p>
-<p><em>It gets a bit tricky to extend our cheesy mashed potatoes example to more complex topics like this, but libraries are kind of like this: You want to make cheesy mashed potatoes from scratch, but don’t have the time to do so. Luckily someone else has created instant mashed potatoes, so all you have to do is add boiling water and stir. You can add your own flair to the resulting potatoes if you want, but the important part is that someone else has done a lot of the work and you can build off it, rather than doing it all yourself.</em></p>
+<p><em>Using our cheesy mashed potatoes example you might use a programming library to find a recipe that uses different ingredients. You want to make cheesy mashed potatoes from scratch, but don’t have the time to do so. Luckily someone else has created function that uses instant mashed potatoes instead of raw potatoes.</em></p>
 <p>You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don’t need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!<br></p>
 <p>In the same way, your computer and your programming language of choice doesn’t need to always have every single function on hand, which would take up a lot of space. Instead, it can “check out” (load) a “book” (collection of functions) created by another person. You can then use those additional functions the same way you would any function.<br></p>
 <p>This set up saves computer disk space, ensures you don’t have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference “book” so output should be the same for the same input, across users).<br></p>
@@ -170,36 +174,38 @@ mean(values, na.rm = TRUE)
 <span class="header-section-number">7.4.2</span> Function names<a class="anchor" aria-label="anchor" href="#function-names"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are only so many function names that make sense in the English language, so there may be functions from <em>different libraries</em> that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.</p>
-<p>Let’s say we have two <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> functions, one from library <code>A</code> and one from library <code>B</code>. They differ in their default settings:</p>
+<p>Let’s say we have two <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> functions, one from <code>library_A</code> and one from <code>library_B</code>. They differ in their default settings:</p>
 <ul>
-<li>library <code>A</code> defauls to <code>na.rm = TRUE</code>
+<li>
+<code>library_A</code> defauls to <code>na.rm = TRUE</code>
 </li>
-<li>library <code>B</code> defaults to <code>na.rm = FALSE</code>
+<li>
+<code>library_B</code> defaults to <code>na.rm = FALSE</code>
 </li>
 </ul>
-<p>If we load libraries in order <code>A</code> then <code>B</code> and then use <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> as a function, we will be using the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function from library <code>B</code>.</p>
-<pre><code>load(A)
-load(B)
+<p>If we load libraries in order <code>library_A</code> then <code>library_B</code> and then use <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> as a function, we will be using the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function from <code>library_B</code>.</p>
+<pre><code>load(library_A)
+load(library_B)
 
 values &lt;- c(2, 4, 7, 5, 9, NA)
 mean(values)
 </code></pre>
 <p>Our result will be <code>NA</code>.</p>
-<p>Conversely, if we load library <code>B</code> then library <code>A</code>, we will use the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function from library <code>A</code>.</p>
-<pre><code>load(B)
-load(A)
+<p>Conversely, if we load <code>library_B</code> then <code>library_A</code>, we will use the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> function from <code>library_A</code>.</p>
+<pre><code>load(library_B)
+load(library_A)
 
 values &lt;- c(2, 4, 7, 5, 9, NA)
 mean(values)
 </code></pre>
 <p>Our value will be <code>5.4</code>.</p>
 <p>The tricky part is that all this happens invisibly. There may or may not - depending on your programming language - be a warning that two libraries contain functions of the same name. So, keeping track of your order of loading is important. If you get any unexpected results, you can double check which library the function you are using is from.<br></p>
-<p>An alternative method is to be explicit about which function you are calling. Most programming languages will allow a syntax along the lines of <code>library:function()</code> to specify use of a function from a stated library.<br></p>
-<pre><code>load(B)
-load(A)
+<p>A better method is to be explicit about which function you are calling. Most programming languages will allow a syntax along the lines of <code>library:function()</code> to specify use of a function from a stated library.<br></p>
+<pre><code>load(library_B)
+load(library_A)
 
 values &lt;- c(2, 4, 7, 5, 9, NA)
-B:mean(values)
+library_B:mean(values)
 
 #result will be `NA`
 </code></pre>
@@ -240,6 +246,18 @@ make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, 
 # is known to burn popcorn at recommended time
 
 make_popcorn(time = 1.5 minutes)</code></pre>
+<pre><code># specify which library we want to get a function from, in this case instructor Kat
+
+from Kat import make_popcorn()
+
+# The arguments and defaults for this library is
+# make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, butter = TRUE, salt = "light")
+# where quantity is in tbsp
+
+# example in use
+
+make_popcorn(2)
+</code></pre>
 </details>
 </div>
 </div>

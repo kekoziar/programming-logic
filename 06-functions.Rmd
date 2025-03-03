@@ -35,40 +35,42 @@ paste("this function uses", cheese, "oz of cheese")
 
 ```
 
-For our `mean()` function example, the primary argument would be what kind of input to put in: `mean(x)` where `x` is a list or vector of values. Another argument might be an option for how to handle missing or `NA` values: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
+We already mentioned that `print` is a common built-in function.  Most languages a number of built-in functions which are commonly used, such as the `paste` function in R, represented above.  Let's look at another built in function that is common to both R and Python:  `round()`
+
+Built-in functions have help pages which will allow you to see the syntax and arguments.  The help files will include definitions of the arguments, if they're required or have a default, and examples for use.  
+
+The syntax for Python is `round(number, ndigits=None)`
+
+The syntax for R is `round(x, digits = 0, ...)`, where `x` is a numeric vector.
+
+https://search.r-project.org/R/refmans/base/html/Round.html
+https://docs.python.org/3/library/functions.html#round
+
+The second argument for both languages indicates the number of digits along with the default value.  Since there's a default value, you don't necessarily need to include the argument in the function call. 
+
+An example in R is
+``` {r function-round}
+round(c(1.4, 2.5, 3.5))
+```
+
+Another argument common in many functions which deal with statistics is how to handle missing or `NA` values, for example, the function `mean()`: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
 
 Optional arguments like this may come with a pre-supplied default, in this case that `na.rm = FALSE` and any `NA`values will be retained, unless this argument is manually changed to `TRUE`.\
 
-It is important to understand (a) what arguments are in a function and (b) what arguments are optional and what the defaults are. A function will run as long as the non-optional arguments are completed (that is, input is specified), but the resulting output may not match expectations unless you understand what other optional arguments were included, and what the default values were.\
+When working with functions, which is the vast majority of programming, it is important to keep in mind a two things
 
-Putting this into practice, let's return to the `mean()` function where our arguments are input (mandatory) and handling of `NA` values (optional).
+1. The arguments in a function 
+2. Which arguments are optional, and what are their defaults
 
-If we only input the mandatory argument of specifying input:
-```
-values <- c(2, 4, 7, 5, 9, NA)
-mean(values)
-
-```
-The output of this function would be `NA`, because if we retain the `NA` values - which we do by default in the `mean()` function, then the mean will necessary be `NA`. For a computer, the sum of a set of values plus `NA` will always be `NA`, and taking the mean of `NA` will also return `NA`.
-
-Conversely, if we specify that we want to remove `NA` values from our mean calculation:
-
-```
-values <- c(2, 4, 7, 5, 9, NA)
-mean(values, na.rm = TRUE)
-
-```
-Now our output is `5.4` which is the mean of `values` excluding `NA`.
+A function will run as long as the required arguments are provided, but the resulting output may not match expectations unless you recognize which optional arguments were included with default values.
 
 ## Libraries
 
-Programming languages will have a variety of functions for common tasks ready to use without any additional work. These are called "built in" functions and are available to use right away.\
-
-However, built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.
+We've already discussed built-in functions.  Built in functions are often limited to basic tasks and do not include more complex or custom functions that you may with to use. Now, you can code more complex functions yourself, building off of the built in functions, but this would take a lot of time and require more in-depth programming knowledge.
 
 The good news is that most programming languages will have optional "libraries" (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.\
 
-_It gets a bit tricky to extend our cheesy mashed potatoes example to more complex topics like this, but libraries are kind of like this: You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created instant mashed potatoes, so all you have to do is add boiling water and stir. You can add your own flair to the resulting potatoes if you want, but the important part is that someone else has done a lot of the work and you can build off it, rather than doing it all yourself._
+_Using our cheesy mashed potatoes example you might use a programming library to find a recipe that uses different ingredients. You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created function that uses instant mashed potatoes instead of raw potatoes._
 
 You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\
 
@@ -94,16 +96,16 @@ The syntax for accessing functions in libraries varies by programming language b
 
 There are only so many function names that make sense in the English language, so there may be functions from _different libraries_ that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
 
-Let's say we have two `mean()` functions, one from library `A` and one from library `B`. They differ in their default settings: 
+Let's say we have two `mean()` functions, one from `library_A` and one from `library_B`. They differ in their default settings: 
 
-- library `A` defauls to `na.rm = TRUE`
-- library `B` defaults to `na.rm = FALSE`
+- `library_A` defauls to `na.rm = TRUE`
+- `library_B` defaults to `na.rm = FALSE`
 
-If we load libraries in order `A` then `B` and then use `mean()` as a function, we will be using the `mean()` function from library `B`.
+If we load libraries in order `library_A` then `library_B` and then use `mean()` as a function, we will be using the `mean()` function from `library_B`.
 
 ```
-load(A)
-load(B)
+load(library_A)
+load(library_B)
 
 values <- c(2, 4, 7, 5, 9, NA)
 mean(values)
@@ -111,11 +113,11 @@ mean(values)
 ```
 Our result will be `NA`.
 
-Conversely, if we load library `B` then library `A`, we will use the `mean()` function from library `A`.
+Conversely, if we load `library_B` then `library_A`, we will use the `mean()` function from `library_A`.
 
 ```
-load(B)
-load(A)
+load(library_B)
+load(library_A)
 
 values <- c(2, 4, 7, 5, 9, NA)
 mean(values)
@@ -126,14 +128,14 @@ Our value will be `5.4`.
 
 The tricky part is that all this happens invisibly. There may or may not - depending on your programming language - be a warning that two libraries contain functions of the same name. So, keeping track of your order of loading is important. If you get any unexpected results, you can double check which library the function you are using is from.\
 
-An alternative method is to be explicit about which function you are calling. Most programming languages will allow a syntax along the lines of `library:function()` to specify use of a function from a stated library.\
+A better method is to be explicit about which function you are calling. Most programming languages will allow a syntax along the lines of `library:function()` to specify use of a function from a stated library.\
 
 ```
-load(B)
-load(A)
+load(library_B)
+load(library_A)
 
 values <- c(2, 4, 7, 5, 9, NA)
-B:mean(values)
+library_B:mean(values)
 
 #result will be `NA`
 
@@ -179,6 +181,22 @@ make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, 
 
 make_popcorn(time = 1.5 minutes)
 ```
+
+```
+# specify which library we want to get a function from, in this case instructor Kat
+
+from Kat import make_popcorn()
+
+# The arguments and defaults for this library is
+# make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, butter = TRUE, salt = "light")
+# where quantity is in tbsp
+
+# example in use
+
+make_popcorn(2)
+
+```
+
 </details>
 
 
