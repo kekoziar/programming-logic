@@ -4,7 +4,7 @@
 
 A "function" in programming is a piece of code that does a specific task, but packages it so it can be called with a single line of code.  Functions can be predefined by developers, and also may be custom to any script.
 
-We've already been using examples of functions in our psuedocode - such as when we would include the `write` statement - and formal functions, such as the `print`, `cout`, or `echo` statements we saw in the conditional examples at the end of the previous chapter.  
+We've already been using examples of functions in our psuedocode - such as when we would include the `write` statement - and formal functions, such as the `print`, `count`, or `echo` statements we saw in the conditional examples at the end of the previous chapter.  
 
 The `print` function does something very simple, which is provide output, either on the R or Python console or interface, that people can read.  It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least).  Since communicating output is ubiquitous in all computer languages, each language has some sort of print function as a built in function so it makes it easier for programmers to focus on their particular code.
 
@@ -41,7 +41,6 @@ define function peel_potato(potato, peeler):
   
   return (potato)
 // end function definition
-
 ```
 
 A bonus of functions, is you can make them generic if you know the action can be applied over many objects.  Perhaps you want to peel both potatoes and carrots, you can make a function for that.
@@ -60,7 +59,6 @@ define function peel_vegetable(vegetable, peeler):
   
   return (vegetable)
 // end function definition
-
 ```
 
 Now the `peel_vegetable` function can be used with multiple objects - well, it could before, but using the variable or argument `potato` would be confusing when applied to something else.
@@ -76,7 +74,6 @@ for potato in potatoes:
   bowl <- bowl+peel_vegetable(potato)
 
 // end for-statement  
-
 ```
 
 ### Programming Concepts
@@ -114,7 +111,6 @@ x <- as.text(x) // accidentally uses the wrong function
 // many lines of code later
 
 x <- x + 1  // this will cause an error in the code
-
 ```
 The error will happen because a string and a numeric value can't be added together but it's harder to find because the error will point to this location in the code, but the actual error was the assignment which happened many lines above the error.
 
@@ -145,7 +141,6 @@ butter <- 4
 make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
 
 paste("this function uses", cheese, "oz of cheese")
-
 ```
 
 We already mentioned that `print` is a common built-in function.  Most languages a number of built-in functions which are commonly used, such as the `paste` function in R, represented above.  Let's look at another built in function that is common to both R and Python:  `round()`
@@ -222,7 +217,6 @@ load(library_B)
 
 values <- c(2, 4, 7, 5, 9, NA)
 mean(values)
-
 ```
 Our result will be `NA`.
 
@@ -234,7 +228,6 @@ load(library_A)
 
 values <- c(2, 4, 7, 5, 9, NA)
 mean(values)
-
 ```
 
 Our value will be `5.4`.
@@ -251,7 +244,6 @@ values <- c(2, 4, 7, 5, 9, NA)
 library_B:mean(values)
 
 #result will be `NA`
-
 ```
 ### Aliases
 
@@ -280,23 +272,25 @@ Let's return to the section 2 activity where your group created an algorithm to 
 <summary>Example functions</summary>
 
 ```
-# specify which library we want to get a function from, in this case instructor Steph
+# specify which library we want to get a function from, 
+# in this case instructor Steph
 
 from Steph import make_popcorn()
 
 # set arguments and defaults
 
-make_popcorn(type = microwave, time = 2 minutes, flavor = movie_theater_flavor, seasoning = TRUE)
+make_popcorn(type = microwave, time = 2 minutes, 
+  flavor = movie_theater_flavor, seasoning = TRUE)
 
 # example in use
-# keeping all defaults, but changing time because this microwave 
+# keeping all defaults
+# except changing time because this microwave 
 # is known to burn popcorn at recommended time
 
 make_popcorn(time = 1.5 minutes)
 ```
 
 ```
-
 # specify which library we want to get a function from, 
 # in this case instructor Kat
 
@@ -310,7 +304,6 @@ from Kat import make_popcorn()
 # example in use
 
 make_popcorn(2)
-
 ```
 
 </details>
