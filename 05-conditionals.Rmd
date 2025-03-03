@@ -78,7 +78,11 @@ ELSE
   
 ```
 
-__Exercise__: Let's try a similar example with the popcorn algorithm from section 2. 
+## Exercise - Popcorn `if else` pseudocode
+
+_Timing: 5 minutes_
+
+Let's try a similar example with the popcorn algorithm from section 2. 
 
 Write out an `if else` statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
 Write out an `if, else if, else` statement that includes an air fry scenario.
@@ -124,7 +128,7 @@ Common comparison operators are:
   - `B == 7` ("`B` is equal to `7`", where the statement is then evaluated to be `true` or `false`.  In this case, it is `false`)
 
 
-## Exercise - `ifelse` trace 
+## Conditional Statements in Practice
 
 Let's look at some examples of conditional statements in practice, first by using our cheesy mashed potatoes example, and then with actual code.
 
@@ -142,10 +146,11 @@ else:
 
 If we have `cheese <- parmesan` we would expect this statement to print out `Grate the cheese`. If we have `cheese <- brie` we would expect the output to be `Cube the cheese`. And if we have `cheese <- broccoli` we would expect the output to be `Do not use this in the recipe`. 
 
-_Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we're using our cheese-based expertise to draw conclusions, but as we've covered, we would never assume a computer would know which cheeses were hard or soft!_
+Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we're using our cheese-based expertise to draw conclusions, but as we've covered, we would never assume a computer would know which cheeses were hard or soft!
 
+### Exercise: `ifelse` Trace 
 
-__Exercise__
+_Timing: 5 minutes_
 
 _For this exercise, want you to type the answer in the chat, but don't press enter until we tell you.  We'll say, _3, 2, 1, enter_ then you press enter when we say _enter_._
 
@@ -207,7 +212,6 @@ if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
   
 ```
 In this case, because `cheddar == cheese` is `true`, the computer doesn't bother checking the other two statements.
-
 
 ### Clarity and Order of Operations in math statements
 

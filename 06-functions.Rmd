@@ -127,7 +127,7 @@ make_cheesy_mashed_potatoes(cheese, potatoes, milk, salt, butter)
 ```
 In programming parlance, these ingredients listed `(cheese, potatoes, milk, salt, butter)` would be the "arguments".
  
-## Arguments
+### Arguments
 
 Functions will have inputs _(usually)_ and outputs. The function inputs are formally called "arguments," and are specified by the programmer, entered within the parentheses as part of the function call. For cheesy mashed potatoes, this could be specifying what kind of cheese to use, or the quantity of each ingredient. 
 
@@ -189,7 +189,7 @@ A good rule of thumb is if it _seems_ like the function you want is broadly usef
 
 Finding the 'right' library for the function you need can be overwhelming, but a good starting point is the official library collection for a programming language, such as [CRAN for R](https://cran.r-project.org/web/views/) or [PyPI for Python](https://pypi.org/).
 
-## Accessing functions in libraries
+### Accessing functions in libraries
 
 The syntax for accessing functions in libraries varies by programming language but follows the general process of:
 
@@ -255,8 +255,9 @@ import numpy as np
 
 Functions can then be called using the explicit `package:function` syntax, such as `pd.DataFrame` to designate a `pandas` `DataFrame` object.
 
+### Exercise: Create Popcorn Function
 
-## Activity reprise for functions
+_Timing: 15 minutes_
 
 Let's return to the section 2 activity where your group created an algorithm to make popcorn. 
 

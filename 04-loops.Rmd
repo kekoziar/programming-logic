@@ -26,7 +26,7 @@ for ingredient in ingredients
 
 Before we look at any real world code, we will manually go through some example loops, without the computer doing the work for us. Practicing a trace on tasks that are simple, like writing each ingredient in a collection, will help us build skills for, and comfort with, reading complex code. 
 
-## Practicing a Trace
+### Activity: Practicing a Trace
 
 _Timing: 10 minutes_
 _You will need: a piece of paper and writing implement_
@@ -130,7 +130,10 @@ for(ingredient in ingredients){
 ```
 <hr>
 
-### Exercise - Loop Trace
+### Activity - Loop Trace 
+
+_Timing: 10 minutes_
+_You will need: a piece of paper and writing implement_
 
 Now that we've practiced a trace using text, let's practice using number ranges  Remember that to a computer, the range written as `2 to 7` represents numbers 2 3 4 5 6 7.
 
@@ -187,6 +190,9 @@ By this point, you're probably thinking that doing a manual trace is a bit tedio
 
 
 ### Exercise - Trace Nested `for` Loops
+
+_Timing: 15 minutes_
+_You will need: a piece of paper and writing implement_
 
 So far, we've tackled one loop at a time. But loops are flexible and can be "nested", or embedded within each other.
 
@@ -494,7 +500,11 @@ The logic is opposite of a `do while` loop.  It will run while the condition is 
 
 These aren't used often, in fact IMO it's better to just re-write the logic to use a `while` loop. 
 
-### While Trace
+### Exercise - While Trace
+
+_Timing: 10 minutes_
+_You will need: a piece of paper and writing implement_
+
 Let's practice a `while` combined with a `for` trace 
 
 ```
