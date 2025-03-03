@@ -6,13 +6,11 @@ A "function" in programming is a piece of code that does a specific task, but pa
 
 We've already been using examples of functions in our psuedocode - such as when we would include the `write` statement - and formal functions, such as the `print`, `count`, or `echo` statements we saw in the conditional examples at the end of the previous chapter.  
 
-The `print` function does something very simple, which is provide output, either on the R or Python console or interface, that people can read.  It's quite simple to use, but internal code that creates the print function is a little more complex (to say the least).  Since communicating output is ubiquitous in all computer languages, each language has some sort of print function as a built in function so it makes it easier for programmers to focus on their particular code.
+The `print` function does something very simple, which is provide output, either on the R or Python console or interface, that people can read.  It is simple to use, but internal code that creates the print function is a little more complex (to say the least).  Since communicating output is ubiquitous in all computer languages, each language has some sort of print function as a built in function so it makes it easier for programmers to focus on their particular code.
 
-Really, functions are created when you know you're going to do the same task over and over again.  
+Functions can do something very simple or very complex. But in essence, functions are used when you know you're going to do the same task over and over again.  
 
-Functions can do something very simple or very complex, and there are a few terms you need to learn, which are ubiquitous across all languages, but it might be easier to show you what a function is then define those terms later.  
-
-Take our cheesy mashed potatoes example, a simple function might be something like `peel_potato()`, which would take our first example algorithm on peeling potatoes, and create a function.
+Take our cheesy mashed potatoes example. A simple function might be something like `peel_potato()`, which would take our first example algorithm on peeling potatoes, and create a function.
 
 The original algorithm
 **Algorithm for peeling potatoes for Cheesy Mashed Potatoes**
@@ -26,7 +24,7 @@ The original algorithm
 7. Place peeled potato in bowl
 8. Repeat 4-7 until all potatoes are washed and peeled
 
-But, we don't want to create a function for the whole thing.  We want to create a function that allows us to easily execute what needs to be repeat, Steps 4-7. So the function might look like
+But, we don't want to create a function for the whole thing.  We want to create a function that allows us to easily execute what needs to be repeated, Steps 4-7. So the function might look like
 
 ```
 define function peel_potato(potato, peeler):
@@ -87,13 +85,18 @@ These two examples add to something that already exists
 - `bowl <- bowl+peel_vegetable(potato)`
 - `x <- 0; x <- x + 1`
 
-A key piece of info here is the original variable needs to be of a data type that can accept the new piece of data.  We defined the bowl as an array `[]`, so we can keep adding the same data type (potato, maybe vegetable) to the array.  This happens so often that some languages, such as C/C++ will combine assignment operators with math functions, such as `+=` so `x += 1` is the same as `x = x + 1`
+A key piece of info here is the __original variable needs to be of a data type that can accept the new piece of data__.\  
+
+We defined the bowl as an array `[]`, so we can keep adding the same data type (potato, maybe vegetable) to the array.\  
 
 If we tried to add two different data types
 
 - `x <- "zero"; x <- x + 1`
 
-The computer would return an error message.
+The computer would return an error message, because adding text and numbers, in `"zero" + 1`, is not possible.
+
+The task of adding content to something that already exists happens so often that some languages, such as C/C++, will combine assignment operators with math functions, as in `+=`. In this case, `x += 1` is the same as `x = x + 1`
+
 
 #### Modifying a Variable
 
@@ -101,7 +104,7 @@ For this statement
 
 `vegetable <- rotate(vegetable)`
 
-the vegetable is rotating, and being reassigned to the same variable name.  This is a little more tricky and in need of caution, because you're completely rewriting the value in `vegetable` instead of modifying it.  If it were to be modified to a different data type accidentally, the program would still execute with no error message for this assignment, because it simply sees a variable assignment.
+the vegetable is rotating, and being reassigned to the same variable name.  This is a little more tricky and in need of caution, because you're completely __rewriting the value in `vegetable` instead of modifying it__.  If it were to be modified to a different data type accidentally, the program would still execute with no error message for this assignment, because it simply sees a variable assignment.
 
 ```
 x <- 123
@@ -112,7 +115,7 @@ x <- as.text(x) // accidentally uses the wrong function
 
 x <- x + 1  // this will cause an error in the code
 ```
-The error will happen because a string and a numeric value can't be added together but it's harder to find because the error will point to this location in the code, but the actual error was the assignment which happened many lines above the error.
+The error will happen because a string and a numeric value can't be added together. But, this will be tricky to troubleshoot because the error will result from the `x <- x + 1` part of the code, even though the actual error was the assignment which happened many lines prior in `x <- as.text(x)`.
 
 
 <hr>
@@ -178,13 +181,9 @@ We've already discussed built-in functions.  Built in functions are often limite
 
 The good news is that most programming languages will have optional "libraries" (or packages, or modules, depending on what term your programming language of choice uses) that include additional functions, beyond the built in function. So before creating a new function from scratch, it is worthwhile to check whether a library exists that includes a function that does what you want to do.\
 
-_Using our cheesy mashed potatoes example you might use a programming library to find a recipe that uses different ingredients. You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created function that uses instant mashed potatoes instead of raw potatoes._
+Using our cheesy mashed potatoes example, you might use a programming library to find a recipe that uses different ingredients. You want to make cheesy mashed potatoes from scratch, but don't have the time to do so. Luckily someone else has created function that uses instant mashed potatoes instead of raw potatoes.
 
-You can also think of programming libraries as serving a role similar to actual libraries. For instance, you don't need to memorize every historical event, or write your favorite novel from scratch - you can check out a book from a library to read and learn more!\
-
-In the same way, your computer and your programming language of choice doesn't need to always have every single function on hand, which would take up a lot of space. Instead, it can "check out" (load) a "book" (collection of functions) created by another person. You can then use those additional functions the same way you would any function.\
-
-This set up saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference "book" so output should be the same for the same input, across users).\
+Libraries are also useful because they mean that your computer and programming language of choice don't need to always have every single function on hand. This set up saves computer disk space, ensures you don't have to recreate the wheel and make every function from scratch, and provides a level of standardization (e.g., everyone uses the same reference "recipe" so output should be the same for the same input, across users).\
 
 A good rule of thumb is if it _seems_ like the function you want is broadly useful, then someone has likely created a library containing it. This is also true for niche or domain-specific functions: if the task is one that comes up a lot in analysis, there is likely a library that has functions for those analysis tasks.\
 
@@ -197,8 +196,6 @@ The syntax for accessing functions in libraries varies by programming language b
 1. Install the library from the source. You only need to do this once. 
 2. Load or import the library. You will need to do this every time you want to access a function in a library. By convention, libraries are loaded at the top of a script, so you, and other people, can see at a glance what libraries are needed to run the script.
 3. Use the functions as normal.
-
-### Caveats
 
 ### Function names
 
