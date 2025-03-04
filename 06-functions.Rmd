@@ -11,7 +11,7 @@ editor_options:
 
 A "function" in programming is a piece of code that does a specific task, but packages it so it can be called with a single line of code.  Functions can be predefined by developers, and also may be custom to any script.
 
-We've already been using examples of functions in our psuedocode - such as when we would include the `write` statement - and formal functions, such as the `print`, `count`, or `echo` statements we saw in the conditional examples at the end of the previous chapter.  
+We've already been using examples of functions in our psuedocode - such as when we would include the `write` statement - and formal functions, such as the `print`, `cout`, or `echo` statements we saw in the conditional examples at the end of the previous chapter.  
 
 The `print` function does something very simple, which is provide output, either on the R or Python console or interface, that people can read.  It is simple to use, but internal code that creates the print function is a little more complex (to say the least).  Since communicating output is ubiquitous in all computer languages, each language has some sort of print function as a built in function so it makes it easier for programmers to focus on their particular code.
 
