@@ -6,7 +6,7 @@ editor_options:
 
 # Common Issues
 
-Some common issues
+Here are some common issues that we've seen during consultations.  We've covered some of these prior in the workshop.
 
 ## Difference between `=` and `==`
 

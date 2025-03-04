@@ -1,6 +1,13 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Functions
 
 ## What is a function?
+
 
 A "function" in programming is a piece of code that does a specific task, but packages it so it can be called with a single line of code.  Functions can be predefined by developers, and also may be custom to any script.
 

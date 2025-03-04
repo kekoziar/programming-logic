@@ -1,6 +1,106 @@
-# Comments and Names
+# Self-Documenting Code
 
-Concept of comments, naming of variables and variables
-Briefly touch on common conventions (like `df` for dataframe); ask about disciplinary conventions for abbreviations or naming
+We've mentioned this before, but it's worth repeating.  There are certain habits which will help create self-documenting code, which will reduce the need for a large amount of outside documentation.  These habits are using comments and descriptive names.
 
-[SL: kind of moved this into 'caveats' of functions, flagged to discuss]
+## Variable Names
+
+Variable names should be self-describing, and there are some other naming conventions and restrictions which you should know about.  Yes, I've had researchers schedule a consultation and ask me why their code wasn't running when their variable names violated a restriction.
+
+### Naming Restrictions
+
+- Variable and function names are case sensitive
+- Variables names use alphanumeric characters and underscores. Special characters cannot be in variable names, especially since `$` and even `.` mean specific things in many languages.  
+- Variable names cannot start with a numeric character, but must start with an letter or underscore.
+  - Underscores `_variable` usually have a predefined meaning in different languages. 
+- Variable names cannot contain spaces or hyphens. 
+  - The space will treat it as two variables: `my variable`
+  - The hyphen is treated as a minus sign `my-variable` will be read as `my` minus `variable`
+- Variable names cannot be reserved words, such as `for` or `while`
+
+### Naming Conventions
+
+Pro Tip: Choose a convention and use it consistently
+
+- `camelCase`
+- `use_of_underscore`
+- `ADifferentTypeOfCamelCase`
+- `ALLCAPS` means someting specific in certain languages, such as constants in C/C++. it can be used, but you should avoid it.
+
+
+## Comments
+
+Just like metadata, comments are love notes to your future self.  
+
+Comments in programming scripts are there for the programmer.  The computer doesn't see the comments at all.  It just ignores them.  I use comments as a supplement to self-describing variable names.  The variable name tells you *what*; the comments tell you *why*
+
+I've seen code from grad students without comments before, and I gently asked them if they would remember why they did certain things if they weren't working on it for six months, then suggested adding comments so it'd be easier to pick it back up in the future.
+
+Each language will have different characters which begin a comment line or comment block.  For single line comments, the comment will start at the special characters and go to the end of the line.
+
+
+**Python, R, Ruby, Bash**
+
+`# This is a comment`
+
+**Python**
+
+```
+'''
+This is a 
+multi-line comment
+'''
+```
+
+**SQL**
+
+`-- This is a comment`
+
+
+**C/C++, JavaScript, PHP, Java, C#**
+
+`// This is a comment`
+
+```
+/* 
+This is a 
+multi-line comment 
+*/
+```
+
+**HTML**
+
+`<!-- This is a comment, which can go multiple lines -->`
+
+
+### Multi-Line Comment Trick
+
+There is a trick to easily using multi-line comments
+
+Multi-line comments are often use to block out code while testing different scripts in C/C++ and JavaScript, or block out text in html.  But adding and removing the beginning/end of the code is a bit of a pain.  
+
+However, here's the trick:
+
+Always have a beginning + end at the end of a code block you want to comment out, then you just need to add the beginning.
+
+```
+/* 
+this is a 
+multi
+line
+block of code
+commented out
+and here is the end 
+/* */
+```
+
+It's similar for html
+
+```
+<!-- 
+This is a comment, 
+which can go multiple lines 
+and it doesn't matter that the end
+also has the beginning of a comment block
+it's still commented out
+<!-- -->
+```

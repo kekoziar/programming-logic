@@ -1,9 +1,16 @@
 # Recap and Consultation Tips
 
-Recap - you won’t be an expert, the idea is to build up your skillset
+The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations.  
 
 ## Approaching Consultations
-How you may approach consultations - prepare in advance knowing specific question, evening seeing code in advance; have student talk through their code
+
+Consultations may seem scary, especially if you aren't familiar with a particular language, but the nice thing about programming languages is the concepts are so similar across languages, many of the issues students and researchers come with aren't specific to the language, per se.  That is, sometimes it's something as simple as a variable not being assigned properly.  That isn't language specific, but requires someone to be able to trace the code.
+
+Here are some tips on approaching consultations
+
+- Include a prompt for anyone scheduling a consultation to provide as much detail as possible.  _Please share anything that will help prepare for our meeting. Include your specific research question or problem._ This will help you to prepare in advance.  I've followed up via email, asking researchers if they'd share their code/data in advance.
+
+have student talk through their code
 Be clear with what you can and cannot do.
 Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician) 
 Troubleshooting vs consult

@@ -46,7 +46,12 @@ accessing-functions-in-libraries
 function-names
 aliases
 exercise-create-popcorn-function
-comments-and-names
+self-documenting-code
+variable-names
+naming-restrictions
+naming-conventions
+comments
+multi-line-comment-trick
 common-issues
 difference-between-and
 spelling-and-capitalization-matter
