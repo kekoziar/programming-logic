@@ -13,7 +13,6 @@ It takes the basic form of:
 ```
 IF (condition A is TRUE)
   do something
-  
 ```
 
 In terms of our cheesy mashed potatoes algorithm, an `if` statement might look like this
@@ -23,7 +22,6 @@ ingredient <- cheddar cheese
 
 IF (ingredient is (a type of hard cheese))
   grate(ingredient)
-  
 ```
 
 In that example, we've told the computer what to do _if_ the condition is true. We can also specify what to do if the condition is false. 
@@ -37,7 +35,6 @@ IF (ingredient is (a type of hard cheese))
   grate(ingredient)
 ELSE
   cube(ingredient)
-  
 ```
 
 In a generic programming format, a complete `if else` statement would look like: 
@@ -47,7 +44,6 @@ IF (condition A is TRUE)
   do something
 ELSE 
   do something different
-  
 ```
 
 Here, `else` is used equivalent to "if not true", meaning `A == FALSE`.\
@@ -63,7 +59,6 @@ ELSE IF (ingredient is (a type of soft cheese))
   cube(ingredient)
 ELSE
   don't use
-  
 ```
 
 In generic programming format, this updated statement would look like: 
@@ -75,7 +70,6 @@ ELSE IF (condition B is true)
   do something different
 ELSE 
   do something even more different
-  
 ```
 
 ## Exercise - Popcorn `if else` pseudocode
@@ -97,8 +91,8 @@ ELSE IF (popcorn_type is stovetop)
   use stove
 ELSE 
   use air fryer
-
 ```
+
 Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.
 
 </details>\
@@ -141,7 +135,6 @@ else if cheese == hard:
   print("Cube the cheese.")
 else:
   print("Do not use this in this recipe.")
-  
 ```
 
 If we have `cheese <- parmesan` we would expect this statement to print out `Grate the cheese`. If we have `cheese <- brie` we would expect the output to be `Cube the cheese`. And if we have `cheese <- broccoli` we would expect the output to be `Do not use this in the recipe`. 
@@ -166,7 +159,6 @@ else if x > y:
   print("x greater than y")
 else:
   print("x must be less than y")
-  
 ```
 
 <details>
@@ -188,7 +180,6 @@ else if x > y:
   print("x greater than y")
 else:
   print("x must be less than y")
-
 ```
 
 <details>
@@ -209,8 +200,8 @@ Order of operations is critical for conditionals. The computer will go through e
 ```
 if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
   print("This is cheesy")
-  
 ```
+
 In this case, because `cheddar == cheese` is `true`, the computer doesn't bother checking the other two statements.
 
 ### Clarity and Order of Operations in math statements
@@ -240,7 +231,6 @@ The code below, without a closing parentheses after "equal", will continue to ex
 ```
 if (x == y) 
   print("values are equal"
-  
 ```
 
 As far as the programming language is concerned, you haven't finished this `if` statement. So, depending on the language, it might wait to run until you have "completed your thought", so to speak, and provided the syntax (here the end paren `)`) indicating that this statement is complete and the program is ready to run.
@@ -252,15 +242,14 @@ Here's another example of fun with parentheses:
 ```
 if (x == y) 
   print("values are equal"))
-  
 ```
+
 In this case, there is an extra closing parentheses `)` after `print("values are equal")` that doesn't have a matching `(` anywhere in the statement. The resulting error would look like:
 
 ```
 Error: unexpected ')' in:
 "if (x == y) {
     print("values are equal"))"
-    
 ```
 
 ## Language examples: Formatting may vary
@@ -277,7 +266,6 @@ elif x > y:
   print("x greater than y")
 else:
   print("x must be less than y")
-
 ```
 <hr>
 
@@ -293,7 +281,6 @@ if (x == y) {
 } else {
   print("x must be less than y")
 }
-
 ```
 <hr>
 The following example is **C/C++** syntax.  One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.

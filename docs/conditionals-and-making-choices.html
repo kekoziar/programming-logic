@@ -102,14 +102,12 @@
 <p>This structure tells the computer to check a condition and the next step depends on whether the condition is true or false.</p>
 <p>It takes the basic form of:</p>
 <pre><code>IF (condition A is TRUE)
-  do something
-  </code></pre>
+  do something</code></pre>
 <p>In terms of our cheesy mashed potatoes algorithm, an <code>if</code> statement might look like this</p>
 <pre><code>ingredient &lt;- cheddar cheese
 
 IF (ingredient is (a type of hard cheese))
-  grate(ingredient)
-  </code></pre>
+  grate(ingredient)</code></pre>
 <p>In that example, we’ve told the computer what to do <em>if</em> the condition is true. We can also specify what to do if the condition is false.</p>
 <p>For our cheesy mashed potatoes algorithm, we may want to cut cheese into cubes if it is not a hard cheese:</p>
 <pre><code>ingredient &lt;- cheddar cheese
@@ -117,14 +115,12 @@ IF (ingredient is (a type of hard cheese))
 IF (ingredient is (a type of hard cheese))
   grate(ingredient)
 ELSE
-  cube(ingredient)
-  </code></pre>
+  cube(ingredient)</code></pre>
 <p>In a generic programming format, a complete <code>if else</code> statement would look like:</p>
 <pre><code>IF (condition A is TRUE)
   do something
 ELSE 
-  do something different
-  </code></pre>
+  do something different</code></pre>
 <p>Here, <code>else</code> is used equivalent to “if not true”, meaning <code>A == FALSE</code>.<br></p>
 <p>Furthermore, we are not limited to a single <code>TRUE</code>/<code>FALSE</code> check in an <code>if else</code> statement, where actions are limited to <em>“do something if true, in <strong>all</strong> other scenarios do something different”</em>. The <code>else if</code> (written as <code>elif</code> in some programming languages) concept allows us to add another sequential check if the <code>if</code> statement is not true.</p>
 <p>An updated cheesy mashed potato narrative statement could be that if we have a hard cheese, we want to grate it, if we have a soft cheese we want to cube it, and if we have something that is neither hard nor soft cheese, we don’t put it in the potatoes.</p>
@@ -133,16 +129,14 @@ ELSE
 ELSE IF (ingredient is (a type of soft cheese))
   cube(ingredient)
 ELSE
-  don't use
-  </code></pre>
+  don't use</code></pre>
 <p>In generic programming format, this updated statement would look like:</p>
 <pre><code>IF (condition A is TRUE)
   do something
 ELSE IF (condition B is true)
   do something different
 ELSE 
-  do something even more different
-  </code></pre>
+  do something even more different</code></pre>
 </div>
 <div id="exercise---popcorn-if-else-pseudocode" class="section level2" number="6.2">
 <h2>
@@ -159,8 +153,7 @@ Example statement
 ELSE IF (popcorn_type is stovetop)
   use stove
 ELSE 
-  use air fryer
-</code></pre>
+  use air fryer</code></pre>
 <p>Your version may look different, and that’s fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.</p>
 </details><p><br></p>
 </div>
@@ -214,8 +207,7 @@ ELSE
 else if cheese == hard:
   print("Cube the cheese.")
 else:
-  print("Do not use this in this recipe.")
-  </code></pre>
+  print("Do not use this in this recipe.")</code></pre>
 <p>If we have <code>cheese &lt;- parmesan</code> we would expect this statement to print out <code>Grate the cheese</code>. If we have <code>cheese &lt;- brie</code> we would expect the output to be <code>Cube the cheese</code>. And if we have <code>cheese &lt;- broccoli</code> we would expect the output to be <code>Do not use this in the recipe</code>.</p>
 <p>Sidenote: yes, this assumes that somewhere we have specified a list of hard cheese and soft cheeses. For this pseudocode example, we’re using our cheese-based expertise to draw conclusions, but as we’ve covered, we would never assume a computer would know which cheeses were hard or soft!</p>
 <div id="exercise-ifelse-trace" class="section level3" number="6.4.1">
@@ -233,8 +225,7 @@ if x == y:
 else if x &gt; y:
   print("x greater than y")
 else:
-  print("x must be less than y")
-  </code></pre>
+  print("x must be less than y")</code></pre>
 <details><summary>
 Answer
 </summary><p>x must be less than y</p>
@@ -248,8 +239,7 @@ if x == y:
 else if x &gt; y:
   print("x greater than y")
 else:
-  print("x must be less than y")
-</code></pre>
+  print("x must be less than y")</code></pre>
 <details><summary>
 Answer
 </summary><p>x greater than y</p>
@@ -267,8 +257,7 @@ Answer
 </h3>
 <p>Order of operations is critical for conditionals. The computer will go through each condition <em>in order</em>, so if an early condition is found as <code>true</code>, the statement will conclude there and not check the other conditions.</p>
 <pre><code>if (cheddar == cheese) OR (brie == cheese) OR (broccoli == cheese):
-  print("This is cheesy")
-  </code></pre>
+  print("This is cheesy")</code></pre>
 <p>In this case, because <code>cheddar == cheese</code> is <code>true</code>, the computer doesn’t bother checking the other two statements.</p>
 </div>
 <div id="clarity-and-order-of-operations-in-math-statements" class="section level3" number="6.5.2">
@@ -291,20 +280,17 @@ Answer
 <p>For complex nested conditionals, be sure to use parentheses, and be sure parentheses are matched properly.</p>
 <p>The code below, without a closing parentheses after “equal”, will continue to expect input.</p>
 <pre><code>if (x == y) 
-  print("values are equal"
-  </code></pre>
+  print("values are equal"</code></pre>
 <p>As far as the programming language is concerned, you haven’t finished this <code>if</code> statement. So, depending on the language, it might wait to run until you have “completed your thought”, so to speak, and provided the syntax (here the end paren <code>)</code>) indicating that this statement is complete and the program is ready to run.</p>
 Or if you have mismatched parentheses, the computer might give you an error message.
 <hr>
 <p>Here’s another example of fun with parentheses:</p>
 <pre><code>if (x == y) 
-  print("values are equal"))
-  </code></pre>
+  print("values are equal"))</code></pre>
 <p>In this case, there is an extra closing parentheses <code>)</code> after <code>print("values are equal")</code> that doesn’t have a matching <code>(</code> anywhere in the statement. The resulting error would look like:</p>
 <pre><code>Error: unexpected ')' in:
 "if (x == y) {
-    print("values are equal"))"
-    </code></pre>
+    print("values are equal"))"</code></pre>
 </div>
 </div>
 <div id="language-examples-formatting-may-vary" class="section level2" number="6.6">
@@ -319,8 +305,7 @@ Or if you have mismatched parentheses, the computer might give you an error mess
 elif x &gt; y:
   print("x greater than y")
 else:
-  print("x must be less than y")
-</code></pre>
+  print("x must be less than y")</code></pre>
 <hr>
 <p>The next language examples do not require indentation for code blocks; however, indentation is used because it’s easier for humans to read!</p>
 <p><strong>R</strong> makes use of curly brackets <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code> to indicate each section of an <code>if else</code> statement.</p>
@@ -330,8 +315,7 @@ else:
   print("x greater than y")
 } else {
   print("x must be less than y")
-}
-</code></pre>
+}</code></pre>
 <hr>
 <p>The following example is <strong>C/C++</strong> syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.</p>
 <p><strong>C/C++</strong> syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).</p>
