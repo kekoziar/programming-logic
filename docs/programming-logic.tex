@@ -139,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-03-03}
+\date{2025-03-04}
 
 \begin{document}
 \maketitle
@@ -2383,7 +2383,7 @@ it's still commented out
 
 \chapter{Common Issues}\label{common-issues}
 
-Here are some common issues that we've seen during consultations. We've covered some of these prior in the workshop.
+Here are some common issues that we've seen during consultations. While we've covered some of these in prior chapters, it's worth having a list to review.
 
 \section{\texorpdfstring{Difference between \texttt{=} and \texttt{==}}{Difference between = and ==}}\label{difference-between-and}
 
@@ -2418,9 +2418,42 @@ letters NA.
 
 \section{Ending a code chunk}\label{ending-a-code-chunk}
 
-Ending a statement (needing ; or other conclusion)
+Certain programming languages require a character at the end of a line or statement.
 
-\section{Order of operations}\label{order-of-operations}
+\textbf{C/C++, Java, and PHP} all require a semi-colon \texttt{;} at the end of lines or statements.
+
+Why do we say \emph{statement}? Because technically you could write your code
+
+\begin{verbatim}
+if(x == y){cout << "values are equal";x++;cout<<"x was increased & is now 
+equal to "<<fixed<<setprecision(1)<<x<<endl;}else if(x > y){cout << "x greater 
+than y";x--cout<<"x was reduced & is now equal to "<< fixed <<setprecision(1)
+<<x<<endl;} else {cout << "x must be less than y";x++;cout<<"x was increased 
+& is now equal to "<<fixed<<setprecision(1)<<x<<endl;}
+\end{verbatim}
+
+But, there's an error in that code. A semi-colon is required but missing.
+Can you find it?
+
+Having each statement on its own line is easier to read.
+
+\begin{verbatim}
+if (x == y) {
+  cout << "values are equal";
+  x++;
+  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
+} else if (x > y) {
+  cout << "x greater than y";
+  x--
+  cout << "x was reduced & is now equal to " << fixed << setprecision(1) << x << endl;
+} else {
+  cout << "x must be less than y";
+  x++;
+  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
+}
+\end{verbatim}
+
+\section{Order of Assignment}\label{order-of-assignment}
 
 overwriting/ variable will be whatever most recently set as
 

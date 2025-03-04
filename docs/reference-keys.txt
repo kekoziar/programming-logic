@@ -57,7 +57,7 @@ difference-between-and
 spelling-and-capitalization-matter
 special-characters-and-words
 ending-a-code-chunk
-order-of-operations
+order-of-assignment
 others-work-in-progress
 practice
 new-types-of-conditions-in-sql

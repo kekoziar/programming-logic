@@ -1,12 +1,12 @@
 ---
 editor_options: 
   markdown: 
-    wrap: 72
+    wrap: 65
 ---
 
 # Common Issues
 
-Here are some common issues that we've seen during consultations.  We've covered some of these prior in the workshop.
+Here are some common issues that we've seen during consultations.  While we've covered some of these in prior chapters, it's worth having a list to review. 
 
 ## Difference between `=` and `==`
 
@@ -41,9 +41,41 @@ letters NA.
 
 ## Ending a code chunk
 
-Ending a statement (needing ; or other conclusion)
+Certain programming languages require a character at the end of a line or statement.  
 
-## Order of operations
+**C/C++, Java, and PHP** all require a semi-colon `;` at the end of lines or statements.
+
+Why do we say _statement_?  Because technically you could write your code 
+
+```
+if(x == y){cout << "values are equal";x++;cout<<"x was increased & is now 
+equal to "<<fixed<<setprecision(1)<<x<<endl;}else if(x > y){cout << "x greater 
+than y";x--cout<<"x was reduced & is now equal to "<< fixed <<setprecision(1)
+<<x<<endl;} else {cout << "x must be less than y";x++;cout<<"x was increased 
+& is now equal to "<<fixed<<setprecision(1)<<x<<endl;}
+```
+But, there's an error in that code. A semi-colon is required but missing. 
+Can you find it?  
+
+Having each statement on its own line is easier to read.  
+```
+if (x == y) {
+  cout << "values are equal";
+  x++;
+  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
+} else if (x > y) {
+  cout << "x greater than y";
+  x--
+  cout << "x was reduced & is now equal to " << fixed << setprecision(1) << x << endl;
+} else {
+  cout << "x must be less than y";
+  x++;
+  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
+}
+```
+
+
+## Order of Assignment
 
 overwriting/ variable will be whatever most recently set as
 

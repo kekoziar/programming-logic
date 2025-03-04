@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 9 Common Issues | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="Here are some common issues that we’ve seen during consultations. We’ve covered some of these prior in the workshop.  9.1 Difference between = and == The former, = is used to set something as...">
+<meta name="description" content="Here are some common issues that we’ve seen during consultations. While we’ve covered some of these in prior chapters, it’s worth having a list to review.  9.1 Difference between = and == The...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Common Issues | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Here are some common issues that we’ve seen during consultations. We’ve covered some of these prior in the workshop.  9.1 Difference between = and == The former, = is used to set something as...">
+<meta property="og:description" content="Here are some common issues that we’ve seen during consultations. While we’ve covered some of these in prior chapters, it’s worth having a list to review.  9.1 Difference between = and == The...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 9 Common Issues | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="Here are some common issues that we’ve seen during consultations. We’ve covered some of these prior in the workshop.  9.1 Difference between = and == The former, = is used to set something as...">
+<meta name="twitter:description" content="Here are some common issues that we’ve seen during consultations. While we’ve covered some of these in prior chapters, it’s worth having a list to review.  9.1 Difference between = and == The...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -90,7 +90,7 @@
 <h1>
 <span class="header-section-number">9</span> Common Issues<a class="anchor" aria-label="anchor" href="#common-issues"><i class="fas fa-link"></i></a>
 </h1>
-<p>Here are some common issues that we’ve seen during consultations. We’ve covered some of these prior in the workshop.</p>
+<p>Here are some common issues that we’ve seen during consultations. While we’ve covered some of these in prior chapters, it’s worth having a list to review.</p>
 <div id="difference-between-and" class="section level2" number="9.1">
 <h2>
 <span class="header-section-number">9.1</span> Difference between <code>=</code> and <code>==</code><a class="anchor" aria-label="anchor" href="#difference-between-and"><i class="fas fa-link"></i></a>
@@ -130,11 +130,34 @@ letters NA.</p>
 <h2>
 <span class="header-section-number">9.4</span> Ending a code chunk<a class="anchor" aria-label="anchor" href="#ending-a-code-chunk"><i class="fas fa-link"></i></a>
 </h2>
-<p>Ending a statement (needing ; or other conclusion)</p>
+<p>Certain programming languages require a character at the end of a line or statement.</p>
+<p><strong>C/C++, Java, and PHP</strong> all require a semi-colon <code>;</code> at the end of lines or statements.</p>
+<p>Why do we say <em>statement</em>? Because technically you could write your code</p>
+<pre><code>if(x == y){cout &lt;&lt; "values are equal";x++;cout&lt;&lt;"x was increased &amp; is now 
+equal to "&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}else if(x &gt; y){cout &lt;&lt; "x greater 
+than y";x--cout&lt;&lt;"x was reduced &amp; is now equal to "&lt;&lt; fixed &lt;&lt;setprecision(1)
+&lt;&lt;x&lt;&lt;endl;} else {cout &lt;&lt; "x must be less than y";x++;cout&lt;&lt;"x was increased 
+&amp; is now equal to "&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}</code></pre>
+<p>But, there’s an error in that code. A semi-colon is required but missing.
+Can you find it?</p>
+<p>Having each statement on its own line is easier to read.</p>
+<pre><code>if (x == y) {
+  cout &lt;&lt; "values are equal";
+  x++;
+  cout &lt;&lt; "x was increased &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
+} else if (x &gt; y) {
+  cout &lt;&lt; "x greater than y";
+  x--
+  cout &lt;&lt; "x was reduced &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
+} else {
+  cout &lt;&lt; "x must be less than y";
+  x++;
+  cout &lt;&lt; "x was increased &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
+}</code></pre>
 </div>
-<div id="order-of-operations" class="section level2" number="9.5">
+<div id="order-of-assignment" class="section level2" number="9.5">
 <h2>
-<span class="header-section-number">9.5</span> Order of operations<a class="anchor" aria-label="anchor" href="#order-of-operations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5</span> Order of Assignment<a class="anchor" aria-label="anchor" href="#order-of-assignment"><i class="fas fa-link"></i></a>
 </h2>
 <p>overwriting/ variable will be whatever most recently set as</p>
 </div>
@@ -163,7 +186,7 @@ Show some examples of reading/writing data in R, Python, Stata, SQL</p>
 <li><a class="nav-link" href="#spelling-and-capitalization-matter"><span class="header-section-number">9.2</span> Spelling and capitalization matter</a></li>
 <li><a class="nav-link" href="#special-characters-and-words"><span class="header-section-number">9.3</span> Special characters and words</a></li>
 <li><a class="nav-link" href="#ending-a-code-chunk"><span class="header-section-number">9.4</span> Ending a code chunk</a></li>
-<li><a class="nav-link" href="#order-of-operations"><span class="header-section-number">9.5</span> Order of operations</a></li>
+<li><a class="nav-link" href="#order-of-assignment"><span class="header-section-number">9.5</span> Order of Assignment</a></li>
 <li><a class="nav-link" href="#others-work-in-progress"><span class="header-section-number">9.6</span> Others [work in progress]</a></li>
 </ul>
 
@@ -181,7 +204,7 @@ Show some examples of reading/writing data in R, Python, Stata, SQL</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-03.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
