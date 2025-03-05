@@ -55,10 +55,12 @@ multi-line-comment-trick
 common-issues
 difference-between-and
 spelling-and-capitalization-matter
-special-characters-and-words
+special-characters-and-reserved-words
 ending-a-code-chunk
+order-of-execution
 order-of-assignment
-others-work-in-progress
+matching-delimiters-quotes-parens-brackets
+reading-and-writing-data-files
 practice
 new-types-of-conditions-in-sql
 nested-for-loops-and-if-else-statements-in-python

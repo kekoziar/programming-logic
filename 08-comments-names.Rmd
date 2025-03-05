@@ -24,7 +24,7 @@ Pro Tip: Choose a convention and use it consistently
 - `camelCase`
 - `use_of_underscore`
 - `ADifferentTypeOfCamelCase`
-- `ALLCAPS` means someting specific in certain languages, such as constants in C/C++. it can be used, but you should avoid it.
+- `ALLCAPS` means something specific in certain languages, such as constants in C/C++. it can be used, but you should avoid it.
 
 
 ## Comments

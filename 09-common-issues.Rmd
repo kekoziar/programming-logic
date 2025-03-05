@@ -18,16 +18,27 @@ and the code `x == 6` would return `False`.\
 
 ## Spelling and capitalization matter
 
-The variable `x` is different from the variable `X`. Likewise, a
+Programming languages are generally case-sensitive.  The variable `x` is 
+different from the variable `X`. Likewise, a
 function `mean()` and a function `Mean()` would be separate functions.
 
-## Special characters and words
+It's easier to list the languages which are not case sensitive than those which are:
+
+- SQL commands are not case-sensitive, but it's common practice to see the 
+commands as all-caps, such as `SELECT`, because it makes reading the argument easier
+- Functions in Excel are not case-sensitive
+- HTML tags are generally not case-sensitive, however, class names in HTML and 
+CSS are case-sensitive.
+
+Again, it's easier to just assume everything is case-sensitive.
+
+## Special characters and reserved words
 
 Many programming languages reserve specific words for specific tasks.
 For example, a function called `sum()` is fairly common across
 languages. While you *could* make your own alternate function called
 `sum()`, this may lead to unexpected results when using the `sum()`
-function\
+function, so it's better to avoid using the same name.
 
 Similarly, it is best practice to avoid naming variables or objects the
 same as common function names. Again, while you *could* write code like
@@ -54,7 +65,7 @@ than y";x--cout<<"x was reduced & is now equal to "<< fixed <<setprecision(1)
 <<x<<endl;} else {cout << "x must be less than y";x++;cout<<"x was increased 
 & is now equal to "<<fixed<<setprecision(1)<<x<<endl;}
 ```
-But, there's an error in that code. A semi-colon is required but missing. 
+But, there's an error in that code. A required semi-colon is missing. 
 Can you find it?  
 
 Having each statement on its own line is easier to read.  
@@ -75,16 +86,132 @@ if (x == y) {
 ```
 
 
+## Order of Execution
+
+In the chapter about functions, we gave an example where libraries which have 
+functions with the same name will default to the last loaded library when called, 
+so it's good habit to explicitly specify the library when using functions which 
+might have the same name in a different library
+
+```
+load(library_B)
+load(library_A)
+
+values <- c(2, 4, 7, 5, 9, NA)
+
+library_B:mean(values) 
+#result will be `NA`
+
+library_A:mean(values) 
+#result will be `5.4`
+```
+
 ## Order of Assignment
 
-overwriting/ variable will be whatever most recently set as
+I've had researchers execute code chunks which assign a value to a variable, 
+then reassigns a different value to the same variable, undoing the first
+assignment.
 
-## Others [work in progress]
+```
+researchVariable <- someFunction(data)
+researchVariable <- aDifferentFunction(data)
+plot_or_graph <- anotherFunction(researchVariable)
+all of
+the plot
+or graph
+code sometimes it's a lot
+```
 
-Closing quotes and parenthese\
-Direct comparison of multiple syntax, so like the same task in R,
-Python, C, SQL, Stata, Java  You don’t need to memorize specifics!
-Reading and writing data / files\
-Syntax is going to be specific to a language, or package within a
-language\
-Show some examples of reading/writing data in R, Python, Stata, SQL
+If you see this, ask the researcher to talk through their code, and gently point
+out the reassignment.  If it's for different conditions, ask if others looking at 
+the code would understand that. 
+
+But, often they'll share that they were trying different things for working
+with their data.  If the assignment is unneeded, they should just remove
+it from their code.  If they are using version control (e.g. git), they will be
+able to recover the code by looking at previous versions.  
+
+But, including code that's not used in the final script clutters the script, and 
+makes it more difficult to trace when errors occur.
+
+
+## Matching Delimiters: Quotes, Parens, Brackets
+
+Delimiters are used to indicate the boundaries for something specific in the syntax.  
+They need to be a matching set, so the computer knows the beginning and end boundary.
+Many text editors (such as Sublime Text or Notepadd++) or IDEs for programming 
+languages will auto-complete the end delimiter, but sometimes
+you need to adjust that in the options.
+
+- **Quotes `" "` or `' '`** - used for text.  If used within text, you either have to 
+escape it (often the escape character is `\`), or use the other (`"don't"`)
+- **Parentheses `( )`** - used for functions, or order of operation in expressions
+- **Curly-Brackets `{ }`** - often used to indicate code chunks
+- **Square-Brackets `[ ]`** - used to indicate an index in a collection
+
+## Reading and Writing Data Files
+
+Reading and writing files can be a pain point.  There are two things to consider 
+when reading from or writing to files
+
+1. The location of the file with respect to the script that is doing the request.
+1. The type of file to be read/written.  Different file types require different functions.  
+
+It is useful to understand how to navigate between directories on a command line, as 
+many of the keywords and shortcuts are used to create the *path* to the files.
+There are recommended lessons for learning the Bash command line in the Resources chapter.
+
+Here is an example loading a CSV file in Python
+```
+import pandas as pd
+
+# updates the event list based on previously created csv
+events_df = pd.read_csv("../data/events.csv")
+```
+
+Here is the folder structure.  Folders have a `/` at the end of their name, while
+files will have an extension (`.csv`, `.r`, etc)
+```
+- data/
+  - events.csv
+- src/
+  - myPythonFile.ipynb
+```
+<hr>
+
+Here is an example of writing a CSV file in R
+```
+write.csv(mydata, file = "output/census_names2.csv", row.names = FALSE)
+```
+
+The folder structure is
+```
+- project folder/
+  - get_names.r
+  - output/
+    - census_names2.csv
+```
+<hr>
+Here is an example of saving an HTML file (which is just a text file) in Python
+```
+import requests
+from bs4 import BeautifulSoup
+
+year = "1995"
+save_prefix = "ipeds_" 
+url = "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="+year
+
+output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
+webpage = requests.get(url)
+
+with open(output_path, 'wb') as file:
+  file.write(webpage.content) 
+```
+
+The folder structure is
+```
+- save-linked-files/
+  - save-linked-files.ipynb
+  - 1995/
+    - ipeds_1995_.html
+```
