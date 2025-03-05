@@ -106,16 +106,43 @@ Helping with programming vs statistics (for when they ask for help with interpre
 Troubleshooting vs consult
 Ok to say you don’t know! Point to documentation and learning resources</p>
 </div>
-<div id="three-areas-for-errors" class="section level2" number="11.2">
+<div id="narrowing-down-errors" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">11.2</span> Three Areas For Errors<a class="anchor" aria-label="anchor" href="#three-areas-for-errors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2</span> Narrowing Down Errors<a class="anchor" aria-label="anchor" href="#narrowing-down-errors"><i class="fas fa-link"></i></a>
 </h2>
-<p>Code not running at all → often a syntax error</p>
+<p>You might think there’s a lot of places where errors can be introduced in code,
+especially if it’s a hundred lines, but you can usually narrow down the errors
+to a few places.</p>
+<div id="does-the-code-run-or-not" class="section level3" number="11.2.1">
+<h3>
+<span class="header-section-number">11.2.1</span> Does the Code Run or Not?<a class="anchor" aria-label="anchor" href="#does-the-code-run-or-not"><i class="fas fa-link"></i></a>
+</h3>
+<p>Syntax errors - a missing quote or paren that’s supposed to close a delimiter pair, a
+missing semicolon, the computer trying to open a file that doesn’t exist in
+the location indicated by the path - these will all result in error messages. The
+code generally won’t even run.</p>
+<p>That’s the nice thing about syntax errors, is the code doesn’t run and will give
+you an indication of where to look to correct the error.</p>
+<p>Here’s an example in R. The code is</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb70-1"><a href="recap-and-consultation-tips.html#cb70-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y <span class="op">{</span></span>
+<span id="cb70-2"><a href="recap-and-consultation-tips.html#cb70-2" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"values are equal"</span><span class="op">);</span></span>
+<span id="cb70-3"><a href="recap-and-consultation-tips.html#cb70-3" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb70-4"><a href="recap-and-consultation-tips.html#cb70-4" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x greater than y"</span><span class="op">);</span></span>
+<span id="cb70-5"><a href="recap-and-consultation-tips.html#cb70-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb70-6"><a href="recap-and-consultation-tips.html#cb70-6" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x must be less than y"</span><span class="op">);</span></span>
+<span id="cb70-7"><a href="recap-and-consultation-tips.html#cb70-7" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>But, when we run it, the console indicates
+<code><br>
+&gt; if (x == y {<br><span style="color: red;">Error: unexpected ‘{’ in “if (x == y {”</span>
+</code></p>
+<p>Three Areas For Errors
+Code not running at all → often a syntax error</p>
 <p>Running unexpectedly / unexpected output</p>
 <p>input</p>
 <p>logic</p>
 <p>output</p>
 
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -126,7 +153,9 @@ Ok to say you don’t know! Point to documentation and learning resources</p>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#recap-and-consultation-tips"><span class="header-section-number">11</span> Recap and Consultation Tips</a></li>
 <li><a class="nav-link" href="#approaching-consultations"><span class="header-section-number">11.1</span> Approaching Consultations</a></li>
-<li><a class="nav-link" href="#three-areas-for-errors"><span class="header-section-number">11.2</span> Three Areas For Errors</a></li>
+<li>
+<a class="nav-link" href="#narrowing-down-errors"><span class="header-section-number">11.2</span> Narrowing Down Errors</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#does-the-code-run-or-not"><span class="header-section-number">11.2.1</span> Does the Code Run or Not?</a></li></ul>
+</li>
 </ul>
 
       <div class="book-extra">

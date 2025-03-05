@@ -96,9 +96,8 @@
 <span class="header-section-number">10.1</span> New types of conditions (in SQL)<a class="anchor" aria-label="anchor" href="#new-types-of-conditions-in-sql"><i class="fas fa-link"></i></a>
 </h2>
 <p>Consider the following SQL command:</p>
-<pre><code>SELECT * FROM OceanBuoys
-WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
-</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb66-1"><a href="practice.html#cb66-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
+<span id="cb66-2"><a href="practice.html#cb66-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
 <p>One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
 <p><strong>Exercise</strong>: Using what we’ve learned in prior sections, try to answer the following questions.</p>
 <ul>
@@ -186,63 +185,62 @@ Example written narrative
 </ul>
 </li>
 </ul>
-<pre><code># Code to scrape data from website
-
-1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
-2.  data_url = "DataFiles.aspx?"
-3.  year_base = "year="
-4.  years = ["1995", "1996", "1997", "1998"]
-5.  session_id = "&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"
-6. 
-7.  # what type of files do you want to save?
-8.  file_type = ["zip","csv"]
-9. 
-10. # where do you want to save locally?
-11. 
-12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 
-13. # because that's where below is saving to
-14. save_loc = years 
-15. 
-16. # what kind of prefix do you want on your files
-17. save_prefix = "ipeds_" 
-18. 
-19. # scrape
-20. for year in years:
-21.     url = base_url+data_url+year_base+year+session_id 
-22.     webpage = requests.get(url)
-23.     soup = BeautifulSoup(webpage.content, 'html.parser')
-24. 
-25. 
-26.     if os.path.isdir("./"+year):
-27.         # notice output path has "year" as a variable indicating folders
-28.         output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
-29.     
-30.         if os.path.exists(output_path):
-31.             print(output_path+" already exists. Did NOT save.")
-32.         else:
-33.             # saving the html file
-34.             print("saving "+output_path)
-35.     
-36.             with open(output_path, 'wb') as file:
-37.                 file.write(webpage.content) 
-38.             
-39.         # saving files linked on original html page which meet file type requirement
-40.         for link in soup.find_all('a')[0:16]:  
-41.             data_target = link.get('href')
-42.             # data_target[-3:]
-43.             if any(extension == data_target[-3:] for extension in file_type):
-44.                 wget_url = base_url+data_target
-45.                 wget_save = "./"+year+"/"+save_prefix+data_target.replace("/","-")
-46.     
-47.                 if os.path.exists(wget_save):
-48.                     print(wget_save+" already exists. Did NOT save.")
-49.                 else:
-50.                     print("SAVING "+ wget_url+ " at local location: "+wget_save)
-51.                     wget.download(wget_url,wget_save)
-52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
-53.     else:
-54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
-</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="practice.html#cb67-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
+<span id="cb67-2"><a href="practice.html#cb67-2" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="practice.html#cb67-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
+<span id="cb67-4"><a href="practice.html#cb67-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
+<span id="cb67-5"><a href="practice.html#cb67-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
+<span id="cb67-6"><a href="practice.html#cb67-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
+<span id="cb67-7"><a href="practice.html#cb67-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
+<span id="cb67-8"><a href="practice.html#cb67-8" tabindex="-1"></a><span class="fl">6.</span> </span>
+<span id="cb67-9"><a href="practice.html#cb67-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
+<span id="cb67-10"><a href="practice.html#cb67-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
+<span id="cb67-11"><a href="practice.html#cb67-11" tabindex="-1"></a><span class="fl">9.</span> </span>
+<span id="cb67-12"><a href="practice.html#cb67-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
+<span id="cb67-13"><a href="practice.html#cb67-13" tabindex="-1"></a><span class="fl">11.</span> </span>
+<span id="cb67-14"><a href="practice.html#cb67-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
+<span id="cb67-15"><a href="practice.html#cb67-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
+<span id="cb67-16"><a href="practice.html#cb67-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
+<span id="cb67-17"><a href="practice.html#cb67-17" tabindex="-1"></a><span class="fl">15.</span> </span>
+<span id="cb67-18"><a href="practice.html#cb67-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
+<span id="cb67-19"><a href="practice.html#cb67-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb67-20"><a href="practice.html#cb67-20" tabindex="-1"></a><span class="fl">18.</span> </span>
+<span id="cb67-21"><a href="practice.html#cb67-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
+<span id="cb67-22"><a href="practice.html#cb67-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb67-23"><a href="practice.html#cb67-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
+<span id="cb67-24"><a href="practice.html#cb67-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb67-25"><a href="practice.html#cb67-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb67-26"><a href="practice.html#cb67-26" tabindex="-1"></a><span class="fl">24.</span> </span>
+<span id="cb67-27"><a href="practice.html#cb67-27" tabindex="-1"></a><span class="fl">25.</span> </span>
+<span id="cb67-28"><a href="practice.html#cb67-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
+<span id="cb67-29"><a href="practice.html#cb67-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
+<span id="cb67-30"><a href="practice.html#cb67-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb67-31"><a href="practice.html#cb67-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
+<span id="cb67-32"><a href="practice.html#cb67-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
+<span id="cb67-33"><a href="practice.html#cb67-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb67-34"><a href="practice.html#cb67-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
+<span id="cb67-35"><a href="practice.html#cb67-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
+<span id="cb67-36"><a href="practice.html#cb67-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
+<span id="cb67-37"><a href="practice.html#cb67-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
+<span id="cb67-38"><a href="practice.html#cb67-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb67-39"><a href="practice.html#cb67-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
+<span id="cb67-40"><a href="practice.html#cb67-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
+<span id="cb67-41"><a href="practice.html#cb67-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
+<span id="cb67-42"><a href="practice.html#cb67-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
+<span id="cb67-43"><a href="practice.html#cb67-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
+<span id="cb67-44"><a href="practice.html#cb67-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
+<span id="cb67-45"><a href="practice.html#cb67-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
+<span id="cb67-46"><a href="practice.html#cb67-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
+<span id="cb67-47"><a href="practice.html#cb67-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
+<span id="cb67-48"><a href="practice.html#cb67-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
+<span id="cb67-49"><a href="practice.html#cb67-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
+<span id="cb67-50"><a href="practice.html#cb67-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb67-51"><a href="practice.html#cb67-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
+<span id="cb67-52"><a href="practice.html#cb67-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
+<span id="cb67-53"><a href="practice.html#cb67-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
+<span id="cb67-54"><a href="practice.html#cb67-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
+<span id="cb67-55"><a href="practice.html#cb67-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
+<span id="cb67-56"><a href="practice.html#cb67-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
 <p><strong>This needs a color coded image to clarify</strong></p>
 <details><summary>
 Start and end locations
@@ -291,12 +289,12 @@ Start and end locations
 </h2>
 <p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend.<br></p>
 <p>Here is an example of R code:</p>
-<pre><code>1.  df_new &lt;- df %&gt;% 
-2.    select(-respondent_name) %&gt;% 
-3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %&gt;% 
-4.    mutate(survey_type = 
-5.           ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
-  </code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="practice.html#cb68-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb68-2"><a href="practice.html#cb68-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb68-3"><a href="practice.html#cb68-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb68-4"><a href="practice.html#cb68-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
+<span id="cb68-5"><a href="practice.html#cb68-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
+<span id="cb68-6"><a href="practice.html#cb68-6" tabindex="-1"></a>  </span></code></pre></div>
 <p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
 <p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below, to guide your annotation.</p>
 <ul>
@@ -339,7 +337,7 @@ Example narrative
 </h2>
 <p>We’ll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
 <p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
-<pre><code>replace variable = variable[_n-1] if missing(variable)</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb69-1"><a href="practice.html#cb69-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
 <details><summary>
 What is this code doing?
 </summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (n-1) value of `variable.</p>

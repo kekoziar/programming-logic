@@ -69,5 +69,6 @@ new-functions-in-stata
 add-example-for-cc
 recap-and-consultation-tips
 approaching-consultations
-three-areas-for-errors
+narrowing-down-errors
+does-the-code-run-or-not
 resources

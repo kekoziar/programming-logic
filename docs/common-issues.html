@@ -141,29 +141,29 @@ letters NA.</p>
 <span class="header-section-number">9.4</span> Ending a code chunk<a class="anchor" aria-label="anchor" href="#ending-a-code-chunk"><i class="fas fa-link"></i></a>
 </h2>
 <p>Certain programming languages require a character at the end of a line or statement.</p>
-<p><strong>C/C++, Java, and PHP</strong> all require a semi-colon <code>;</code> at the end of lines or statements.</p>
+<p><strong>C/C++, Java, and PHP</strong> all require a semicolon <code>;</code> at the end of lines or statements.</p>
 <p>Why do we say <em>statement</em>? Because technically you could write your code</p>
-<pre><code>if(x == y){cout &lt;&lt; "values are equal";x++;cout&lt;&lt;"x was increased &amp; is now 
-equal to "&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}else if(x &gt; y){cout &lt;&lt; "x greater 
-than y";x--cout&lt;&lt;"x was reduced &amp; is now equal to "&lt;&lt; fixed &lt;&lt;setprecision(1)
-&lt;&lt;x&lt;&lt;endl;} else {cout &lt;&lt; "x must be less than y";x++;cout&lt;&lt;"x was increased 
-&amp; is now equal to "&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}</code></pre>
-<p>But, there’s an error in that code. A required semi-colon is missing.
+<div class="sourceCode" id="cb56"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb56-1"><a href="common-issues.html#cb56-1" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>x <span class="op">==</span> y<span class="op">){</span>cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased &amp; is now </span></span>
+<span id="cb56-2"><a href="common-issues.html#cb56-2" tabindex="-1"></a>equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}else if(x &gt; y){cout &lt;&lt; "</span>x greater </span>
+<span id="cb56-3"><a href="common-issues.html#cb56-3" tabindex="-1"></a>than y<span class="st">";x--cout&lt;&lt;"</span>x was reduced <span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt; fixed &lt;&lt;setprecision(1)</span></span>
+<span id="cb56-4"><a href="common-issues.html#cb56-4" tabindex="-1"></a><span class="op">&lt;&lt;</span>x<span class="op">&lt;&lt;</span>endl<span class="op">;}</span> <span class="cf">else</span> <span class="op">{</span>cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased </span></span>
+<span id="cb56-5"><a href="common-issues.html#cb56-5" tabindex="-1"></a><span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}</span></span></code></pre></div>
+<p>But, there’s an error in that code. A required semicolon is missing.
 Can you find it?</p>
 <p>Having each statement on its own line is easier to read.</p>
-<pre><code>if (x == y) {
-  cout &lt;&lt; "values are equal";
-  x++;
-  cout &lt;&lt; "x was increased &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
-} else if (x &gt; y) {
-  cout &lt;&lt; "x greater than y";
-  x--
-  cout &lt;&lt; "x was reduced &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
-} else {
-  cout &lt;&lt; "x must be less than y";
-  x++;
-  cout &lt;&lt; "x was increased &amp; is now equal to " &lt;&lt; fixed &lt;&lt; setprecision(1) &lt;&lt; x &lt;&lt; endl;
-}</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb57-1"><a href="common-issues.html#cb57-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb57-2"><a href="common-issues.html#cb57-2" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span></span>
+<span id="cb57-3"><a href="common-issues.html#cb57-3" tabindex="-1"></a>  x<span class="op">++;</span></span>
+<span id="cb57-4"><a href="common-issues.html#cb57-4" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb57-5"><a href="common-issues.html#cb57-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb57-6"><a href="common-issues.html#cb57-6" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x greater than y"</span><span class="op">;</span></span>
+<span id="cb57-7"><a href="common-issues.html#cb57-7" tabindex="-1"></a>  x<span class="op">--</span></span>
+<span id="cb57-8"><a href="common-issues.html#cb57-8" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was reduced &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb57-9"><a href="common-issues.html#cb57-9" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb57-10"><a href="common-issues.html#cb57-10" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span></span>
+<span id="cb57-11"><a href="common-issues.html#cb57-11" tabindex="-1"></a>  x<span class="op">++;</span></span>
+<span id="cb57-12"><a href="common-issues.html#cb57-12" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb57-13"><a href="common-issues.html#cb57-13" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 <div id="order-of-execution" class="section level2" number="9.5">
 <h2>
@@ -212,17 +212,20 @@ makes it more difficult to trace when errors occur.</p>
 <h2>
 <span class="header-section-number">9.7</span> Matching Delimiters: Quotes, Parens, Brackets<a class="anchor" aria-label="anchor" href="#matching-delimiters-quotes-parens-brackets"><i class="fas fa-link"></i></a>
 </h2>
-<p>Delimiters are used to indicate the boundaries for something specific in the syntax.<br>
-They need to be a matching set, so the computer knows the beginning and end boundary.
-Many text editors (such as Sublime Text or Notepadd++) or IDEs for programming
-languages will auto-complete the end delimiter, but sometimes
+<p>Delimiters are used to indicate the boundaries for something specific in the
+syntax. They need to be a matching set, so the computer knows the beginning and
+end boundary. A missing end quote or bracket will often throw an error; review
+the error trace to find where to complete the pair.</p>
+<p>Many text editors (such as Sublime Text or Notepad++) or development environments
+(such as Jupyter Notebooks or RStudio)
+will auto-complete the end delimiter, but sometimes
 you need to adjust that in the options.</p>
 <ul>
 <li>
 <strong>Quotes <code>" "</code> or <code>' '</code></strong> - used for text. If used within text, you either have to
-escape it (often the escape character is <code>\</code>), or use the other (<code>"don't"</code>)</li>
+escape it (often the escape character is <code>\</code>), or use the other (<code>"you'll need to  surround contractions with double-quotes"</code>)</li>
 <li>
-<strong>Parentheses <code>( )</code></strong> - used for functions, or order of operation in expressions</li>
+<strong>Parentheses <code>( )</code></strong> - used for functions or order of operation in expressions</li>
 <li>
 <strong>Curly-Brackets <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code></strong> - often used to indicate code chunks</li>
 <li>
@@ -243,10 +246,10 @@ when reading from or writing to files</p>
 many of the keywords and shortcuts are used to create the <em>path</em> to the files.
 There are recommended lessons for learning the Bash command line in the Resources chapter.</p>
 <p>Here is an example loading a CSV file in Python</p>
-<pre><code>import pandas as pd
-
-# updates the event list based on previously created csv
-events_df = pd.read_csv("../data/events.csv")</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="common-issues.html#cb60-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb60-2"><a href="common-issues.html#cb60-2" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="common-issues.html#cb60-3" tabindex="-1"></a><span class="co"># updates the event list based on previously created csv</span></span>
+<span id="cb60-4"><a href="common-issues.html#cb60-4" tabindex="-1"></a>events_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/events.csv"</span>)</span></code></pre></div>
 <p>Here is the folder structure. Folders have a <code>/</code> at the end of their name, while
 files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
 <pre><code>- data/
@@ -255,7 +258,8 @@ files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
   - myPythonFile.ipynb</code></pre>
 <hr>
 <p>Here is an example of writing a CSV file in R</p>
-<pre><code>write.csv(mydata, file = "output/census_names2.csv", row.names = FALSE)</code></pre>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">mydata</span>, file <span class="op">=</span> <span class="st">"output/census_names2.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>The folder structure is</p>
 <pre><code>- project folder/
   - get_names.r
@@ -263,18 +267,18 @@ files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
     - census_names2.csv</code></pre>
 <hr>
 <p>Here is an example of saving an HTML file (which is just a text file) in Python</p>
-<pre><code>import requests
-from bs4 import BeautifulSoup
-
-year = "1995"
-save_prefix = "ipeds_" 
-url = "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="+year
-
-output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
-webpage = requests.get(url)
-
-with open(output_path, 'wb') as file:
-  file.write(webpage.content) </code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="common-issues.html#cb64-1" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb64-2"><a href="common-issues.html#cb64-2" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb64-3"><a href="common-issues.html#cb64-3" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="common-issues.html#cb64-4" tabindex="-1"></a>year <span class="op">=</span> <span class="st">"1995"</span></span>
+<span id="cb64-5"><a href="common-issues.html#cb64-5" tabindex="-1"></a>save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb64-6"><a href="common-issues.html#cb64-6" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="</span><span class="op">+</span>year</span>
+<span id="cb64-7"><a href="common-issues.html#cb64-7" tabindex="-1"></a></span>
+<span id="cb64-8"><a href="common-issues.html#cb64-8" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb64-9"><a href="common-issues.html#cb64-9" tabindex="-1"></a>webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb64-10"><a href="common-issues.html#cb64-10" tabindex="-1"></a></span>
+<span id="cb64-11"><a href="common-issues.html#cb64-11" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb64-12"><a href="common-issues.html#cb64-12" tabindex="-1"></a>  <span class="bu">file</span>.write(webpage.content) </span></code></pre></div>
 <p>The folder structure is</p>
 <pre><code>- save-linked-files/
   - save-linked-files.ipynb

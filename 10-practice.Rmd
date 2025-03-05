@@ -6,7 +6,7 @@ In this section, we'll work on annotating and understanding unfamiliar code.
 
 Consider the following SQL command:
 
-```
+```SQL
 SELECT * FROM OceanBuoys
 WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 
@@ -83,7 +83,7 @@ __Exercise__: Review the code chunk below and identify on which line each `for` 
   - Starts on line:
   - Ends on line:
 
-```
+```python
 # Code to scrape data from website
 
 1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
@@ -179,7 +179,7 @@ While the logic underlying programming languages stays consistent, a central cha
 
 Here is an example of R code:
 
-```
+```r
 1.  df_new <- df %>% 
 2.    select(-respondent_name) %>% 
 3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %>% 
@@ -222,7 +222,7 @@ We'll conclude with a challenge in Stata, a proprietary statistical analysis pla
 
 Relying on what we've learned so far and context clues, what is the code below doing?
 
-```
+```stata
 replace variable = variable[_n-1] if missing(variable)
 ```
 <details>

@@ -1814,78 +1814,90 @@ Programming languages may have specific formatting for conditional statements. T
 
 Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block intented by one
 
-\begin{verbatim}
-if x == y:
-  print("values are equal")
-elif x > y:
-  print("x greater than y")
-else:
-  print("x must be less than y")
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{==}\NormalTok{ y:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"values are equal"}\NormalTok{)}
+\ControlFlowTok{elif}\NormalTok{ x }\OperatorTok{\textgreater{}}\NormalTok{ y:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"x greater than y"}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"x must be less than y"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 The next language examples do not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
 
 \textbf{R} makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement.
 
-\begin{verbatim}
-if (x == y) {
-  print("values are equal")
-} else if (x > y) {
-  print("x greater than y")
-} else {
-  print("x must be less than y")
-}
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (x }\SpecialCharTok{==}\NormalTok{ y) \{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"values are equal"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (x }\SpecialCharTok{\textgreater{}}\NormalTok{ y) \{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"x greater than y"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+  \FunctionTok{print}\NormalTok{(}\StringTok{"x must be less than y"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 The following example is \textbf{C/C++} syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
 
 \textbf{C/C++} syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
-\begin{verbatim}
-if (x == y) {
-  cout << "values are equal";
-} else if (x > y) {
-  cout << "x greater than y";
-} else {
-  cout << "x must be less than y";
-}
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{==}\NormalTok{ y}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"values are equal"}\OperatorTok{;}
+\OperatorTok{\}} \ControlFlowTok{else} \ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{\textgreater{}}\NormalTok{ y}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x greater than y"}\OperatorTok{;}
+\OperatorTok{\}} \ControlFlowTok{else} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x must be less than y"}\OperatorTok{;}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \textbf{PHP} is very similar to C/C++, but is used for web development.
 
-\begin{verbatim}
-if (x == y) {
-  echo "values are equal";
-} elseif (x > y) {
-  echo "x greater than y";
-} else {
-  echo "x must be less than y";
-}
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\NormalTok{ y) \{}
+  \KeywordTok{echo} \StringTok{"values are equal"}\OtherTok{;}
+\NormalTok{\} }\ControlFlowTok{elseif}\NormalTok{ (x }\OperatorTok{\textgreater{}}\NormalTok{ y) \{}
+  \KeywordTok{echo} \StringTok{"x greater than y"}\OtherTok{;}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+  \KeywordTok{echo} \StringTok{"x must be less than y"}\OtherTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 With \textbf{Bash}, you need to be careful of spaces around your operators and parentheses. (cheatsheets \url{https://ss64.com/bash/if.html} \url{https://devhints.io/bash\#conditionals})
 
 This Bash script example compares numbers
 
-\begin{verbatim}
-if (( $x == $y )) ; then
-  echo "values are equal"
-elif (( $x > $y )) ; then
-  echo "x greater than y"
-else
-  echo "x must be less than y"
-fi
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if} \KeywordTok{((} \VariableTok{$x} \OperatorTok{==} \VariableTok{$y} \KeywordTok{))} \KeywordTok{;} \ControlFlowTok{then}
+  \BuiltInTok{echo} \StringTok{"values are equal"}
+\ControlFlowTok{elif} \KeywordTok{((} \VariableTok{$x} \OperatorTok{\textgreater{}} \VariableTok{$y} \KeywordTok{))} \KeywordTok{;} \ControlFlowTok{then}
+  \BuiltInTok{echo} \StringTok{"x greater than y"}
+\ControlFlowTok{else}
+  \BuiltInTok{echo} \StringTok{"x must be less than y"}
+\ControlFlowTok{fi}
+\end{Highlighting}
+\end{Shaded}
 
 This Bash script example compares text
 
-\begin{verbatim}
-if  [[ "$x" == "$y" ]] ; then
-  echo "the text in x is the same as y"
-else
-  echo "the text in x is not the same as y"
-fi
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}  \KeywordTok{[[} \StringTok{"}\VariableTok{$x}\StringTok{"} \OtherTok{==} \StringTok{"}\VariableTok{$y}\StringTok{"} \KeywordTok{]]} \KeywordTok{;} \ControlFlowTok{then}
+  \BuiltInTok{echo} \StringTok{"the text in x is the same as y"}
+\ControlFlowTok{else}
+  \BuiltInTok{echo} \StringTok{"the text in x is not the same as y"}
+\ControlFlowTok{fi}
+\end{Highlighting}
+\end{Shaded}
 
 \subsection{Challenge}\label{challenge}
 
@@ -2439,38 +2451,42 @@ letters NA.
 
 Certain programming languages require a character at the end of a line or statement.
 
-\textbf{C/C++, Java, and PHP} all require a semi-colon \texttt{;} at the end of lines or statements.
+\textbf{C/C++, Java, and PHP} all require a semicolon \texttt{;} at the end of lines or statements.
 
 Why do we say \emph{statement}? Because technically you could write your code
 
-\begin{verbatim}
-if(x == y){cout << "values are equal";x++;cout<<"x was increased & is now 
-equal to "<<fixed<<setprecision(1)<<x<<endl;}else if(x > y){cout << "x greater 
-than y";x--cout<<"x was reduced & is now equal to "<< fixed <<setprecision(1)
-<<x<<endl;} else {cout << "x must be less than y";x++;cout<<"x was increased 
-& is now equal to "<<fixed<<setprecision(1)<<x<<endl;}
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\OperatorTok{(}\NormalTok{x }\OperatorTok{==}\NormalTok{ y}\OperatorTok{)\{}\NormalTok{cout }\OperatorTok{\textless{}\textless{}} \StringTok{"values are equal"}\OperatorTok{;}\NormalTok{x}\OperatorTok{++;}\NormalTok{cout}\OperatorTok{\textless{}\textless{}}\StringTok{"x was increased \& is now }
+\NormalTok{equal to }\StringTok{"\textless{}\textless{}fixed\textless{}\textless{}setprecision(1)\textless{}\textless{}x\textless{}\textless{}endl;\}else if(x \textgreater{} y)\{cout \textless{}\textless{} "}\NormalTok{x greater }
+\NormalTok{than y}\StringTok{";x{-}{-}cout\textless{}\textless{}"}\NormalTok{x was reduced }\OperatorTok{\&}\NormalTok{ is now equal to }\StringTok{"\textless{}\textless{} fixed \textless{}\textless{}setprecision(1)}
+\OperatorTok{\textless{}\textless{}}\NormalTok{x}\OperatorTok{\textless{}\textless{}}\NormalTok{endl}\OperatorTok{;\}} \ControlFlowTok{else} \OperatorTok{\{}\NormalTok{cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x must be less than y"}\OperatorTok{;}\NormalTok{x}\OperatorTok{++;}\NormalTok{cout}\OperatorTok{\textless{}\textless{}}\StringTok{"x was increased }
+\OperatorTok{\&}\NormalTok{ is now equal to }\StringTok{"\textless{}\textless{}fixed\textless{}\textless{}setprecision(1)\textless{}\textless{}x\textless{}\textless{}endl;\}}
+\end{Highlighting}
+\end{Shaded}
 
-But, there's an error in that code. A required semi-colon is missing.
+But, there's an error in that code. A required semicolon is missing.
 Can you find it?
 
 Having each statement on its own line is easier to read.
 
-\begin{verbatim}
-if (x == y) {
-  cout << "values are equal";
-  x++;
-  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
-} else if (x > y) {
-  cout << "x greater than y";
-  x--
-  cout << "x was reduced & is now equal to " << fixed << setprecision(1) << x << endl;
-} else {
-  cout << "x must be less than y";
-  x++;
-  cout << "x was increased & is now equal to " << fixed << setprecision(1) << x << endl;
-}
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{==}\NormalTok{ y}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"values are equal"}\OperatorTok{;}
+\NormalTok{  x}\OperatorTok{++;}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x was increased \& is now equal to "} \OperatorTok{\textless{}\textless{}}\NormalTok{ fixed }\OperatorTok{\textless{}\textless{}}\NormalTok{ setprecision}\OperatorTok{(}\DecValTok{1}\OperatorTok{)} \OperatorTok{\textless{}\textless{}}\NormalTok{ x }\OperatorTok{\textless{}\textless{}}\NormalTok{ endl}\OperatorTok{;}
+\OperatorTok{\}} \ControlFlowTok{else} \ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{\textgreater{}}\NormalTok{ y}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x greater than y"}\OperatorTok{;}
+\NormalTok{  x}\OperatorTok{{-}{-}}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x was reduced \& is now equal to "} \OperatorTok{\textless{}\textless{}}\NormalTok{ fixed }\OperatorTok{\textless{}\textless{}}\NormalTok{ setprecision}\OperatorTok{(}\DecValTok{1}\OperatorTok{)} \OperatorTok{\textless{}\textless{}}\NormalTok{ x }\OperatorTok{\textless{}\textless{}}\NormalTok{ endl}\OperatorTok{;}
+\OperatorTok{\}} \ControlFlowTok{else} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x must be less than y"}\OperatorTok{;}
+\NormalTok{  x}\OperatorTok{++;}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}} \StringTok{"x was increased \& is now equal to "} \OperatorTok{\textless{}\textless{}}\NormalTok{ fixed }\OperatorTok{\textless{}\textless{}}\NormalTok{ setprecision}\OperatorTok{(}\DecValTok{1}\OperatorTok{)} \OperatorTok{\textless{}\textless{}}\NormalTok{ x }\OperatorTok{\textless{}\textless{}}\NormalTok{ endl}\OperatorTok{;}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Order of Execution}\label{order-of-execution}
 
@@ -2522,19 +2538,23 @@ makes it more difficult to trace when errors occur.
 
 \section{Matching Delimiters: Quotes, Parens, Brackets}\label{matching-delimiters-quotes-parens-brackets}
 
-Delimiters are used to indicate the boundaries for something specific in the syntax.\\
-They need to be a matching set, so the computer knows the beginning and end boundary.
-Many text editors (such as Sublime Text or Notepadd++) or IDEs for programming
-languages will auto-complete the end delimiter, but sometimes
+Delimiters are used to indicate the boundaries for something specific in the
+syntax. They need to be a matching set, so the computer knows the beginning and
+end boundary. A missing end quote or bracket will often throw an error; review
+the error trace to find where to complete the pair.
+
+Many text editors (such as Sublime Text or Notepad++) or development environments
+(such as Jupyter Notebooks or RStudio)
+will auto-complete the end delimiter, but sometimes
 you need to adjust that in the options.
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{Quotes \texttt{"\ "} or \texttt{\textquotesingle{}\ \textquotesingle{}}} - used for text. If used within text, you either have to
-  escape it (often the escape character is \texttt{\textbackslash{}}), or use the other (\texttt{"don\textquotesingle{}t"})
+  escape it (often the escape character is \texttt{\textbackslash{}}), or use the other (\texttt{"you\textquotesingle{}ll\ need\ to\ \ surround\ contractions\ with\ double-quotes"})
 \item
-  \textbf{Parentheses \texttt{(\ )}} - used for functions, or order of operation in expressions
+  \textbf{Parentheses \texttt{(\ )}} - used for functions or order of operation in expressions
 \item
   \textbf{Curly-Brackets \texttt{\{\ \}}} - often used to indicate code chunks
 \item
@@ -2561,12 +2581,14 @@ There are recommended lessons for learning the Bash command line in the Resource
 
 Here is an example loading a CSV file in Python
 
-\begin{verbatim}
-import pandas as pd
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
 
-# updates the event list based on previously created csv
-events_df = pd.read_csv("../data/events.csv")
-\end{verbatim}
+\CommentTok{\# updates the event list based on previously created csv}
+\NormalTok{events\_df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"../data/events.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 Here is the folder structure. Folders have a \texttt{/} at the end of their name, while
 files will have an extension (\texttt{.csv}, \texttt{.r}, etc)
@@ -2580,9 +2602,11 @@ files will have an extension (\texttt{.csv}, \texttt{.r}, etc)
 
 Here is an example of writing a CSV file in R
 
-\begin{verbatim}
-write.csv(mydata, file = "output/census_names2.csv", row.names = FALSE)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write.csv}\NormalTok{(mydata, }\AttributeTok{file =} \StringTok{"output/census\_names2.csv"}\NormalTok{, }\AttributeTok{row.names =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 The folder structure is
 
@@ -2595,20 +2619,22 @@ The folder structure is
 
 Here is an example of saving an HTML file (which is just a text file) in Python
 
-\begin{verbatim}
-import requests
-from bs4 import BeautifulSoup
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ requests}
+\ImportTok{from}\NormalTok{ bs4 }\ImportTok{import}\NormalTok{ BeautifulSoup}
 
-year = "1995"
-save_prefix = "ipeds_" 
-url = "https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="+year
+\NormalTok{year }\OperatorTok{=} \StringTok{"1995"}
+\NormalTok{save\_prefix }\OperatorTok{=} \StringTok{"ipeds\_"} 
+\NormalTok{url }\OperatorTok{=} \StringTok{"https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="}\OperatorTok{+}\NormalTok{year}
 
-output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
-webpage = requests.get(url)
+\NormalTok{output\_path }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"\_"}\OperatorTok{+}\StringTok{".html"}
+\NormalTok{webpage }\OperatorTok{=}\NormalTok{ requests.get(url)}
 
-with open(output_path, 'wb') as file:
-  file.write(webpage.content) 
-\end{verbatim}
+\ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(output\_path, }\StringTok{\textquotesingle{}wb\textquotesingle{}}\NormalTok{) }\ImportTok{as} \BuiltInTok{file}\NormalTok{:}
+  \BuiltInTok{file}\NormalTok{.write(webpage.content) }
+\end{Highlighting}
+\end{Shaded}
 
 The folder structure is
 
@@ -2627,10 +2653,12 @@ In this section, we'll work on annotating and understanding unfamiliar code.
 
 Consider the following SQL command:
 
-\begin{verbatim}
-SELECT * FROM OceanBuoys
-WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ OceanBuoys}
+\KeywordTok{WHERE}\NormalTok{ Ocean }\OperatorTok{=} \StringTok{\textquotesingle{}Atlantic\textquotesingle{}} \KeywordTok{AND}\NormalTok{ (BuoyName }\KeywordTok{LIKE} \StringTok{\textquotesingle{}S\%\textquotesingle{}} \KeywordTok{OR}\NormalTok{ BuoyName }\KeywordTok{LIKE} \StringTok{\textquotesingle{}K\%\textquotesingle{}}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
 
 One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do.
 
@@ -2763,64 +2791,66 @@ The code may look intimidating! But remember, we're less concerned here about un
   \end{itemize}
 \end{itemize}
 
-\begin{verbatim}
-# Code to scrape data from website
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Code to scrape data from website}
 
-1.  base_url = "https://nces.ed.gov/ipeds/datacenter/"
-2.  data_url = "DataFiles.aspx?"
-3.  year_base = "year="
-4.  years = ["1995", "1996", "1997", "1998"]
-5.  session_id = "&sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&rtid=7"
-6. 
-7.  # what type of files do you want to save?
-8.  file_type = ["zip","csv"]
-9. 
-10. # where do you want to save locally?
-11. 
-12. # save_loc is redundant, but a reminder that you should have locally folders that reflect the years, 
-13. # because that's where below is saving to
-14. save_loc = years 
-15. 
-16. # what kind of prefix do you want on your files
-17. save_prefix = "ipeds_" 
-18. 
-19. # scrape
-20. for year in years:
-21.     url = base_url+data_url+year_base+year+session_id 
-22.     webpage = requests.get(url)
-23.     soup = BeautifulSoup(webpage.content, 'html.parser')
-24. 
-25. 
-26.     if os.path.isdir("./"+year):
-27.         # notice output path has "year" as a variable indicating folders
-28.         output_path = "./"+year+"/"+save_prefix+year+"_"+".html"
-29.     
-30.         if os.path.exists(output_path):
-31.             print(output_path+" already exists. Did NOT save.")
-32.         else:
-33.             # saving the html file
-34.             print("saving "+output_path)
-35.     
-36.             with open(output_path, 'wb') as file:
-37.                 file.write(webpage.content) 
-38.             
-39.         # saving files linked on original html page which meet file type requirement
-40.         for link in soup.find_all('a')[0:16]:  
-41.             data_target = link.get('href')
-42.             # data_target[-3:]
-43.             if any(extension == data_target[-3:] for extension in file_type):
-44.                 wget_url = base_url+data_target
-45.                 wget_save = "./"+year+"/"+save_prefix+data_target.replace("/","-")
-46.     
-47.                 if os.path.exists(wget_save):
-48.                     print(wget_save+" already exists. Did NOT save.")
-49.                 else:
-50.                     print("SAVING "+ wget_url+ " at local location: "+wget_save)
-51.                     wget.download(wget_url,wget_save)
-52.                     time.sleep(.25) # be kind, don't look like a DDOS attack
-53.     else:
-54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
-\end{verbatim}
+\FloatTok{1.}\NormalTok{  base\_url }\OperatorTok{=} \StringTok{"https://nces.ed.gov/ipeds/datacenter/"}
+\FloatTok{2.}\NormalTok{  data\_url }\OperatorTok{=} \StringTok{"DataFiles.aspx?"}
+\FloatTok{3.}\NormalTok{  year\_base }\OperatorTok{=} \StringTok{"year="}
+\FloatTok{4.}\NormalTok{  years }\OperatorTok{=}\NormalTok{ [}\StringTok{"1995"}\NormalTok{, }\StringTok{"1996"}\NormalTok{, }\StringTok{"1997"}\NormalTok{, }\StringTok{"1998"}\NormalTok{]}
+\FloatTok{5.}\NormalTok{  session\_id }\OperatorTok{=} \StringTok{"\&sid=4f8f293f{-}df75{-}42cd{-}9cc0{-}ed184270cf17\&rtid=7"}
+\FloatTok{6.} 
+\FloatTok{7.}  \CommentTok{\# what type of files do you want to save?}
+\FloatTok{8.}\NormalTok{  file\_type }\OperatorTok{=}\NormalTok{ [}\StringTok{"zip"}\NormalTok{,}\StringTok{"csv"}\NormalTok{]}
+\FloatTok{9.} 
+\FloatTok{10.} \CommentTok{\# where do you want to save locally?}
+\FloatTok{11.} 
+\FloatTok{12.} \CommentTok{\# save\_loc is redundant, but a reminder that you should have locally folders that reflect the years, }
+\FloatTok{13.} \CommentTok{\# because that\textquotesingle{}s where below is saving to}
+\FloatTok{14.}\NormalTok{ save\_loc }\OperatorTok{=}\NormalTok{ years }
+\FloatTok{15.} 
+\FloatTok{16.} \CommentTok{\# what kind of prefix do you want on your files}
+\FloatTok{17.}\NormalTok{ save\_prefix }\OperatorTok{=} \StringTok{"ipeds\_"} 
+\FloatTok{18.} 
+\FloatTok{19.} \CommentTok{\# scrape}
+\FloatTok{20.} \ControlFlowTok{for}\NormalTok{ year }\KeywordTok{in}\NormalTok{ years:}
+\FloatTok{21.}\NormalTok{     url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_url}\OperatorTok{+}\NormalTok{year\_base}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\NormalTok{session\_id }
+\FloatTok{22.}\NormalTok{     webpage }\OperatorTok{=}\NormalTok{ requests.get(url)}
+\FloatTok{23.}\NormalTok{     soup }\OperatorTok{=}\NormalTok{ BeautifulSoup(webpage.content, }\StringTok{\textquotesingle{}html.parser\textquotesingle{}}\NormalTok{)}
+\FloatTok{24.} 
+\FloatTok{25.} 
+\FloatTok{26.}     \ControlFlowTok{if}\NormalTok{ os.path.isdir(}\StringTok{"./"}\OperatorTok{+}\NormalTok{year):}
+\FloatTok{27.}         \CommentTok{\# notice output path has "year" as a variable indicating folders}
+\FloatTok{28.}\NormalTok{         output\_path }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"\_"}\OperatorTok{+}\StringTok{".html"}
+\FloatTok{29.}     
+\FloatTok{30.}         \ControlFlowTok{if}\NormalTok{ os.path.exists(output\_path):}
+\FloatTok{31.}             \BuiltInTok{print}\NormalTok{(output\_path}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
+\FloatTok{32.}         \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{33.}             \CommentTok{\# saving the html file}
+\FloatTok{34.}             \BuiltInTok{print}\NormalTok{(}\StringTok{"saving "}\OperatorTok{+}\NormalTok{output\_path)}
+\FloatTok{35.}     
+\FloatTok{36.}             \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(output\_path, }\StringTok{\textquotesingle{}wb\textquotesingle{}}\NormalTok{) }\ImportTok{as} \BuiltInTok{file}\NormalTok{:}
+\FloatTok{37.}                 \BuiltInTok{file}\NormalTok{.write(webpage.content) }
+\FloatTok{38.}             
+\FloatTok{39.}         \CommentTok{\# saving files linked on original html page which meet file type requirement}
+\FloatTok{40.}         \ControlFlowTok{for}\NormalTok{ link }\KeywordTok{in}\NormalTok{ soup.find\_all(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{)[}\DecValTok{0}\NormalTok{:}\DecValTok{16}\NormalTok{]:  }
+\FloatTok{41.}\NormalTok{             data\_target }\OperatorTok{=}\NormalTok{ link.get(}\StringTok{\textquotesingle{}href\textquotesingle{}}\NormalTok{)}
+\FloatTok{42.}             \CommentTok{\# data\_target[{-}3:]}
+\FloatTok{43.}             \ControlFlowTok{if} \BuiltInTok{any}\NormalTok{(extension }\OperatorTok{==}\NormalTok{ data\_target[}\OperatorTok{{-}}\DecValTok{3}\NormalTok{:] }\ControlFlowTok{for}\NormalTok{ extension }\KeywordTok{in}\NormalTok{ file\_type):}
+\FloatTok{44.}\NormalTok{                 wget\_url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_target}
+\FloatTok{45.}\NormalTok{                 wget\_save }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{data\_target.replace(}\StringTok{"/"}\NormalTok{,}\StringTok{"{-}"}\NormalTok{)}
+\FloatTok{46.}     
+\FloatTok{47.}                 \ControlFlowTok{if}\NormalTok{ os.path.exists(wget\_save):}
+\FloatTok{48.}                     \BuiltInTok{print}\NormalTok{(wget\_save}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
+\FloatTok{49.}                 \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{50.}                     \BuiltInTok{print}\NormalTok{(}\StringTok{"SAVING "}\OperatorTok{+}\NormalTok{ wget\_url}\OperatorTok{+} \StringTok{" at local location: "}\OperatorTok{+}\NormalTok{wget\_save)}
+\FloatTok{51.}\NormalTok{                     wget.download(wget\_url,wget\_save)}
+\FloatTok{52.}\NormalTok{                     time.sleep(}\FloatTok{.25}\NormalTok{) }\CommentTok{\# be kind, don\textquotesingle{}t look like a DDOS attack}
+\FloatTok{53.}     \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{54.}         \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{!!! save directory "}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{" does NOT exist. please create}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \textbf{This needs a color coded image to clarify}
 
@@ -2896,14 +2926,16 @@ While the logic underlying programming languages stays consistent, a central cha
 
 Here is an example of R code:
 
-\begin{verbatim}
-1.  df_new <- df %>% 
-2.    select(-respondent_name) %>% 
-3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %>% 
-4.    mutate(survey_type = 
-5.           ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{1.}\NormalTok{  df\_new }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+\FloatTok{2.}    \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{respondent\_name) }\SpecialCharTok{\%\textgreater{}\%} 
+\FloatTok{3.}    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{identifier =} \FunctionTok{paste}\NormalTok{(respondent\_id, survey\_wave, }\AttributeTok{sep =} \StringTok{"\_"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+\FloatTok{4.}    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{survey\_type =} 
+\FloatTok{5.}           \FunctionTok{ifelse}\NormalTok{(survey\_wave }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"first"}\NormalTok{, }\StringTok{"second"}\NormalTok{), }\StringTok{"phone"}\NormalTok{, }\StringTok{"in person"}\NormalTok{))}
   
-\end{verbatim}
+\end{Highlighting}
+\end{Shaded}
 
 \textbf{Exercise}: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.\\
 
@@ -2971,9 +3003,11 @@ We'll conclude with a challenge in Stata, a proprietary statistical analysis pla
 
 Relying on what we've learned so far and context clues, what is the code below doing?
 
-\begin{verbatim}
-replace variable = variable[_n-1] if missing(variable)
-\end{verbatim}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{replace} \KeywordTok{variable}\NormalTok{ = }\KeywordTok{variable}\NormalTok{[}\DataTypeTok{\_n}\NormalTok{{-}1] }\KeywordTok{if} \FunctionTok{missing}\NormalTok{(}\KeywordTok{variable}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 What is this code doing?
 
@@ -3005,8 +3039,41 @@ Helping with programming vs statistics (for when they ask for help with interpre
 Troubleshooting vs consult
 Ok to say you don't know! Point to documentation and learning resources
 
-\section{Three Areas For Errors}\label{three-areas-for-errors}
+\section{Narrowing Down Errors}\label{narrowing-down-errors}
 
+You might think there's a lot of places where errors can be introduced in code,
+especially if it's a hundred lines, but you can usually narrow down the errors
+to a few places.
+
+\subsection{Does the Code Run or Not?}\label{does-the-code-run-or-not}
+
+Syntax errors - a missing quote or paren that's supposed to close a delimiter pair, a
+missing semicolon, the computer trying to open a file that doesn't exist in
+the location indicated by the path - these will all result in error messages. The
+code generally won't even run.
+
+That's the nice thing about syntax errors, is the code doesn't run and will give
+you an indication of where to look to correct the error.
+
+Here's an example in R. The code is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{==}\NormalTok{ y }\OperatorTok{\{}
+\NormalTok{  print}\OperatorTok{(}\StringTok{"values are equal"}\OperatorTok{);}
+\OperatorTok{\}} \ControlFlowTok{else} \ControlFlowTok{if} \OperatorTok{(}\NormalTok{x }\OperatorTok{\textgreater{}}\NormalTok{ y}\OperatorTok{)} \OperatorTok{\{}
+\NormalTok{  print}\OperatorTok{(}\StringTok{"x greater than y"}\OperatorTok{);}
+\OperatorTok{\}} \ControlFlowTok{else} \OperatorTok{\{}
+\NormalTok{  print}\OperatorTok{(}\StringTok{"x must be less than y"}\OperatorTok{);}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+But, when we run it, the console indicates
+\textgreater{} if (x == y \{
+{Error: unexpected `\{' in ``if (x == y \{''}
+
+Three Areas For Errors
 Code not running at all → often a syntax error
 
 Running unexpectedly / unexpected output

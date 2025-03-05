@@ -259,7 +259,7 @@ Programming languages may have specific formatting for conditional statements. T
 **Python** requires indentation for code blocks.  Code blocks in different structures must be aligned with the same indentation.
 
 Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block intented by one
-```
+```python
 if x == y:
   print("values are equal")
 elif x > y:
@@ -273,7 +273,7 @@ The next language examples do not require indentation for code blocks; however, 
 
 **R** makes use of curly brackets `{}` to indicate each section of an `if else` statement.
 
-```
+```r
 if (x == y) {
   print("values are equal")
 } else if (x > y) {
@@ -287,7 +287,7 @@ The following example is **C/C++** syntax.  One big difference between C/C++ and
 
 **C/C++** syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
-```
+```c
 if (x == y) {
   cout << "values are equal";
 } else if (x > y) {
@@ -300,7 +300,7 @@ if (x == y) {
 
 **PHP** is very similar to C/C++, but is used for web development.
 
-```
+```php
 if (x == y) {
   echo "values are equal";
 } elseif (x > y) {
@@ -315,7 +315,7 @@ With **Bash**, you need to be careful of spaces around your operators and parent
 
 This Bash script example compares numbers
 
-```
+```bash
 if (( $x == $y )) ; then
   echo "values are equal"
 elif (( $x > $y )) ; then
@@ -327,7 +327,7 @@ fi
 
 This Bash script example compares text
 
-```
+```bash
 if  [[ "$x" == "$y" ]] ; then
   echo "the text in x is the same as y"
 else

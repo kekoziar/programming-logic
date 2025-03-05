@@ -54,22 +54,22 @@ letters NA.
 
 Certain programming languages require a character at the end of a line or statement.  
 
-**C/C++, Java, and PHP** all require a semi-colon `;` at the end of lines or statements.
+**C/C++, Java, and PHP** all require a semicolon `;` at the end of lines or statements.
 
 Why do we say _statement_?  Because technically you could write your code 
 
-```
+```c
 if(x == y){cout << "values are equal";x++;cout<<"x was increased & is now 
 equal to "<<fixed<<setprecision(1)<<x<<endl;}else if(x > y){cout << "x greater 
 than y";x--cout<<"x was reduced & is now equal to "<< fixed <<setprecision(1)
 <<x<<endl;} else {cout << "x must be less than y";x++;cout<<"x was increased 
 & is now equal to "<<fixed<<setprecision(1)<<x<<endl;}
 ```
-But, there's an error in that code. A required semi-colon is missing. 
+But, there's an error in that code. A required semicolon is missing. 
 Can you find it?  
 
 Having each statement on its own line is easier to read.  
-```
+```c
 if (x == y) {
   cout << "values are equal";
   x++;
@@ -137,15 +137,20 @@ makes it more difficult to trace when errors occur.
 
 ## Matching Delimiters: Quotes, Parens, Brackets
 
-Delimiters are used to indicate the boundaries for something specific in the syntax.  
-They need to be a matching set, so the computer knows the beginning and end boundary.
-Many text editors (such as Sublime Text or Notepadd++) or IDEs for programming 
-languages will auto-complete the end delimiter, but sometimes
+Delimiters are used to indicate the boundaries for something specific in the 
+syntax.  They need to be a matching set, so the computer knows the beginning and 
+end boundary. A missing end quote or bracket will often throw an error; review 
+the error trace to find where to complete the pair.
+
+Many text editors (such as Sublime Text or Notepad++) or development environments 
+(such as Jupyter Notebooks or RStudio)
+will auto-complete the end delimiter, but sometimes
 you need to adjust that in the options.
 
 - **Quotes `" "` or `' '`** - used for text.  If used within text, you either have to 
-escape it (often the escape character is `\`), or use the other (`"don't"`)
-- **Parentheses `( )`** - used for functions, or order of operation in expressions
+escape it (often the escape character is `\`), or use the other (`"you'll need to 
+surround contractions with double-quotes"`)
+- **Parentheses `( )`** - used for functions or order of operation in expressions
 - **Curly-Brackets `{ }`** - often used to indicate code chunks
 - **Square-Brackets `[ ]`** - used to indicate an index in a collection
 
@@ -162,7 +167,7 @@ many of the keywords and shortcuts are used to create the *path* to the files.
 There are recommended lessons for learning the Bash command line in the Resources chapter.
 
 Here is an example loading a CSV file in Python
-```
+```python
 import pandas as pd
 
 # updates the event list based on previously created csv
@@ -180,7 +185,7 @@ files will have an extension (`.csv`, `.r`, etc)
 <hr>
 
 Here is an example of writing a CSV file in R
-```
+```r
 write.csv(mydata, file = "output/census_names2.csv", row.names = FALSE)
 ```
 
@@ -193,7 +198,7 @@ The folder structure is
 ```
 <hr>
 Here is an example of saving an HTML file (which is just a text file) in Python
-```
+```python
 import requests
 from bs4 import BeautifulSoup
 

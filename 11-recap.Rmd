@@ -17,7 +17,45 @@ Troubleshooting vs consult
 Ok to say you don’t know! Point to documentation and learning resources
 
 
-## Three Areas For Errors
+## Narrowing Down Errors
+
+You might think there's a lot of places where errors can be introduced in code, 
+especially if it's a hundred lines, but you can usually narrow down the errors
+to a few places.
+
+### Does the Code Run or Not?
+
+Syntax errors - a missing quote or paren that's supposed to close a delimiter pair,  a
+missing semicolon, the computer trying to open a file that doesn't exist in
+the location indicated by the path - these will all result in error messages.  The
+code generally won't even run.  
+
+That's the nice thing about syntax errors, is the code doesn't run and will give
+you an indication of where to look to correct the error.
+
+Here's an example in R.  The code is
+
+
+```c 
+if (x == y {
+  print("values are equal");
+} else if (x > y) {
+  print("x greater than y");
+} else {
+  print("x must be less than y");
+}
+```
+
+But, when we run it, the console indicates
+<code><br>
+> if (x == y {<br>
+<span style="color: red;">Error: unexpected '{' in "if (x == y {"</span>
+</code>
+
+
+
+
+Three Areas For Errors
 Code not running at all → often a syntax error
 
 Running unexpectedly / unexpected output
