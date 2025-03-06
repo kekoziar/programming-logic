@@ -28,7 +28,7 @@ Before we look at any real world code, we will manually go through some example 
 
 ### Activity: Practicing a Trace
 
-_Timing: 10 minutes_
+_Timing: 10 minutes_\
 _You will need: a piece of paper and writing implement_
 
 Let's set up our trace exercise. The example loop is: 
