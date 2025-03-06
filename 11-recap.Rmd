@@ -8,7 +8,7 @@ You might think there's a lot of places where errors can be introduced in code,
 especially if it's a hundred lines, but you can usually narrow down the errors
 to a few places.
 
-### Why Doesn't my Code Run?
+### Why Doesn't My Code Run?
 
 Syntax errors - a missing quote or paren that's supposed to close a delimiter pair,  a
 missing semicolon, the computer trying to open a file that doesn't exist in
@@ -124,7 +124,7 @@ assistance you can't provide, most researchers will be thankful and
 understanding if you *don't know.* One of the best professors I ever had would 
 sometimes answer questions with *I don't know, but I'll look that up and get back
 you you.*  It's a philosophy I've incorporated into my professional services, 
-*I don't know, but I'll help you find the answers.*. Have a list of go-to documentation and learning resources to point to when needed. 
+*I don't know, but I'll help you find the answers.* Have a list of go-to documentation and learning resources to point to when needed. 
 
 
 
