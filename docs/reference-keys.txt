@@ -68,7 +68,8 @@ new-syntax-and-terms-in-r
 new-functions-in-stata
 add-example-for-cc
 recap-and-consultation-tips
-approaching-consultations
 narrowing-down-errors
-does-the-code-run-or-not
+why-doesnt-my-code-run
+the-code-runs-but-something-is-wrong
+approaching-consultations
 resources

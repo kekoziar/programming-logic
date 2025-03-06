@@ -3019,25 +3019,7 @@ There are \href{https://www.stata.com/support/faqs/data-management/replacing-mis
 
 \chapter{Recap and Consultation Tips}\label{recap-and-consultation-tips}
 
-The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations.
-
-\section{Approaching Consultations}\label{approaching-consultations}
-
-Consultations may seem scary, especially if you aren't familiar with a particular language, but the nice thing about programming languages is the concepts are so similar across languages, many of the issues students and researchers come with aren't specific to the language, per se. That is, sometimes it's something as simple as a variable not being assigned properly. That isn't language specific, but requires someone to be able to trace the code.
-
-Here are some tips on approaching consultations
-
-\begin{itemize}
-\tightlist
-\item
-  Include a prompt for anyone scheduling a consultation to provide as much detail as possible. \emph{Please share anything that will help prepare for our meeting. Include your specific research question or problem.} This will help you to prepare in advance. I've followed up via email, asking researchers if they'd share their code/data in advance.
-\end{itemize}
-
-have student talk through their code
-Be clear with what you can and cannot do.
-Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician)
-Troubleshooting vs consult
-Ok to say you don't know! Point to documentation and learning resources
+The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations. Let's first talk about where errors can pop up.
 
 \section{Narrowing Down Errors}\label{narrowing-down-errors}
 
@@ -3045,7 +3027,7 @@ You might think there's a lot of places where errors can be introduced in code,
 especially if it's a hundred lines, but you can usually narrow down the errors
 to a few places.
 
-\subsection{Does the Code Run or Not?}\label{does-the-code-run-or-not}
+\subsection{Why Doesn't my Code Run?}\label{why-doesnt-my-code-run}
 
 Syntax errors - a missing quote or paren that's supposed to close a delimiter pair, a
 missing semicolon, the computer trying to open a file that doesn't exist in
@@ -3070,19 +3052,60 @@ Here's an example in R. The code is
 \end{Shaded}
 
 But, when we run it, the console indicates
-\textgreater{} if (x == y \{
-{Error: unexpected `\{' in ``if (x == y \{''}
 
-Three Areas For Errors
-Code not running at all → often a syntax error
+Similarly, if we try to run something in Jupyter Notebook using Python with an error\ldots{}
 
-Running unexpectedly / unexpected output
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\NormalTok{ y:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"values are equal"}\NormalTok{)}
+\ControlFlowTok{elif}\NormalTok{ (x }\OperatorTok{\textgreater{}}\NormalTok{ y):}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"x greater than y"}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"x must be less than y"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-input
+\ldots we will get an error message\ldots{}
 
-logic
+\ldots with the specific location where the error started
 
-output
+As stated in earlier chapters, it's important to read through the error message,
+usually from bottom then working your way up. Sometimes error messages can be
+quite long. If you want to practice this for a particular
+language, there are recommended lessons in the Resources chapter.
+
+\subsection{The Code Runs, but Something is Wrong}\label{the-code-runs-but-something-is-wrong}
+
+It's a little trickier to troubleshoot when the code runs, but does something
+unexpected. Unexpected output might look like incorrect results, it could be a
+graph or chart doesn't look right. This is trickier because it might be the
+\emph{logic} of the code.
+
+Things I scan for before looking at the logic are making sure the correct data files
+are being requested, and making sure the location of the images the researcher is
+showing me matches with the file path indicated in the code.
+
+If those match, then it's useful to ask the researcher to walk through the code
+and explain it to you. Which brings us to tips for how to approach consultations.
+
+\section{Approaching Consultations}\label{approaching-consultations}
+
+Consultations may seem scary, especially if you aren't familiar with a particular language, but the nice thing about programming languages is the concepts are so similar across languages, many of the issues students and researchers come with aren't specific to the language, per se. That is, sometimes it's something as simple as a variable not being assigned properly. That isn't language specific, but requires someone to be able to trace the code.
+
+Here are some tips on approaching consultations
+
+\begin{itemize}
+\tightlist
+\item
+  Include a prompt for anyone scheduling a consultation to provide as much detail as possible. \emph{Please share anything that will help prepare for our meeting. Include your specific research question or problem.} This will help you to prepare in advance. I've followed up via email, asking researchers if they'd share their code/data in advance.
+\end{itemize}
+
+have student talk through their code
+Be clear with what you can and cannot do.
+Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician)
+Troubleshooting vs consult
+Ok to say you don't know! Point to documentation and learning resources
 
 \chapter{Resources}\label{resources}
 

@@ -1,21 +1,6 @@
 # Recap and Consultation Tips
 
-The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations.  
-
-## Approaching Consultations
-
-Consultations may seem scary, especially if you aren't familiar with a particular language, but the nice thing about programming languages is the concepts are so similar across languages, many of the issues students and researchers come with aren't specific to the language, per se.  That is, sometimes it's something as simple as a variable not being assigned properly.  That isn't language specific, but requires someone to be able to trace the code.
-
-Here are some tips on approaching consultations
-
-- Include a prompt for anyone scheduling a consultation to provide as much detail as possible.  _Please share anything that will help prepare for our meeting. Include your specific research question or problem._ This will help you to prepare in advance.  I've followed up via email, asking researchers if they'd share their code/data in advance.
-
-have student talk through their code
-Be clear with what you can and cannot do.
-Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician) 
-Troubleshooting vs consult
-Ok to say you don’t know! Point to documentation and learning resources
-
+The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations.  Let's first talk about where errors can pop up.
 
 ## Narrowing Down Errors
 
@@ -23,7 +8,7 @@ You might think there's a lot of places where errors can be introduced in code,
 especially if it's a hundred lines, but you can usually narrow down the errors
 to a few places.
 
-### Does the Code Run or Not?
+### Why Doesn't my Code Run?
 
 Syntax errors - a missing quote or paren that's supposed to close a delimiter pair,  a
 missing semicolon, the computer trying to open a file that doesn't exist in
@@ -47,22 +32,63 @@ if (x == y {
 ```
 
 But, when we run it, the console indicates
-<code><br>
-> if (x == y {<br>
-<span style="color: red;">Error: unexpected '{' in "if (x == y {"</span>
-</code>
+<pre><code>> if (x == y {
+<span style="color: red;">Error: unexpected '{' in "if (x == y {"</span></code></pre>
+
+<hr>
+Similarly, if we try to run something in Jupyter Notebook using Python with an error...
+
+```python
+if (x == y:
+  print("values are equal")
+elif (x > y):
+  print("x greater than y")
+else:
+  print("x must be less than y")
+```
+...we will get an error message...
+
+<pre style="background-color: #ffdede;"><code><span style="color: #278da2;">   Cell</span> <span style="color: #00736a;">In[7], line 1</span>
+     <span style="color: #b17f25;">if (x == y:</span>
+               <span style="color: #a1a6b1;">^</span>
+<span style="color: #b23635;">SyntaxError:</span> <span style="color: black;">invalid syntax</span></code></pre>
 
 
+...with the specific location where the error started
+
+As stated in earlier chapters, it's important to read through the error message, 
+usually from bottom then working your way up.  Sometimes error messages can be
+quite long.  If you want to practice this for a particular
+language, there are recommended lessons in the Resources chapter.
 
 
-Three Areas For Errors
-Code not running at all → often a syntax error
+### The Code Runs, but Something is Wrong
 
-Running unexpectedly / unexpected output
 
-input
+It's a little trickier to troubleshoot when the code runs, but does something 
+unexpected. Unexpected output might look like incorrect results, it could be a
+graph or chart doesn't look right.  This is trickier because it might be the 
+*logic* of the code.  
 
-logic
+Things I scan for before looking at the logic are making sure the correct data files
+are being requested, and making sure the location of the images the researcher is 
+showing me matches with the file path indicated in the code. 
 
-output
+If those match, then it's useful to ask the researcher to walk through the code 
+and explain it to you.  Which brings us to tips for how to approach consultations. 
+
+## Approaching Consultations
+
+Consultations may seem scary, especially if you aren't familiar with a particular language, but the nice thing about programming languages is the concepts are so similar across languages, many of the issues students and researchers come with aren't specific to the language, per se.  That is, sometimes it's something as simple as a variable not being assigned properly.  That isn't language specific, but requires someone to be able to trace the code.
+
+Here are some tips on approaching consultations
+
+- Include a prompt for anyone scheduling a consultation to provide as much detail as possible.  _Please share anything that will help prepare for our meeting. Include your specific research question or problem._ This will help you to prepare in advance.  I've followed up via email, asking researchers if they'd share their code/data in advance.
+
+have student talk through their code
+Be clear with what you can and cannot do.
+Helping with programming vs statistics (for when they ask for help with interpreting something Full disclosure, I am not a statistician) 
+Troubleshooting vs consult
+Ok to say you don’t know! Point to documentation and learning resources
+
 
