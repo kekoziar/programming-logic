@@ -396,7 +396,7 @@ ft
 
 <hr>
 
-## Other Types of Loops 
+## `while` Loops 
 
 There are other types of loops in addition to the commonly used `for` loop.\ 
 
@@ -475,7 +475,32 @@ ft <- flextable(as.data.frame(ingredients_trace)) %>%
 ft
 ```
 
+Try filling out this table for `condition_check = length(ingredients) + 1` (condition_check = 6). What is the last value of `ingredients[i]` that is printed?
+
+Now let's try a thought exercise:
+
+- What would be the last value of `ingredients[i]` printed if `condition_check = 3`?
+- What would be the last value of `ingredients[i]` printed if `condition_check = 8`?
+
+<details>
+<summary>Answers</summary>
+If `condition_check = 3`, then the loop would stop after the `i = 2` iteration. Once `i = 3`, `i < condition_check` would be `False`, and the loop would not continue. So, the last printed value of `ingredients[i]` would be `ingredients[2]`, which is `potatoes`.
+
+In this case, we would be all out of values in `ingredients` before `condition_check` was `False`, meaning the loop would keep going even if there was nothing to return. Since there are only 5 values in `ingredients`, when we got to `i = 6` and `ingredients[6]`, the code would return `NA` (missing value). The same would happen for `i = 7`. So, our full results would look like:
+```
+[1] "cheddar cheese"
+[1] "potatoes"
+[1] "milk"
+[1] "salt"
+[1] "butter"
+[1] NA
+[1] NA
+```
+</details>
+
 <hr>
+
+### Other types of loops
 
 Two other types of loops are a `do while` loop (check at end) and an `until` loop (check at end).
 
