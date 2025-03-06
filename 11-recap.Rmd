@@ -48,7 +48,7 @@ else:
 ```
 ...we will get an error message...
 
-<pre style="background-color: #ffdede;"><code><span style="color: #278da2;">   Cell</span> <span style="color: #00736a;">In[7], line 1</span>
+<pre style="background-color: #ffdede; display:block; border: none; padding: 0px;"><code style="background-color: #ffdede; display:block; padding: 10px"><span style="color: #278da2;">   Cell</span> <span style="color: #00736a;">In[7], line 1</span>
      <span style="color: #b17f25;">if (x == y:</span>
                <span style="color: #a1a6b1;">^</span>
 <span style="color: #b23635;">SyntaxError:</span> <span style="color: black;">invalid syntax</span></code></pre>
