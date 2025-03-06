@@ -60,7 +60,7 @@ multi-line comment
 
 `// This is a comment`
 
-```
+```c
 /* 
 This is a 
 multi-line comment 

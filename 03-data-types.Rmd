@@ -188,3 +188,5 @@ Yam & German\text{ }Butterball & Purple\text{ }Viking \\
 Carola & Nicola & Canela\text{ }Russet
 \end{bmatrix}
 \end{equation}<br>What is the value of `potatoes[3,2]`?
+
+4. What do you think the value of this is `df$ingredients[3]`
