@@ -3,3 +3,24 @@
 Here's a list of resources, cheat sheets, reference materials, and stuff we really like and recommend.
 
 - Introduction to Programming Logic [@lynne_ohanlon_introduction_2000]
+- For practical, research-focused language-specific training (R, Python, SQL, Bash, etc.), we recommend [The Carpentries](https://carpentries.org/lessons/) lessons
+
+_Help troubleshooting code_
+
+- Check language/platform-specific message boards to see if someone else has encountered a similar problem.
+  - [Python](https://discuss.python.org/c/help/7)
+  - [R](https://forum.posit.co/)
+  - [SAS](https://communities.sas.com/)
+  - [SPSS](https://www.ibm.com/products/spss-statistics/support)
+  - [Stata](https://www.statalist.org/)
+  
+- Search [StackOverflow](https://stackoverflow.com/questions) 
+  - Programming community forum. Specify what language/platform in your search term (ex: "R plotting change axes")
+
+- Google the error code + name of software
+  - Example: “R error default.density need at least 2 points to select a bandwidth automatically”
+  - This will often surface relevant StackOverflow posts\
+
+- Check documentation for specific function/package/program 
+  - User guides/docs for “official” add-on packages to software
+  - Example: error/problem implementing “bmacoefsample” in Stata? → Find documentation for bmacoefsample - Posterior samples of regression coefficients - read syntax description 
