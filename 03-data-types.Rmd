@@ -189,4 +189,38 @@ Carola & Nicola & Canela\text{ }Russet
 \end{bmatrix}
 \end{equation}<br>What is the value of `potatoes[3,2]`?
 
-4. What do you think the value of this is `df$ingredients[3]`
+4. _Challenge_: For the following dataframe
+```{r df_exercise, echo = FALSE, message = FALSE, warning = FALSE}
+
+library(flextable)
+library(officer)
+library(shiny)
+library(dplyr)
+
+# reference: https://davidgohel.github.io/flextable/reference/bg.html
+
+ingredients <- c("smoked gouda cheese", "potatoes", "milk", "salt", "butter")
+ingredient_quantities <- c("all", "3 lb", "0.5 c", "to taste", "8 tbsp")
+ingredient_rankings <- c(5, 1, 3, 4, 2)
+
+table_demo <-   data.frame(ingredients, ingredient_quantities, ingredient_rankings)
+
+colnames(table_demo) <- c("ingredients", "quantities", "importance")
+
+# print(table_demo)
+
+big_border = fp_border(color="black", width = 2)
+small_border = fp_border(color="black", width = 1)
+
+ft <- flextable(table_demo) %>% 
+      border_remove() %>%
+      border_outer(part="all", border = big_border ) %>%
+      border_inner_h(part="all", border = small_border ) %>% 
+      border_inner_v(part="all", border = small_border ) %>% 
+      align(align = "center", part = "all") %>%
+      bg(j="ingredients", bg="white", part="body") %>%
+      bg(bg="gray90", part="header") %>%
+      vline(j="ingredients", border = big_border, part = "all")
+ft 
+```
+What do you think `df$ingredients[3]` would return? 
