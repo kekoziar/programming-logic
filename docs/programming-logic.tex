@@ -3100,7 +3100,7 @@ Here is an example of R code:
 
 \textbf{Exercise}: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.\\
 
-Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below, to guide your annotation.
+Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below to guide your annotation.
 
 \begin{itemize}
 \tightlist
@@ -3115,7 +3115,7 @@ Each line has a new take on the same logic we've covered in prior sections; a br
     \begin{itemize}
     \tightlist
     \item
-      Hint: refer to 8.1.3, and common variable names
+      Hint: refer to 8.1.3, Common Variable Names
     \end{itemize}
   \item
     What does the \texttt{\%\textgreater{}\%} symbol indicate?
@@ -3156,11 +3156,11 @@ Each line has a new take on the same logic we've covered in prior sections; a br
 
 Example narrative
 
-Starting from the table/dataframe called ``df'', we want to keep (select) all columns \emph{except} the column named ``respondent\_name''.\\
+Starting from the table/dataframe called \texttt{df}, we want to keep (\texttt{select}) all columns \emph{except} the column named \texttt{respondent\_name}.\\
 
-Then, make a new column called ``identifier''. This new column is created by pasting together the value in the ``respondent\_id'' column and the ``survey\_wave'' column, separated by an underscore.\\
+Then, make a new column called \texttt{identifier}. This new column is created by pasting together the value in the \texttt{respondent\_id} column and the \texttt{survey\_wave} column, separated by an underscore, \texttt{\_}.\\
 
-Then, make another new column called ``survey\_type''. The values in this column are determined by an \texttt{ifelse} statement: if the value in the ``survey\_wave'' column is any of the values specified in the list \texttt{("first",\ "second")} (so if the value is ``first'' or ``second''), then the value in the ``survey\_type'' column will be ``phone''. Otherwise, the value will be ``in person''.\\
+Then, make another new column called \texttt{survey\_type}. The values in this column are determined by an \texttt{ifelse} statement: if the value in the \texttt{survey\_wave} column is any of the values specified in the list \texttt{("first",\ "second")} (so if the value is \texttt{first} or \texttt{second}), then the value in the \texttt{survey\_type} column will be \texttt{phone}. Otherwise, the value will be \texttt{in\ person}.\\
 
 \hfill\break
 
@@ -3178,7 +3178,7 @@ Relying on what we've learned so far and context clues, what is the code below d
 
 What is this code doing?
 
-This is a bit of code to replace any missing values of \texttt{variable} with with previous (n-1) value of `variable.
+This is a bit of code to replace any missing values of \texttt{variable} with with previous (\texttt{n-1}) value of \texttt{variable}.
 
 There are \href{https://www.stata.com/support/faqs/data-management/replacing-missing-values/}{many ways to replace missing values in Stata}, this is one.
 

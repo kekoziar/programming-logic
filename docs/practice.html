@@ -135,6 +135,7 @@ Do your answers match these?
 Example written narrative
 </summary><p>This code is returning a subset of data from the <code>OceanBuoys</code> table. Starting from the full <code>OceanBuoys</code> table, return all the columns from this table, but keep only rows where <code>Ocean</code> is equal to “Atlantic” <em>and</em> where the <code>BuoyName</code> value starts with “S” or “K”. The returned data should be tabular, with the same number of columns as the full <code>OceanBuoys</code> table, but likely with less rows (only those that met the condition).</p>
 </details><p><br></p>
+<hr>
 </div>
 <div id="nested-for-loops-and-if-else-statements-in-python" class="section level2" number="10.2">
 <h2>
@@ -284,7 +285,7 @@ Start and end locations
 <li>Ends on line: 52 (matching <code>else</code> is on line 49, with end of action on line 52)</li>
 </ul>
 </li>
-</ul></details>
+</ul></details><hr>
 </div>
 <div id="new-syntax-and-terms-in-r" class="section level2" number="10.3">
 <h2>
@@ -299,13 +300,13 @@ Start and end locations
 <span id="cb69-5"><a href="practice.html#cb69-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
 <span id="cb69-6"><a href="practice.html#cb69-6" tabindex="-1"></a>  </span></code></pre></div>
 <p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
-<p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below, to guide your annotation.</p>
+<p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below to guide your annotation.</p>
 <ul>
 <li>Line 1
 <ul>
 <li>What is <code>df_new &lt;- df</code> doing here?
 <ul>
-<li>Hint: refer to 8.1.3, and common variable names</li>
+<li>Hint: refer to 8.1.3, Common Variable Names</li>
 </ul>
 </li>
 <li>What does the <code>%&gt;%</code> symbol indicate?</li>
@@ -333,10 +334,11 @@ Start and end locations
 </ul>
 <details><summary>
 Example narrative
-</summary><p>Starting from the table/dataframe called “df”, we want to keep (select) all columns <em>except</em> the column named “respondent_name”.<br></p>
-<p>Then, make a new column called “identifier”. This new column is created by pasting together the value in the “respondent_id” column and the “survey_wave” column, separated by an underscore.<br></p>
-<p>Then, make another new column called “survey_type”. The values in this column are determined by an <code>ifelse</code> statement: if the value in the “survey_wave” column is any of the values specified in the list <code>("first", "second")</code> (so if the value is “first” or “second”), then the value in the “survey_type” column will be “phone”. Otherwise, the value will be “in person”.<br></p>
+</summary><p>Starting from the table/dataframe called <code>df</code>, we want to keep (<code>select</code>) all columns <em>except</em> the column named <code>respondent_name</code>.<br></p>
+<p>Then, make a new column called <code>identifier</code>. This new column is created by pasting together the value in the <code>respondent_id</code> column and the <code>survey_wave</code> column, separated by an underscore, <code>_</code>.<br></p>
+<p>Then, make another new column called <code>survey_type</code>. The values in this column are determined by an <code>ifelse</code> statement: if the value in the <code>survey_wave</code> column is any of the values specified in the list <code>("first", "second")</code> (so if the value is <code>first</code> or <code>second</code>), then the value in the <code>survey_type</code> column will be <code>phone</code>. Otherwise, the value will be <code>in person</code>.<br></p>
 </details><p><br></p>
+<hr>
 </div>
 <div id="new-functions-in-stata" class="section level2" number="10.4">
 <h2>
@@ -347,9 +349,9 @@ Example narrative
 <div class="sourceCode" id="cb70"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb70-1"><a href="practice.html#cb70-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
 <details><summary>
 What is this code doing?
-</summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (n-1) value of `variable.</p>
+</summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (<code>n-1</code>) value of <code>variable</code>.</p>
 There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
-</details>
+</details><hr>
 </div>
 <div id="c" class="section level2" number="10.5">
 <h2>
@@ -484,6 +486,7 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <span id="cb71-119"><a href="practice.html#cb71-119" tabindex="-1"></a><span class="co">    printf("%s\n", sentence);</span></span>
 <span id="cb71-120"><a href="practice.html#cb71-120" tabindex="-1"></a></span>
 <span id="cb71-121"><a href="practice.html#cb71-121" tabindex="-1"></a><span class="co">}*/</span></span></code></pre></div>
+<hr>
 </div>
 <div id="matlab" class="section level2" number="10.6">
 <h2>
