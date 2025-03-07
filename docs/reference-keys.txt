@@ -17,6 +17,7 @@ for-loops
 activity-practicing-a-trace
 activity---loop-trace
 exercise---trace-nested-for-loops
+while-loops
 other-types-of-loops
 exercise---while-trace
 caveats
@@ -66,7 +67,8 @@ new-types-of-conditions-in-sql
 nested-for-loops-and-if-else-statements-in-python
 new-syntax-and-terms-in-r
 new-functions-in-stata
-add-example-for-cc
+c
+matlab
 recap-and-consultation-tips
 narrowing-down-errors
 why-doesnt-my-code-run

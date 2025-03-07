@@ -96,8 +96,8 @@
 <span class="header-section-number">10.1</span> New types of conditions (in SQL)<a class="anchor" aria-label="anchor" href="#new-types-of-conditions-in-sql"><i class="fas fa-link"></i></a>
 </h2>
 <p>Consider the following SQL command:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb66-1"><a href="practice.html#cb66-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
-<span id="cb66-2"><a href="practice.html#cb66-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb67-1"><a href="practice.html#cb67-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
+<span id="cb67-2"><a href="practice.html#cb67-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
 <p>One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
 <p><strong>Exercise</strong>: Using what we’ve learned in prior sections, try to answer the following questions.</p>
 <ul>
@@ -185,62 +185,62 @@ Example written narrative
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="practice.html#cb67-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
-<span id="cb67-2"><a href="practice.html#cb67-2" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="practice.html#cb67-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
-<span id="cb67-4"><a href="practice.html#cb67-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
-<span id="cb67-5"><a href="practice.html#cb67-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
-<span id="cb67-6"><a href="practice.html#cb67-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
-<span id="cb67-7"><a href="practice.html#cb67-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
-<span id="cb67-8"><a href="practice.html#cb67-8" tabindex="-1"></a><span class="fl">6.</span> </span>
-<span id="cb67-9"><a href="practice.html#cb67-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
-<span id="cb67-10"><a href="practice.html#cb67-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
-<span id="cb67-11"><a href="practice.html#cb67-11" tabindex="-1"></a><span class="fl">9.</span> </span>
-<span id="cb67-12"><a href="practice.html#cb67-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
-<span id="cb67-13"><a href="practice.html#cb67-13" tabindex="-1"></a><span class="fl">11.</span> </span>
-<span id="cb67-14"><a href="practice.html#cb67-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
-<span id="cb67-15"><a href="practice.html#cb67-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
-<span id="cb67-16"><a href="practice.html#cb67-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
-<span id="cb67-17"><a href="practice.html#cb67-17" tabindex="-1"></a><span class="fl">15.</span> </span>
-<span id="cb67-18"><a href="practice.html#cb67-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
-<span id="cb67-19"><a href="practice.html#cb67-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
-<span id="cb67-20"><a href="practice.html#cb67-20" tabindex="-1"></a><span class="fl">18.</span> </span>
-<span id="cb67-21"><a href="practice.html#cb67-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
-<span id="cb67-22"><a href="practice.html#cb67-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
-<span id="cb67-23"><a href="practice.html#cb67-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
-<span id="cb67-24"><a href="practice.html#cb67-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
-<span id="cb67-25"><a href="practice.html#cb67-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
-<span id="cb67-26"><a href="practice.html#cb67-26" tabindex="-1"></a><span class="fl">24.</span> </span>
-<span id="cb67-27"><a href="practice.html#cb67-27" tabindex="-1"></a><span class="fl">25.</span> </span>
-<span id="cb67-28"><a href="practice.html#cb67-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
-<span id="cb67-29"><a href="practice.html#cb67-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
-<span id="cb67-30"><a href="practice.html#cb67-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
-<span id="cb67-31"><a href="practice.html#cb67-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
-<span id="cb67-32"><a href="practice.html#cb67-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
-<span id="cb67-33"><a href="practice.html#cb67-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb67-34"><a href="practice.html#cb67-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
-<span id="cb67-35"><a href="practice.html#cb67-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
-<span id="cb67-36"><a href="practice.html#cb67-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
-<span id="cb67-37"><a href="practice.html#cb67-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
-<span id="cb67-38"><a href="practice.html#cb67-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb67-39"><a href="practice.html#cb67-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
-<span id="cb67-40"><a href="practice.html#cb67-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
-<span id="cb67-41"><a href="practice.html#cb67-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
-<span id="cb67-42"><a href="practice.html#cb67-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
-<span id="cb67-43"><a href="practice.html#cb67-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
-<span id="cb67-44"><a href="practice.html#cb67-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
-<span id="cb67-45"><a href="practice.html#cb67-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
-<span id="cb67-46"><a href="practice.html#cb67-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
-<span id="cb67-47"><a href="practice.html#cb67-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
-<span id="cb67-48"><a href="practice.html#cb67-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
-<span id="cb67-49"><a href="practice.html#cb67-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
-<span id="cb67-50"><a href="practice.html#cb67-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb67-51"><a href="practice.html#cb67-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
-<span id="cb67-52"><a href="practice.html#cb67-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
-<span id="cb67-53"><a href="practice.html#cb67-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
-<span id="cb67-54"><a href="practice.html#cb67-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
-<span id="cb67-55"><a href="practice.html#cb67-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
-<span id="cb67-56"><a href="practice.html#cb67-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="practice.html#cb68-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
+<span id="cb68-2"><a href="practice.html#cb68-2" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="practice.html#cb68-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
+<span id="cb68-4"><a href="practice.html#cb68-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
+<span id="cb68-5"><a href="practice.html#cb68-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
+<span id="cb68-6"><a href="practice.html#cb68-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
+<span id="cb68-7"><a href="practice.html#cb68-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
+<span id="cb68-8"><a href="practice.html#cb68-8" tabindex="-1"></a><span class="fl">6.</span> </span>
+<span id="cb68-9"><a href="practice.html#cb68-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
+<span id="cb68-10"><a href="practice.html#cb68-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
+<span id="cb68-11"><a href="practice.html#cb68-11" tabindex="-1"></a><span class="fl">9.</span> </span>
+<span id="cb68-12"><a href="practice.html#cb68-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
+<span id="cb68-13"><a href="practice.html#cb68-13" tabindex="-1"></a><span class="fl">11.</span> </span>
+<span id="cb68-14"><a href="practice.html#cb68-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
+<span id="cb68-15"><a href="practice.html#cb68-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
+<span id="cb68-16"><a href="practice.html#cb68-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
+<span id="cb68-17"><a href="practice.html#cb68-17" tabindex="-1"></a><span class="fl">15.</span> </span>
+<span id="cb68-18"><a href="practice.html#cb68-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
+<span id="cb68-19"><a href="practice.html#cb68-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb68-20"><a href="practice.html#cb68-20" tabindex="-1"></a><span class="fl">18.</span> </span>
+<span id="cb68-21"><a href="practice.html#cb68-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
+<span id="cb68-22"><a href="practice.html#cb68-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb68-23"><a href="practice.html#cb68-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
+<span id="cb68-24"><a href="practice.html#cb68-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb68-25"><a href="practice.html#cb68-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb68-26"><a href="practice.html#cb68-26" tabindex="-1"></a><span class="fl">24.</span> </span>
+<span id="cb68-27"><a href="practice.html#cb68-27" tabindex="-1"></a><span class="fl">25.</span> </span>
+<span id="cb68-28"><a href="practice.html#cb68-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
+<span id="cb68-29"><a href="practice.html#cb68-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
+<span id="cb68-30"><a href="practice.html#cb68-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb68-31"><a href="practice.html#cb68-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
+<span id="cb68-32"><a href="practice.html#cb68-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
+<span id="cb68-33"><a href="practice.html#cb68-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb68-34"><a href="practice.html#cb68-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
+<span id="cb68-35"><a href="practice.html#cb68-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
+<span id="cb68-36"><a href="practice.html#cb68-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
+<span id="cb68-37"><a href="practice.html#cb68-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
+<span id="cb68-38"><a href="practice.html#cb68-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb68-39"><a href="practice.html#cb68-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
+<span id="cb68-40"><a href="practice.html#cb68-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
+<span id="cb68-41"><a href="practice.html#cb68-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
+<span id="cb68-42"><a href="practice.html#cb68-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
+<span id="cb68-43"><a href="practice.html#cb68-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
+<span id="cb68-44"><a href="practice.html#cb68-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
+<span id="cb68-45"><a href="practice.html#cb68-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
+<span id="cb68-46"><a href="practice.html#cb68-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
+<span id="cb68-47"><a href="practice.html#cb68-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
+<span id="cb68-48"><a href="practice.html#cb68-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
+<span id="cb68-49"><a href="practice.html#cb68-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
+<span id="cb68-50"><a href="practice.html#cb68-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb68-51"><a href="practice.html#cb68-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
+<span id="cb68-52"><a href="practice.html#cb68-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
+<span id="cb68-53"><a href="practice.html#cb68-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
+<span id="cb68-54"><a href="practice.html#cb68-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
+<span id="cb68-55"><a href="practice.html#cb68-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
+<span id="cb68-56"><a href="practice.html#cb68-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
 <p><strong>This needs a color coded image to clarify</strong></p>
 <details><summary>
 Start and end locations
@@ -289,12 +289,12 @@ Start and end locations
 </h2>
 <p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend.<br></p>
 <p>Here is an example of R code:</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="practice.html#cb68-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb68-2"><a href="practice.html#cb68-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb68-3"><a href="practice.html#cb68-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb68-4"><a href="practice.html#cb68-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
-<span id="cb68-5"><a href="practice.html#cb68-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
-<span id="cb68-6"><a href="practice.html#cb68-6" tabindex="-1"></a>  </span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="practice.html#cb69-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb69-2"><a href="practice.html#cb69-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-3"><a href="practice.html#cb69-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-4"><a href="practice.html#cb69-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
+<span id="cb69-5"><a href="practice.html#cb69-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
+<span id="cb69-6"><a href="practice.html#cb69-6" tabindex="-1"></a>  </span></code></pre></div>
 <p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
 <p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below, to guide your annotation.</p>
 <ul>
@@ -337,17 +337,199 @@ Example narrative
 </h2>
 <p>We’ll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
 <p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb69-1"><a href="practice.html#cb69-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb70-1"><a href="practice.html#cb70-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
 <details><summary>
 What is this code doing?
 </summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (n-1) value of `variable.</p>
 There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
 </details>
 </div>
-<div id="add-example-for-cc" class="section level2" number="10.5">
+<div id="c" class="section level2" number="10.5">
 <h2>
-<span class="header-section-number">10.5</span> add example for C/C++<a class="anchor" aria-label="anchor" href="#add-example-for-cc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.5</span> C++<a class="anchor" aria-label="anchor" href="#c"><i class="fas fa-link"></i></a>
 </h2>
+<p>This is a C++ file named <code>testScratchDoc.cpp</code></p>
+<p>Review the file then answer the following questions, annotating as you see fit.</p>
+<ul>
+<li>How is the code similar to some of the code that we’ve seen so far?</li>
+<li>What do you think the code does (generally)?</li>
+<li>What questions do you have about it?</li>
+<li>What are some suggestions to make it easier to read?</li>
+</ul>
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource cpp numberLines"><code class="sourceCode cpp"><span id="cb71-1"><a href="practice.html#cb71-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb71-2"><a href="practice.html#cb71-2"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb71-3"><a href="practice.html#cb71-3"></a><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></span>
+<span id="cb71-4"><a href="practice.html#cb71-4"></a></span>
+<span id="cb71-5"><a href="practice.html#cb71-5"></a></span>
+<span id="cb71-6"><a href="practice.html#cb71-6"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb71-7"><a href="practice.html#cb71-7"></a>    printf<span class="op">(</span><span class="st">"Hello World!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-8"><a href="practice.html#cb71-8"></a></span>
+<span id="cb71-9"><a href="practice.html#cb71-9"></a><span class="co">//    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</span></span>
+<span id="cb71-10"><a href="practice.html#cb71-10"></a></span>
+<span id="cb71-11"><a href="practice.html#cb71-11"></a>    <span class="co">// mbr (a,b,c,d)</span></span>
+<span id="cb71-12"><a href="practice.html#cb71-12"></a>    <span class="dt">int</span> a<span class="op">=</span><span class="dv">6</span><span class="op">;</span></span>
+<span id="cb71-13"><a href="practice.html#cb71-13"></a>    <span class="dt">int</span> b<span class="op">=</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb71-14"><a href="practice.html#cb71-14"></a>    <span class="dt">int</span> c<span class="op">=</span><span class="dv">8</span><span class="op">;</span> <span class="co">//c=b+1; inner/outer test c=4</span></span>
+<span id="cb71-15"><a href="practice.html#cb71-15"></a>    <span class="dt">int</span> d<span class="op">=</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb71-16"><a href="practice.html#cb71-16"></a></span>
+<span id="cb71-17"><a href="practice.html#cb71-17"></a>    <span class="co">//mbr (i,j,k,l)</span></span>
+<span id="cb71-18"><a href="practice.html#cb71-18"></a>    <span class="dt">int</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span>    <span class="co">// i=n;  inner/outer test i=1</span></span>
+<span id="cb71-19"><a href="practice.html#cb71-19"></a>    <span class="dt">int</span> j<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb71-20"><a href="practice.html#cb71-20"></a>    <span class="dt">int</span> k<span class="op">=</span><span class="dv">3</span><span class="op">;</span>  <span class="co">// k=j+1; inner/outer test k=3</span></span>
+<span id="cb71-21"><a href="practice.html#cb71-21"></a>    <span class="dt">int</span> l<span class="op">=</span><span class="dv">4</span><span class="op">;</span></span>
+<span id="cb71-22"><a href="practice.html#cb71-22"></a>    <span class="dt">bool</span> intersect_x <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb71-23"><a href="practice.html#cb71-23"></a>    <span class="dt">bool</span> intersect_y <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb71-24"><a href="practice.html#cb71-24"></a></span>
+<span id="cb71-25"><a href="practice.html#cb71-25"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>a<span class="op">,</span>b<span class="op">,</span>c<span class="op">,</span>d<span class="op">);</span></span>
+<span id="cb71-26"><a href="practice.html#cb71-26"></a>    printf<span class="op">(</span><span class="st">"MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>l<span class="op">);</span></span>
+<span id="cb71-27"><a href="practice.html#cb71-27"></a></span>
+<span id="cb71-28"><a href="practice.html#cb71-28"></a>    <span class="cf">if</span><span class="op">(!((</span>c<span class="op">&lt;</span>i<span class="op">)</span> <span class="op">||(</span>k<span class="op">&lt;</span>a<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb71-29"><a href="practice.html#cb71-29"></a>    <span class="op">{</span></span>
+<span id="cb71-30"><a href="practice.html#cb71-30"></a>        printf<span class="op">(</span><span class="st">"x intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-31"><a href="practice.html#cb71-31"></a>        intersect_x <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb71-32"><a href="practice.html#cb71-32"></a>        printf<span class="op">(</span><span class="st">"intersect_x is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_x<span class="op">);</span></span>
+<span id="cb71-33"><a href="practice.html#cb71-33"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb71-34"><a href="practice.html#cb71-34"></a>        printf<span class="op">(</span><span class="st">"x does not intersect!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-35"><a href="practice.html#cb71-35"></a>    <span class="op">}</span></span>
+<span id="cb71-36"><a href="practice.html#cb71-36"></a></span>
+<span id="cb71-37"><a href="practice.html#cb71-37"></a>    <span class="cf">if</span><span class="op">(!((</span>d<span class="op">&lt;</span>j<span class="op">)</span> <span class="op">||(</span>l<span class="op">&lt;</span>b<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb71-38"><a href="practice.html#cb71-38"></a>    <span class="op">{</span></span>
+<span id="cb71-39"><a href="practice.html#cb71-39"></a>        printf<span class="op">(</span><span class="st">"y intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-40"><a href="practice.html#cb71-40"></a>        intersect_y <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb71-41"><a href="practice.html#cb71-41"></a>        printf<span class="op">(</span><span class="st">"intersect_y is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_y<span class="op">);</span></span>
+<span id="cb71-42"><a href="practice.html#cb71-42"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb71-43"><a href="practice.html#cb71-43"></a>        printf<span class="op">(</span><span class="st">"y does not intercept!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-44"><a href="practice.html#cb71-44"></a>    <span class="op">}</span></span>
+<span id="cb71-45"><a href="practice.html#cb71-45"></a></span>
+<span id="cb71-46"><a href="practice.html#cb71-46"></a>    <span class="cf">if</span><span class="op">(</span>intersect_x<span class="op">&amp;&amp;</span>intersect_y<span class="op">)</span></span>
+<span id="cb71-47"><a href="practice.html#cb71-47"></a>        printf<span class="op">(</span><span class="st">"MBR1 intersects with MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-48"><a href="practice.html#cb71-48"></a>    <span class="cf">else</span></span>
+<span id="cb71-49"><a href="practice.html#cb71-49"></a>        printf<span class="op">(</span><span class="st">"MBR1 does not intersect MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-50"><a href="practice.html#cb71-50"></a></span>
+<span id="cb71-51"><a href="practice.html#cb71-51"></a></span>
+<span id="cb71-52"><a href="practice.html#cb71-52"></a></span>
+<span id="cb71-53"><a href="practice.html#cb71-53"></a><span class="co">/*</span></span>
+<span id="cb71-54"><a href="practice.html#cb71-54"></a><span class="co">    // testing writing to memory using pointers</span></span>
+<span id="cb71-55"><a href="practice.html#cb71-55"></a><span class="co">    int page = 1;</span></span>
+<span id="cb71-56"><a href="practice.html#cb71-56"></a></span>
+<span id="cb71-57"><a href="practice.html#cb71-57"></a><span class="co">    int *pData; // pointer to data</span></span>
+<span id="cb71-58"><a href="practice.html#cb71-58"></a><span class="co">    pData = &amp;page;</span></span>
+<span id="cb71-59"><a href="practice.html#cb71-59"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb71-60"><a href="practice.html#cb71-60"></a></span>
+<span id="cb71-61"><a href="practice.html#cb71-61"></a><span class="co">    int* newP; // new pointer to data</span></span>
+<span id="cb71-62"><a href="practice.html#cb71-62"></a><span class="co">    int a = 2;</span></span>
+<span id="cb71-63"><a href="practice.html#cb71-63"></a><span class="co">    int b = 3;</span></span>
+<span id="cb71-64"><a href="practice.html#cb71-64"></a></span>
+<span id="cb71-65"><a href="practice.html#cb71-65"></a><span class="co">    int m = sizeof(b);</span></span>
+<span id="cb71-66"><a href="practice.html#cb71-66"></a></span>
+<span id="cb71-67"><a href="practice.html#cb71-67"></a><span class="co">    newP = pData+m;</span></span>
+<span id="cb71-68"><a href="practice.html#cb71-68"></a></span>
+<span id="cb71-69"><a href="practice.html#cb71-69"></a><span class="co">    memcpy(pData,&amp;a,sizeof(int));</span></span>
+<span id="cb71-70"><a href="practice.html#cb71-70"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb71-71"><a href="practice.html#cb71-71"></a></span>
+<span id="cb71-72"><a href="practice.html#cb71-72"></a><span class="co">    memcpy(pData+m,&amp;b,sizeof(int));</span></span>
+<span id="cb71-73"><a href="practice.html#cb71-73"></a><span class="co">//    newP = pData+sizeof(int);</span></span>
+<span id="cb71-74"><a href="practice.html#cb71-74"></a><span class="co">    printf("\nnewP is %s; \n&amp;newP is %p; \n*newP is %d",newP, &amp;newP, *newP);</span></span>
+<span id="cb71-75"><a href="practice.html#cb71-75"></a><span class="co">*/</span> <span class="co">// end testing writing to memory using pointers</span></span>
+<span id="cb71-76"><a href="practice.html#cb71-76"></a></span>
+<span id="cb71-77"><a href="practice.html#cb71-77"></a>    <span class="co">// testing whether you can initialize a structure with an outside variable</span></span>
+<span id="cb71-78"><a href="practice.html#cb71-78"></a>    <span class="co">// not really, you can with an outside constant</span></span>
+<span id="cb71-79"><a href="practice.html#cb71-79"></a><span class="co">/*    const int b = 100;</span></span>
+<span id="cb71-80"><a href="practice.html#cb71-80"></a><span class="co">    const int c = 7;</span></span>
+<span id="cb71-81"><a href="practice.html#cb71-81"></a><span class="co">    const int a = (int)(b/c);</span></span>
+<span id="cb71-82"><a href="practice.html#cb71-82"></a><span class="co">    int i;</span></span>
+<span id="cb71-83"><a href="practice.html#cb71-83"></a></span>
+<span id="cb71-84"><a href="practice.html#cb71-84"></a><span class="co">    struct test {</span></span>
+<span id="cb71-85"><a href="practice.html#cb71-85"></a><span class="co">        int test[a];</span></span>
+<span id="cb71-86"><a href="practice.html#cb71-86"></a><span class="co">    };</span></span>
+<span id="cb71-87"><a href="practice.html#cb71-87"></a></span>
+<span id="cb71-88"><a href="practice.html#cb71-88"></a><span class="co">    test mytest;</span></span>
+<span id="cb71-89"><a href="practice.html#cb71-89"></a></span>
+<span id="cb71-90"><a href="practice.html#cb71-90"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb71-91"><a href="practice.html#cb71-91"></a><span class="co">    {</span></span>
+<span id="cb71-92"><a href="practice.html#cb71-92"></a><span class="co">        mytest.test[i]=i;</span></span>
+<span id="cb71-93"><a href="practice.html#cb71-93"></a><span class="co">    }</span></span>
+<span id="cb71-94"><a href="practice.html#cb71-94"></a></span>
+<span id="cb71-95"><a href="practice.html#cb71-95"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb71-96"><a href="practice.html#cb71-96"></a><span class="co">    {</span></span>
+<span id="cb71-97"><a href="practice.html#cb71-97"></a><span class="co">        printf("\nmytest[%d]=%d",i,mytest.test[i]);</span></span>
+<span id="cb71-98"><a href="practice.html#cb71-98"></a><span class="co">    }*/</span></span>
+<span id="cb71-99"><a href="practice.html#cb71-99"></a></span>
+<span id="cb71-100"><a href="practice.html#cb71-100"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb71-101"><a href="practice.html#cb71-101"></a><span class="op">}</span></span>
+<span id="cb71-102"><a href="practice.html#cb71-102"></a><span class="co">/*</span></span>
+<span id="cb71-103"><a href="practice.html#cb71-103"></a><span class="co">#include &lt;stdio.h&gt;</span></span>
+<span id="cb71-104"><a href="practice.html#cb71-104"></a></span>
+<span id="cb71-105"><a href="practice.html#cb71-105"></a><span class="co">main() {</span></span>
+<span id="cb71-106"><a href="practice.html#cb71-106"></a><span class="co">    printf("Hello World!\n");</span></span>
+<span id="cb71-107"><a href="practice.html#cb71-107"></a><span class="co">    char sentence []="test your 12 7 42";</span></span>
+<span id="cb71-108"><a href="practice.html#cb71-108"></a><span class="co">    char str[20];</span></span>
+<span id="cb71-109"><a href="practice.html#cb71-109"></a><span class="co">    int a, b, c;</span></span>
+<span id="cb71-110"><a href="practice.html#cb71-110"></a><span class="co">    sscanf(sentence,"%s %s %d %d %d", str, str, &amp;a, &amp;b, &amp;c);</span></span>
+<span id="cb71-111"><a href="practice.html#cb71-111"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb71-112"><a href="practice.html#cb71-112"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb71-113"><a href="practice.html#cb71-113"></a><span class="co">    sscanf(sentence,"%s your %d 7 %d", str, &amp;a, &amp;b);</span></span>
+<span id="cb71-114"><a href="practice.html#cb71-114"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb71-115"><a href="practice.html#cb71-115"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb71-116"><a href="practice.html#cb71-116"></a><span class="co">    printf("%s\n", sentence);</span></span>
+<span id="cb71-117"><a href="practice.html#cb71-117"></a></span>
+<span id="cb71-118"><a href="practice.html#cb71-118"></a><span class="co">}*/</span></span></code></pre></div>
+</div>
+<div id="matlab" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> MATLAB<a class="anchor" aria-label="anchor" href="#matlab"><i class="fas fa-link"></i></a>
+</h2>
+<p>This is a MATLAB file named <code>assignment01_leaf.m</code></p>
+<p>Review the file then answer the following questions, annotating as you see fit.</p>
+<ul>
+<li>How is the code similar to some of the code that we’ve seen so far?</li>
+<li>What do you think starts a comment line?</li>
+<li>What do you think the code does (generally)?</li>
+<li>What questions do you have about it?</li>
+<li>What are some suggestions to make it easier to read?</li>
+</ul>
+<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource matlab numberLines"><code class="sourceCode matlab"><span id="cb72-1"><a href="practice.html#cb72-1"></a><span class="kw">function</span> <span class="va">assignment01_leaf</span></span>
+<span id="cb72-2"><a href="practice.html#cb72-2"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-3"><a href="practice.html#cb72-3"></a><span class="va">TRAIN</span> <span class="op">=</span> <span class="va">load</span>(<span class="ss">'FaultsNNA_csv'</span>)<span class="op">;</span> <span class="co">% Only these two lines need to be changed to test a different dataset. % </span></span>
+<span id="cb72-4"><a href="practice.html#cb72-4"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-5"><a href="practice.html#cb72-5"></a></span>
+<span id="cb72-6"><a href="practice.html#cb72-6"></a><span class="va">TRAIN_class_labels</span> <span class="op">=</span> <span class="va">TRAIN</span>(<span class="op">:,</span><span class="fl">1</span>)<span class="op">;</span>    <span class="co">% Pull out the class labels.</span></span>
+<span id="cb72-7"><a href="practice.html#cb72-7"></a><span class="va">TRAIN</span>(<span class="op">:,</span><span class="fl">1</span>) <span class="op">=</span> []<span class="op">;</span>    <span class="co">% Remove class labels from training set.</span></span>
+<span id="cb72-8"><a href="practice.html#cb72-8"></a></span>
+<span id="cb72-9"><a href="practice.html#cb72-9"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-10"><a href="practice.html#cb72-10"></a><span class="co">% Compute and display Default Rate and other Basic Information</span></span>
+<span id="cb72-11"><a href="practice.html#cb72-11"></a><span class="co">%</span></span>
+<span id="cb72-12"><a href="practice.html#cb72-12"></a>[<span class="va">class</span><span class="op">,</span><span class="va">count</span>] <span class="op">=</span> <span class="va">mode</span>(<span class="va">TRAIN_class_labels</span>(<span class="op">:,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb72-13"><a href="practice.html#cb72-13"></a><span class="va">default_error_rate</span><span class="op">=</span><span class="fl">1</span><span class="op">-</span>(<span class="va">count</span><span class="op">/</span><span class="va">size</span>(<span class="va">TRAIN_class_labels</span>(<span class="op">:,</span><span class="fl">1</span>)<span class="op">,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb72-14"><a href="practice.html#cb72-14"></a><span class="va">disp</span>([<span class="ss">'The dataset you tested has '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">length</span>(<span class="va">unique</span>(<span class="va">TRAIN_class_labels</span>)))<span class="op">,</span> <span class="ss">' classes.'</span>])<span class="op">;</span></span>
+<span id="cb72-15"><a href="practice.html#cb72-15"></a><span class="va">disp</span>([<span class="ss">'The training set is of size '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">size</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="fl">1</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-16"><a href="practice.html#cb72-16"></a><span class="va">disp</span>([<span class="ss">'The time series are of length '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">size</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="fl">2</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-17"><a href="practice.html#cb72-17"></a><span class="va">disp</span>([<span class="ss">'The dataset''s most common class is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">class</span>)<span class="op">,</span><span class="ss">' with a total of '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">count</span>)<span class="op">,</span><span class="ss">' occurances.'</span>])<span class="op">;</span></span>
+<span id="cb72-18"><a href="practice.html#cb72-18"></a><span class="va">disp</span>([<span class="ss">'The default error rate is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">default_error_rate</span>)<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-19"><a href="practice.html#cb72-19"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-20"><a href="practice.html#cb72-20"></a></span>
+<span id="cb72-21"><a href="practice.html#cb72-21"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-22"><a href="practice.html#cb72-22"></a><span class="co">% Compute and display the k-fold error rate</span></span>
+<span id="cb72-23"><a href="practice.html#cb72-23"></a><span class="co">%</span></span>
+<span id="cb72-24"><a href="practice.html#cb72-24"></a><span class="va">k</span><span class="op">=</span><span class="va">length</span>(<span class="va">TRAIN_class_labels</span>)<span class="op">;</span></span>
+<span id="cb72-25"><a href="practice.html#cb72-25"></a><span class="va">k_fold_error_rate</span> <span class="op">=</span> <span class="va">k_fold_cross_validation</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="va">TRAIN_class_labels</span><span class="op">,</span><span class="va">k</span>)<span class="op">;</span></span>
+<span id="cb72-26"><a href="practice.html#cb72-26"></a><span class="va">disp</span>([<span class="ss">'The normal k-fold error rate is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">k_fold_error_rate</span>)<span class="op">,</span><span class="ss">' where k='</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">k</span>)<span class="op">,</span><span class="ss">' and length of train set is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">length</span>(<span class="va">TRAIN_class_labels</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-27"><a href="practice.html#cb72-27"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-28"><a href="practice.html#cb72-28"></a></span>
+<span id="cb72-29"><a href="practice.html#cb72-29"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-30"><a href="practice.html#cb72-30"></a><span class="co">% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest</span></span>
+<span id="cb72-31"><a href="practice.html#cb72-31"></a><span class="co">% neighbor using the Euclidean distance. </span></span>
+<span id="cb72-32"><a href="practice.html#cb72-32"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-33"><a href="practice.html#cb72-33"></a><span class="kw">function</span> <span class="va">predicted_class</span> <span class="op">=</span> <span class="va">Classification_Algorithm</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="va">TRAIN_class_labels</span><span class="op">,</span><span class="va">unknown_object</span>)</span>
+<span id="cb72-34"><a href="practice.html#cb72-34"></a><span class="va">best_so_far</span> <span class="op">=</span> <span class="va">inf</span><span class="op">;</span></span>
+<span id="cb72-35"><a href="practice.html#cb72-35"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="va">length</span>(<span class="va">TRAIN_class_labels</span>)</span>
+<span id="cb72-36"><a href="practice.html#cb72-36"></a>    <span class="va">compare_to_this_object</span> <span class="op">=</span> <span class="va">TRAIN</span>(<span class="va">i</span><span class="op">,:</span>)<span class="op">;</span></span>
+<span id="cb72-37"><a href="practice.html#cb72-37"></a>    <span class="va">distance</span> <span class="op">=</span> <span class="va">sqrt</span>(<span class="va">sum</span>((<span class="va">compare_to_this_object</span> <span class="op">-</span> <span class="va">unknown_object</span>)<span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span> <span class="co">% Euclidean distance</span></span>
+<span id="cb72-38"><a href="practice.html#cb72-38"></a>    <span class="kw">if</span> <span class="va">distance</span> <span class="op">&lt;</span> <span class="va">best_so_far</span></span>
+<span id="cb72-39"><a href="practice.html#cb72-39"></a>        <span class="va">predicted_class</span> <span class="op">=</span> <span class="va">TRAIN_class_labels</span>(<span class="va">i</span>)<span class="op">;</span></span>
+<span id="cb72-40"><a href="practice.html#cb72-40"></a>        <span class="va">best_so_far</span> <span class="op">=</span> <span class="va">distance</span><span class="op">;</span></span>
+<span id="cb72-41"><a href="practice.html#cb72-41"></a>    <span class="kw">end</span></span>
+<span id="cb72-42"><a href="practice.html#cb72-42"></a> <span class="kw">end</span><span class="op">;</span></span></code></pre></div>
 
 </div>
 </div>
@@ -362,7 +544,8 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <li><a class="nav-link" href="#nested-for-loops-and-if-else-statements-in-python"><span class="header-section-number">10.2</span> Nested for loops and if else statements (in Python)</a></li>
 <li><a class="nav-link" href="#new-syntax-and-terms-in-r"><span class="header-section-number">10.3</span> New syntax and terms (in R)</a></li>
 <li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">10.4</span> New functions in Stata</a></li>
-<li><a class="nav-link" href="#add-example-for-cc"><span class="header-section-number">10.5</span> add example for C/C++</a></li>
+<li><a class="nav-link" href="#c"><span class="header-section-number">10.5</span> C++</a></li>
+<li><a class="nav-link" href="#matlab"><span class="header-section-number">10.6</span> MATLAB</a></li>
 </ul>
 
       <div class="book-extra">

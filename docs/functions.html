@@ -220,7 +220,7 @@ paste("this function uses", cheese, "oz of cheese")</code></pre>
 <a href="https://docs.python.org/3/library/functions.html#round" class="uri">https://docs.python.org/3/library/functions.html#round</a></p>
 <p>The second argument for both languages indicates the number of digits along with the default value. Since there’s a default value, you don’t necessarily need to include the argument in the function call.</p>
 <p>An example in R is</p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.4</span>, <span class="fl">2.5</span>, <span class="fl">3.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 1 2 4</code></pre>
 <p>Another argument common in many functions which deal with statistics is how to handle missing or <code>NA</code> values, for example, the function <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>: <code>mean(x, na.rm = FALSE)</code> where the default value of <code>na.rm</code> is <code>FALSE</code>, indicating that <code>NA</code> values will <em>not</em> be removed from the calculation.</p>

@@ -232,4 +232,195 @@ This is a bit of code to replace any missing values of `variable` with with prev
 There are [many ways to replace missing values in Stata](https://www.stata.com/support/faqs/data-management/replacing-missing-values/), this is one.
 </details>
 
-## add example for C/C++
+## C++
+
+This is a C++ file named `testScratchDoc.cpp`
+
+Review the file then answer the following questions, annotating as you see fit.
+
+- How is the code similar to some of the code that we've seen so far?
+- What do you think the code does (generally)?
+- What questions do you have about it?
+- What are some suggestions to make it easier to read?
+
+```{cpp, attr.source='.numberLines'}
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+
+
+int main() {
+    printf("Hello World!\n");
+
+//    std::cout << "Hello, World!" << std::endl;
+
+    // mbr (a,b,c,d)
+    int a=6;
+    int b=3;
+    int c=8; //c=b+1; inner/outer test c=4
+    int d=5;
+
+    //mbr (i,j,k,l)
+    int i=1;    // i=n;  inner/outer test i=1
+    int j=2;
+    int k=3;  // k=j+1; inner/outer test k=3
+    int l=4;
+    bool intersect_x = false;
+    bool intersect_y = false;
+
+    printf("\nMBR1[%d,%d,%d,%d]\n",a,b,c,d);
+    printf("MBR1[%d,%d,%d,%d]\n",i,j,k,l);
+
+    if(!((c<i) ||(k<a) ))
+    {
+        printf("x intersects!\n");
+        intersect_x = true;
+        printf("intersect_x is %d\n", intersect_x);
+    } else{
+        printf("x does not intersect!\n");
+    }
+
+    if(!((d<j) ||(l<b) ))
+    {
+        printf("y intersects!\n");
+        intersect_y = true;
+        printf("intersect_y is %d\n", intersect_y);
+    } else{
+        printf("y does not intercept!\n");
+    }
+
+    if(intersect_x&&intersect_y)
+        printf("MBR1 intersects with MBR2\n");
+    else
+        printf("MBR1 does not intersect MBR2\n");
+
+
+
+/*
+    // testing writing to memory using pointers
+    int page = 1;
+
+    int *pData; // pointer to data
+    pData = &page;
+    printf("\npdata is %s; \n&pData is %p; \n*pdata is %d",pData, &pData, *pData);
+
+    int* newP; // new pointer to data
+    int a = 2;
+    int b = 3;
+
+    int m = sizeof(b);
+
+    newP = pData+m;
+
+    memcpy(pData,&a,sizeof(int));
+    printf("\npdata is %s; \n&pData is %p; \n*pdata is %d",pData, &pData, *pData);
+
+    memcpy(pData+m,&b,sizeof(int));
+//    newP = pData+sizeof(int);
+    printf("\nnewP is %s; \n&newP is %p; \n*newP is %d",newP, &newP, *newP);
+*/ // end testing writing to memory using pointers
+
+
+
+    // testing whether you can initialize a structure with an outside variable
+    // not really, you can with an outside constant
+/*    const int b = 100;
+    const int c = 7;
+    const int a = (int)(b/c);
+    int i;
+
+    struct test {
+        int test[a];
+    };
+
+    test mytest;
+
+    for(i=0; i<a; i++)
+    {
+        mytest.test[i]=i;
+    }
+
+    for(i=0; i<a; i++)
+    {
+        printf("\nmytest[%d]=%d",i,mytest.test[i]);
+    }*/
+
+
+    return 0;
+}
+/*
+#include <stdio.h>
+
+main() {
+    printf("Hello World!\n");
+    char sentence []="test your 12 7 42";
+    char str[20];
+    int a, b, c;
+    sscanf(sentence,"%s %s %d %d %d", str, str, &a, &b, &c);
+    printf("%d %d %d\n", a,b,c);
+    printf("%s\n", str);
+    sscanf(sentence,"%s your %d 7 %d", str, &a, &b);
+    printf("%d %d %d\n", a,b,c);
+    printf("%s\n", str);
+    printf("%s\n", sentence);
+
+}*/
+```
+
+
+## MATLAB
+
+This is a MATLAB file named `assignment01_leaf.m`
+
+Review the file then answer the following questions, annotating as you see fit.
+
+- How is the code similar to some of the code that we've seen so far?
+- What do you think starts a comment line?
+- What do you think the code does (generally)?
+- What questions do you have about it?
+- What are some suggestions to make it easier to read? 
+
+```{matlab, attr.source='.numberLines'}
+function assignment01_leaf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%
+TRAIN = load('FaultsNNA_csv'); % Only these two lines need to be changed to test a different dataset. % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TRAIN_class_labels = TRAIN(:,1);    % Pull out the class labels.
+TRAIN(:,1) = [];    % Remove class labels from training set.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compute and display Default Rate and other Basic Information
+%
+[class,count] = mode(TRAIN_class_labels(:,1));
+default_error_rate=1-(count/size(TRAIN_class_labels(:,1),1));
+disp(['The dataset you tested has ', int2str(length(unique(TRAIN_class_labels))), ' classes.']);
+disp(['The training set is of size ', int2str(size(TRAIN,1)),'.']);
+disp(['The time series are of length ', int2str(size(TRAIN,2)),'.']);
+disp(['The dataset''s most common class is ',num2str(class),' with a total of ',num2str(count),' occurances.']);
+disp(['The default error rate is ',num2str(default_error_rate),'.']);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Compute and display the k-fold error rate
+%
+k=length(TRAIN_class_labels);
+k_fold_error_rate = k_fold_cross_validation(TRAIN,TRAIN_class_labels,k);
+disp(['The normal k-fold error rate is ',num2str(k_fold_error_rate),' where k=',num2str(k),' and length of train set is ',num2str(length(TRAIN_class_labels)),'.']);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest
+% neighbor using the Euclidean distance. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function predicted_class = Classification_Algorithm(TRAIN,TRAIN_class_labels,unknown_object)
+best_so_far = inf;
+for i = 1 : length(TRAIN_class_labels)
+    compare_to_this_object = TRAIN(i,:);
+    distance = sqrt(sum((compare_to_this_object - unknown_object).^2)); % Euclidean distance
+    if distance < best_so_far
+        predicted_class = TRAIN_class_labels(i);
+        best_so_far = distance;
+    end
+ end;
+```

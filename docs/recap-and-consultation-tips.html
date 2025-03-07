@@ -109,24 +109,24 @@ code generally won’t even run.</p>
 <p>That’s the nice thing about syntax errors, is the code doesn’t run and will give
 you an indication of where to look to correct the error.</p>
 <p>Here’s an example in R. The code is</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb70-1"><a href="recap-and-consultation-tips.html#cb70-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y <span class="op">{</span></span>
-<span id="cb70-2"><a href="recap-and-consultation-tips.html#cb70-2" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"values are equal"</span><span class="op">);</span></span>
-<span id="cb70-3"><a href="recap-and-consultation-tips.html#cb70-3" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb70-4"><a href="recap-and-consultation-tips.html#cb70-4" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x greater than y"</span><span class="op">);</span></span>
-<span id="cb70-5"><a href="recap-and-consultation-tips.html#cb70-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb70-6"><a href="recap-and-consultation-tips.html#cb70-6" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x must be less than y"</span><span class="op">);</span></span>
-<span id="cb70-7"><a href="recap-and-consultation-tips.html#cb70-7" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb73-1"><a href="recap-and-consultation-tips.html#cb73-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y <span class="op">{</span></span>
+<span id="cb73-2"><a href="recap-and-consultation-tips.html#cb73-2" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"values are equal"</span><span class="op">);</span></span>
+<span id="cb73-3"><a href="recap-and-consultation-tips.html#cb73-3" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb73-4"><a href="recap-and-consultation-tips.html#cb73-4" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x greater than y"</span><span class="op">);</span></span>
+<span id="cb73-5"><a href="recap-and-consultation-tips.html#cb73-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb73-6"><a href="recap-and-consultation-tips.html#cb73-6" tabindex="-1"></a>  print<span class="op">(</span><span class="st">"x must be less than y"</span><span class="op">);</span></span>
+<span id="cb73-7"><a href="recap-and-consultation-tips.html#cb73-7" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 But, when we run it, the console indicates
 <pre><code>&gt; if (x == y {
 <span style="color: red;">Error: unexpected '{' in "if (x == y {"</span></code></pre>
 <hr>
 <p>Similarly, if we try to run something in Jupyter Notebook using Python with an error…</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="recap-and-consultation-tips.html#cb71-1" tabindex="-1"></a><span class="cf">if</span> (x <span class="op">==</span> y:</span>
-<span id="cb71-2"><a href="recap-and-consultation-tips.html#cb71-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"values are equal"</span>)</span>
-<span id="cb71-3"><a href="recap-and-consultation-tips.html#cb71-3" tabindex="-1"></a><span class="cf">elif</span> (x <span class="op">&gt;</span> y):</span>
-<span id="cb71-4"><a href="recap-and-consultation-tips.html#cb71-4" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"x greater than y"</span>)</span>
-<span id="cb71-5"><a href="recap-and-consultation-tips.html#cb71-5" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb71-6"><a href="recap-and-consultation-tips.html#cb71-6" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"x must be less than y"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="recap-and-consultation-tips.html#cb74-1" tabindex="-1"></a><span class="cf">if</span> (x <span class="op">==</span> y:</span>
+<span id="cb74-2"><a href="recap-and-consultation-tips.html#cb74-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"values are equal"</span>)</span>
+<span id="cb74-3"><a href="recap-and-consultation-tips.html#cb74-3" tabindex="-1"></a><span class="cf">elif</span> (x <span class="op">&gt;</span> y):</span>
+<span id="cb74-4"><a href="recap-and-consultation-tips.html#cb74-4" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"x greater than y"</span>)</span>
+<span id="cb74-5"><a href="recap-and-consultation-tips.html#cb74-5" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb74-6"><a href="recap-and-consultation-tips.html#cb74-6" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"x must be less than y"</span>)</span></code></pre></div>
 <p>…we will get an error message…</p>
 <pre style="background-color: #ffdede; display:block; border: none; padding: 0px;"><code style="background-color: #ffdede; display:block; padding: 10px"><span style="color: #278da2;">   Cell</span> <span style="color: #00736a;">In[7], line 1</span>
      <span style="color: #b17f25;">if (x == y:</span>

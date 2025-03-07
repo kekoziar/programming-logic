@@ -12,3 +12,21 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+pre.sourceCode.numberLines {
+    counter-reset: line-number;
+    padding-left: 13em; /* Adjust the padding as needed */
+    position: relative;
+}
+
+.sourceCode.numberLines .sourceLine::before {
+    counter-increment: line-number;
+    content: counter(line-number) " ";
+    display: inline-block;
+    width: 2.5em; /* Adjust the width as needed */
+    margin-right: 1em;
+    text-align: right;
+    color: #999;
+    position: absolute;
+    left: 0;
+}
