@@ -51,6 +51,7 @@ self-documenting-code
 variable-names
 naming-restrictions
 naming-conventions
+common-variable-names
 comments
 multi-line-comment-trick
 common-issues

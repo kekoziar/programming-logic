@@ -21,11 +21,31 @@ Variable names should be self-describing, and there are some other naming conven
 
 Pro Tip: Choose a convention and use it consistently
 
+Because variable names are generally case-sensitive, it allows different types of naming
+conventions.
+
 - `camelCase`
 - `use_of_underscore`
 - `ADifferentTypeOfCamelCase`
 - `ALLCAPS` means something specific in certain languages, such as constants in C/C++. it can be used, but you should avoid it.
 
+### Common Variable Names
+
+You may have noticed that some of the variable names in our examples use certain
+variable names, such as `i`, consistently.  This is not because we are being 
+lazy. There are some common naming conventions for variable
+or function names used across programming languages.  Here is an incomplete list
+that focuses on the most commonly used variable names.
+
+- `i`,`j`,`k` are commonly used as loop indices, iterators, and sometimes a count
+- `n` commonly represents a count or number
+- `df` is commonly used to represent a DataFrame
+- `tmp` is short for temporary, and represents a temporary variable
+- `func` or `f` will represent a function
+  - these can be used as `func_sum` or `f_sum` to indicate it as a user defined function
+- as shown in the previous chapter, `pd` and `np` are often used as aliases for
+pandas and numpy, respectively.  Other libraries will have common aliases used across
+the community which uses those libraries.
 
 ## Comments
 

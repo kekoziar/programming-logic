@@ -141,7 +141,6 @@ Example written narrative
 <span class="header-section-number">10.2</span> Nested <code>for</code> loops and <code>if else</code> statements (in Python)<a class="anchor" aria-label="anchor" href="#nested-for-loops-and-if-else-statements-in-python"><i class="fas fa-link"></i></a>
 </h2>
 <p>Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.</p>
-<p>This is a useful skill and especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?<br></p>
 <p>Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested <code>for</code> loops, and nested <code>if else</code> statements with the <code>for</code> loops and within other <code>if else</code> statements.<br></p>
 <p>The code may look intimidating! But remember, we’re less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends.</p>
 <p><strong>Exercise</strong>: Review the code chunk below and identify on which line each <code>for</code> loop and each <code>if else</code> statement starts and ends.</p>
@@ -246,7 +245,6 @@ Example written narrative
 <span id="cb68-54"><a href="practice.html#cb68-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
 <span id="cb68-55"><a href="practice.html#cb68-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
 <span id="cb68-56"><a href="practice.html#cb68-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
-<p><strong>This needs a color coded image to clarify</strong></p>
 <details><summary>
 Start and end locations
 </summary><ul>
@@ -292,7 +290,7 @@ Start and end locations
 <h2>
 <span class="header-section-number">10.3</span> New syntax and terms (in R)<a class="anchor" aria-label="anchor" href="#new-syntax-and-terms-in-r"><i class="fas fa-link"></i></a>
 </h2>
-<p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend.<br></p>
+<p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice. Some of us prefer DuckDuckGo).<br></p>
 <p>Here is an example of R code:</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="practice.html#cb69-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
 <span id="cb69-2"><a href="practice.html#cb69-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
@@ -305,7 +303,11 @@ Start and end locations
 <ul>
 <li>Line 1
 <ul>
-<li>What is <code>df_new &lt;- df</code> doing here?</li>
+<li>What is <code>df_new &lt;- df</code> doing here?
+<ul>
+<li>Hint: refer to 8.1.3, and common variable names</li>
+</ul>
+</li>
 <li>What does the <code>%&gt;%</code> symbol indicate?</li>
 </ul>
 </li>
@@ -317,7 +319,7 @@ Start and end locations
 </li>
 <li>Line 3
 <ul>
-<li>Using context clues (and Google) what do you think the <code>mutate()</code> function does?</li>
+<li>Using context clues (and your favorite search engine) what do you think the <code>mutate()</code> function does?</li>
 <li>The new <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> function has three arguments (<code>paste(arg1, arg2, arg3)</code>). What do you think the arguments are for?</li>
 </ul>
 </li>
@@ -340,7 +342,7 @@ Example narrative
 <h2>
 <span class="header-section-number">10.4</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
 </h2>
-<p>We’ll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
+<p>This challenge uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
 <p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb70-1"><a href="practice.html#cb70-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
 <details><summary>

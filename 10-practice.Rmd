@@ -51,8 +51,6 @@ This code is returning a subset of data from the `OceanBuoys` table. Starting fr
 
 Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.
 
-This is a useful skill and especially helpful when troubleshooting. For instance, if there is an error or unexpected result, a first item to check is often: are functions, especially loops and conditional statements, started and ended properly in matched fashion?\
-
 Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested `for` loops, and nested `if else` statements with the `for` loops and within other `if else` statements.\
 
 The code may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends. 
@@ -144,7 +142,6 @@ __Exercise__: Review the code chunk below and identify on which line each `for` 
 54.         print("\n!!! save directory "+year+" does NOT exist. please create\n")
 
 ```
-__This needs a color coded image to clarify__
 
 <details>
 <summary>Start and end locations</summary>
@@ -177,7 +174,7 @@ __This needs a color coded image to clarify__
 
 ## New syntax and terms (in R)
 
-While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don't panic! Familiarity comes with experience and in the meantime, Google is your friend.\
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don't panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice.  Some of us prefer DuckDuckGo).\
 
 Here is an example of R code:
 
@@ -195,12 +192,13 @@ Each line has a new take on the same logic we've covered in prior sections; a br
 
 - Line 1
   - What is `df_new <- df` doing here?
+    - Hint: refer to 8.1.3, and common variable names
   - What does the `%>%` symbol indicate?
 - Line 2
   - What is the `select()` function likely doing? 
   - What might it mean that the argument in this function is preceded by `-`?
 - Line 3
-  - Using context clues (and Google) what do you think the `mutate()` function does?
+  - Using context clues (and your favorite search engine) what do you think the `mutate()` function does?
   - The new `paste()` function has three arguments (`paste(arg1, arg2, arg3)`). What do you think the arguments are for?
 - Line 4 & 5 (note: new line not strictly necessary, only to fit in page width without needing scroll)
   - This `ifelse()` statement has a different format than we've covered so far, but the concept is the same. Assuming this `ifelse()` statement has three arguments (`ifelse(condition, mystery1, mystery2)`) what might the two mystery arguments be specifying?
@@ -220,7 +218,7 @@ Then, make another new column called "survey_type". The values in this column ar
 
 ## New functions in Stata
 
-We'll conclude with a challenge in Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor's experience, Stata is not user-friendly, but your mileage may vary!)
+This challenge uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor's experience, Stata is not user-friendly, but your mileage may vary!)
 
 Relying on what we've learned so far and context clues, what is the code below doing?
 
