@@ -98,14 +98,19 @@
 <p>Consider the following SQL command:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb67-1"><a href="practice.html#cb67-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
 <span id="cb67-2"><a href="practice.html#cb67-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
-<p>One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
+<p>One option for navigating unfamiliar code is to break down the code into its
+component parts. Using that approach, you can differentiate functions separate from variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
 <p><strong>Exercise</strong>: Using what we’ve learned in prior sections, try to answer the following questions.</p>
 <ul>
-<li>What does the <code>OceanBuoys</code> term most likely refer to - object/variable, or function?</li>
+<li>What does the <code>OceanBuoys</code> term most likely refer to - variable or function?
+<ul>
+<li>Tip: Variables will contain a data object. Functions perform an action or task.</li>
+</ul>
+</li>
 <li>Assuming that <code>SELECT</code> is a function, what might it do?</li>
 <li>The <code>*</code> character is new. What might <code>*</code> indicate, in combination with <code>SELECT</code>?</li>
 <li>Parsing the second line that starts with <code>WHERE</code>, can you make an educated guess about what <code>Ocean</code> and <code>BuoyName</code> refer to, in terms of variables?</li>
-<li>Can you guess (or feel free to use Google) what <code>LIKE 'S%'</code> and <code>LIKE 'K%'</code> would indicate?</li>
+<li>Can you guess (or feel free to use your favorite search engine) what <code>LIKE 'S%'</code> and <code>LIKE 'K%'</code> would indicate?</li>
 <li>Note the <code>;</code> at the end of the line starting with <code>WHERE</code>. What might this mean?</li>
 </ul>
 <details><summary>
@@ -121,7 +126,7 @@ Do your answers match these?
 </ul>
 </li>
 <li>
-<code>LIKE</code> is used for pattern matching. This code is matching values that start with “S” or with “K”.</li>
+<code>LIKE</code> is used for pattern matching. The symbol <code>%</code> is a wildcard character in SQL. This code is matching values that start with “S” or with “K”.</li>
 </ul></details><p><br>
 - The conditions after <code>WHERE</code> are the row-based conditions for what will be returned, analogous to <code>SELECT</code> for the column-specific condition.
 - The <code>;</code> is used to indicate the end of a statement in SQL. It tells the computer that the ‘thought’ is finished, and the action of <em>doing</em> the thought can commence.</p>
@@ -562,7 +567,7 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-06.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

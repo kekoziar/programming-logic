@@ -12,15 +12,17 @@ WHERE Ocean = 'Atlantic' AND (BuoyName LIKE 'S%' OR BuoyName LIKE 'K%');
 
 ```
 
-One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do. 
+One option for navigating unfamiliar code is to break down the code into its 
+component parts. Using that approach, you can differentiate functions separate from variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do. 
 
 __Exercise__: Using what we've learned in prior sections, try to answer the following questions.
 
-- What does the `OceanBuoys` term most likely refer to - object/variable, or function?
+- What does the `OceanBuoys` term most likely refer to - variable or function?
+  - Tip: Variables will contain a data object. Functions perform an action or task.
 - Assuming that `SELECT` is a function, what might it do?
 - The `*` character is new. What might `*` indicate, in combination with `SELECT`? 
 - Parsing the second line that starts with `WHERE`, can you make an educated guess about what `Ocean` and `BuoyName` refer to, in terms of variables?
-- Can you guess (or feel free to use Google) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
+- Can you guess (or feel free to use your favorite search engine) what `LIKE 'S%'` and `LIKE 'K%'` would indicate?
 - Note the `;` at the end of the line starting with `WHERE`. What might this mean?
 
 <details>
@@ -31,7 +33,7 @@ __Exercise__: Using what we've learned in prior sections, try to answer the foll
 - The `*` is a wildcard matching symbol. It indicates that we want to return _all_ columns from the table, no matter what their column names are. 
 - The `OceanBuoys` table must have columns named `Ocean` and `BuoyName`. 
   - If we wanted to return only these columns, the syntax could be: `SELECT Ocean, BuoyName FROM OceanBuoys`
-- `LIKE` is used for pattern matching. This code is matching values that start with "S" or with "K".
+- `LIKE` is used for pattern matching. The symbol `%` is a wildcard character in SQL. This code is matching values that start with "S" or with "K".
 </details>\
   - The conditions after `WHERE` are the row-based conditions for what will be returned, analogous to `SELECT` for the column-specific condition.
 - The `;` is used to indicate the end of a statement in SQL. It tells the computer that the 'thought' is finished, and the action of _doing_ the thought can commence.

@@ -139,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-03-06}
+\date{2025-03-07}
 
 \begin{document}
 \maketitle
@@ -2781,14 +2781,21 @@ Consider the following SQL command:
 \end{Highlighting}
 \end{Shaded}
 
-One option for navigating unfamiliar code is to break down the code into its component parts. Using that approach, you can separate out functions (as common tasks across programming languages) from data-specific variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do.
+One option for navigating unfamiliar code is to break down the code into its
+component parts. Using that approach, you can differentiate functions separate from variables and names to get a better understanding of what type of data you're working with, and what the code is trying to do.
 
 \textbf{Exercise}: Using what we've learned in prior sections, try to answer the following questions.
 
 \begin{itemize}
 \tightlist
 \item
-  What does the \texttt{OceanBuoys} term most likely refer to - object/variable, or function?
+  What does the \texttt{OceanBuoys} term most likely refer to - variable or function?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tip: Variables will contain a data object. Functions perform an action or task.
+  \end{itemize}
 \item
   Assuming that \texttt{SELECT} is a function, what might it do?
 \item
@@ -2796,7 +2803,7 @@ One option for navigating unfamiliar code is to break down the code into its com
 \item
   Parsing the second line that starts with \texttt{WHERE}, can you make an educated guess about what \texttt{Ocean} and \texttt{BuoyName} refer to, in terms of variables?
 \item
-  Can you guess (or feel free to use Google) what \texttt{LIKE\ \textquotesingle{}S\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}K\%\textquotesingle{}} would indicate?
+  Can you guess (or feel free to use your favorite search engine) what \texttt{LIKE\ \textquotesingle{}S\%\textquotesingle{}} and \texttt{LIKE\ \textquotesingle{}K\%\textquotesingle{}} would indicate?
 \item
   Note the \texttt{;} at the end of the line starting with \texttt{WHERE}. What might this mean?
 \end{itemize}
@@ -2820,7 +2827,7 @@ Do your answers match these?
     If we wanted to return only these columns, the syntax could be: \texttt{SELECT\ Ocean,\ BuoyName\ FROM\ OceanBuoys}
   \end{itemize}
 \item
-  \texttt{LIKE} is used for pattern matching. This code is matching values that start with ``S'' or with ``K''.
+  \texttt{LIKE} is used for pattern matching. The symbol \texttt{\%} is a wildcard character in SQL. This code is matching values that start with ``S'' or with ``K''.
 \end{itemize}
 
 \hfill\break
