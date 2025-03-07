@@ -127,10 +127,10 @@ Do your answers match these?
 </li>
 <li>
 <code>LIKE</code> is used for pattern matching. The symbol <code>%</code> is a wildcard character in SQL. This code is matching values that start with “S” or with “K”.</li>
-</ul></details><p><br>
-- The conditions after <code>WHERE</code> are the row-based conditions for what will be returned, analogous to <code>SELECT</code> for the column-specific condition.
-- The <code>;</code> is used to indicate the end of a statement in SQL. It tells the computer that the ‘thought’ is finished, and the action of <em>doing</em> the thought can commence.</p>
-<p>Now, can you write out a narrative of what you see the code is trying to do?<br></p>
+<li>The conditions after <code>WHERE</code> are the row-based conditions for what will be returned, analogous to <code>SELECT</code> for the column-specific condition.</li>
+<li>The <code>;</code> is used to indicate the end of a statement in SQL. It tells the computer that the ‘thought’ is finished, and the action of <em>doing</em> the thought can commence.</li>
+</ul></details><p><br></p>
+<p><strong>Exercise, continued:</strong> Now, can you write out a narrative of what you see the code is trying to do?</p>
 <details><summary>
 Example written narrative
 </summary><p>This code is returning a subset of data from the <code>OceanBuoys</code> table. Starting from the full <code>OceanBuoys</code> table, return all the columns from this table, but keep only rows where <code>Ocean</code> is equal to “Atlantic” <em>and</em> where the <code>BuoyName</code> value starts with “S” or “K”. The returned data should be tabular, with the same number of columns as the full <code>OceanBuoys</code> table, but likely with less rows (only those that met the condition).</p>
@@ -361,124 +361,127 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <li>What questions do you have about it?</li>
 <li>What are some suggestions to make it easier to read?</li>
 </ul>
-<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource cpp numberLines"><code class="sourceCode cpp"><span id="cb71-1"><a href="practice.html#cb71-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb71-2"><a href="practice.html#cb71-2"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb71-3"><a href="practice.html#cb71-3"></a><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></span>
-<span id="cb71-4"><a href="practice.html#cb71-4"></a></span>
-<span id="cb71-5"><a href="practice.html#cb71-5"></a></span>
-<span id="cb71-6"><a href="practice.html#cb71-6"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb71-7"><a href="practice.html#cb71-7"></a>    printf<span class="op">(</span><span class="st">"Hello World!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-8"><a href="practice.html#cb71-8"></a></span>
-<span id="cb71-9"><a href="practice.html#cb71-9"></a><span class="co">//    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</span></span>
-<span id="cb71-10"><a href="practice.html#cb71-10"></a></span>
-<span id="cb71-11"><a href="practice.html#cb71-11"></a>    <span class="co">// mbr (a,b,c,d)</span></span>
-<span id="cb71-12"><a href="practice.html#cb71-12"></a>    <span class="dt">int</span> a<span class="op">=</span><span class="dv">6</span><span class="op">;</span></span>
-<span id="cb71-13"><a href="practice.html#cb71-13"></a>    <span class="dt">int</span> b<span class="op">=</span><span class="dv">3</span><span class="op">;</span></span>
-<span id="cb71-14"><a href="practice.html#cb71-14"></a>    <span class="dt">int</span> c<span class="op">=</span><span class="dv">8</span><span class="op">;</span> <span class="co">//c=b+1; inner/outer test c=4</span></span>
-<span id="cb71-15"><a href="practice.html#cb71-15"></a>    <span class="dt">int</span> d<span class="op">=</span><span class="dv">5</span><span class="op">;</span></span>
-<span id="cb71-16"><a href="practice.html#cb71-16"></a></span>
-<span id="cb71-17"><a href="practice.html#cb71-17"></a>    <span class="co">//mbr (i,j,k,l)</span></span>
-<span id="cb71-18"><a href="practice.html#cb71-18"></a>    <span class="dt">int</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span>    <span class="co">// i=n;  inner/outer test i=1</span></span>
-<span id="cb71-19"><a href="practice.html#cb71-19"></a>    <span class="dt">int</span> j<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
-<span id="cb71-20"><a href="practice.html#cb71-20"></a>    <span class="dt">int</span> k<span class="op">=</span><span class="dv">3</span><span class="op">;</span>  <span class="co">// k=j+1; inner/outer test k=3</span></span>
-<span id="cb71-21"><a href="practice.html#cb71-21"></a>    <span class="dt">int</span> l<span class="op">=</span><span class="dv">4</span><span class="op">;</span></span>
-<span id="cb71-22"><a href="practice.html#cb71-22"></a>    <span class="dt">bool</span> intersect_x <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb71-23"><a href="practice.html#cb71-23"></a>    <span class="dt">bool</span> intersect_y <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb71-24"><a href="practice.html#cb71-24"></a></span>
-<span id="cb71-25"><a href="practice.html#cb71-25"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>a<span class="op">,</span>b<span class="op">,</span>c<span class="op">,</span>d<span class="op">);</span></span>
-<span id="cb71-26"><a href="practice.html#cb71-26"></a>    printf<span class="op">(</span><span class="st">"MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>l<span class="op">);</span></span>
-<span id="cb71-27"><a href="practice.html#cb71-27"></a></span>
-<span id="cb71-28"><a href="practice.html#cb71-28"></a>    <span class="cf">if</span><span class="op">(!((</span>c<span class="op">&lt;</span>i<span class="op">)</span> <span class="op">||(</span>k<span class="op">&lt;</span>a<span class="op">)</span> <span class="op">))</span></span>
-<span id="cb71-29"><a href="practice.html#cb71-29"></a>    <span class="op">{</span></span>
-<span id="cb71-30"><a href="practice.html#cb71-30"></a>        printf<span class="op">(</span><span class="st">"x intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-31"><a href="practice.html#cb71-31"></a>        intersect_x <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb71-32"><a href="practice.html#cb71-32"></a>        printf<span class="op">(</span><span class="st">"intersect_x is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_x<span class="op">);</span></span>
-<span id="cb71-33"><a href="practice.html#cb71-33"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
-<span id="cb71-34"><a href="practice.html#cb71-34"></a>        printf<span class="op">(</span><span class="st">"x does not intersect!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-35"><a href="practice.html#cb71-35"></a>    <span class="op">}</span></span>
-<span id="cb71-36"><a href="practice.html#cb71-36"></a></span>
-<span id="cb71-37"><a href="practice.html#cb71-37"></a>    <span class="cf">if</span><span class="op">(!((</span>d<span class="op">&lt;</span>j<span class="op">)</span> <span class="op">||(</span>l<span class="op">&lt;</span>b<span class="op">)</span> <span class="op">))</span></span>
-<span id="cb71-38"><a href="practice.html#cb71-38"></a>    <span class="op">{</span></span>
-<span id="cb71-39"><a href="practice.html#cb71-39"></a>        printf<span class="op">(</span><span class="st">"y intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-40"><a href="practice.html#cb71-40"></a>        intersect_y <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb71-41"><a href="practice.html#cb71-41"></a>        printf<span class="op">(</span><span class="st">"intersect_y is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_y<span class="op">);</span></span>
-<span id="cb71-42"><a href="practice.html#cb71-42"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
-<span id="cb71-43"><a href="practice.html#cb71-43"></a>        printf<span class="op">(</span><span class="st">"y does not intercept!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-44"><a href="practice.html#cb71-44"></a>    <span class="op">}</span></span>
-<span id="cb71-45"><a href="practice.html#cb71-45"></a></span>
-<span id="cb71-46"><a href="practice.html#cb71-46"></a>    <span class="cf">if</span><span class="op">(</span>intersect_x<span class="op">&amp;&amp;</span>intersect_y<span class="op">)</span></span>
-<span id="cb71-47"><a href="practice.html#cb71-47"></a>        printf<span class="op">(</span><span class="st">"MBR1 intersects with MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-48"><a href="practice.html#cb71-48"></a>    <span class="cf">else</span></span>
-<span id="cb71-49"><a href="practice.html#cb71-49"></a>        printf<span class="op">(</span><span class="st">"MBR1 does not intersect MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-50"><a href="practice.html#cb71-50"></a></span>
-<span id="cb71-51"><a href="practice.html#cb71-51"></a></span>
-<span id="cb71-52"><a href="practice.html#cb71-52"></a></span>
-<span id="cb71-53"><a href="practice.html#cb71-53"></a><span class="co">/*</span></span>
-<span id="cb71-54"><a href="practice.html#cb71-54"></a><span class="co">    // testing writing to memory using pointers</span></span>
-<span id="cb71-55"><a href="practice.html#cb71-55"></a><span class="co">    int page = 1;</span></span>
-<span id="cb71-56"><a href="practice.html#cb71-56"></a></span>
-<span id="cb71-57"><a href="practice.html#cb71-57"></a><span class="co">    int *pData; // pointer to data</span></span>
-<span id="cb71-58"><a href="practice.html#cb71-58"></a><span class="co">    pData = &amp;page;</span></span>
-<span id="cb71-59"><a href="practice.html#cb71-59"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
-<span id="cb71-60"><a href="practice.html#cb71-60"></a></span>
-<span id="cb71-61"><a href="practice.html#cb71-61"></a><span class="co">    int* newP; // new pointer to data</span></span>
-<span id="cb71-62"><a href="practice.html#cb71-62"></a><span class="co">    int a = 2;</span></span>
-<span id="cb71-63"><a href="practice.html#cb71-63"></a><span class="co">    int b = 3;</span></span>
-<span id="cb71-64"><a href="practice.html#cb71-64"></a></span>
-<span id="cb71-65"><a href="practice.html#cb71-65"></a><span class="co">    int m = sizeof(b);</span></span>
-<span id="cb71-66"><a href="practice.html#cb71-66"></a></span>
-<span id="cb71-67"><a href="practice.html#cb71-67"></a><span class="co">    newP = pData+m;</span></span>
-<span id="cb71-68"><a href="practice.html#cb71-68"></a></span>
-<span id="cb71-69"><a href="practice.html#cb71-69"></a><span class="co">    memcpy(pData,&amp;a,sizeof(int));</span></span>
-<span id="cb71-70"><a href="practice.html#cb71-70"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
-<span id="cb71-71"><a href="practice.html#cb71-71"></a></span>
-<span id="cb71-72"><a href="practice.html#cb71-72"></a><span class="co">    memcpy(pData+m,&amp;b,sizeof(int));</span></span>
-<span id="cb71-73"><a href="practice.html#cb71-73"></a><span class="co">//    newP = pData+sizeof(int);</span></span>
-<span id="cb71-74"><a href="practice.html#cb71-74"></a><span class="co">    printf("\nnewP is %s; \n&amp;newP is %p; \n*newP is %d",newP, &amp;newP, *newP);</span></span>
-<span id="cb71-75"><a href="practice.html#cb71-75"></a><span class="co">*/</span> <span class="co">// end testing writing to memory using pointers</span></span>
-<span id="cb71-76"><a href="practice.html#cb71-76"></a></span>
-<span id="cb71-77"><a href="practice.html#cb71-77"></a>    <span class="co">// testing whether you can initialize a structure with an outside variable</span></span>
-<span id="cb71-78"><a href="practice.html#cb71-78"></a>    <span class="co">// not really, you can with an outside constant</span></span>
-<span id="cb71-79"><a href="practice.html#cb71-79"></a><span class="co">/*    const int b = 100;</span></span>
-<span id="cb71-80"><a href="practice.html#cb71-80"></a><span class="co">    const int c = 7;</span></span>
-<span id="cb71-81"><a href="practice.html#cb71-81"></a><span class="co">    const int a = (int)(b/c);</span></span>
-<span id="cb71-82"><a href="practice.html#cb71-82"></a><span class="co">    int i;</span></span>
-<span id="cb71-83"><a href="practice.html#cb71-83"></a></span>
-<span id="cb71-84"><a href="practice.html#cb71-84"></a><span class="co">    struct test {</span></span>
-<span id="cb71-85"><a href="practice.html#cb71-85"></a><span class="co">        int test[a];</span></span>
-<span id="cb71-86"><a href="practice.html#cb71-86"></a><span class="co">    };</span></span>
-<span id="cb71-87"><a href="practice.html#cb71-87"></a></span>
-<span id="cb71-88"><a href="practice.html#cb71-88"></a><span class="co">    test mytest;</span></span>
-<span id="cb71-89"><a href="practice.html#cb71-89"></a></span>
-<span id="cb71-90"><a href="practice.html#cb71-90"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
-<span id="cb71-91"><a href="practice.html#cb71-91"></a><span class="co">    {</span></span>
-<span id="cb71-92"><a href="practice.html#cb71-92"></a><span class="co">        mytest.test[i]=i;</span></span>
-<span id="cb71-93"><a href="practice.html#cb71-93"></a><span class="co">    }</span></span>
-<span id="cb71-94"><a href="practice.html#cb71-94"></a></span>
-<span id="cb71-95"><a href="practice.html#cb71-95"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
-<span id="cb71-96"><a href="practice.html#cb71-96"></a><span class="co">    {</span></span>
-<span id="cb71-97"><a href="practice.html#cb71-97"></a><span class="co">        printf("\nmytest[%d]=%d",i,mytest.test[i]);</span></span>
-<span id="cb71-98"><a href="practice.html#cb71-98"></a><span class="co">    }*/</span></span>
-<span id="cb71-99"><a href="practice.html#cb71-99"></a></span>
-<span id="cb71-100"><a href="practice.html#cb71-100"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb71-101"><a href="practice.html#cb71-101"></a><span class="op">}</span></span>
-<span id="cb71-102"><a href="practice.html#cb71-102"></a><span class="co">/*</span></span>
-<span id="cb71-103"><a href="practice.html#cb71-103"></a><span class="co">#include &lt;stdio.h&gt;</span></span>
-<span id="cb71-104"><a href="practice.html#cb71-104"></a></span>
-<span id="cb71-105"><a href="practice.html#cb71-105"></a><span class="co">main() {</span></span>
-<span id="cb71-106"><a href="practice.html#cb71-106"></a><span class="co">    printf("Hello World!\n");</span></span>
-<span id="cb71-107"><a href="practice.html#cb71-107"></a><span class="co">    char sentence []="test your 12 7 42";</span></span>
-<span id="cb71-108"><a href="practice.html#cb71-108"></a><span class="co">    char str[20];</span></span>
-<span id="cb71-109"><a href="practice.html#cb71-109"></a><span class="co">    int a, b, c;</span></span>
-<span id="cb71-110"><a href="practice.html#cb71-110"></a><span class="co">    sscanf(sentence,"%s %s %d %d %d", str, str, &amp;a, &amp;b, &amp;c);</span></span>
-<span id="cb71-111"><a href="practice.html#cb71-111"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
-<span id="cb71-112"><a href="practice.html#cb71-112"></a><span class="co">    printf("%s\n", str);</span></span>
-<span id="cb71-113"><a href="practice.html#cb71-113"></a><span class="co">    sscanf(sentence,"%s your %d 7 %d", str, &amp;a, &amp;b);</span></span>
-<span id="cb71-114"><a href="practice.html#cb71-114"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
-<span id="cb71-115"><a href="practice.html#cb71-115"></a><span class="co">    printf("%s\n", str);</span></span>
-<span id="cb71-116"><a href="practice.html#cb71-116"></a><span class="co">    printf("%s\n", sentence);</span></span>
-<span id="cb71-117"><a href="practice.html#cb71-117"></a></span>
-<span id="cb71-118"><a href="practice.html#cb71-118"></a><span class="co">}*/</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb71-1"><a href="practice.html#cb71-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb71-2"><a href="practice.html#cb71-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb71-3"><a href="practice.html#cb71-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></span>
+<span id="cb71-4"><a href="practice.html#cb71-4" tabindex="-1"></a></span>
+<span id="cb71-5"><a href="practice.html#cb71-5" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="practice.html#cb71-6" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb71-7"><a href="practice.html#cb71-7" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello World!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-8"><a href="practice.html#cb71-8" tabindex="-1"></a></span>
+<span id="cb71-9"><a href="practice.html#cb71-9" tabindex="-1"></a><span class="co">//    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</span></span>
+<span id="cb71-10"><a href="practice.html#cb71-10" tabindex="-1"></a></span>
+<span id="cb71-11"><a href="practice.html#cb71-11" tabindex="-1"></a>    <span class="co">// mbr (a,b,c,d)</span></span>
+<span id="cb71-12"><a href="practice.html#cb71-12" tabindex="-1"></a>    <span class="dt">int</span> a<span class="op">=</span><span class="dv">6</span><span class="op">;</span></span>
+<span id="cb71-13"><a href="practice.html#cb71-13" tabindex="-1"></a>    <span class="dt">int</span> b<span class="op">=</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb71-14"><a href="practice.html#cb71-14" tabindex="-1"></a>    <span class="dt">int</span> c<span class="op">=</span><span class="dv">8</span><span class="op">;</span> <span class="co">//c=b+1; inner/outer test c=4</span></span>
+<span id="cb71-15"><a href="practice.html#cb71-15" tabindex="-1"></a>    <span class="dt">int</span> d<span class="op">=</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb71-16"><a href="practice.html#cb71-16" tabindex="-1"></a></span>
+<span id="cb71-17"><a href="practice.html#cb71-17" tabindex="-1"></a>    <span class="co">//mbr (i,j,k,l)</span></span>
+<span id="cb71-18"><a href="practice.html#cb71-18" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span>    <span class="co">// i=n;  inner/outer test i=1</span></span>
+<span id="cb71-19"><a href="practice.html#cb71-19" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb71-20"><a href="practice.html#cb71-20" tabindex="-1"></a>    <span class="dt">int</span> k<span class="op">=</span><span class="dv">3</span><span class="op">;</span>  <span class="co">// k=j+1; inner/outer test k=3</span></span>
+<span id="cb71-21"><a href="practice.html#cb71-21" tabindex="-1"></a>    <span class="dt">int</span> l<span class="op">=</span><span class="dv">4</span><span class="op">;</span></span>
+<span id="cb71-22"><a href="practice.html#cb71-22" tabindex="-1"></a>    <span class="dt">bool</span> intersect_x <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb71-23"><a href="practice.html#cb71-23" tabindex="-1"></a>    <span class="dt">bool</span> intersect_y <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb71-24"><a href="practice.html#cb71-24" tabindex="-1"></a></span>
+<span id="cb71-25"><a href="practice.html#cb71-25" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>a<span class="op">,</span>b<span class="op">,</span>c<span class="op">,</span>d<span class="op">);</span></span>
+<span id="cb71-26"><a href="practice.html#cb71-26" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>l<span class="op">);</span></span>
+<span id="cb71-27"><a href="practice.html#cb71-27" tabindex="-1"></a></span>
+<span id="cb71-28"><a href="practice.html#cb71-28" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>c<span class="op">&lt;</span>i<span class="op">)</span> <span class="op">||(</span>k<span class="op">&lt;</span>a<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb71-29"><a href="practice.html#cb71-29" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb71-30"><a href="practice.html#cb71-30" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-31"><a href="practice.html#cb71-31" tabindex="-1"></a>        intersect_x <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb71-32"><a href="practice.html#cb71-32" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_x is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_x<span class="op">);</span></span>
+<span id="cb71-33"><a href="practice.html#cb71-33" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb71-34"><a href="practice.html#cb71-34" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x does not intersect!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-35"><a href="practice.html#cb71-35" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb71-36"><a href="practice.html#cb71-36" tabindex="-1"></a></span>
+<span id="cb71-37"><a href="practice.html#cb71-37" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>d<span class="op">&lt;</span>j<span class="op">)</span> <span class="op">||(</span>l<span class="op">&lt;</span>b<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb71-38"><a href="practice.html#cb71-38" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb71-39"><a href="practice.html#cb71-39" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-40"><a href="practice.html#cb71-40" tabindex="-1"></a>        intersect_y <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb71-41"><a href="practice.html#cb71-41" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_y is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_y<span class="op">);</span></span>
+<span id="cb71-42"><a href="practice.html#cb71-42" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb71-43"><a href="practice.html#cb71-43" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y does not intercept!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-44"><a href="practice.html#cb71-44" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb71-45"><a href="practice.html#cb71-45" tabindex="-1"></a></span>
+<span id="cb71-46"><a href="practice.html#cb71-46" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>intersect_x<span class="op">&amp;&amp;</span>intersect_y<span class="op">)</span></span>
+<span id="cb71-47"><a href="practice.html#cb71-47" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 intersects with MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-48"><a href="practice.html#cb71-48" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb71-49"><a href="practice.html#cb71-49" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 does not intersect MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb71-50"><a href="practice.html#cb71-50" tabindex="-1"></a></span>
+<span id="cb71-51"><a href="practice.html#cb71-51" tabindex="-1"></a></span>
+<span id="cb71-52"><a href="practice.html#cb71-52" tabindex="-1"></a></span>
+<span id="cb71-53"><a href="practice.html#cb71-53" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb71-54"><a href="practice.html#cb71-54" tabindex="-1"></a><span class="co">    // testing writing to memory using pointers</span></span>
+<span id="cb71-55"><a href="practice.html#cb71-55" tabindex="-1"></a><span class="co">    int page = 1;</span></span>
+<span id="cb71-56"><a href="practice.html#cb71-56" tabindex="-1"></a></span>
+<span id="cb71-57"><a href="practice.html#cb71-57" tabindex="-1"></a><span class="co">    int *pData; // pointer to data</span></span>
+<span id="cb71-58"><a href="practice.html#cb71-58" tabindex="-1"></a><span class="co">    pData = &amp;page;</span></span>
+<span id="cb71-59"><a href="practice.html#cb71-59" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb71-60"><a href="practice.html#cb71-60" tabindex="-1"></a></span>
+<span id="cb71-61"><a href="practice.html#cb71-61" tabindex="-1"></a><span class="co">    int* newP; // new pointer to data</span></span>
+<span id="cb71-62"><a href="practice.html#cb71-62" tabindex="-1"></a><span class="co">    int a = 2;</span></span>
+<span id="cb71-63"><a href="practice.html#cb71-63" tabindex="-1"></a><span class="co">    int b = 3;</span></span>
+<span id="cb71-64"><a href="practice.html#cb71-64" tabindex="-1"></a></span>
+<span id="cb71-65"><a href="practice.html#cb71-65" tabindex="-1"></a><span class="co">    int m = sizeof(b);</span></span>
+<span id="cb71-66"><a href="practice.html#cb71-66" tabindex="-1"></a></span>
+<span id="cb71-67"><a href="practice.html#cb71-67" tabindex="-1"></a><span class="co">    newP = pData+m;</span></span>
+<span id="cb71-68"><a href="practice.html#cb71-68" tabindex="-1"></a></span>
+<span id="cb71-69"><a href="practice.html#cb71-69" tabindex="-1"></a><span class="co">    memcpy(pData,&amp;a,sizeof(int));</span></span>
+<span id="cb71-70"><a href="practice.html#cb71-70" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb71-71"><a href="practice.html#cb71-71" tabindex="-1"></a></span>
+<span id="cb71-72"><a href="practice.html#cb71-72" tabindex="-1"></a><span class="co">    memcpy(pData+m,&amp;b,sizeof(int));</span></span>
+<span id="cb71-73"><a href="practice.html#cb71-73" tabindex="-1"></a><span class="co">//    newP = pData+sizeof(int);</span></span>
+<span id="cb71-74"><a href="practice.html#cb71-74" tabindex="-1"></a><span class="co">    printf("\nnewP is %s; \n&amp;newP is %p; \n*newP is %d",newP, &amp;newP, *newP);</span></span>
+<span id="cb71-75"><a href="practice.html#cb71-75" tabindex="-1"></a><span class="co">*/</span> <span class="co">// end testing writing to memory using pointers</span></span>
+<span id="cb71-76"><a href="practice.html#cb71-76" tabindex="-1"></a></span>
+<span id="cb71-77"><a href="practice.html#cb71-77" tabindex="-1"></a></span>
+<span id="cb71-78"><a href="practice.html#cb71-78" tabindex="-1"></a></span>
+<span id="cb71-79"><a href="practice.html#cb71-79" tabindex="-1"></a>    <span class="co">// testing whether you can initialize a structure with an outside variable</span></span>
+<span id="cb71-80"><a href="practice.html#cb71-80" tabindex="-1"></a>    <span class="co">// not really, you can with an outside constant</span></span>
+<span id="cb71-81"><a href="practice.html#cb71-81" tabindex="-1"></a><span class="co">/*    const int b = 100;</span></span>
+<span id="cb71-82"><a href="practice.html#cb71-82" tabindex="-1"></a><span class="co">    const int c = 7;</span></span>
+<span id="cb71-83"><a href="practice.html#cb71-83" tabindex="-1"></a><span class="co">    const int a = (int)(b/c);</span></span>
+<span id="cb71-84"><a href="practice.html#cb71-84" tabindex="-1"></a><span class="co">    int i;</span></span>
+<span id="cb71-85"><a href="practice.html#cb71-85" tabindex="-1"></a></span>
+<span id="cb71-86"><a href="practice.html#cb71-86" tabindex="-1"></a><span class="co">    struct test {</span></span>
+<span id="cb71-87"><a href="practice.html#cb71-87" tabindex="-1"></a><span class="co">        int test[a];</span></span>
+<span id="cb71-88"><a href="practice.html#cb71-88" tabindex="-1"></a><span class="co">    };</span></span>
+<span id="cb71-89"><a href="practice.html#cb71-89" tabindex="-1"></a></span>
+<span id="cb71-90"><a href="practice.html#cb71-90" tabindex="-1"></a><span class="co">    test mytest;</span></span>
+<span id="cb71-91"><a href="practice.html#cb71-91" tabindex="-1"></a></span>
+<span id="cb71-92"><a href="practice.html#cb71-92" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb71-93"><a href="practice.html#cb71-93" tabindex="-1"></a><span class="co">    {</span></span>
+<span id="cb71-94"><a href="practice.html#cb71-94" tabindex="-1"></a><span class="co">        mytest.test[i]=i;</span></span>
+<span id="cb71-95"><a href="practice.html#cb71-95" tabindex="-1"></a><span class="co">    }</span></span>
+<span id="cb71-96"><a href="practice.html#cb71-96" tabindex="-1"></a></span>
+<span id="cb71-97"><a href="practice.html#cb71-97" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb71-98"><a href="practice.html#cb71-98" tabindex="-1"></a><span class="co">    {</span></span>
+<span id="cb71-99"><a href="practice.html#cb71-99" tabindex="-1"></a><span class="co">        printf("\nmytest[%d]=%d",i,mytest.test[i]);</span></span>
+<span id="cb71-100"><a href="practice.html#cb71-100" tabindex="-1"></a><span class="co">    }*/</span></span>
+<span id="cb71-101"><a href="practice.html#cb71-101" tabindex="-1"></a></span>
+<span id="cb71-102"><a href="practice.html#cb71-102" tabindex="-1"></a></span>
+<span id="cb71-103"><a href="practice.html#cb71-103" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb71-104"><a href="practice.html#cb71-104" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb71-105"><a href="practice.html#cb71-105" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb71-106"><a href="practice.html#cb71-106" tabindex="-1"></a><span class="co">#include &lt;stdio.h&gt;</span></span>
+<span id="cb71-107"><a href="practice.html#cb71-107" tabindex="-1"></a></span>
+<span id="cb71-108"><a href="practice.html#cb71-108" tabindex="-1"></a><span class="co">main() {</span></span>
+<span id="cb71-109"><a href="practice.html#cb71-109" tabindex="-1"></a><span class="co">    printf("Hello World!\n");</span></span>
+<span id="cb71-110"><a href="practice.html#cb71-110" tabindex="-1"></a><span class="co">    char sentence []="test your 12 7 42";</span></span>
+<span id="cb71-111"><a href="practice.html#cb71-111" tabindex="-1"></a><span class="co">    char str[20];</span></span>
+<span id="cb71-112"><a href="practice.html#cb71-112" tabindex="-1"></a><span class="co">    int a, b, c;</span></span>
+<span id="cb71-113"><a href="practice.html#cb71-113" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s %s %d %d %d", str, str, &amp;a, &amp;b, &amp;c);</span></span>
+<span id="cb71-114"><a href="practice.html#cb71-114" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb71-115"><a href="practice.html#cb71-115" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb71-116"><a href="practice.html#cb71-116" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s your %d 7 %d", str, &amp;a, &amp;b);</span></span>
+<span id="cb71-117"><a href="practice.html#cb71-117" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb71-118"><a href="practice.html#cb71-118" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb71-119"><a href="practice.html#cb71-119" tabindex="-1"></a><span class="co">    printf("%s\n", sentence);</span></span>
+<span id="cb71-120"><a href="practice.html#cb71-120" tabindex="-1"></a></span>
+<span id="cb71-121"><a href="practice.html#cb71-121" tabindex="-1"></a><span class="co">}*/</span></span></code></pre></div>
 </div>
 <div id="matlab" class="section level2" number="10.6">
 <h2>
@@ -493,48 +496,48 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <li>What questions do you have about it?</li>
 <li>What are some suggestions to make it easier to read?</li>
 </ul>
-<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource matlab numberLines"><code class="sourceCode matlab"><span id="cb72-1"><a href="practice.html#cb72-1"></a><span class="kw">function</span> <span class="va">assignment01_leaf</span></span>
-<span id="cb72-2"><a href="practice.html#cb72-2"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-3"><a href="practice.html#cb72-3"></a><span class="va">TRAIN</span> <span class="op">=</span> <span class="va">load</span>(<span class="ss">'FaultsNNA_csv'</span>)<span class="op">;</span> <span class="co">% Only these two lines need to be changed to test a different dataset. % </span></span>
-<span id="cb72-4"><a href="practice.html#cb72-4"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-5"><a href="practice.html#cb72-5"></a></span>
-<span id="cb72-6"><a href="practice.html#cb72-6"></a><span class="va">TRAIN_class_labels</span> <span class="op">=</span> <span class="va">TRAIN</span>(<span class="op">:,</span><span class="fl">1</span>)<span class="op">;</span>    <span class="co">% Pull out the class labels.</span></span>
-<span id="cb72-7"><a href="practice.html#cb72-7"></a><span class="va">TRAIN</span>(<span class="op">:,</span><span class="fl">1</span>) <span class="op">=</span> []<span class="op">;</span>    <span class="co">% Remove class labels from training set.</span></span>
-<span id="cb72-8"><a href="practice.html#cb72-8"></a></span>
-<span id="cb72-9"><a href="practice.html#cb72-9"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-10"><a href="practice.html#cb72-10"></a><span class="co">% Compute and display Default Rate and other Basic Information</span></span>
-<span id="cb72-11"><a href="practice.html#cb72-11"></a><span class="co">%</span></span>
-<span id="cb72-12"><a href="practice.html#cb72-12"></a>[<span class="va">class</span><span class="op">,</span><span class="va">count</span>] <span class="op">=</span> <span class="va">mode</span>(<span class="va">TRAIN_class_labels</span>(<span class="op">:,</span><span class="fl">1</span>))<span class="op">;</span></span>
-<span id="cb72-13"><a href="practice.html#cb72-13"></a><span class="va">default_error_rate</span><span class="op">=</span><span class="fl">1</span><span class="op">-</span>(<span class="va">count</span><span class="op">/</span><span class="va">size</span>(<span class="va">TRAIN_class_labels</span>(<span class="op">:,</span><span class="fl">1</span>)<span class="op">,</span><span class="fl">1</span>))<span class="op">;</span></span>
-<span id="cb72-14"><a href="practice.html#cb72-14"></a><span class="va">disp</span>([<span class="ss">'The dataset you tested has '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">length</span>(<span class="va">unique</span>(<span class="va">TRAIN_class_labels</span>)))<span class="op">,</span> <span class="ss">' classes.'</span>])<span class="op">;</span></span>
-<span id="cb72-15"><a href="practice.html#cb72-15"></a><span class="va">disp</span>([<span class="ss">'The training set is of size '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">size</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="fl">1</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-16"><a href="practice.html#cb72-16"></a><span class="va">disp</span>([<span class="ss">'The time series are of length '</span><span class="op">,</span> <span class="va">int2str</span>(<span class="va">size</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="fl">2</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-17"><a href="practice.html#cb72-17"></a><span class="va">disp</span>([<span class="ss">'The dataset''s most common class is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">class</span>)<span class="op">,</span><span class="ss">' with a total of '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">count</span>)<span class="op">,</span><span class="ss">' occurances.'</span>])<span class="op">;</span></span>
-<span id="cb72-18"><a href="practice.html#cb72-18"></a><span class="va">disp</span>([<span class="ss">'The default error rate is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">default_error_rate</span>)<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-19"><a href="practice.html#cb72-19"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-20"><a href="practice.html#cb72-20"></a></span>
-<span id="cb72-21"><a href="practice.html#cb72-21"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-22"><a href="practice.html#cb72-22"></a><span class="co">% Compute and display the k-fold error rate</span></span>
-<span id="cb72-23"><a href="practice.html#cb72-23"></a><span class="co">%</span></span>
-<span id="cb72-24"><a href="practice.html#cb72-24"></a><span class="va">k</span><span class="op">=</span><span class="va">length</span>(<span class="va">TRAIN_class_labels</span>)<span class="op">;</span></span>
-<span id="cb72-25"><a href="practice.html#cb72-25"></a><span class="va">k_fold_error_rate</span> <span class="op">=</span> <span class="va">k_fold_cross_validation</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="va">TRAIN_class_labels</span><span class="op">,</span><span class="va">k</span>)<span class="op">;</span></span>
-<span id="cb72-26"><a href="practice.html#cb72-26"></a><span class="va">disp</span>([<span class="ss">'The normal k-fold error rate is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">k_fold_error_rate</span>)<span class="op">,</span><span class="ss">' where k='</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">k</span>)<span class="op">,</span><span class="ss">' and length of train set is '</span><span class="op">,</span><span class="va">num2str</span>(<span class="va">length</span>(<span class="va">TRAIN_class_labels</span>))<span class="op">,</span><span class="ss">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-27"><a href="practice.html#cb72-27"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-28"><a href="practice.html#cb72-28"></a></span>
-<span id="cb72-29"><a href="practice.html#cb72-29"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-30"><a href="practice.html#cb72-30"></a><span class="co">% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest</span></span>
-<span id="cb72-31"><a href="practice.html#cb72-31"></a><span class="co">% neighbor using the Euclidean distance. </span></span>
-<span id="cb72-32"><a href="practice.html#cb72-32"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-33"><a href="practice.html#cb72-33"></a><span class="kw">function</span> <span class="va">predicted_class</span> <span class="op">=</span> <span class="va">Classification_Algorithm</span>(<span class="va">TRAIN</span><span class="op">,</span><span class="va">TRAIN_class_labels</span><span class="op">,</span><span class="va">unknown_object</span>)</span>
-<span id="cb72-34"><a href="practice.html#cb72-34"></a><span class="va">best_so_far</span> <span class="op">=</span> <span class="va">inf</span><span class="op">;</span></span>
-<span id="cb72-35"><a href="practice.html#cb72-35"></a><span class="kw">for</span> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="va">length</span>(<span class="va">TRAIN_class_labels</span>)</span>
-<span id="cb72-36"><a href="practice.html#cb72-36"></a>    <span class="va">compare_to_this_object</span> <span class="op">=</span> <span class="va">TRAIN</span>(<span class="va">i</span><span class="op">,:</span>)<span class="op">;</span></span>
-<span id="cb72-37"><a href="practice.html#cb72-37"></a>    <span class="va">distance</span> <span class="op">=</span> <span class="va">sqrt</span>(<span class="va">sum</span>((<span class="va">compare_to_this_object</span> <span class="op">-</span> <span class="va">unknown_object</span>)<span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span> <span class="co">% Euclidean distance</span></span>
-<span id="cb72-38"><a href="practice.html#cb72-38"></a>    <span class="kw">if</span> <span class="va">distance</span> <span class="op">&lt;</span> <span class="va">best_so_far</span></span>
-<span id="cb72-39"><a href="practice.html#cb72-39"></a>        <span class="va">predicted_class</span> <span class="op">=</span> <span class="va">TRAIN_class_labels</span>(<span class="va">i</span>)<span class="op">;</span></span>
-<span id="cb72-40"><a href="practice.html#cb72-40"></a>        <span class="va">best_so_far</span> <span class="op">=</span> <span class="va">distance</span><span class="op">;</span></span>
-<span id="cb72-41"><a href="practice.html#cb72-41"></a>    <span class="kw">end</span></span>
-<span id="cb72-42"><a href="practice.html#cb72-42"></a> <span class="kw">end</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode octave"><code class="sourceCode octave"><span id="cb72-1"><a href="practice.html#cb72-1" tabindex="-1"></a><span class="cf">function</span> assignment01_leaf</span>
+<span id="cb72-2"><a href="practice.html#cb72-2" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-3"><a href="practice.html#cb72-3" tabindex="-1"></a>TRAIN <span class="op">=</span> <span class="bu">load</span>(<span class="st">'FaultsNNA_csv'</span>)<span class="op">;</span> <span class="co">% Only these two lines need to be changed to test a different dataset. % </span></span>
+<span id="cb72-4"><a href="practice.html#cb72-4" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-5"><a href="practice.html#cb72-5" tabindex="-1"></a></span>
+<span id="cb72-6"><a href="practice.html#cb72-6" tabindex="-1"></a>TRAIN_class_labels <span class="op">=</span> TRAIN(<span class="op">:,</span><span class="fl">1</span>)<span class="op">;</span>    <span class="co">% Pull out the class labels.</span></span>
+<span id="cb72-7"><a href="practice.html#cb72-7" tabindex="-1"></a>TRAIN(<span class="op">:,</span><span class="fl">1</span>) <span class="op">=</span> []<span class="op">;</span>    <span class="co">% Remove class labels from training set.</span></span>
+<span id="cb72-8"><a href="practice.html#cb72-8" tabindex="-1"></a></span>
+<span id="cb72-9"><a href="practice.html#cb72-9" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-10"><a href="practice.html#cb72-10" tabindex="-1"></a><span class="co">% Compute and display Default Rate and other Basic Information</span></span>
+<span id="cb72-11"><a href="practice.html#cb72-11" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb72-12"><a href="practice.html#cb72-12" tabindex="-1"></a>[<span class="fu">class</span><span class="op">,</span><span class="fu">count</span>] <span class="op">=</span> <span class="fu">mode</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb72-13"><a href="practice.html#cb72-13" tabindex="-1"></a>default_error_rate<span class="op">=</span><span class="fl">1</span><span class="op">-</span>(<span class="fu">count</span><span class="op">/</span><span class="fu">size</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>)<span class="op">,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb72-14"><a href="practice.html#cb72-14" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset you tested has '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">length</span>(<span class="fu">unique</span>(TRAIN_class_labels)))<span class="op">,</span> <span class="st">' classes.'</span>])<span class="op">;</span></span>
+<span id="cb72-15"><a href="practice.html#cb72-15" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The training set is of size '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">1</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-16"><a href="practice.html#cb72-16" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The time series are of length '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">2</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-17"><a href="practice.html#cb72-17" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset''s most common class is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">class</span>)<span class="op">,</span><span class="st">' with a total of '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">count</span>)<span class="op">,</span><span class="st">' occurances.'</span>])<span class="op">;</span></span>
+<span id="cb72-18"><a href="practice.html#cb72-18" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The default error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(default_error_rate)<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-19"><a href="practice.html#cb72-19" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-20"><a href="practice.html#cb72-20" tabindex="-1"></a></span>
+<span id="cb72-21"><a href="practice.html#cb72-21" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-22"><a href="practice.html#cb72-22" tabindex="-1"></a><span class="co">% Compute and display the k-fold error rate</span></span>
+<span id="cb72-23"><a href="practice.html#cb72-23" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb72-24"><a href="practice.html#cb72-24" tabindex="-1"></a>k<span class="op">=</span><span class="fu">length</span>(TRAIN_class_labels)<span class="op">;</span></span>
+<span id="cb72-25"><a href="practice.html#cb72-25" tabindex="-1"></a>k_fold_error_rate <span class="op">=</span> k_fold_cross_validation(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>k)<span class="op">;</span></span>
+<span id="cb72-26"><a href="practice.html#cb72-26" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The normal k-fold error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(k_fold_error_rate)<span class="op">,</span><span class="st">' where k='</span><span class="op">,</span><span class="fu">num2str</span>(k)<span class="op">,</span><span class="st">' and length of train set is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">length</span>(TRAIN_class_labels))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb72-27"><a href="practice.html#cb72-27" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-28"><a href="practice.html#cb72-28" tabindex="-1"></a></span>
+<span id="cb72-29"><a href="practice.html#cb72-29" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-30"><a href="practice.html#cb72-30" tabindex="-1"></a><span class="co">% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest</span></span>
+<span id="cb72-31"><a href="practice.html#cb72-31" tabindex="-1"></a><span class="co">% neighbor using the Euclidean distance. </span></span>
+<span id="cb72-32"><a href="practice.html#cb72-32" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb72-33"><a href="practice.html#cb72-33" tabindex="-1"></a><span class="cf">function</span> predicted_class <span class="op">=</span> Classification_Algorithm(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>unknown_object)</span>
+<span id="cb72-34"><a href="practice.html#cb72-34" tabindex="-1"></a>best_so_far <span class="op">=</span> <span class="fu">inf</span><span class="op">;</span></span>
+<span id="cb72-35"><a href="practice.html#cb72-35" tabindex="-1"></a><span class="cf">for</span> <span class="fu">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="fu">length</span>(TRAIN_class_labels)</span>
+<span id="cb72-36"><a href="practice.html#cb72-36" tabindex="-1"></a>    compare_to_this_object <span class="op">=</span> TRAIN(<span class="fu">i</span><span class="op">,:</span>)<span class="op">;</span></span>
+<span id="cb72-37"><a href="practice.html#cb72-37" tabindex="-1"></a>    <span class="fu">distance</span> <span class="op">=</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((compare_to_this_object <span class="op">-</span> unknown_object)<span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span> <span class="co">% Euclidean distance</span></span>
+<span id="cb72-38"><a href="practice.html#cb72-38" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">distance</span> <span class="op">&lt;</span> best_so_far</span>
+<span id="cb72-39"><a href="practice.html#cb72-39" tabindex="-1"></a>        predicted_class <span class="op">=</span> TRAIN_class_labels(<span class="fu">i</span>)<span class="op">;</span></span>
+<span id="cb72-40"><a href="practice.html#cb72-40" tabindex="-1"></a>        best_so_far <span class="op">=</span> <span class="fu">distance</span><span class="op">;</span></span>
+<span id="cb72-41"><a href="practice.html#cb72-41" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb72-42"><a href="practice.html#cb72-42" tabindex="-1"></a> <span class="cf">end</span><span class="op">;</span></span></code></pre></div>
 
 </div>
 </div>

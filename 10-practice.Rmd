@@ -34,11 +34,11 @@ __Exercise__: Using what we've learned in prior sections, try to answer the foll
 - The `OceanBuoys` table must have columns named `Ocean` and `BuoyName`. 
   - If we wanted to return only these columns, the syntax could be: `SELECT Ocean, BuoyName FROM OceanBuoys`
 - `LIKE` is used for pattern matching. The symbol `%` is a wildcard character in SQL. This code is matching values that start with "S" or with "K".
-</details>\
-  - The conditions after `WHERE` are the row-based conditions for what will be returned, analogous to `SELECT` for the column-specific condition.
+- The conditions after `WHERE` are the row-based conditions for what will be returned, analogous to `SELECT` for the column-specific condition.
 - The `;` is used to indicate the end of a statement in SQL. It tells the computer that the 'thought' is finished, and the action of _doing_ the thought can commence.
+</details>\
 
-Now, can you write out a narrative of what you see the code is trying to do?\
+**Exercise, continued:** Now, can you write out a narrative of what you see the code is trying to do?
 
 <details>
 <summary>Example written narrative</summary>
@@ -245,7 +245,7 @@ Review the file then answer the following questions, annotating as you see fit.
 - What questions do you have about it?
 - What are some suggestions to make it easier to read?
 
-```{cpp, attr.source='.numberLines'}
+```c
 #include <iostream>
 #include <stdio.h>
 #include <cstring>
@@ -382,7 +382,7 @@ Review the file then answer the following questions, annotating as you see fit.
 - What questions do you have about it?
 - What are some suggestions to make it easier to read? 
 
-```{matlab, attr.source='.numberLines'}
+```octave
 function assignment01_leaf
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%
 TRAIN = load('FaultsNNA_csv'); % Only these two lines need to be changed to test a different dataset. % 
