@@ -2,13 +2,25 @@
 
 Here's a list of resources, cheat sheets, reference materials, and stuff we really like and recommend.
 
+## Learn to Program Specific Languages
+
 - For practical, research-focused language-specific training (R, Python, SQL, Bash, etc.), we recommend [The Carpentries](https://carpentries.org/lessons/) lessons.
   - You can also use these for reminders of how certain functions are called.
   - Pro Tip: be sure to leave enough time for the lessons.  R & Python will each take
   about 8 hours, Bash & Git will take about 4 hours each.  But, you will be about
   at an intermediate level when you finish these lessons.
+  
+## Cheat Sheets
 
-_Help troubleshooting code_
+- [Python](https://docs.google.com/document/d/1EkKX0iLZORNaixrB90rX7NXTQ051qSN9K_UHS-3WdwI/)
+- [SQL](https://docs.google.com/document/d/1mnhYe88ctjAVWR_cEUmP7XlWtBMt9-VqXJeaOkKVCMI/)
+- [Git](https://docs.google.com/document/d/1fo08RDG0G0r33x3DGGvQ7IpUDLB3uPy2tzQpYQYTWbc/)
+- [Shell](https://docs.google.com/document/d/1GstF7VGOmyttGYuZ29PBzP-YLoJ7XGgJX0DI6zluD6g/)
+- [R Project Packages](https://cran.r-project.org/web/packages/) Most R packages have robust documentation, and is available at CRAN (The Comprehensive R Archive Network)
+  - [ReadXL to Read Excel Files](https://cran.r-project.org/web/packages/readxl/index.html)
+- [R: ggplot2 & knitr (lesson with cheatsheets linked)](https://hackmd.io/@kekoziar/ryGX1rrxo)
+
+## Help troubleshooting code
 
 - Check language/platform-specific message boards to see if someone else has encountered a similar problem.
   - [Python](https://discuss.python.org/c/help/7)
@@ -24,14 +36,14 @@ _Help troubleshooting code_
 - Use your favorite search engine and search the error code + name of software or
 the name of the software and the function or operator. 
   - Example: “R error default.density need at least 2 points to select a bandwidth automatically”
-    - This will often surface relevant StackOverflow posts\\
+    - This will often surface relevant StackOverflow posts
   - "R %>%" will tell you about this operator common to the tidyverse.
 
 - Check documentation for specific function/package/program 
   - User guides/docs for “official” add-on packages to software
   - Example: error/problem implementing “bmacoefsample” in Stata? → Find documentation for bmacoefsample - Posterior samples of regression coefficients - read syntax description 
   
-**Did you like this style of learning?**
+## Did you like this style of learning?
 
 Do you want to learn the ins and outs of computer programming, including memory 
 allocation, logic gates, and more?  

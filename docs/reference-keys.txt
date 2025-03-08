@@ -76,3 +76,7 @@ why-doesnt-my-code-run
 the-code-runs-but-something-is-wrong
 approaching-consultations
 resources
+learn-to-program-specific-languages
+cheat-sheets
+help-troubleshooting-code
+did-you-like-this-style-of-learning
