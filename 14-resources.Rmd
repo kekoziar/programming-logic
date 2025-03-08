@@ -2,8 +2,11 @@
 
 Here's a list of resources, cheat sheets, reference materials, and stuff we really like and recommend.
 
-- Introduction to Programming Logic [@lynne_ohanlon_introduction_2000]
-- For practical, research-focused language-specific training (R, Python, SQL, Bash, etc.), we recommend [The Carpentries](https://carpentries.org/lessons/) lessons
+- For practical, research-focused language-specific training (R, Python, SQL, Bash, etc.), we recommend [The Carpentries](https://carpentries.org/lessons/) lessons.
+  - You can also use these for reminders of how certain functions are called.
+  - Pro Tip: be sure to leave enough time for the lessons.  R & Python will each take
+  about 8 hours, Bash & Git will take about 4 hours each.  But, you will be about
+  at an intermediate level when you finish these lessons.
 
 _Help troubleshooting code_
 
@@ -16,11 +19,24 @@ _Help troubleshooting code_
   
 - Search [StackOverflow](https://stackoverflow.com/questions) 
   - Programming community forum. Specify what language/platform in your search term (ex: "R plotting change axes")
+  - Pro tip: use your favorite search engine, and prioritize StackOverflow.
 
-- Google the error code + name of software
+- Use your favorite search engine and search the error code + name of software or
+the name of the software and the function or operator. 
   - Example: “R error default.density need at least 2 points to select a bandwidth automatically”
-  - This will often surface relevant StackOverflow posts\
+    - This will often surface relevant StackOverflow posts\\
+  - "R %>%" will tell you about this operator common to the tidyverse.
 
 - Check documentation for specific function/package/program 
   - User guides/docs for “official” add-on packages to software
   - Example: error/problem implementing “bmacoefsample” in Stata? → Find documentation for bmacoefsample - Posterior samples of regression coefficients - read syntax description 
+  
+**Did you like this style of learning?**
+
+Do you want to learn the ins and outs of computer programming, including memory 
+allocation, logic gates, and more?  
+
+- Introduction to Programming Logic [@lynne_ohanlon_introduction_2000]
+  - This is a very accessible and readable programming logic book.  This was written
+  by one of Kat's computer science instructors, to whom Kat is eternally grateful 
+  for a logical and structured approach to learning how to program.
