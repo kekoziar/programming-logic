@@ -37,7 +37,7 @@ ELSE
   cube(ingredient)
 ```
 
-In a generic programming format, a complete `if else` statement would look like: 
+In pseudocode, a complete `if else` statement would look like: 
 
 ```
 IF (condition A is TRUE)
@@ -61,7 +61,7 @@ ELSE
   don't use
 ```
 
-In generic programming format, this updated statement would look like: 
+In pseudocode, this updated statement would look like: 
 
 ```
 IF (condition A is TRUE)
@@ -78,7 +78,9 @@ _Timing: 5 minutes_
 
 Let's try a similar example with the popcorn algorithm from section 2. 
 
-Write out an `if else` statement specifying what appliance to use in the case of microwave vs stovetop popcorn.
+Write out an `if else` statement specifying what appliance to use in the case of 
+different popcorn types: bagged popcorn (`bagged`), popcorn in an aluminum pan (`jiffy_pop`),
+and loose kernels.
 Write out an `if, else if, else` statement that includes an air fry scenario.
 
 <details>
@@ -93,7 +95,7 @@ ELSE
   use air fryer
 ```
 
-Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lots in the details.
+Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lost in the details.
 
 </details>\
 
