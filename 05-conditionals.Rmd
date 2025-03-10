@@ -112,11 +112,11 @@ Common Boolean operators are:\
 
 Common comparison operators are:
 
-- `>` for Greater-than
-- `<` for Less-than
-- `>=` for Greater-than or equal-to
-- `<=` for Less-than or equal-to
-- `==` for *is equal to*
+- `>`  Greater-than
+- `<`  Less-than
+- `>=`  Greater-than or equal-to
+- `<=`  Less-than or equal-to
+- `==`  *is equal to*
   - you should note that `==` is very different from `=`. `==` is the comparison operator, while `=` is an assignment operator. Another assignment operator you may have noticed us using is `<-` which is commonly used in R.
   - To practice, you can replace the words "is equal to" or "is assigned the value of" appropriately.
   - `A = 6` (`A` is assigned the value of `6`)
