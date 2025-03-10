@@ -80,13 +80,18 @@ Let's try a similar example with the popcorn algorithm from section 2.
 
 Write out an `if else` statement specifying what appliance to use in the case of 
 different popcorn types: bagged popcorn (`bagged`), popcorn in an aluminum pan (`jiffy_pop`),
-and loose kernels.
-Write out an `if, else if, else` statement that includes an air fry scenario.
+and loose kernels.\
+Then, write out an `if, else if, else` statement that includes use of an air fryer for loose kernels.\
 
 <details>
 <summary>Example statement</summary>
 
 ```
+IF (popcorn_type is `bagged`)
+  use microwave
+ELSE (popcorn_type is `jiffy_pop`)
+  use stove
+
 IF (popcorn_type is `bagged`)
   use microwave
 ELSE IF (popcorn_type is `jiffy_pop`)
@@ -98,7 +103,6 @@ ELSE
 Your version may look different, and that's fine! The fun of pseudocode is practicing with the logic of code, rather than getting lost in the details.
 
 </details>\
-
 
 ## Comparing Things and Booleans
 

@@ -157,12 +157,9 @@ We already mentioned that `print` is a common built-in function.  Most languages
 
 Built-in functions have help pages which will allow you to see the syntax and arguments.  The help files will include definitions of the arguments, if they're required or have a default, and examples for use.  
 
-The syntax for Python is `round(number, ndigits=None)`
+The [syntax for Python](https://docs.python.org/3/library/functions.html#round) is `round(number, ndigits=None)`
 
-The syntax for R is `round(x, digits = 0, ...)`, where `x` is a numeric vector.
-
-https://search.r-project.org/R/refmans/base/html/Round.html
-https://docs.python.org/3/library/functions.html#round
+The [syntax for R](https://search.r-project.org/R/refmans/base/html/Round.html) is `round(x, digits = 0, ...)`, where `x` is a numeric vector.
 
 The second argument for both languages indicates the number of digits along with the default value.  Since there's a default value, you don't necessarily need to include the argument in the function call. 
 

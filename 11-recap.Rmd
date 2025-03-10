@@ -2,6 +2,17 @@
 
 The point of this workshop isn't to make you an expert, but to build your skillset so you can read code and be more confident in consultations.  Let's first talk about where errors can pop up.
 
+### Clarifying variables
+
+Something I'd commonly do when helping researchers with their code, especially when I'd see variable names which are abbreviations, is I'd ask them if the abbreviation is something which is commonly used in their field.  My questions would usually go something like this:
+
+- _So you know, I'm not an expert in your field.  You're the expert.  Can you help me understand a little more about what you're trying to do in the code?_
+- _What does `w_f` represent?_
+- _Is that something someone who is knowledgeable in your field would recognize?_
+- _It's good practice to use self-describing variables which someone in the field would recognize.  It's also a good idea to keep track of information about your data in a README or data dictionary.  Honestly, I've heard a lot of different terms to describe them, but it's basically a file that describes your data.  I can give you an example if you want._
+- Kat's favorite dataset example: Leaf Dataset in UCI Data Science Repository [@leaf_288]
+- _At the top of your code when you define your variables, if the variable name doesn't exactly correlate to something in your dataset's README file, you can add a comment with the exact term._
+
 ## Narrowing Down Errors
 
 You might think there's a lot of places where errors can be introduced in code, 

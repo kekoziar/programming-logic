@@ -132,7 +132,7 @@ for(ingredient in ingredients){
 
 ### Activity - Loop Trace 
 
-_Timing: 10 minutes_
+_Timing: 10 minutes_\
 _You will need: a piece of paper and writing implement_
 
 Now that we've practiced a trace using text, let's practice using number ranges  Remember that to a computer, the range written as `2 to 7` represents numbers 2 3 4 5 6 7.

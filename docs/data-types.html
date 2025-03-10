@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="4.1 Variables Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -94,7 +94,7 @@
 <h2>
 <span class="header-section-number">4.1</span> Variables<a class="anchor" aria-label="anchor" href="#variables"><i class="fas fa-link"></i></a>
 </h2>
-<p>Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures <em>(Kat’s note: data structures might be too early, but maybe not.)</em></p>
+<p>Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures.</p>
 <p>A word that people use a lot when referring to computer code is <em>variable</em>, but what is a variable? A variable is a placeholder for some type of data that will be used in computer code.</p>
 <p><code>ingredients &lt;- cheddar cheese, potatoes, milk, salt, butter</code></p>
 <p>We use variables to represent the data that are being used within a program because it’s easy to change it,</p>
@@ -107,16 +107,6 @@ ingredient_quantities &lt;- all, 3 lb, 0.5 c, to taste, 8 tbsp</code></pre>
 <span class="header-section-number">4.1.1</span> Pro-tip<a class="anchor" aria-label="anchor" href="#pro-tip"><i class="fas fa-link"></i></a>
 </h3>
 <p>A common rule to help decide what name to use for a variable is, the name should describe what the data represent. If we used the term <code>x</code> - which is commonly used as a variable in math equations - we wouldn’t know what it represents. Using the word <code>ingredients</code> is descriptive, so you have an idea what the data are in the variable - it describes what the variable represents.</p>
-<p>Something I’d commonly do when helping researchers with their code, especially when I’d see variable names which are abbreviations, is I’d ask them if the abbreviation is something which is commonly used in their field. My questions would usually go something like this:</p>
-<ul>
-<li><em>So you know, I’m not an expert in your field. You’re the expert. Can you help me understand a little more about what you’re trying to do in the code?</em></li>
-<li><em>What does <code>w_f</code> represent?</em></li>
-<li><em>Is that something someone who is knowledgeable in your field would recognize?</em></li>
-<li><em>It’s good practice to use self-describing variables which someone in the field would recognize. It’s also a good idea to keep track of information about your data in a README or data dictionary. Honestly, I’ve heard a lot of different terms to describe them, but it’s basically a file that describes your data. I can give you an example if you want.</em></li>
-<li>Kat’s favorite dataset example: Leaf Dataset in UCI Data Science Repository <span class="citation">(<a href="references.html#ref-leaf_288">Silva and Maral 2013</a>)</span>
-</li>
-<li><em>At the top of your code when you define your variables, if the variable name doesn’t exactly correlate to something in your dataset’s README file, you can add a comment with the exact term.</em></li>
-</ul>
 </div>
 </div>
 <div id="data-types-1" class="section level2" number="4.2">
@@ -182,38 +172,38 @@ ingredients =
 <hr>
 <p>A <strong>dataframe</strong> is a tabular form with rows and columns, much like a matrix. However, dataframes can contain mixed data types, for instance a column of integers, a column of strings, and another column of floats. Dataframes can also have column names and row names.</p>
 <div class="tabwid">
-<style>.cl-e9a98380{}.cl-e9a6d72a{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e9a81c2a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e9a82684{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82685{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a8268e{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a8268f{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82690{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82691{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82692{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82693{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82698{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a82699{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a8269a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9a8269b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e9a98380">
+<style>.cl-52e037ac{}.cl-52d85e9c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-52db3568{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-52db4c06{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c07{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c10{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c11{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c12{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c1a{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c1b{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c1c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c24{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c25{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c26{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52db4c27{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-52e037ac">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e9a82684"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">ingredients</span></p></th>
-<th class="cl-e9a82685"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">quantities</span></p></th>
-<th class="cl-e9a8268e"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">importance</span></p></th>
+<th class="cl-52db4c06"><p class="cl-52db3568"><span class="cl-52d85e9c">ingredients</span></p></th>
+<th class="cl-52db4c07"><p class="cl-52db3568"><span class="cl-52d85e9c">quantities</span></p></th>
+<th class="cl-52db4c10"><p class="cl-52db3568"><span class="cl-52d85e9c">importance</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9a8268f"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">smoked gouda cheese</span></p></td>
-<td class="cl-e9a82690"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">all</span></p></td>
-<td class="cl-e9a82691"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">5</span></p></td>
+<td class="cl-52db4c11"><p class="cl-52db3568"><span class="cl-52d85e9c">smoked gouda cheese</span></p></td>
+<td class="cl-52db4c12"><p class="cl-52db3568"><span class="cl-52d85e9c">all</span></p></td>
+<td class="cl-52db4c1a"><p class="cl-52db3568"><span class="cl-52d85e9c">5</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9a82692"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">potatoes</span></p></td>
-<td class="cl-e9a82693"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">3 lb</span></p></td>
-<td class="cl-e9a82698"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">1</span></p></td>
+<td class="cl-52db4c1b"><p class="cl-52db3568"><span class="cl-52d85e9c">potatoes</span></p></td>
+<td class="cl-52db4c1c"><p class="cl-52db3568"><span class="cl-52d85e9c">3 lb</span></p></td>
+<td class="cl-52db4c24"><p class="cl-52db3568"><span class="cl-52d85e9c">1</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9a82692"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">milk</span></p></td>
-<td class="cl-e9a82693"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">0.5 c</span></p></td>
-<td class="cl-e9a82698"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">3</span></p></td>
+<td class="cl-52db4c1b"><p class="cl-52db3568"><span class="cl-52d85e9c">milk</span></p></td>
+<td class="cl-52db4c1c"><p class="cl-52db3568"><span class="cl-52d85e9c">0.5 c</span></p></td>
+<td class="cl-52db4c24"><p class="cl-52db3568"><span class="cl-52d85e9c">3</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9a82692"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">salt</span></p></td>
-<td class="cl-e9a82693"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">to taste</span></p></td>
-<td class="cl-e9a82698"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">4</span></p></td>
+<td class="cl-52db4c1b"><p class="cl-52db3568"><span class="cl-52d85e9c">salt</span></p></td>
+<td class="cl-52db4c1c"><p class="cl-52db3568"><span class="cl-52d85e9c">to taste</span></p></td>
+<td class="cl-52db4c24"><p class="cl-52db3568"><span class="cl-52d85e9c">4</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9a82699"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">butter</span></p></td>
-<td class="cl-e9a8269a"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">8 tbsp</span></p></td>
-<td class="cl-e9a8269b"><p class="cl-e9a81c2a"><span class="cl-e9a6d72a">2</span></p></td>
+<td class="cl-52db4c25"><p class="cl-52db3568"><span class="cl-52d85e9c">butter</span></p></td>
+<td class="cl-52db4c26"><p class="cl-52db3568"><span class="cl-52d85e9c">8 tbsp</span></p></td>
+<td class="cl-52db4c27"><p class="cl-52db3568"><span class="cl-52d85e9c">2</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -250,38 +240,38 @@ Carola &amp; Nicola &amp; Canela\text{ }Russet
 <li><p><em>Challenge</em>: For the following dataframe</p></li>
 </ol>
 <div class="tabwid">
-<style>.cl-e9b0422e{}.cl-e9ade4d4{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e9aebd96{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e9aec6e2{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6e3{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6ec{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6ed{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6ee{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6ef{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f0{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f1{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f6{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f7{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e9aec6f8{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-e9b0422e">
+<style>.cl-52f50d08{}.cl-52eb6b4a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-52ee017a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-52ee1656{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1657{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1660{width:0.75in;background-color:rgba(229, 229, 229, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1661{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1662{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1663{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee166a{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee166b{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1674{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1675{width:0.75in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1676{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 2pt solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-52ee1677{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(0, 0, 0, 1.00);border-right: 2pt solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table data-quarto-disable-processing="true" class="cl-52f50d08">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-e9aec6e2"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">ingredients</span></p></th>
-<th class="cl-e9aec6e3"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">quantities</span></p></th>
-<th class="cl-e9aec6ec"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">importance</span></p></th>
+<th class="cl-52ee1656"><p class="cl-52ee017a"><span class="cl-52eb6b4a">ingredients</span></p></th>
+<th class="cl-52ee1657"><p class="cl-52ee017a"><span class="cl-52eb6b4a">quantities</span></p></th>
+<th class="cl-52ee1660"><p class="cl-52ee017a"><span class="cl-52eb6b4a">importance</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9aec6ed"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">smoked gouda cheese</span></p></td>
-<td class="cl-e9aec6ee"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">all</span></p></td>
-<td class="cl-e9aec6ef"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">5</span></p></td>
+<td class="cl-52ee1661"><p class="cl-52ee017a"><span class="cl-52eb6b4a">smoked gouda cheese</span></p></td>
+<td class="cl-52ee1662"><p class="cl-52ee017a"><span class="cl-52eb6b4a">all</span></p></td>
+<td class="cl-52ee1663"><p class="cl-52ee017a"><span class="cl-52eb6b4a">5</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9aec6f0"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">potatoes</span></p></td>
-<td class="cl-e9aec6f1"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">3 lb</span></p></td>
-<td class="cl-e9aec6f2"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">1</span></p></td>
+<td class="cl-52ee166a"><p class="cl-52ee017a"><span class="cl-52eb6b4a">potatoes</span></p></td>
+<td class="cl-52ee166b"><p class="cl-52ee017a"><span class="cl-52eb6b4a">3 lb</span></p></td>
+<td class="cl-52ee1674"><p class="cl-52ee017a"><span class="cl-52eb6b4a">1</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9aec6f0"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">milk</span></p></td>
-<td class="cl-e9aec6f1"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">0.5 c</span></p></td>
-<td class="cl-e9aec6f2"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">3</span></p></td>
+<td class="cl-52ee166a"><p class="cl-52ee017a"><span class="cl-52eb6b4a">milk</span></p></td>
+<td class="cl-52ee166b"><p class="cl-52ee017a"><span class="cl-52eb6b4a">0.5 c</span></p></td>
+<td class="cl-52ee1674"><p class="cl-52ee017a"><span class="cl-52eb6b4a">3</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9aec6f0"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">salt</span></p></td>
-<td class="cl-e9aec6f1"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">to taste</span></p></td>
-<td class="cl-e9aec6f2"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">4</span></p></td>
+<td class="cl-52ee166a"><p class="cl-52ee017a"><span class="cl-52eb6b4a">salt</span></p></td>
+<td class="cl-52ee166b"><p class="cl-52ee017a"><span class="cl-52eb6b4a">to taste</span></p></td>
+<td class="cl-52ee1674"><p class="cl-52ee017a"><span class="cl-52eb6b4a">4</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-e9aec6f6"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">butter</span></p></td>
-<td class="cl-e9aec6f7"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">8 tbsp</span></p></td>
-<td class="cl-e9aec6f8"><p class="cl-e9aebd96"><span class="cl-e9ade4d4">2</span></p></td>
+<td class="cl-52ee1675"><p class="cl-52ee017a"><span class="cl-52eb6b4a">butter</span></p></td>
+<td class="cl-52ee1676"><p class="cl-52ee017a"><span class="cl-52eb6b4a">8 tbsp</span></p></td>
+<td class="cl-52ee1677"><p class="cl-52ee017a"><span class="cl-52eb6b4a">2</span></p></td>
 </tr>
 </tbody>
 </table></div>
@@ -321,7 +311,7 @@ Carola &amp; Nicola &amp; Canela\text{ }Russet
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-09.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

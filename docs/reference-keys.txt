@@ -71,6 +71,7 @@ new-functions-in-stata
 c
 matlab
 recap-and-consultation-tips
+clarifying-variables
 narrowing-down-errors
 why-doesnt-my-code-run
 the-code-runs-but-something-is-wrong

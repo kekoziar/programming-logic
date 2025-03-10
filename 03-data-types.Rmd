@@ -2,7 +2,7 @@
 
 ## Variables
 
-Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures _(Kat's note: data structures might be too early, but maybe not.)_
+Now that we understand the structure and logic of algorithms, we can start on how the natural language of algorithms is translated into programming scripts. In order to do this, we need to introduce closely related concepts of variables, data types, and data structures.
 
 A word that people use a lot when referring to computer code is _variable_, but what is a variable?  A variable is a placeholder for some type of data that will be used in computer code.  
 
@@ -21,15 +21,6 @@ ingredient_quantities <- all, 3 lb, 0.5 c, to taste, 8 tbsp
 ### Pro-tip
 
 A common rule to help decide what name to use for a variable is, the name should describe what the data represent.  If we used the term `x` - which is commonly used as a variable in math equations - we wouldn't know what it represents.  Using the word `ingredients` is descriptive, so you have an idea what the data are in the variable - it describes what the variable represents.
-
-Something I'd commonly do when helping researchers with their code, especially when I'd see variable names which are abbreviations, is I'd ask them if the abbreviation is something which is commonly used in their field.  My questions would usually go something like this:
-
-- _So you know, I'm not an expert in your field.  You're the expert.  Can you help me understand a little more about what you're trying to do in the code?_
-- _What does `w_f` represent?_
-- _Is that something someone who is knowledgeable in your field would recognize?_
-- _It's good practice to use self-describing variables which someone in the field would recognize.  It's also a good idea to keep track of information about your data in a README or data dictionary.  Honestly, I've heard a lot of different terms to describe them, but it's basically a file that describes your data.  I can give you an example if you want._
-- Kat's favorite dataset example: Leaf Dataset in UCI Data Science Repository [@leaf_288]
-- _At the top of your code when you define your variables, if the variable name doesn't exactly correlate to something in your dataset's README file, you can add a comment with the exact term._
 
 ## Data Types
 

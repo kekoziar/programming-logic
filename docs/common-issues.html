@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="Here are some common issues that we’ve seen during consultations. While we’ve covered some of these in prior chapters, it’s worth having a list to review.  9.1 Difference between = and == The...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -143,27 +143,27 @@ letters NA.</p>
 <p>Certain programming languages require a character at the end of a line or statement.</p>
 <p><strong>C/C++, Java, and PHP</strong> all require a semicolon <code>;</code> at the end of lines or statements.</p>
 <p>Why do we say <em>statement</em>? Because technically you could write your code</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb57-1"><a href="common-issues.html#cb57-1" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>x <span class="op">==</span> y<span class="op">){</span>cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased &amp; is now </span></span>
-<span id="cb57-2"><a href="common-issues.html#cb57-2" tabindex="-1"></a>equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}else if(x &gt; y){cout &lt;&lt; "</span>x greater </span>
-<span id="cb57-3"><a href="common-issues.html#cb57-3" tabindex="-1"></a>than y<span class="st">";x--cout&lt;&lt;"</span>x was reduced <span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt; fixed &lt;&lt;setprecision(1)</span></span>
-<span id="cb57-4"><a href="common-issues.html#cb57-4" tabindex="-1"></a><span class="op">&lt;&lt;</span>x<span class="op">&lt;&lt;</span>endl<span class="op">;}</span> <span class="cf">else</span> <span class="op">{</span>cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased </span></span>
-<span id="cb57-5"><a href="common-issues.html#cb57-5" tabindex="-1"></a><span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb58-1"><a href="common-issues.html#cb58-1" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>x <span class="op">==</span> y<span class="op">){</span>cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased &amp; is now </span></span>
+<span id="cb58-2"><a href="common-issues.html#cb58-2" tabindex="-1"></a>equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}else if(x &gt; y){cout &lt;&lt; "</span>x greater </span>
+<span id="cb58-3"><a href="common-issues.html#cb58-3" tabindex="-1"></a>than y<span class="st">";x--cout&lt;&lt;"</span>x was reduced <span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt; fixed &lt;&lt;setprecision(1)</span></span>
+<span id="cb58-4"><a href="common-issues.html#cb58-4" tabindex="-1"></a><span class="op">&lt;&lt;</span>x<span class="op">&lt;&lt;</span>endl<span class="op">;}</span> <span class="cf">else</span> <span class="op">{</span>cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span>x<span class="op">++;</span>cout<span class="op">&lt;&lt;</span><span class="st">"x was increased </span></span>
+<span id="cb58-5"><a href="common-issues.html#cb58-5" tabindex="-1"></a><span class="op">&amp;</span> is now equal to <span class="st">"&lt;&lt;fixed&lt;&lt;setprecision(1)&lt;&lt;x&lt;&lt;endl;}</span></span></code></pre></div>
 <p>But, there’s an error in that code. A required semicolon is missing.
 Can you find it?</p>
 <p>Having each statement on its own line is easier to read.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb58-1"><a href="common-issues.html#cb58-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb58-2"><a href="common-issues.html#cb58-2" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span></span>
-<span id="cb58-3"><a href="common-issues.html#cb58-3" tabindex="-1"></a>  x<span class="op">++;</span></span>
-<span id="cb58-4"><a href="common-issues.html#cb58-4" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb58-5"><a href="common-issues.html#cb58-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb58-6"><a href="common-issues.html#cb58-6" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x greater than y"</span><span class="op">;</span></span>
-<span id="cb58-7"><a href="common-issues.html#cb58-7" tabindex="-1"></a>  x<span class="op">--</span></span>
-<span id="cb58-8"><a href="common-issues.html#cb58-8" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was reduced &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb58-9"><a href="common-issues.html#cb58-9" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb58-10"><a href="common-issues.html#cb58-10" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span></span>
-<span id="cb58-11"><a href="common-issues.html#cb58-11" tabindex="-1"></a>  x<span class="op">++;</span></span>
-<span id="cb58-12"><a href="common-issues.html#cb58-12" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb58-13"><a href="common-issues.html#cb58-13" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb59-1"><a href="common-issues.html#cb59-1" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>x <span class="op">==</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb59-2"><a href="common-issues.html#cb59-2" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"values are equal"</span><span class="op">;</span></span>
+<span id="cb59-3"><a href="common-issues.html#cb59-3" tabindex="-1"></a>  x<span class="op">++;</span></span>
+<span id="cb59-4"><a href="common-issues.html#cb59-4" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb59-5"><a href="common-issues.html#cb59-5" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>x <span class="op">&gt;</span> y<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb59-6"><a href="common-issues.html#cb59-6" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x greater than y"</span><span class="op">;</span></span>
+<span id="cb59-7"><a href="common-issues.html#cb59-7" tabindex="-1"></a>  x<span class="op">--</span></span>
+<span id="cb59-8"><a href="common-issues.html#cb59-8" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was reduced &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb59-9"><a href="common-issues.html#cb59-9" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb59-10"><a href="common-issues.html#cb59-10" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x must be less than y"</span><span class="op">;</span></span>
+<span id="cb59-11"><a href="common-issues.html#cb59-11" tabindex="-1"></a>  x<span class="op">++;</span></span>
+<span id="cb59-12"><a href="common-issues.html#cb59-12" tabindex="-1"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"x was increased &amp; is now equal to "</span> <span class="op">&lt;&lt;</span> fixed <span class="op">&lt;&lt;</span> setprecision<span class="op">(</span><span class="dv">1</span><span class="op">)</span> <span class="op">&lt;&lt;</span> x <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb59-13"><a href="common-issues.html#cb59-13" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </div>
 <div id="order-of-execution" class="section level2" number="9.5">
 <h2>
@@ -246,10 +246,10 @@ when reading from or writing to files</p>
 many of the keywords and shortcuts are used to create the <em>path</em> to the files.
 There are recommended lessons for learning the Bash command line in the Resources chapter.</p>
 <p>Here is an example loading a CSV file in Python</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="common-issues.html#cb61-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb61-2"><a href="common-issues.html#cb61-2" tabindex="-1"></a></span>
-<span id="cb61-3"><a href="common-issues.html#cb61-3" tabindex="-1"></a><span class="co"># updates the event list based on previously created csv</span></span>
-<span id="cb61-4"><a href="common-issues.html#cb61-4" tabindex="-1"></a>events_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/events.csv"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="common-issues.html#cb62-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb62-2"><a href="common-issues.html#cb62-2" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="common-issues.html#cb62-3" tabindex="-1"></a><span class="co"># updates the event list based on previously created csv</span></span>
+<span id="cb62-4"><a href="common-issues.html#cb62-4" tabindex="-1"></a>events_df <span class="op">=</span> pd.read_csv(<span class="st">"../data/events.csv"</span>)</span></code></pre></div>
 <p>Here is the folder structure. Folders have a <code>/</code> at the end of their name, while
 files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
 <pre><code>- data/
@@ -258,7 +258,7 @@ files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
   - myPythonFile.ipynb</code></pre>
 <hr>
 <p>Here is an example of writing a CSV file in R</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">mydata</span>, file <span class="op">=</span> <span class="st">"output/census_names2.csv"</span>, row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>The folder structure is</p>
 <pre><code>- project folder/
@@ -267,18 +267,18 @@ files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
     - census_names2.csv</code></pre>
 <hr>
 <p>Here is an example of saving an HTML file (which is just a text file) in Python</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="common-issues.html#cb65-1" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb65-2"><a href="common-issues.html#cb65-2" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb65-3"><a href="common-issues.html#cb65-3" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="common-issues.html#cb65-4" tabindex="-1"></a>year <span class="op">=</span> <span class="st">"1995"</span></span>
-<span id="cb65-5"><a href="common-issues.html#cb65-5" tabindex="-1"></a>save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
-<span id="cb65-6"><a href="common-issues.html#cb65-6" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="</span><span class="op">+</span>year</span>
-<span id="cb65-7"><a href="common-issues.html#cb65-7" tabindex="-1"></a></span>
-<span id="cb65-8"><a href="common-issues.html#cb65-8" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
-<span id="cb65-9"><a href="common-issues.html#cb65-9" tabindex="-1"></a>webpage <span class="op">=</span> requests.get(url)</span>
-<span id="cb65-10"><a href="common-issues.html#cb65-10" tabindex="-1"></a></span>
-<span id="cb65-11"><a href="common-issues.html#cb65-11" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb65-12"><a href="common-issues.html#cb65-12" tabindex="-1"></a>  <span class="bu">file</span>.write(webpage.content) </span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="common-issues.html#cb66-1" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb66-2"><a href="common-issues.html#cb66-2" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb66-3"><a href="common-issues.html#cb66-3" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="common-issues.html#cb66-4" tabindex="-1"></a>year <span class="op">=</span> <span class="st">"1995"</span></span>
+<span id="cb66-5"><a href="common-issues.html#cb66-5" tabindex="-1"></a>save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb66-6"><a href="common-issues.html#cb66-6" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year="</span><span class="op">+</span>year</span>
+<span id="cb66-7"><a href="common-issues.html#cb66-7" tabindex="-1"></a></span>
+<span id="cb66-8"><a href="common-issues.html#cb66-8" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb66-9"><a href="common-issues.html#cb66-9" tabindex="-1"></a>webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb66-10"><a href="common-issues.html#cb66-10" tabindex="-1"></a></span>
+<span id="cb66-11"><a href="common-issues.html#cb66-11" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb66-12"><a href="common-issues.html#cb66-12" tabindex="-1"></a>  <span class="bu">file</span>.write(webpage.content) </span></code></pre></div>
 <p>The folder structure is</p>
 <pre><code>- save-linked-files/
   - save-linked-files.ipynb
@@ -318,7 +318,7 @@ files will have an extension (<code>.csv</code>, <code>.r</code>, etc)</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-09.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

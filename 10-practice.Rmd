@@ -67,8 +67,6 @@ __Exercise__: Review the code chunk below and identify on which line each `for` 
   - Starts on line:
   - Ends on line:
   
-- (sneaky third for in line 43?)
-  
 - First `if else` statement
   - Starts on line:
   - Ends on line:
@@ -155,6 +153,8 @@ __Exercise__: Review the code chunk below and identify on which line each `for` 
 - Second loop
   - Starts on line: 40
   - Ends on line: 52 (encompasses entire code block line 40 until end of line 52)
+  
+- _You may have noticed another loop on line 43. If so, great job! That one originally snuck by the instructors when putting together this answer key. We're leaving it as is though, as a reminder that even more experienced programmers miss things and make mistakes. So if you didn't catch this additional loop, you're in good company!_ 
   
 - First `if else` statement
   - Starts on line: 26
