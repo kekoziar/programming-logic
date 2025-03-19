@@ -311,3 +311,44 @@ make_popcorn(2)
 </details>
 
 
+## Language examples: Formatting may vary
+
+**Python** 
+
+```python
+for x in range(0, 5):
+  print(x)
+```
+<hr>
+
+**R**
+
+```r
+for (x in 0:5) {
+  print(x)
+}
+```
+<hr>
+
+**C/C++** 
+
+```c
+
+```
+<hr>
+
+**PHP** 
+
+```php
+
+```
+<hr>
+
+**Bash**
+
+```bash
+
+```
+
+
+<hr>

@@ -570,3 +570,57 @@ Often when researchers are developing a script, they will use test case to devel
 
 If a step is missed, it can be disastrous.  I can attest. I wrote a script to rename about 500 files, and in my hubris of being an awesome coder, forgot to test it on a few cases before using it on all of the files. I forgot to change the single rename `("test-case")` to something that incorporated the loop `("test-case"+x)` and when the loop was finished, wondered why I went from 500 to only one file in the folder.  Luckily, I always backup my data files, so it was an easy mistake to remedy _(and makes for a good story on the importance of data backup)_.
 
+## Language examples: Formatting may vary
+
+Programming languages may have specific formatting for loops. This may mean certain brackets must be used, tab indents are needed, or ranges are specified a certain way.
+
+**Python** requires indentation for code blocks.  Code blocks in different structures must be aligned with the same indentation.
+
+Programming structures such as `for` expect `:` at the end of each statement with the subsequent code block intented by one
+```python
+for x in range(0, 5):
+  print(x)
+```
+<hr>
+
+R does not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
+
+Instead of `:` **R** makes use of curly brackets `{}` to indicate the main body  of a `for` statement.
+
+```r
+for (x in 0:5) {
+  print(x)
+}
+```
+<hr>
+The following example is **C/C++** syntax.  One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
+
+**C/C++** syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
+
+```c
+
+```
+<hr>
+
+**PHP** is very similar to C/C++, but is used for web development.
+
+```php
+
+```
+<hr>
+
+With **Bash**, you need to be careful of spaces around your operators and parentheses. (cheatsheets https://ss64.com/bash/if.html https://devhints.io/bash#conditionals)
+
+This Bash script example compares numbers
+
+```bash
+
+```
+
+This Bash script example compares text
+
+```bash
+
+```
+
+<hr>
