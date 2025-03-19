@@ -2,6 +2,8 @@
 
 In this section, we'll work on annotating and understanding unfamiliar code.
 
+The code examples may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about using what we've learned about programming logic as a lens through which to begin interpreting code.
+
 ## New types of conditions (in SQL)
 
 Consider the following SQL command:
@@ -54,8 +56,6 @@ This code is returning a subset of data from the `OceanBuoys` table. Starting fr
 Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.
 
 Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested `for` loops, and nested `if else` statements with the `for` loops and within other `if else` statements.\
-
-The code may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends. 
 
 __Exercise__: Review the code chunk below and identify on which line each `for` loop and each `if else` statement starts and ends. 
 
