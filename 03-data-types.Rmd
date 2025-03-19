@@ -180,7 +180,7 @@ Carola & Nicola & Canela\text{ }Russet
 \end{bmatrix}
 \end{equation}<br>What is the value of `potatoes[3,2]`?
 
-4. _Challenge_: For the following dataframe
+4. _Challenge_: For the following dataframe, named `df`,
 ```{r df_exercise, echo = FALSE, message = FALSE, warning = FALSE}
 
 library(flextable)
@@ -215,3 +215,21 @@ ft <- flextable(table_demo) %>%
 ft 
 ```
 What do you think `df$ingredients[3]` would return? 
+
+<details>
+<summary>Answers</summary>
+
+1. Your answer will vary! Some examples:
+
+- `temperature = 75 (integer)`
+- `precipitation = 1.2 (float)`
+- `location = California (string)`
+
+2. The value of `cheese[4]` is `Muenster`, the fourth item in the `cheese` array.
+
+3. The value of `potatoes[3,2]` is `Kennebec`, which is the value in row 3, column 2.
+
+4. `df$ingredients[3]` would return `milk`. We can guess that `df$ingredients` means the `ingredients` column in the dataframe `df` (even though the `$` symbol is new). From there, we can use the same indexing approach as the other questions, such that `df$ingredients[3]` indicates the third rows down in the `ingredients` column, which is `milk`. 
+
+
+</details>\
