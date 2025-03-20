@@ -180,11 +180,15 @@ An example in R is
 round(c(1.4, 2.5, 3.5))
 ```
 
-Another argument common in many functions which deal with statistics is how to handle missing or `NA` values, for example, the function `mean()`: `mean(x, na.rm = FALSE)` where the default value of `na.rm` is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
+Another argument common in many functions which deal with calculating something is how to handle missing or `NA` values. 
+
+For example, the function [`mean()` in R](https://search.r-project.org/R/refmans/base/html/mean.html) is `mean(x, trim = 0, na.rm = FALSE)`. The default value of `na.rm` (which you can think of as "NA remove") is `FALSE`, indicating that `NA` values will _not_ be removed from the calculation. 
 
 Optional arguments like this may come with a pre-supplied default, in this case that `na.rm = FALSE` and any `NA`values will be retained, unless this argument is manually changed to `TRUE`.\
 
-When working with functions, which is the vast majority of programming, it is important to keep in mind a two things
+## Function Takeaways
+
+When working with functions, which is the vast majority of programming, it is important to keep in mind two things:
 
 1. The arguments in a function 
 2. Which arguments are optional, and what are their defaults
@@ -205,7 +209,7 @@ A good rule of thumb is if it _seems_ like the function you want is broadly usef
 
 Finding the 'right' library for the function you need can be overwhelming, but a good starting point is the official library collection for a programming language, such as [CRAN for R](https://cran.r-project.org/web/views/) or [PyPI for Python](https://pypi.org/).
 
-### Accessing functions in libraries
+### Accessing Functions in Libraries
 
 The syntax for accessing functions in libraries varies by programming language but follows the general process of:
 
@@ -213,7 +217,7 @@ The syntax for accessing functions in libraries varies by programming language b
 2. Load or import the library. You will need to do this every time you want to access a function in a library. By convention, libraries are loaded at the top of a script, so you, and other people, can see at a glance what libraries are needed to run the script.
 3. Use the functions as normal.
 
-### Function names
+### Function Names
 
 There are only so many function names that make sense in the English language, so there may be functions from _different libraries_ that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
 
@@ -291,17 +295,16 @@ Let's return to the section 2 activity where your group created an algorithm to 
 
 from Steph import make_popcorn()
 
-# set arguments and defaults
-
-make_popcorn(type = microwave, time = 2 minutes, 
-  flavor = movie_theater_flavor, seasoning = TRUE)
+# The arguments and defaults for this library is
+#
+# make_popcorn(quantity_popcorn, type = microwave, time = 2, 
+#              butter = movie_theater_flavor, seasoning = TRUE)
+#
+# where time is in minutes and quantity_popcorn is in bags
 
 # example in use
-# keeping all defaults
-# except changing time because this microwave 
-# is known to burn popcorn at recommended time
 
-make_popcorn(time = 1.5 minutes)
+make_popcorn(quantity_popcorn = 1, time = 1.5)
 ```
 
 ```
@@ -311,8 +314,10 @@ make_popcorn(time = 1.5 minutes)
 from Kat import make_popcorn()
 
 # The arguments and defaults for this library is
+#
 # make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, 
 #              butter = TRUE, salt = "light")
+#
 # where quantity is in tbsp
 
 # example in use
@@ -323,22 +328,17 @@ make_popcorn(2)
 </details>
 
 
-## Language examples: Formatting may vary
+## Language examples: Formatting may vary [may not need in this section, since round() and mean() included above]
 
 **Python** 
 
 ```python
-for x in range(0, 5):
-  print(x)
 ```
 <hr>
 
 **R**
 
 ```r
-for (x in 0:5) {
-  print(x)
-}
 ```
 <hr>
 
