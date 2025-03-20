@@ -66,7 +66,7 @@ define function peel_vegetable(vegetable, peeler):
 // end function definition
 ```
 
-Now the `peel_vegetable` function can be used with multiple objects - well, it could before, but using the variable or argument `potato` would be confusing when applied to something else.
+Now the `peel_vegetable` function can be used with multiple objects. (Well, it could before, but using the function name `peel_potato` would be confusing when trying to peel `carrot` or `zucchini`. Naming matters, especially for understandability!)
 
 Now that we've created a function for peeling vegetables, our algorithm might look like this
 
@@ -81,22 +81,34 @@ for potato in potatoes:
 // end for-statement  
 ```
 
-### Programming Concepts
+### New Programming Concepts
 
-You may have noticed a couple of statements that adds a variable to something and saves it to itself or does something to a variable and saves it to itself.  These commonly occur in programming.
+Sometimes, we may want to _add_ a variable, or function output, to an existing variable type that can accept new information. Other times, we may want to _change_ a variable in a completely different way. 
 
 #### Adding to a Variable
 
-These two examples add to something that already exists
+These two examples add to something that already exists:
 
 - `bowl <- bowl+peel_vegetable(potato)`
 - `x <- 0; x <- x + 1`
 
 A key piece of info here is the __original variable needs to be of a data type that can accept the new piece of data__.\  
 
-We defined the bowl as an array `[]`, so we can keep adding the same data type (potato, maybe vegetable) to the array.\  
+We defined the bowl as an array `[]`, so we can keep adding the same data type (potato, maybe vegetable) to the array.\ 
 
-If we tried to add two different data types
+```
+potatoes <- 16
+peeler <- "swiss peeler"
+bowl <- [] // empty array
+
+for potato in potatoes:
+  bowl <- bowl+peel_vegetable(potato, peeler)
+
+// bowl array after for loop finishes
+[potato, potato, potato, potato,...] // 16 'potato' items in array
+```
+
+For the other example, if we tried to add two different data types
 
 - `x <- "zero"; x <- x + 1`
 
