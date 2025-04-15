@@ -139,7 +139,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-03-10}
+\date{2025-04-15}
 
 \begin{document}
 \maketitle
@@ -499,7 +499,7 @@ For the next items in review, we want you to type the answer, but don't press en
   \end{bmatrix}
   \end{equation}What is the value of \texttt{potatoes{[}3,2{]}}?
 \item
-  \emph{Challenge}: For the following dataframe
+  \emph{Challenge}: For the following dataframe, named \texttt{df},
 \end{enumerate}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
@@ -589,6 +589,38 @@ For the next items in review, we want you to type the answer, but don't press en
 \renewcommand*{\arraystretch}{1}
 
 What do you think \texttt{df\$ingredients{[}3{]}} would return?
+
+Answers
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Your answer will vary! Some examples:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{temperature\ =\ 75\ (integer)}
+\item
+  \texttt{precipitation\ =\ 1.2\ (float)}
+\item
+  \texttt{location\ =\ California\ (string)}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  The value of \texttt{cheese{[}4{]}} is \texttt{Muenster}, the fourth item in the \texttt{cheese} array.
+\item
+  The value of \texttt{potatoes{[}3,2{]}} is \texttt{Kennebec}, which is the value in row 3, column 2.
+\item
+  \texttt{df\$ingredients{[}3{]}} would return \texttt{milk}. We can guess that \texttt{df\$ingredients} means the \texttt{ingredients} column in the dataframe \texttt{df} (even though the \texttt{\$} symbol is new). From there, we can use the same indexing approach as the other questions, such that \texttt{df\$ingredients{[}3{]}} indicates the third rows down in the \texttt{ingredients} column, which is \texttt{milk}.
+\end{enumerate}
+
+\hfill\break
 
 \chapter{Loops}\label{loops}
 
@@ -745,6 +777,10 @@ Your paper is formatted so it's easy to see what's going on with variable during
 The next step is to fill in the values for each iteration of the loop.
 
 Your paper will now look something like this:
+
+\begin{verbatim}
+## Warning: package 'ftExtra' was built under R version 4.4.2
+\end{verbatim}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -1635,6 +1671,59 @@ Often when researchers are developing a script, they will use test case to devel
 
 If a step is missed, it can be disastrous. I can attest. I wrote a script to rename about 500 files, and in my hubris of being an awesome coder, forgot to test it on a few cases before using it on all of the files. I forgot to change the single rename \texttt{("test-case")} to something that incorporated the loop \texttt{("test-case"+x)} and when the loop was finished, wondered why I went from 500 to only one file in the folder. Luckily, I always backup my data files, so it was an easy mistake to remedy \emph{(and makes for a good story on the importance of data backup)}.
 
+\section{Language examples: Formatting may vary}\label{language-examples-formatting-may-vary}
+
+Programming languages may have specific formatting for loops. This may mean certain brackets must be used, tab indents are needed, or ranges are specified a certain way.
+
+Formatting of outputs may also look slightly different, with some languages printing each output iteration on a new line, and some not.
+
+\textbf{Python} requires indentation for code blocks. Code blocks in different structures must be aligned with the same indentation.
+
+Programming structures such as \texttt{for} expect \texttt{:} at the end of each statement with the subsequent code block indented by one.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{):}
+  \BuiltInTok{print}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+R does not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
+
+Instead of \texttt{:} \textbf{R} makes use of curly brackets \texttt{\{\}} to indicate the main body of a \texttt{for} statement.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (x }\ControlFlowTok{in} \DecValTok{0}\SpecialCharTok{:}\DecValTok{5}\NormalTok{) \{}
+  \FunctionTok{print}\NormalTok{(x)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+The following example is \textbf{C/C++} syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
+
+\textbf{C/C++} syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
+
+Note that \textbf{C/C++} also uses the \texttt{cout} command to specify what should be returned to the console, rather than \texttt{print} like in \textbf{Python} or \textbf{R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ i }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}=} \DecValTok{5}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++)} \OperatorTok{\{}
+\NormalTok{  cout }\OperatorTok{\textless{}\textless{}}\NormalTok{ i}\OperatorTok{;}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{PHP} is very similar to C/C++, but is used for web development. Note that \textbf{PHP} uses \texttt{echo} rather than \texttt{cout} or \texttt{print} to specify what should be returned to the console.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (}\VariableTok{$x} \OperatorTok{=} \DecValTok{0}\OtherTok{;} \VariableTok{$x} \OperatorTok{\textless{}=} \DecValTok{5}\OtherTok{;} \VariableTok{$x}\OperatorTok{++}\NormalTok{) \{}
+  \KeywordTok{echo} \VariableTok{$x}\StringTok{";}
+\StringTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
 \chapter{Conditionals and Making Choices}\label{conditionals-and-making-choices}
 
 \section{\texorpdfstring{\texttt{if} Statements}{if Statements}}\label{if-statements}
@@ -1914,13 +2003,13 @@ Error: unexpected ')' in:
     print("values are equal"))"
 \end{verbatim}
 
-\section{Language examples: Formatting may vary}\label{language-examples-formatting-may-vary}
+\section{Language examples: Formatting may vary}\label{language-examples-formatting-may-vary-1}
 
-Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
+Much like with \texttt{for} loops, programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
 \textbf{Python} requires indentation for code blocks. Code blocks in different structures must be aligned with the same indentation.
 
-Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block intented by one
+Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \texttt{for} expects \texttt{:} at the end of each statement with the subsequent code block indented by one
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1933,9 +2022,7 @@ Programming structures, such as \texttt{if}, \texttt{else}, \texttt{elif}, or \t
 \end{Highlighting}
 \end{Shaded}
 
-The next language examples do not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
-
-\textbf{R} makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement.
+\textbf{R} makes use of curly brackets \texttt{\{\}} to indicate each section of an \texttt{if\ else} statement. R does not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1949,9 +2036,7 @@ The next language examples do not require indentation for code blocks; however, 
 \end{Highlighting}
 \end{Shaded}
 
-The following example is \textbf{C/C++} syntax. One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
-
-\textbf{C/C++} syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
+\textbf{C/C++} syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block and uses \texttt{cout} rather than \texttt{print} to specify what should be returned in the console.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1965,7 +2050,7 @@ The following example is \textbf{C/C++} syntax. One big difference between C/C++
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{PHP} is very similar to C/C++, but is used for web development.
+\textbf{PHP} is very similar to C/C++ with curly brackets and semicolons, but uses \texttt{echo} rather than \texttt{cout}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1979,7 +2064,7 @@ The following example is \textbf{C/C++} syntax. One big difference between C/C++
 \end{Highlighting}
 \end{Shaded}
 
-With \textbf{Bash}, you need to be careful of spaces around your operators and parentheses. (cheatsheets \url{https://ss64.com/bash/if.html} \url{https://devhints.io/bash\#conditionals})
+Here's a new language: \textbf{Bash}. This language is often used from the command line to perform operations on files. With \textbf{Bash}, you need to be careful of spaces around your operators and parentheses. (cheatsheets \url{https://ss64.com/bash/if.html} \url{https://devhints.io/bash\#conditionals})
 
 This Bash script example compares numbers
 
@@ -2015,6 +2100,212 @@ This Bash script example compares text
   What are some of the differences you can spot between the different languages?
 \item
   What are the similarities?
+\end{itemize}
+
+\chapter{Practice}\label{practice}
+
+In this section, we'll practice applying our understanding of \texttt{for} loops and \texttt{if\ else} conditional statements to unfamiliar code.
+
+The code example below may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about using what we've learned about programming logic as a lens through which to begin interpreting code.
+
+\section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
+
+One way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions - we want to understand the order of operations of each thing that is being done.
+
+Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested \texttt{for} loops, and nested \texttt{if\ else} statements with the \texttt{for} loops and within other \texttt{if\ else} statements.\\
+
+\textbf{Exercise}: Review the code chunk below and identify on which line each \texttt{for} loop and each \texttt{if\ else} statement starts and ends.
+
+\begin{itemize}
+\tightlist
+\item
+  First \texttt{for} loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Second \texttt{for} loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  First \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Second \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Third \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\item
+  Fourth \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line:
+  \item
+    Ends on line:
+  \end{itemize}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Code to scrape data from website}
+
+\FloatTok{1.}\NormalTok{  base\_url }\OperatorTok{=} \StringTok{"https://nces.ed.gov/ipeds/datacenter/"}
+\FloatTok{2.}\NormalTok{  data\_url }\OperatorTok{=} \StringTok{"DataFiles.aspx?"}
+\FloatTok{3.}\NormalTok{  year\_base }\OperatorTok{=} \StringTok{"year="}
+\FloatTok{4.}\NormalTok{  years }\OperatorTok{=}\NormalTok{ [}\StringTok{"1995"}\NormalTok{, }\StringTok{"1996"}\NormalTok{, }\StringTok{"1997"}\NormalTok{, }\StringTok{"1998"}\NormalTok{]}
+\FloatTok{5.}\NormalTok{  session\_id }\OperatorTok{=} \StringTok{"\&sid=4f8f293f{-}df75{-}42cd{-}9cc0{-}ed184270cf17\&rtid=7"}
+\FloatTok{6.} 
+\FloatTok{7.}  \CommentTok{\# what type of files do you want to save?}
+\FloatTok{8.}\NormalTok{  file\_type }\OperatorTok{=}\NormalTok{ [}\StringTok{"zip"}\NormalTok{,}\StringTok{"csv"}\NormalTok{]}
+\FloatTok{9.} 
+\FloatTok{10.} \CommentTok{\# where do you want to save locally?}
+\FloatTok{11.} 
+\FloatTok{12.} \CommentTok{\# save\_loc is redundant, but a reminder that you should have locally folders that reflect the years, }
+\FloatTok{13.} \CommentTok{\# because that\textquotesingle{}s where below is saving to}
+\FloatTok{14.}\NormalTok{ save\_loc }\OperatorTok{=}\NormalTok{ years }
+\FloatTok{15.} 
+\FloatTok{16.} \CommentTok{\# what kind of prefix do you want on your files}
+\FloatTok{17.}\NormalTok{ save\_prefix }\OperatorTok{=} \StringTok{"ipeds\_"} 
+\FloatTok{18.} 
+\FloatTok{19.} \CommentTok{\# scrape}
+\FloatTok{20.} \ControlFlowTok{for}\NormalTok{ year }\KeywordTok{in}\NormalTok{ years:}
+\FloatTok{21.}\NormalTok{     url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_url}\OperatorTok{+}\NormalTok{year\_base}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\NormalTok{session\_id }
+\FloatTok{22.}\NormalTok{     webpage }\OperatorTok{=}\NormalTok{ requests.get(url)}
+\FloatTok{23.}\NormalTok{     soup }\OperatorTok{=}\NormalTok{ BeautifulSoup(webpage.content, }\StringTok{\textquotesingle{}html.parser\textquotesingle{}}\NormalTok{)}
+\FloatTok{24.} 
+\FloatTok{25.} 
+\FloatTok{26.}     \ControlFlowTok{if}\NormalTok{ os.path.isdir(}\StringTok{"./"}\OperatorTok{+}\NormalTok{year):}
+\FloatTok{27.}         \CommentTok{\# notice output path has "year" as a variable indicating folders}
+\FloatTok{28.}\NormalTok{         output\_path }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"\_"}\OperatorTok{+}\StringTok{".html"}
+\FloatTok{29.}     
+\FloatTok{30.}         \ControlFlowTok{if}\NormalTok{ os.path.exists(output\_path):}
+\FloatTok{31.}             \BuiltInTok{print}\NormalTok{(output\_path}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
+\FloatTok{32.}         \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{33.}             \CommentTok{\# saving the html file}
+\FloatTok{34.}             \BuiltInTok{print}\NormalTok{(}\StringTok{"saving "}\OperatorTok{+}\NormalTok{output\_path)}
+\FloatTok{35.}     
+\FloatTok{36.}             \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(output\_path, }\StringTok{\textquotesingle{}wb\textquotesingle{}}\NormalTok{) }\ImportTok{as} \BuiltInTok{file}\NormalTok{:}
+\FloatTok{37.}                 \BuiltInTok{file}\NormalTok{.write(webpage.content) }
+\FloatTok{38.}             
+\FloatTok{39.}         \CommentTok{\# saving files linked on original html page which meet file type requirement}
+\FloatTok{40.}         \ControlFlowTok{for}\NormalTok{ link }\KeywordTok{in}\NormalTok{ soup.find\_all(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{)[}\DecValTok{0}\NormalTok{:}\DecValTok{16}\NormalTok{]:  }
+\FloatTok{41.}\NormalTok{             data\_target }\OperatorTok{=}\NormalTok{ link.get(}\StringTok{\textquotesingle{}href\textquotesingle{}}\NormalTok{)}
+\FloatTok{42.}             \CommentTok{\# data\_target[{-}3:]}
+\FloatTok{43.}             \ControlFlowTok{if} \BuiltInTok{any}\NormalTok{(extension }\OperatorTok{==}\NormalTok{ data\_target[}\OperatorTok{{-}}\DecValTok{3}\NormalTok{:] }\ControlFlowTok{for}\NormalTok{ extension }\KeywordTok{in}\NormalTok{ file\_type):}
+\FloatTok{44.}\NormalTok{                 wget\_url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_target}
+\FloatTok{45.}\NormalTok{                 wget\_save }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{data\_target.replace(}\StringTok{"/"}\NormalTok{,}\StringTok{"{-}"}\NormalTok{)}
+\FloatTok{46.}     
+\FloatTok{47.}                 \ControlFlowTok{if}\NormalTok{ os.path.exists(wget\_save):}
+\FloatTok{48.}                     \BuiltInTok{print}\NormalTok{(wget\_save}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
+\FloatTok{49.}                 \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{50.}                     \BuiltInTok{print}\NormalTok{(}\StringTok{"SAVING "}\OperatorTok{+}\NormalTok{ wget\_url}\OperatorTok{+} \StringTok{" at local location: "}\OperatorTok{+}\NormalTok{wget\_save)}
+\FloatTok{51.}\NormalTok{                     wget.download(wget\_url,wget\_save)}
+\FloatTok{52.}\NormalTok{                     time.sleep(}\FloatTok{.25}\NormalTok{) }\CommentTok{\# be kind, don\textquotesingle{}t look like a DDOS attack}
+\FloatTok{53.}     \ControlFlowTok{else}\NormalTok{:}
+\FloatTok{54.}         \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{!!! save directory "}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{" does NOT exist. please create}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Start and end locations
+
+\begin{itemize}
+\item
+  First loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 20
+  \item
+    Ends on line: 54 (encompasses entire code block line 20 until end of line 54)
+  \end{itemize}
+\item
+  Second loop
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 40
+  \item
+    Ends on line: 52 (encompasses entire code block line 40 until end of line 52)
+  \end{itemize}
+\item
+  \emph{You may have noticed another loop on line 43. If so, great job! That one originally snuck by the instructors when putting together this answer key. We're leaving it as is though, as a reminder that even more experienced programmers miss things and make mistakes. So if you didn't catch this additional loop, you're in good company!}
+\item
+  First \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 26
+  \item
+    Ends on line: 54 (the matching \texttt{else} is on line 53, with end of action on line 54)
+  \end{itemize}
+\item
+  Second \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 30
+  \item
+    Ends on line: 37 (matching \texttt{else} is on line 32, with end of action on line 37)
+  \end{itemize}
+\item
+  Third \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 43
+  \item
+    Ends on line: 45 (no matching \texttt{else}, ends on line 45 and goes into next \texttt{if})
+  \end{itemize}
+\item
+  Fourth \texttt{if\ else} statement
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Starts on line: 47
+  \item
+    Ends on line: 52 (matching \texttt{else} is on line 49, with end of action on line 52)
+  \end{itemize}
 \end{itemize}
 
 \chapter{Functions}\label{functions}
@@ -2089,7 +2380,7 @@ define function peel_vegetable(vegetable, peeler):
 // end function definition
 \end{verbatim}
 
-Now the \texttt{peel\_vegetable} function can be used with multiple objects - well, it could before, but using the variable or argument \texttt{potato} would be confusing when applied to something else.
+Now the \texttt{peel\_vegetable} function can be used with multiple objects. (Well, it could before, but using the function name \texttt{peel\_potato} would be confusing when trying to peel \texttt{carrot} or \texttt{zucchini}. Naming matters, especially for understandability!)
 
 Now that we've created a function for peeling vegetables, our algorithm might look like this
 
@@ -2104,13 +2395,13 @@ for potato in potatoes:
 // end for-statement  
 \end{verbatim}
 
-\subsection{Programming Concepts}\label{programming-concepts}
+\subsection{New Programming Concepts}\label{new-programming-concepts}
 
-You may have noticed a couple of statements that adds a variable to something and saves it to itself or does something to a variable and saves it to itself. These commonly occur in programming.
+Sometimes, we may want to \emph{add} a variable, or function output, to an existing variable type that can accept new information. Other times, we may want to \emph{change} a variable in a completely different way.
 
 \subsubsection{Adding to a Variable}\label{adding-to-a-variable}
 
-These two examples add to something that already exists
+These two examples add to something that already exists:
 
 \begin{itemize}
 \tightlist
@@ -2124,7 +2415,19 @@ A key piece of info here is the \textbf{original variable needs to be of a data 
 
 We defined the bowl as an array \texttt{{[}{]}}, so we can keep adding the same data type (potato, maybe vegetable) to the array.~
 
-If we tried to add two different data types
+\begin{verbatim}
+potatoes <- 16
+peeler <- "swiss peeler"
+bowl <- [] // empty array
+
+for potato in potatoes:
+  bowl <- bowl+peel_vegetable(potato, peeler)
+
+// bowl array after for loop finishes
+[potato, potato, potato, potato,...] // 16 'potato' items in array
+\end{verbatim}
+
+For the other example, if we tried to add two different data types
 
 \begin{itemize}
 \tightlist
@@ -2207,11 +2510,15 @@ An example in R is
 ## [1] 1 2 4
 \end{verbatim}
 
-Another argument common in many functions which deal with statistics is how to handle missing or \texttt{NA} values, for example, the function \texttt{mean()}: \texttt{mean(x,\ na.rm\ =\ FALSE)} where the default value of \texttt{na.rm} is \texttt{FALSE}, indicating that \texttt{NA} values will \emph{not} be removed from the calculation.
+Another argument common in many functions which deal with calculating something is how to handle missing or \texttt{NA} values.
+
+For example, the function \href{https://search.r-project.org/R/refmans/base/html/mean.html}{\texttt{mean()} in R} is \texttt{mean(x,\ trim\ =\ 0,\ na.rm\ =\ FALSE)}. The default value of \texttt{na.rm} (which you can think of as ``NA remove'') is \texttt{FALSE}, indicating that \texttt{NA} values will \emph{not} be removed from the calculation.
 
 Optional arguments like this may come with a pre-supplied default, in this case that \texttt{na.rm\ =\ FALSE} and any \texttt{NA}values will be retained, unless this argument is manually changed to \texttt{TRUE}.\\
 
-When working with functions, which is the vast majority of programming, it is important to keep in mind a two things
+\section{Function Takeaways}\label{function-takeaways}
+
+When working with functions, which is the vast majority of programming, it is important to keep in mind two things:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2238,7 +2545,7 @@ A good rule of thumb is if it \emph{seems} like the function you want is broadly
 
 Finding the `right' library for the function you need can be overwhelming, but a good starting point is the official library collection for a programming language, such as \href{https://cran.r-project.org/web/views/}{CRAN for R} or \href{https://pypi.org/}{PyPI for Python}.
 
-\subsection{Accessing functions in libraries}\label{accessing-functions-in-libraries}
+\subsection{Accessing Functions in Libraries}\label{accessing-functions-in-libraries}
 
 The syntax for accessing functions in libraries varies by programming language but follows the general process of:
 
@@ -2253,7 +2560,7 @@ The syntax for accessing functions in libraries varies by programming language b
   Use the functions as normal.
 \end{enumerate}
 
-\subsection{Function names}\label{function-names}
+\subsection{Function Names}\label{function-names}
 
 There are only so many function names that make sense in the English language, so there may be functions from \emph{different libraries} that have the same name. How does the programming language know which function you are trying to access? By default, the language will use the function of the more recently loaded or imported package.
 
@@ -2342,17 +2649,16 @@ Example functions
 
 from Steph import make_popcorn()
 
-# set arguments and defaults
-
-make_popcorn(type = microwave, time = 2 minutes, 
-  flavor = movie_theater_flavor, seasoning = TRUE)
+# The arguments and defaults for this library is
+#
+# make_popcorn(quantity_popcorn, type = microwave, time = 2, 
+#              butter = movie_theater_flavor, seasoning = TRUE)
+#
+# where time is in minutes and quantity_popcorn is in bags
 
 # example in use
-# keeping all defaults
-# except changing time because this microwave 
-# is known to burn popcorn at recommended time
 
-make_popcorn(time = 1.5 minutes)
+make_popcorn(quantity_popcorn = 1, time = 1.5)
 \end{verbatim}
 
 \begin{verbatim}
@@ -2362,14 +2668,58 @@ make_popcorn(time = 1.5 minutes)
 from Kat import make_popcorn()
 
 # The arguments and defaults for this library is
+#
 # make_popcorn(quantity_popcorn, quantity_oil = 1, type = stovetop, 
 #              butter = TRUE, salt = "light")
+#
 # where quantity is in tbsp
 
 # example in use
 
 make_popcorn(2)
 \end{verbatim}
+
+\section{Language examples: Formatting may vary {[}may not need in this section, since round() and mean() included above{]}}\label{language-examples-formatting-may-vary-may-not-need-in-this-section-since-round-and-mean-included-above}
+
+\textbf{Python}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{C/C++}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{PHP}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Bash}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Self-Documenting Code}\label{self-documenting-code}
 
@@ -2787,9 +3137,11 @@ The folder structure is
     - ipeds_1995_.html
 \end{verbatim}
 
-\chapter{Practice}\label{practice}
+\chapter{Practice}\label{practice-1}
 
 In this section, we'll work on annotating and understanding unfamiliar code.
+
+The code examples may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about using what we've learned about programming logic as a lens through which to begin interpreting code.
 
 \section{New types of conditions (in SQL)}\label{new-types-of-conditions-in-sql}
 
@@ -2864,208 +3216,6 @@ Example written narrative
 This code is returning a subset of data from the \texttt{OceanBuoys} table. Starting from the full \texttt{OceanBuoys} table, return all the columns from this table, but keep only rows where \texttt{Ocean} is equal to ``Atlantic'' \emph{and} where the \texttt{BuoyName} value starts with ``S'' or ``K''. The returned data should be tabular, with the same number of columns as the full \texttt{OceanBuoys} table, but likely with less rows (only those that met the condition).
 
 \hfill\break
-
-\section{\texorpdfstring{Nested \texttt{for} loops and \texttt{if\ else} statements (in Python)}{Nested for loops and if else statements (in Python)}}\label{nested-for-loops-and-if-else-statements-in-python}
-
-Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.
-
-Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested \texttt{for} loops, and nested \texttt{if\ else} statements with the \texttt{for} loops and within other \texttt{if\ else} statements.\\
-
-The code may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends.
-
-\textbf{Exercise}: Review the code chunk below and identify on which line each \texttt{for} loop and each \texttt{if\ else} statement starts and ends.
-
-\begin{itemize}
-\tightlist
-\item
-  First \texttt{for} loop
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\item
-  Second \texttt{for} loop
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\item
-  First \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\item
-  Second \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\item
-  Third \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\item
-  Fourth \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line:
-  \item
-    Ends on line:
-  \end{itemize}
-\end{itemize}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Code to scrape data from website}
-
-\FloatTok{1.}\NormalTok{  base\_url }\OperatorTok{=} \StringTok{"https://nces.ed.gov/ipeds/datacenter/"}
-\FloatTok{2.}\NormalTok{  data\_url }\OperatorTok{=} \StringTok{"DataFiles.aspx?"}
-\FloatTok{3.}\NormalTok{  year\_base }\OperatorTok{=} \StringTok{"year="}
-\FloatTok{4.}\NormalTok{  years }\OperatorTok{=}\NormalTok{ [}\StringTok{"1995"}\NormalTok{, }\StringTok{"1996"}\NormalTok{, }\StringTok{"1997"}\NormalTok{, }\StringTok{"1998"}\NormalTok{]}
-\FloatTok{5.}\NormalTok{  session\_id }\OperatorTok{=} \StringTok{"\&sid=4f8f293f{-}df75{-}42cd{-}9cc0{-}ed184270cf17\&rtid=7"}
-\FloatTok{6.} 
-\FloatTok{7.}  \CommentTok{\# what type of files do you want to save?}
-\FloatTok{8.}\NormalTok{  file\_type }\OperatorTok{=}\NormalTok{ [}\StringTok{"zip"}\NormalTok{,}\StringTok{"csv"}\NormalTok{]}
-\FloatTok{9.} 
-\FloatTok{10.} \CommentTok{\# where do you want to save locally?}
-\FloatTok{11.} 
-\FloatTok{12.} \CommentTok{\# save\_loc is redundant, but a reminder that you should have locally folders that reflect the years, }
-\FloatTok{13.} \CommentTok{\# because that\textquotesingle{}s where below is saving to}
-\FloatTok{14.}\NormalTok{ save\_loc }\OperatorTok{=}\NormalTok{ years }
-\FloatTok{15.} 
-\FloatTok{16.} \CommentTok{\# what kind of prefix do you want on your files}
-\FloatTok{17.}\NormalTok{ save\_prefix }\OperatorTok{=} \StringTok{"ipeds\_"} 
-\FloatTok{18.} 
-\FloatTok{19.} \CommentTok{\# scrape}
-\FloatTok{20.} \ControlFlowTok{for}\NormalTok{ year }\KeywordTok{in}\NormalTok{ years:}
-\FloatTok{21.}\NormalTok{     url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_url}\OperatorTok{+}\NormalTok{year\_base}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\NormalTok{session\_id }
-\FloatTok{22.}\NormalTok{     webpage }\OperatorTok{=}\NormalTok{ requests.get(url)}
-\FloatTok{23.}\NormalTok{     soup }\OperatorTok{=}\NormalTok{ BeautifulSoup(webpage.content, }\StringTok{\textquotesingle{}html.parser\textquotesingle{}}\NormalTok{)}
-\FloatTok{24.} 
-\FloatTok{25.} 
-\FloatTok{26.}     \ControlFlowTok{if}\NormalTok{ os.path.isdir(}\StringTok{"./"}\OperatorTok{+}\NormalTok{year):}
-\FloatTok{27.}         \CommentTok{\# notice output path has "year" as a variable indicating folders}
-\FloatTok{28.}\NormalTok{         output\_path }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"\_"}\OperatorTok{+}\StringTok{".html"}
-\FloatTok{29.}     
-\FloatTok{30.}         \ControlFlowTok{if}\NormalTok{ os.path.exists(output\_path):}
-\FloatTok{31.}             \BuiltInTok{print}\NormalTok{(output\_path}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
-\FloatTok{32.}         \ControlFlowTok{else}\NormalTok{:}
-\FloatTok{33.}             \CommentTok{\# saving the html file}
-\FloatTok{34.}             \BuiltInTok{print}\NormalTok{(}\StringTok{"saving "}\OperatorTok{+}\NormalTok{output\_path)}
-\FloatTok{35.}     
-\FloatTok{36.}             \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(output\_path, }\StringTok{\textquotesingle{}wb\textquotesingle{}}\NormalTok{) }\ImportTok{as} \BuiltInTok{file}\NormalTok{:}
-\FloatTok{37.}                 \BuiltInTok{file}\NormalTok{.write(webpage.content) }
-\FloatTok{38.}             
-\FloatTok{39.}         \CommentTok{\# saving files linked on original html page which meet file type requirement}
-\FloatTok{40.}         \ControlFlowTok{for}\NormalTok{ link }\KeywordTok{in}\NormalTok{ soup.find\_all(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{)[}\DecValTok{0}\NormalTok{:}\DecValTok{16}\NormalTok{]:  }
-\FloatTok{41.}\NormalTok{             data\_target }\OperatorTok{=}\NormalTok{ link.get(}\StringTok{\textquotesingle{}href\textquotesingle{}}\NormalTok{)}
-\FloatTok{42.}             \CommentTok{\# data\_target[{-}3:]}
-\FloatTok{43.}             \ControlFlowTok{if} \BuiltInTok{any}\NormalTok{(extension }\OperatorTok{==}\NormalTok{ data\_target[}\OperatorTok{{-}}\DecValTok{3}\NormalTok{:] }\ControlFlowTok{for}\NormalTok{ extension }\KeywordTok{in}\NormalTok{ file\_type):}
-\FloatTok{44.}\NormalTok{                 wget\_url }\OperatorTok{=}\NormalTok{ base\_url}\OperatorTok{+}\NormalTok{data\_target}
-\FloatTok{45.}\NormalTok{                 wget\_save }\OperatorTok{=} \StringTok{"./"}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{"/"}\OperatorTok{+}\NormalTok{save\_prefix}\OperatorTok{+}\NormalTok{data\_target.replace(}\StringTok{"/"}\NormalTok{,}\StringTok{"{-}"}\NormalTok{)}
-\FloatTok{46.}     
-\FloatTok{47.}                 \ControlFlowTok{if}\NormalTok{ os.path.exists(wget\_save):}
-\FloatTok{48.}                     \BuiltInTok{print}\NormalTok{(wget\_save}\OperatorTok{+}\StringTok{" already exists. Did NOT save."}\NormalTok{)}
-\FloatTok{49.}                 \ControlFlowTok{else}\NormalTok{:}
-\FloatTok{50.}                     \BuiltInTok{print}\NormalTok{(}\StringTok{"SAVING "}\OperatorTok{+}\NormalTok{ wget\_url}\OperatorTok{+} \StringTok{" at local location: "}\OperatorTok{+}\NormalTok{wget\_save)}
-\FloatTok{51.}\NormalTok{                     wget.download(wget\_url,wget\_save)}
-\FloatTok{52.}\NormalTok{                     time.sleep(}\FloatTok{.25}\NormalTok{) }\CommentTok{\# be kind, don\textquotesingle{}t look like a DDOS attack}
-\FloatTok{53.}     \ControlFlowTok{else}\NormalTok{:}
-\FloatTok{54.}         \BuiltInTok{print}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{!!! save directory "}\OperatorTok{+}\NormalTok{year}\OperatorTok{+}\StringTok{" does NOT exist. please create}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Start and end locations
-
-\begin{itemize}
-\item
-  First loop
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 20
-  \item
-    Ends on line: 54 (encompasses entire code block line 20 until end of line 54)
-  \end{itemize}
-\item
-  Second loop
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 40
-  \item
-    Ends on line: 52 (encompasses entire code block line 40 until end of line 52)
-  \end{itemize}
-\item
-  \emph{You may have noticed another loop on line 43. If so, great job! That one originally snuck by the instructors when putting together this answer key. We're leaving it as is though, as a reminder that even more experienced programmers miss things and make mistakes. So if you didn't catch this additional loop, you're in good company!}
-\item
-  First \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 26
-  \item
-    Ends on line: 54 (the matching \texttt{else} is on line 53, with end of action on line 54)
-  \end{itemize}
-\item
-  Second \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 30
-  \item
-    Ends on line: 37 (matching \texttt{else} is on line 32, with end of action on line 37)
-  \end{itemize}
-\item
-  Third \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 43
-  \item
-    Ends on line: 45 (no matching \texttt{else}, ends on line 45 and goes into next \texttt{if})
-  \end{itemize}
-\item
-  Fourth \texttt{if\ else} statement
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Starts on line: 47
-  \item
-    Ends on line: 52 (matching \texttt{else} is on line 49, with end of action on line 52)
-  \end{itemize}
-\end{itemize}
 
 \section{New syntax and terms (in R)}\label{new-syntax-and-terms-in-r}
 

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 11 Practice | Programming Logic for Non-Programmers</title>
+<meta name="author" content="Kat Koziar and Stephanie Labou">
+<meta name="description" content="In this section, we’ll work on annotating and understanding unfamiliar code. The code examples may look intimidating! But remember, we’re less concerned here about understanding every detail about...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="Chapter 11 Practice | Programming Logic for Non-Programmers">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In this section, we’ll work on annotating and understanding unfamiliar code. The code examples may look intimidating! But remember, we’re less concerned here about understanding every detail about...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 11 Practice | Programming Logic for Non-Programmers">
+<meta name="twitter:description" content="In this section, we’ll work on annotating and understanding unfamiliar code. The code examples may look intimidating! But remember, we’re less concerned here about understanding every detail about...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Programming Logic for Non-Programmers</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
+<li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
+<li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
+<li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
+<li><a class="" href="practice.html"><span class="header-section-number">7</span> Practice</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="self-documenting-code.html"><span class="header-section-number">9</span> Self-Documenting Code</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">10</span> Common Issues</a></li>
+<li><a class="active" href="practice-1.html"><span class="header-section-number">11</span> Practice</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">12</span> Recap and Consultation Tips</a></li>
+<li><a class="" href="resources.html"><span class="header-section-number">13</span> Resources</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice-1" class="section level1" number="11">
+<h1>
+<span class="header-section-number">11</span> Practice<a class="anchor" aria-label="anchor" href="#practice-1"><i class="fas fa-link"></i></a>
+</h1>
+<p>In this section, we’ll work on annotating and understanding unfamiliar code.</p>
+<p>The code examples may look intimidating! But remember, we’re less concerned here about understanding every detail about what the code is doing, and more about using what we’ve learned about programming logic as a lens through which to begin interpreting code.</p>
+<div id="new-types-of-conditions-in-sql" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> New types of conditions (in SQL)<a class="anchor" aria-label="anchor" href="#new-types-of-conditions-in-sql"><i class="fas fa-link"></i></a>
+</h2>
+<p>Consider the following SQL command:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb79-1"><a href="practice-1.html#cb79-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
+<span id="cb79-2"><a href="practice-1.html#cb79-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
+<p>One option for navigating unfamiliar code is to break down the code into its
+component parts. Using that approach, you can differentiate functions separate from variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
+<p><strong>Exercise</strong>: Using what we’ve learned in prior sections, try to answer the following questions.</p>
+<ul>
+<li>What does the <code>OceanBuoys</code> term most likely refer to - variable or function?
+<ul>
+<li>Tip: Variables will contain a data object. Functions perform an action or task.</li>
+</ul>
+</li>
+<li>Assuming that <code>SELECT</code> is a function, what might it do?</li>
+<li>The <code>*</code> character is new. What might <code>*</code> indicate, in combination with <code>SELECT</code>?</li>
+<li>Parsing the second line that starts with <code>WHERE</code>, can you make an educated guess about what <code>Ocean</code> and <code>BuoyName</code> refer to, in terms of variables?</li>
+<li>Can you guess (or feel free to use your favorite search engine) what <code>LIKE 'S%'</code> and <code>LIKE 'K%'</code> would indicate?</li>
+<li>Note the <code>;</code> at the end of the line starting with <code>WHERE</code>. What might this mean?</li>
+</ul>
+<details><summary>
+Do your answers match these?
+</summary><ul>
+<li>The <code>OceanBuoys</code> term here refers to a table or dataframe or matrix (really, any kind of tabular format).</li>
+<li>The <code>SELECT</code> function selects columns from the <code>OceanBuoys</code> table.</li>
+<li>The <code>*</code> is a wildcard matching symbol. It indicates that we want to return <em>all</em> columns from the table, no matter what their column names are.</li>
+<li>The <code>OceanBuoys</code> table must have columns named <code>Ocean</code> and <code>BuoyName</code>.
+<ul>
+<li>If we wanted to return only these columns, the syntax could be: <code>SELECT Ocean, BuoyName FROM OceanBuoys</code>
+</li>
+</ul>
+</li>
+<li>
+<code>LIKE</code> is used for pattern matching. The symbol <code>%</code> is a wildcard character in SQL. This code is matching values that start with “S” or with “K”.</li>
+<li>The conditions after <code>WHERE</code> are the row-based conditions for what will be returned, analogous to <code>SELECT</code> for the column-specific condition.</li>
+<li>The <code>;</code> is used to indicate the end of a statement in SQL. It tells the computer that the ‘thought’ is finished, and the action of <em>doing</em> the thought can commence.</li>
+</ul></details><p><br></p>
+<p><strong>Exercise, continued:</strong> Now, can you write out a narrative of what you see the code is trying to do?</p>
+<details><summary>
+Example written narrative
+</summary><p>This code is returning a subset of data from the <code>OceanBuoys</code> table. Starting from the full <code>OceanBuoys</code> table, return all the columns from this table, but keep only rows where <code>Ocean</code> is equal to “Atlantic” <em>and</em> where the <code>BuoyName</code> value starts with “S” or “K”. The returned data should be tabular, with the same number of columns as the full <code>OceanBuoys</code> table, but likely with less rows (only those that met the condition).</p>
+</details><p><br></p>
+<hr>
+</div>
+<div id="new-syntax-and-terms-in-r" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> New syntax and terms (in R)<a class="anchor" aria-label="anchor" href="#new-syntax-and-terms-in-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice. Some of us prefer DuckDuckGo).<br></p>
+<p>Here is an example of R code:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="practice-1.html#cb80-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb80-2"><a href="practice-1.html#cb80-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb80-3"><a href="practice-1.html#cb80-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb80-4"><a href="practice-1.html#cb80-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
+<span id="cb80-5"><a href="practice-1.html#cb80-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
+<span id="cb80-6"><a href="practice-1.html#cb80-6" tabindex="-1"></a>  </span></code></pre></div>
+<p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
+<p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below to guide your annotation.</p>
+<ul>
+<li>Line 1
+<ul>
+<li>What is <code>df_new &lt;- df</code> doing here?
+<ul>
+<li>Hint: refer to 8.1.3, Common Variable Names</li>
+</ul>
+</li>
+<li>What does the <code>%&gt;%</code> symbol indicate?</li>
+</ul>
+</li>
+<li>Line 2
+<ul>
+<li>What is the <code>select()</code> function likely doing?</li>
+<li>What might it mean that the argument in this function is preceded by <code>-</code>?</li>
+</ul>
+</li>
+<li>Line 3
+<ul>
+<li>Using context clues (and your favorite search engine) what do you think the <code>mutate()</code> function does?</li>
+<li>The new <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> function has three arguments (<code>paste(arg1, arg2, arg3)</code>). What do you think the arguments are for?</li>
+</ul>
+</li>
+<li>Line 4 &amp; 5 (note: new line not strictly necessary, only to fit in page width without needing scroll)
+<ul>
+<li>This <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has a different format than we’ve covered so far, but the concept is the same. Assuming this <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has three arguments (<code>ifelse(condition, mystery1, mystery2)</code>) what might the two mystery arguments be specifying?</li>
+<li>Looking at the section <code>survey_wave %in% c("first", "second")</code>, what do you think this would translate to, as a written explanation of the task here?</li>
+</ul>
+</li>
+<li>Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?</li>
+</ul>
+<details><summary>
+Example narrative
+</summary><p>Starting from the table/dataframe called <code>df</code>, we want to keep (<code>select</code>) all columns <em>except</em> the column named <code>respondent_name</code>.<br></p>
+<p>Then, make a new column called <code>identifier</code>. This new column is created by pasting together the value in the <code>respondent_id</code> column and the <code>survey_wave</code> column, separated by an underscore, <code>_</code>.<br></p>
+<p>Then, make another new column called <code>survey_type</code>. The values in this column are determined by an <code>ifelse</code> statement: if the value in the <code>survey_wave</code> column is any of the values specified in the list <code>("first", "second")</code> (so if the value is <code>first</code> or <code>second</code>), then the value in the <code>survey_type</code> column will be <code>phone</code>. Otherwise, the value will be <code>in person</code>.<br></p>
+</details><p><br></p>
+<hr>
+</div>
+<div id="new-functions-in-stata" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
+</h2>
+<p>This challenge uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
+<p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb81-1"><a href="practice-1.html#cb81-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
+<details><summary>
+What is this code doing?
+</summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (<code>n-1</code>) value of <code>variable</code>.</p>
+There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
+</details><hr>
+</div>
+<div id="c" class="section level2" number="11.4">
+<h2>
+<span class="header-section-number">11.4</span> C++<a class="anchor" aria-label="anchor" href="#c"><i class="fas fa-link"></i></a>
+</h2>
+<p>This is a C++ file named <code>testScratchDoc.cpp</code></p>
+<p>Review the file then answer the following questions, annotating as you see fit.</p>
+<ul>
+<li>How is the code similar to some of the code that we’ve seen so far?</li>
+<li>What do you think the code does (generally)?</li>
+<li>What questions do you have about it?</li>
+<li>What are some suggestions to make it easier to read?</li>
+</ul>
+<div class="sourceCode" id="cb82"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb82-1"><a href="practice-1.html#cb82-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb82-2"><a href="practice-1.html#cb82-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb82-3"><a href="practice-1.html#cb82-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></span>
+<span id="cb82-4"><a href="practice-1.html#cb82-4" tabindex="-1"></a></span>
+<span id="cb82-5"><a href="practice-1.html#cb82-5" tabindex="-1"></a></span>
+<span id="cb82-6"><a href="practice-1.html#cb82-6" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb82-7"><a href="practice-1.html#cb82-7" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello World!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-8"><a href="practice-1.html#cb82-8" tabindex="-1"></a></span>
+<span id="cb82-9"><a href="practice-1.html#cb82-9" tabindex="-1"></a><span class="co">//    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</span></span>
+<span id="cb82-10"><a href="practice-1.html#cb82-10" tabindex="-1"></a></span>
+<span id="cb82-11"><a href="practice-1.html#cb82-11" tabindex="-1"></a>    <span class="co">// mbr (a,b,c,d)</span></span>
+<span id="cb82-12"><a href="practice-1.html#cb82-12" tabindex="-1"></a>    <span class="dt">int</span> a<span class="op">=</span><span class="dv">6</span><span class="op">;</span></span>
+<span id="cb82-13"><a href="practice-1.html#cb82-13" tabindex="-1"></a>    <span class="dt">int</span> b<span class="op">=</span><span class="dv">3</span><span class="op">;</span></span>
+<span id="cb82-14"><a href="practice-1.html#cb82-14" tabindex="-1"></a>    <span class="dt">int</span> c<span class="op">=</span><span class="dv">8</span><span class="op">;</span> <span class="co">//c=b+1; inner/outer test c=4</span></span>
+<span id="cb82-15"><a href="practice-1.html#cb82-15" tabindex="-1"></a>    <span class="dt">int</span> d<span class="op">=</span><span class="dv">5</span><span class="op">;</span></span>
+<span id="cb82-16"><a href="practice-1.html#cb82-16" tabindex="-1"></a></span>
+<span id="cb82-17"><a href="practice-1.html#cb82-17" tabindex="-1"></a>    <span class="co">//mbr (i,j,k,l)</span></span>
+<span id="cb82-18"><a href="practice-1.html#cb82-18" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span>    <span class="co">// i=n;  inner/outer test i=1</span></span>
+<span id="cb82-19"><a href="practice-1.html#cb82-19" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
+<span id="cb82-20"><a href="practice-1.html#cb82-20" tabindex="-1"></a>    <span class="dt">int</span> k<span class="op">=</span><span class="dv">3</span><span class="op">;</span>  <span class="co">// k=j+1; inner/outer test k=3</span></span>
+<span id="cb82-21"><a href="practice-1.html#cb82-21" tabindex="-1"></a>    <span class="dt">int</span> l<span class="op">=</span><span class="dv">4</span><span class="op">;</span></span>
+<span id="cb82-22"><a href="practice-1.html#cb82-22" tabindex="-1"></a>    <span class="dt">bool</span> intersect_x <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb82-23"><a href="practice-1.html#cb82-23" tabindex="-1"></a>    <span class="dt">bool</span> intersect_y <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb82-24"><a href="practice-1.html#cb82-24" tabindex="-1"></a></span>
+<span id="cb82-25"><a href="practice-1.html#cb82-25" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>a<span class="op">,</span>b<span class="op">,</span>c<span class="op">,</span>d<span class="op">);</span></span>
+<span id="cb82-26"><a href="practice-1.html#cb82-26" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>l<span class="op">);</span></span>
+<span id="cb82-27"><a href="practice-1.html#cb82-27" tabindex="-1"></a></span>
+<span id="cb82-28"><a href="practice-1.html#cb82-28" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>c<span class="op">&lt;</span>i<span class="op">)</span> <span class="op">||(</span>k<span class="op">&lt;</span>a<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb82-29"><a href="practice-1.html#cb82-29" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb82-30"><a href="practice-1.html#cb82-30" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-31"><a href="practice-1.html#cb82-31" tabindex="-1"></a>        intersect_x <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb82-32"><a href="practice-1.html#cb82-32" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_x is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_x<span class="op">);</span></span>
+<span id="cb82-33"><a href="practice-1.html#cb82-33" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb82-34"><a href="practice-1.html#cb82-34" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x does not intersect!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-35"><a href="practice-1.html#cb82-35" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb82-36"><a href="practice-1.html#cb82-36" tabindex="-1"></a></span>
+<span id="cb82-37"><a href="practice-1.html#cb82-37" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>d<span class="op">&lt;</span>j<span class="op">)</span> <span class="op">||(</span>l<span class="op">&lt;</span>b<span class="op">)</span> <span class="op">))</span></span>
+<span id="cb82-38"><a href="practice-1.html#cb82-38" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb82-39"><a href="practice-1.html#cb82-39" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-40"><a href="practice-1.html#cb82-40" tabindex="-1"></a>        intersect_y <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb82-41"><a href="practice-1.html#cb82-41" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_y is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_y<span class="op">);</span></span>
+<span id="cb82-42"><a href="practice-1.html#cb82-42" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
+<span id="cb82-43"><a href="practice-1.html#cb82-43" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y does not intercept!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-44"><a href="practice-1.html#cb82-44" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb82-45"><a href="practice-1.html#cb82-45" tabindex="-1"></a></span>
+<span id="cb82-46"><a href="practice-1.html#cb82-46" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>intersect_x<span class="op">&amp;&amp;</span>intersect_y<span class="op">)</span></span>
+<span id="cb82-47"><a href="practice-1.html#cb82-47" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 intersects with MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-48"><a href="practice-1.html#cb82-48" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb82-49"><a href="practice-1.html#cb82-49" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 does not intersect MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb82-50"><a href="practice-1.html#cb82-50" tabindex="-1"></a></span>
+<span id="cb82-51"><a href="practice-1.html#cb82-51" tabindex="-1"></a></span>
+<span id="cb82-52"><a href="practice-1.html#cb82-52" tabindex="-1"></a></span>
+<span id="cb82-53"><a href="practice-1.html#cb82-53" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb82-54"><a href="practice-1.html#cb82-54" tabindex="-1"></a><span class="co">    // testing writing to memory using pointers</span></span>
+<span id="cb82-55"><a href="practice-1.html#cb82-55" tabindex="-1"></a><span class="co">    int page = 1;</span></span>
+<span id="cb82-56"><a href="practice-1.html#cb82-56" tabindex="-1"></a></span>
+<span id="cb82-57"><a href="practice-1.html#cb82-57" tabindex="-1"></a><span class="co">    int *pData; // pointer to data</span></span>
+<span id="cb82-58"><a href="practice-1.html#cb82-58" tabindex="-1"></a><span class="co">    pData = &amp;page;</span></span>
+<span id="cb82-59"><a href="practice-1.html#cb82-59" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb82-60"><a href="practice-1.html#cb82-60" tabindex="-1"></a></span>
+<span id="cb82-61"><a href="practice-1.html#cb82-61" tabindex="-1"></a><span class="co">    int* newP; // new pointer to data</span></span>
+<span id="cb82-62"><a href="practice-1.html#cb82-62" tabindex="-1"></a><span class="co">    int a = 2;</span></span>
+<span id="cb82-63"><a href="practice-1.html#cb82-63" tabindex="-1"></a><span class="co">    int b = 3;</span></span>
+<span id="cb82-64"><a href="practice-1.html#cb82-64" tabindex="-1"></a></span>
+<span id="cb82-65"><a href="practice-1.html#cb82-65" tabindex="-1"></a><span class="co">    int m = sizeof(b);</span></span>
+<span id="cb82-66"><a href="practice-1.html#cb82-66" tabindex="-1"></a></span>
+<span id="cb82-67"><a href="practice-1.html#cb82-67" tabindex="-1"></a><span class="co">    newP = pData+m;</span></span>
+<span id="cb82-68"><a href="practice-1.html#cb82-68" tabindex="-1"></a></span>
+<span id="cb82-69"><a href="practice-1.html#cb82-69" tabindex="-1"></a><span class="co">    memcpy(pData,&amp;a,sizeof(int));</span></span>
+<span id="cb82-70"><a href="practice-1.html#cb82-70" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
+<span id="cb82-71"><a href="practice-1.html#cb82-71" tabindex="-1"></a></span>
+<span id="cb82-72"><a href="practice-1.html#cb82-72" tabindex="-1"></a><span class="co">    memcpy(pData+m,&amp;b,sizeof(int));</span></span>
+<span id="cb82-73"><a href="practice-1.html#cb82-73" tabindex="-1"></a><span class="co">//    newP = pData+sizeof(int);</span></span>
+<span id="cb82-74"><a href="practice-1.html#cb82-74" tabindex="-1"></a><span class="co">    printf("\nnewP is %s; \n&amp;newP is %p; \n*newP is %d",newP, &amp;newP, *newP);</span></span>
+<span id="cb82-75"><a href="practice-1.html#cb82-75" tabindex="-1"></a><span class="co">*/</span> <span class="co">// end testing writing to memory using pointers</span></span>
+<span id="cb82-76"><a href="practice-1.html#cb82-76" tabindex="-1"></a></span>
+<span id="cb82-77"><a href="practice-1.html#cb82-77" tabindex="-1"></a></span>
+<span id="cb82-78"><a href="practice-1.html#cb82-78" tabindex="-1"></a></span>
+<span id="cb82-79"><a href="practice-1.html#cb82-79" tabindex="-1"></a>    <span class="co">// testing whether you can initialize a structure with an outside variable</span></span>
+<span id="cb82-80"><a href="practice-1.html#cb82-80" tabindex="-1"></a>    <span class="co">// not really, you can with an outside constant</span></span>
+<span id="cb82-81"><a href="practice-1.html#cb82-81" tabindex="-1"></a><span class="co">/*    const int b = 100;</span></span>
+<span id="cb82-82"><a href="practice-1.html#cb82-82" tabindex="-1"></a><span class="co">    const int c = 7;</span></span>
+<span id="cb82-83"><a href="practice-1.html#cb82-83" tabindex="-1"></a><span class="co">    const int a = (int)(b/c);</span></span>
+<span id="cb82-84"><a href="practice-1.html#cb82-84" tabindex="-1"></a><span class="co">    int i;</span></span>
+<span id="cb82-85"><a href="practice-1.html#cb82-85" tabindex="-1"></a></span>
+<span id="cb82-86"><a href="practice-1.html#cb82-86" tabindex="-1"></a><span class="co">    struct test {</span></span>
+<span id="cb82-87"><a href="practice-1.html#cb82-87" tabindex="-1"></a><span class="co">        int test[a];</span></span>
+<span id="cb82-88"><a href="practice-1.html#cb82-88" tabindex="-1"></a><span class="co">    };</span></span>
+<span id="cb82-89"><a href="practice-1.html#cb82-89" tabindex="-1"></a></span>
+<span id="cb82-90"><a href="practice-1.html#cb82-90" tabindex="-1"></a><span class="co">    test mytest;</span></span>
+<span id="cb82-91"><a href="practice-1.html#cb82-91" tabindex="-1"></a></span>
+<span id="cb82-92"><a href="practice-1.html#cb82-92" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb82-93"><a href="practice-1.html#cb82-93" tabindex="-1"></a><span class="co">    {</span></span>
+<span id="cb82-94"><a href="practice-1.html#cb82-94" tabindex="-1"></a><span class="co">        mytest.test[i]=i;</span></span>
+<span id="cb82-95"><a href="practice-1.html#cb82-95" tabindex="-1"></a><span class="co">    }</span></span>
+<span id="cb82-96"><a href="practice-1.html#cb82-96" tabindex="-1"></a></span>
+<span id="cb82-97"><a href="practice-1.html#cb82-97" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
+<span id="cb82-98"><a href="practice-1.html#cb82-98" tabindex="-1"></a><span class="co">    {</span></span>
+<span id="cb82-99"><a href="practice-1.html#cb82-99" tabindex="-1"></a><span class="co">        printf("\nmytest[%d]=%d",i,mytest.test[i]);</span></span>
+<span id="cb82-100"><a href="practice-1.html#cb82-100" tabindex="-1"></a><span class="co">    }*/</span></span>
+<span id="cb82-101"><a href="practice-1.html#cb82-101" tabindex="-1"></a></span>
+<span id="cb82-102"><a href="practice-1.html#cb82-102" tabindex="-1"></a></span>
+<span id="cb82-103"><a href="practice-1.html#cb82-103" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb82-104"><a href="practice-1.html#cb82-104" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb82-105"><a href="practice-1.html#cb82-105" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb82-106"><a href="practice-1.html#cb82-106" tabindex="-1"></a><span class="co">#include &lt;stdio.h&gt;</span></span>
+<span id="cb82-107"><a href="practice-1.html#cb82-107" tabindex="-1"></a></span>
+<span id="cb82-108"><a href="practice-1.html#cb82-108" tabindex="-1"></a><span class="co">main() {</span></span>
+<span id="cb82-109"><a href="practice-1.html#cb82-109" tabindex="-1"></a><span class="co">    printf("Hello World!\n");</span></span>
+<span id="cb82-110"><a href="practice-1.html#cb82-110" tabindex="-1"></a><span class="co">    char sentence []="test your 12 7 42";</span></span>
+<span id="cb82-111"><a href="practice-1.html#cb82-111" tabindex="-1"></a><span class="co">    char str[20];</span></span>
+<span id="cb82-112"><a href="practice-1.html#cb82-112" tabindex="-1"></a><span class="co">    int a, b, c;</span></span>
+<span id="cb82-113"><a href="practice-1.html#cb82-113" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s %s %d %d %d", str, str, &amp;a, &amp;b, &amp;c);</span></span>
+<span id="cb82-114"><a href="practice-1.html#cb82-114" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb82-115"><a href="practice-1.html#cb82-115" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb82-116"><a href="practice-1.html#cb82-116" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s your %d 7 %d", str, &amp;a, &amp;b);</span></span>
+<span id="cb82-117"><a href="practice-1.html#cb82-117" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
+<span id="cb82-118"><a href="practice-1.html#cb82-118" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
+<span id="cb82-119"><a href="practice-1.html#cb82-119" tabindex="-1"></a><span class="co">    printf("%s\n", sentence);</span></span>
+<span id="cb82-120"><a href="practice-1.html#cb82-120" tabindex="-1"></a></span>
+<span id="cb82-121"><a href="practice-1.html#cb82-121" tabindex="-1"></a><span class="co">}*/</span></span></code></pre></div>
+<hr>
+</div>
+<div id="matlab" class="section level2" number="11.5">
+<h2>
+<span class="header-section-number">11.5</span> MATLAB<a class="anchor" aria-label="anchor" href="#matlab"><i class="fas fa-link"></i></a>
+</h2>
+<p>This is a MATLAB file named <code>assignment01_leaf.m</code></p>
+<p>Review the file then answer the following questions, annotating as you see fit.</p>
+<ul>
+<li>How is the code similar to some of the code that we’ve seen so far?</li>
+<li>What do you think starts a comment line?</li>
+<li>What do you think the code does (generally)?</li>
+<li>What questions do you have about it?</li>
+<li>What are some suggestions to make it easier to read?</li>
+</ul>
+<div class="sourceCode" id="cb83"><pre class="sourceCode octave"><code class="sourceCode octave"><span id="cb83-1"><a href="practice-1.html#cb83-1" tabindex="-1"></a><span class="cf">function</span> assignment01_leaf</span>
+<span id="cb83-2"><a href="practice-1.html#cb83-2" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-3"><a href="practice-1.html#cb83-3" tabindex="-1"></a>TRAIN <span class="op">=</span> <span class="bu">load</span>(<span class="st">'FaultsNNA_csv'</span>)<span class="op">;</span> <span class="co">% Only these two lines need to be changed to test a different dataset. % </span></span>
+<span id="cb83-4"><a href="practice-1.html#cb83-4" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-5"><a href="practice-1.html#cb83-5" tabindex="-1"></a></span>
+<span id="cb83-6"><a href="practice-1.html#cb83-6" tabindex="-1"></a>TRAIN_class_labels <span class="op">=</span> TRAIN(<span class="op">:,</span><span class="fl">1</span>)<span class="op">;</span>    <span class="co">% Pull out the class labels.</span></span>
+<span id="cb83-7"><a href="practice-1.html#cb83-7" tabindex="-1"></a>TRAIN(<span class="op">:,</span><span class="fl">1</span>) <span class="op">=</span> []<span class="op">;</span>    <span class="co">% Remove class labels from training set.</span></span>
+<span id="cb83-8"><a href="practice-1.html#cb83-8" tabindex="-1"></a></span>
+<span id="cb83-9"><a href="practice-1.html#cb83-9" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-10"><a href="practice-1.html#cb83-10" tabindex="-1"></a><span class="co">% Compute and display Default Rate and other Basic Information</span></span>
+<span id="cb83-11"><a href="practice-1.html#cb83-11" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb83-12"><a href="practice-1.html#cb83-12" tabindex="-1"></a>[<span class="fu">class</span><span class="op">,</span><span class="fu">count</span>] <span class="op">=</span> <span class="fu">mode</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb83-13"><a href="practice-1.html#cb83-13" tabindex="-1"></a>default_error_rate<span class="op">=</span><span class="fl">1</span><span class="op">-</span>(<span class="fu">count</span><span class="op">/</span><span class="fu">size</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>)<span class="op">,</span><span class="fl">1</span>))<span class="op">;</span></span>
+<span id="cb83-14"><a href="practice-1.html#cb83-14" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset you tested has '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">length</span>(<span class="fu">unique</span>(TRAIN_class_labels)))<span class="op">,</span> <span class="st">' classes.'</span>])<span class="op">;</span></span>
+<span id="cb83-15"><a href="practice-1.html#cb83-15" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The training set is of size '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">1</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb83-16"><a href="practice-1.html#cb83-16" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The time series are of length '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">2</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb83-17"><a href="practice-1.html#cb83-17" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset''s most common class is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">class</span>)<span class="op">,</span><span class="st">' with a total of '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">count</span>)<span class="op">,</span><span class="st">' occurances.'</span>])<span class="op">;</span></span>
+<span id="cb83-18"><a href="practice-1.html#cb83-18" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The default error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(default_error_rate)<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb83-19"><a href="practice-1.html#cb83-19" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-20"><a href="practice-1.html#cb83-20" tabindex="-1"></a></span>
+<span id="cb83-21"><a href="practice-1.html#cb83-21" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-22"><a href="practice-1.html#cb83-22" tabindex="-1"></a><span class="co">% Compute and display the k-fold error rate</span></span>
+<span id="cb83-23"><a href="practice-1.html#cb83-23" tabindex="-1"></a><span class="co">%</span></span>
+<span id="cb83-24"><a href="practice-1.html#cb83-24" tabindex="-1"></a>k<span class="op">=</span><span class="fu">length</span>(TRAIN_class_labels)<span class="op">;</span></span>
+<span id="cb83-25"><a href="practice-1.html#cb83-25" tabindex="-1"></a>k_fold_error_rate <span class="op">=</span> k_fold_cross_validation(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>k)<span class="op">;</span></span>
+<span id="cb83-26"><a href="practice-1.html#cb83-26" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The normal k-fold error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(k_fold_error_rate)<span class="op">,</span><span class="st">' where k='</span><span class="op">,</span><span class="fu">num2str</span>(k)<span class="op">,</span><span class="st">' and length of train set is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">length</span>(TRAIN_class_labels))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
+<span id="cb83-27"><a href="practice-1.html#cb83-27" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-28"><a href="practice-1.html#cb83-28" tabindex="-1"></a></span>
+<span id="cb83-29"><a href="practice-1.html#cb83-29" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-30"><a href="practice-1.html#cb83-30" tabindex="-1"></a><span class="co">% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest</span></span>
+<span id="cb83-31"><a href="practice-1.html#cb83-31" tabindex="-1"></a><span class="co">% neighbor using the Euclidean distance. </span></span>
+<span id="cb83-32"><a href="practice-1.html#cb83-32" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
+<span id="cb83-33"><a href="practice-1.html#cb83-33" tabindex="-1"></a><span class="cf">function</span> predicted_class <span class="op">=</span> Classification_Algorithm(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>unknown_object)</span>
+<span id="cb83-34"><a href="practice-1.html#cb83-34" tabindex="-1"></a>best_so_far <span class="op">=</span> <span class="fu">inf</span><span class="op">;</span></span>
+<span id="cb83-35"><a href="practice-1.html#cb83-35" tabindex="-1"></a><span class="cf">for</span> <span class="fu">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="fu">length</span>(TRAIN_class_labels)</span>
+<span id="cb83-36"><a href="practice-1.html#cb83-36" tabindex="-1"></a>    compare_to_this_object <span class="op">=</span> TRAIN(<span class="fu">i</span><span class="op">,:</span>)<span class="op">;</span></span>
+<span id="cb83-37"><a href="practice-1.html#cb83-37" tabindex="-1"></a>    <span class="fu">distance</span> <span class="op">=</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((compare_to_this_object <span class="op">-</span> unknown_object)<span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span> <span class="co">% Euclidean distance</span></span>
+<span id="cb83-38"><a href="practice-1.html#cb83-38" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">distance</span> <span class="op">&lt;</span> best_so_far</span>
+<span id="cb83-39"><a href="practice-1.html#cb83-39" tabindex="-1"></a>        predicted_class <span class="op">=</span> TRAIN_class_labels(<span class="fu">i</span>)<span class="op">;</span></span>
+<span id="cb83-40"><a href="practice-1.html#cb83-40" tabindex="-1"></a>        best_so_far <span class="op">=</span> <span class="fu">distance</span><span class="op">;</span></span>
+<span id="cb83-41"><a href="practice-1.html#cb83-41" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb83-42"><a href="practice-1.html#cb83-42" tabindex="-1"></a> <span class="cf">end</span><span class="op">;</span></span></code></pre></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="common-issues.html"><span class="header-section-number">10</span> Common Issues</a></div>
+<div class="next"><a href="recap-and-consultation-tips.html"><span class="header-section-number">12</span> Recap and Consultation Tips</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#practice-1"><span class="header-section-number">11</span> Practice</a></li>
+<li><a class="nav-link" href="#new-types-of-conditions-in-sql"><span class="header-section-number">11.1</span> New types of conditions (in SQL)</a></li>
+<li><a class="nav-link" href="#new-syntax-and-terms-in-r"><span class="header-section-number">11.2</span> New syntax and terms (in R)</a></li>
+<li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">11.3</span> New functions in Stata</a></li>
+<li><a class="nav-link" href="#c"><span class="header-section-number">11.4</span> C++</a></li>
+<li><a class="nav-link" href="#matlab"><span class="header-section-number">11.5</span> MATLAB</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-04-15.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

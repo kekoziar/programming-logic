@@ -4,19 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 Practice | Programming Logic for Non-Programmers</title>
+<title>Chapter 7 Practice | Programming Logic for Non-Programmers</title>
 <meta name="author" content="Kat Koziar and Stephanie Labou">
-<meta name="description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta name="description" content="In this section, we’ll practice applying our understanding of for loops and if else conditional statements to unfamiliar code. The code example below may look intimidating! But remember, we’re...">
 <meta name="generator" content="bookdown 0.42 with bs4_book()">
-<meta property="og:title" content="Chapter 10 Practice | Programming Logic for Non-Programmers">
+<meta property="og:title" content="Chapter 7 Practice | Programming Logic for Non-Programmers">
 <meta property="og:type" content="book">
-<meta property="og:description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta property="og:description" content="In this section, we’ll practice applying our understanding of for loops and if else conditional statements to unfamiliar code. The code example below may look intimidating! But remember, we’re...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 Practice | Programming Logic for Non-Programmers">
-<meta name="twitter:description" content="In this section, we’ll work on annotating and understanding unfamiliar code.  10.1 New types of conditions (in SQL) Consider the following SQL command: SELECT * FROM OceanBuoys WHERE Ocean =...">
+<meta name="twitter:title" content="Chapter 7 Practice | Programming Logic for Non-Programmers">
+<meta name="twitter:description" content="In this section, we’ll practice applying our understanding of for loops and if else conditional statements to unfamiliar code. The code example below may look intimidating! But remember, we’re...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -72,12 +72,13 @@
 <li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
 <li><a class="" href="loops.html"><span class="header-section-number">5</span> Loops</a></li>
 <li><a class="" href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></li>
-<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
-<li><a class="" href="self-documenting-code.html"><span class="header-section-number">8</span> Self-Documenting Code</a></li>
-<li><a class="" href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></li>
-<li><a class="active" href="practice.html"><span class="header-section-number">10</span> Practice</a></li>
-<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">11</span> Recap and Consultation Tips</a></li>
-<li><a class="" href="resources.html"><span class="header-section-number">12</span> Resources</a></li>
+<li><a class="active" href="practice.html"><span class="header-section-number">7</span> Practice</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">8</span> Functions</a></li>
+<li><a class="" href="self-documenting-code.html"><span class="header-section-number">9</span> Self-Documenting Code</a></li>
+<li><a class="" href="common-issues.html"><span class="header-section-number">10</span> Common Issues</a></li>
+<li><a class="" href="practice-1.html"><span class="header-section-number">11</span> Practice</a></li>
+<li><a class="" href="recap-and-consultation-tips.html"><span class="header-section-number">12</span> Recap and Consultation Tips</a></li>
+<li><a class="" href="resources.html"><span class="header-section-number">13</span> Resources</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -86,64 +87,18 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="practice" class="section level1" number="7">
 <h1>
-<span class="header-section-number">10</span> Practice<a class="anchor" aria-label="anchor" href="#practice"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7</span> Practice<a class="anchor" aria-label="anchor" href="#practice"><i class="fas fa-link"></i></a>
 </h1>
-<p>In this section, we’ll work on annotating and understanding unfamiliar code.</p>
-<div id="new-types-of-conditions-in-sql" class="section level2" number="10.1">
+<p>In this section, we’ll practice applying our understanding of <code>for</code> loops and <code>if else</code> conditional statements to unfamiliar code.</p>
+<p>The code example below may look intimidating! But remember, we’re less concerned here about understanding every detail about what the code is doing, and more about using what we’ve learned about programming logic as a lens through which to begin interpreting code.</p>
+<div id="nested-for-loops-and-if-else-statements-in-python" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">10.1</span> New types of conditions (in SQL)<a class="anchor" aria-label="anchor" href="#new-types-of-conditions-in-sql"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Nested <code>for</code> loops and <code>if else</code> statements (in Python)<a class="anchor" aria-label="anchor" href="#nested-for-loops-and-if-else-statements-in-python"><i class="fas fa-link"></i></a>
 </h2>
-<p>Consider the following SQL command:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb67-1"><a href="practice.html#cb67-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> OceanBuoys</span>
-<span id="cb67-2"><a href="practice.html#cb67-2" tabindex="-1"></a><span class="kw">WHERE</span> Ocean <span class="op">=</span> <span class="st">'Atlantic'</span> <span class="kw">AND</span> (BuoyName <span class="kw">LIKE</span> <span class="st">'S%'</span> <span class="kw">OR</span> BuoyName <span class="kw">LIKE</span> <span class="st">'K%'</span>);</span></code></pre></div>
-<p>One option for navigating unfamiliar code is to break down the code into its
-component parts. Using that approach, you can differentiate functions separate from variables and names to get a better understanding of what type of data you’re working with, and what the code is trying to do.</p>
-<p><strong>Exercise</strong>: Using what we’ve learned in prior sections, try to answer the following questions.</p>
-<ul>
-<li>What does the <code>OceanBuoys</code> term most likely refer to - variable or function?
-<ul>
-<li>Tip: Variables will contain a data object. Functions perform an action or task.</li>
-</ul>
-</li>
-<li>Assuming that <code>SELECT</code> is a function, what might it do?</li>
-<li>The <code>*</code> character is new. What might <code>*</code> indicate, in combination with <code>SELECT</code>?</li>
-<li>Parsing the second line that starts with <code>WHERE</code>, can you make an educated guess about what <code>Ocean</code> and <code>BuoyName</code> refer to, in terms of variables?</li>
-<li>Can you guess (or feel free to use your favorite search engine) what <code>LIKE 'S%'</code> and <code>LIKE 'K%'</code> would indicate?</li>
-<li>Note the <code>;</code> at the end of the line starting with <code>WHERE</code>. What might this mean?</li>
-</ul>
-<details><summary>
-Do your answers match these?
-</summary><ul>
-<li>The <code>OceanBuoys</code> term here refers to a table or dataframe or matrix (really, any kind of tabular format).</li>
-<li>The <code>SELECT</code> function selects columns from the <code>OceanBuoys</code> table.</li>
-<li>The <code>*</code> is a wildcard matching symbol. It indicates that we want to return <em>all</em> columns from the table, no matter what their column names are.</li>
-<li>The <code>OceanBuoys</code> table must have columns named <code>Ocean</code> and <code>BuoyName</code>.
-<ul>
-<li>If we wanted to return only these columns, the syntax could be: <code>SELECT Ocean, BuoyName FROM OceanBuoys</code>
-</li>
-</ul>
-</li>
-<li>
-<code>LIKE</code> is used for pattern matching. The symbol <code>%</code> is a wildcard character in SQL. This code is matching values that start with “S” or with “K”.</li>
-<li>The conditions after <code>WHERE</code> are the row-based conditions for what will be returned, analogous to <code>SELECT</code> for the column-specific condition.</li>
-<li>The <code>;</code> is used to indicate the end of a statement in SQL. It tells the computer that the ‘thought’ is finished, and the action of <em>doing</em> the thought can commence.</li>
-</ul></details><p><br></p>
-<p><strong>Exercise, continued:</strong> Now, can you write out a narrative of what you see the code is trying to do?</p>
-<details><summary>
-Example written narrative
-</summary><p>This code is returning a subset of data from the <code>OceanBuoys</code> table. Starting from the full <code>OceanBuoys</code> table, return all the columns from this table, but keep only rows where <code>Ocean</code> is equal to “Atlantic” <em>and</em> where the <code>BuoyName</code> value starts with “S” or “K”. The returned data should be tabular, with the same number of columns as the full <code>OceanBuoys</code> table, but likely with less rows (only those that met the condition).</p>
-</details><p><br></p>
-<hr>
-</div>
-<div id="nested-for-loops-and-if-else-statements-in-python" class="section level2" number="10.2">
-<h2>
-<span class="header-section-number">10.2</span> Nested <code>for</code> loops and <code>if else</code> statements (in Python)<a class="anchor" aria-label="anchor" href="#nested-for-loops-and-if-else-statements-in-python"><i class="fas fa-link"></i></a>
-</h2>
-<p>Another useful way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions, maybe subsetting - we want to understand the order of operations of each thing that is being done.</p>
+<p>One way to contextualize unfamiliar code is to break down a big chunk of code into self-contained sections. For instance, if the code is doing a lot of things - looping through some task, with some conditions - we want to understand the order of operations of each thing that is being done.</p>
 <p>Below is an example of code that is scraping content from a set of website pages and saving that content locally. This code chunk uses nested <code>for</code> loops, and nested <code>if else</code> statements with the <code>for</code> loops and within other <code>if else</code> statements.<br></p>
-<p>The code may look intimidating! But remember, we’re less concerned here about understanding every detail about what the code is doing, and more about understanding where each loop and conditional statement begins and ends.</p>
 <p><strong>Exercise</strong>: Review the code chunk below and identify on which line each <code>for</code> loop and each <code>if else</code> statement starts and ends.</p>
 <ul>
 <li>First <code>for</code> loop
@@ -183,62 +138,62 @@ Example written narrative
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="practice.html#cb68-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
-<span id="cb68-2"><a href="practice.html#cb68-2" tabindex="-1"></a></span>
-<span id="cb68-3"><a href="practice.html#cb68-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
-<span id="cb68-4"><a href="practice.html#cb68-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
-<span id="cb68-5"><a href="practice.html#cb68-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
-<span id="cb68-6"><a href="practice.html#cb68-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
-<span id="cb68-7"><a href="practice.html#cb68-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
-<span id="cb68-8"><a href="practice.html#cb68-8" tabindex="-1"></a><span class="fl">6.</span> </span>
-<span id="cb68-9"><a href="practice.html#cb68-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
-<span id="cb68-10"><a href="practice.html#cb68-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
-<span id="cb68-11"><a href="practice.html#cb68-11" tabindex="-1"></a><span class="fl">9.</span> </span>
-<span id="cb68-12"><a href="practice.html#cb68-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
-<span id="cb68-13"><a href="practice.html#cb68-13" tabindex="-1"></a><span class="fl">11.</span> </span>
-<span id="cb68-14"><a href="practice.html#cb68-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
-<span id="cb68-15"><a href="practice.html#cb68-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
-<span id="cb68-16"><a href="practice.html#cb68-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
-<span id="cb68-17"><a href="practice.html#cb68-17" tabindex="-1"></a><span class="fl">15.</span> </span>
-<span id="cb68-18"><a href="practice.html#cb68-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
-<span id="cb68-19"><a href="practice.html#cb68-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
-<span id="cb68-20"><a href="practice.html#cb68-20" tabindex="-1"></a><span class="fl">18.</span> </span>
-<span id="cb68-21"><a href="practice.html#cb68-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
-<span id="cb68-22"><a href="practice.html#cb68-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
-<span id="cb68-23"><a href="practice.html#cb68-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
-<span id="cb68-24"><a href="practice.html#cb68-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
-<span id="cb68-25"><a href="practice.html#cb68-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
-<span id="cb68-26"><a href="practice.html#cb68-26" tabindex="-1"></a><span class="fl">24.</span> </span>
-<span id="cb68-27"><a href="practice.html#cb68-27" tabindex="-1"></a><span class="fl">25.</span> </span>
-<span id="cb68-28"><a href="practice.html#cb68-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
-<span id="cb68-29"><a href="practice.html#cb68-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
-<span id="cb68-30"><a href="practice.html#cb68-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
-<span id="cb68-31"><a href="practice.html#cb68-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
-<span id="cb68-32"><a href="practice.html#cb68-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
-<span id="cb68-33"><a href="practice.html#cb68-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb68-34"><a href="practice.html#cb68-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
-<span id="cb68-35"><a href="practice.html#cb68-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
-<span id="cb68-36"><a href="practice.html#cb68-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
-<span id="cb68-37"><a href="practice.html#cb68-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
-<span id="cb68-38"><a href="practice.html#cb68-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb68-39"><a href="practice.html#cb68-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
-<span id="cb68-40"><a href="practice.html#cb68-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
-<span id="cb68-41"><a href="practice.html#cb68-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
-<span id="cb68-42"><a href="practice.html#cb68-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
-<span id="cb68-43"><a href="practice.html#cb68-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
-<span id="cb68-44"><a href="practice.html#cb68-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
-<span id="cb68-45"><a href="practice.html#cb68-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
-<span id="cb68-46"><a href="practice.html#cb68-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
-<span id="cb68-47"><a href="practice.html#cb68-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
-<span id="cb68-48"><a href="practice.html#cb68-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
-<span id="cb68-49"><a href="practice.html#cb68-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
-<span id="cb68-50"><a href="practice.html#cb68-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb68-51"><a href="practice.html#cb68-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
-<span id="cb68-52"><a href="practice.html#cb68-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
-<span id="cb68-53"><a href="practice.html#cb68-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
-<span id="cb68-54"><a href="practice.html#cb68-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
-<span id="cb68-55"><a href="practice.html#cb68-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
-<span id="cb68-56"><a href="practice.html#cb68-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="practice.html#cb44-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
+<span id="cb44-2"><a href="practice.html#cb44-2" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="practice.html#cb44-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
+<span id="cb44-4"><a href="practice.html#cb44-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
+<span id="cb44-5"><a href="practice.html#cb44-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
+<span id="cb44-6"><a href="practice.html#cb44-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
+<span id="cb44-7"><a href="practice.html#cb44-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
+<span id="cb44-8"><a href="practice.html#cb44-8" tabindex="-1"></a><span class="fl">6.</span> </span>
+<span id="cb44-9"><a href="practice.html#cb44-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
+<span id="cb44-10"><a href="practice.html#cb44-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
+<span id="cb44-11"><a href="practice.html#cb44-11" tabindex="-1"></a><span class="fl">9.</span> </span>
+<span id="cb44-12"><a href="practice.html#cb44-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
+<span id="cb44-13"><a href="practice.html#cb44-13" tabindex="-1"></a><span class="fl">11.</span> </span>
+<span id="cb44-14"><a href="practice.html#cb44-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
+<span id="cb44-15"><a href="practice.html#cb44-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
+<span id="cb44-16"><a href="practice.html#cb44-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
+<span id="cb44-17"><a href="practice.html#cb44-17" tabindex="-1"></a><span class="fl">15.</span> </span>
+<span id="cb44-18"><a href="practice.html#cb44-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
+<span id="cb44-19"><a href="practice.html#cb44-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb44-20"><a href="practice.html#cb44-20" tabindex="-1"></a><span class="fl">18.</span> </span>
+<span id="cb44-21"><a href="practice.html#cb44-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
+<span id="cb44-22"><a href="practice.html#cb44-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb44-23"><a href="practice.html#cb44-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
+<span id="cb44-24"><a href="practice.html#cb44-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb44-25"><a href="practice.html#cb44-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb44-26"><a href="practice.html#cb44-26" tabindex="-1"></a><span class="fl">24.</span> </span>
+<span id="cb44-27"><a href="practice.html#cb44-27" tabindex="-1"></a><span class="fl">25.</span> </span>
+<span id="cb44-28"><a href="practice.html#cb44-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
+<span id="cb44-29"><a href="practice.html#cb44-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
+<span id="cb44-30"><a href="practice.html#cb44-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb44-31"><a href="practice.html#cb44-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
+<span id="cb44-32"><a href="practice.html#cb44-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
+<span id="cb44-33"><a href="practice.html#cb44-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb44-34"><a href="practice.html#cb44-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
+<span id="cb44-35"><a href="practice.html#cb44-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
+<span id="cb44-36"><a href="practice.html#cb44-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
+<span id="cb44-37"><a href="practice.html#cb44-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
+<span id="cb44-38"><a href="practice.html#cb44-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb44-39"><a href="practice.html#cb44-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
+<span id="cb44-40"><a href="practice.html#cb44-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
+<span id="cb44-41"><a href="practice.html#cb44-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
+<span id="cb44-42"><a href="practice.html#cb44-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
+<span id="cb44-43"><a href="practice.html#cb44-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
+<span id="cb44-44"><a href="practice.html#cb44-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
+<span id="cb44-45"><a href="practice.html#cb44-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
+<span id="cb44-46"><a href="practice.html#cb44-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
+<span id="cb44-47"><a href="practice.html#cb44-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
+<span id="cb44-48"><a href="practice.html#cb44-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
+<span id="cb44-49"><a href="practice.html#cb44-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
+<span id="cb44-50"><a href="practice.html#cb44-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb44-51"><a href="practice.html#cb44-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
+<span id="cb44-52"><a href="practice.html#cb44-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
+<span id="cb44-53"><a href="practice.html#cb44-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
+<span id="cb44-54"><a href="practice.html#cb44-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
+<span id="cb44-55"><a href="practice.html#cb44-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
+<span id="cb44-56"><a href="practice.html#cb44-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
 <details><summary>
 Start and end locations
 </summary><ul>
@@ -287,278 +242,15 @@ Start and end locations
 </li>
 </ul></details><hr>
 </div>
-<div id="new-syntax-and-terms-in-r" class="section level2" number="10.3">
-<h2>
-<span class="header-section-number">10.3</span> New syntax and terms (in R)<a class="anchor" aria-label="anchor" href="#new-syntax-and-terms-in-r"><i class="fas fa-link"></i></a>
-</h2>
-<p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own special syntax, which can take a while to get used to. Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice. Some of us prefer DuckDuckGo).<br></p>
-<p>Here is an example of R code:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="practice.html#cb69-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb69-2"><a href="practice.html#cb69-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb69-3"><a href="practice.html#cb69-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb69-4"><a href="practice.html#cb69-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
-<span id="cb69-5"><a href="practice.html#cb69-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
-<span id="cb69-6"><a href="practice.html#cb69-6" tabindex="-1"></a>  </span></code></pre></div>
-<p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
-<p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below to guide your annotation.</p>
-<ul>
-<li>Line 1
-<ul>
-<li>What is <code>df_new &lt;- df</code> doing here?
-<ul>
-<li>Hint: refer to 8.1.3, Common Variable Names</li>
-</ul>
-</li>
-<li>What does the <code>%&gt;%</code> symbol indicate?</li>
-</ul>
-</li>
-<li>Line 2
-<ul>
-<li>What is the <code>select()</code> function likely doing?</li>
-<li>What might it mean that the argument in this function is preceded by <code>-</code>?</li>
-</ul>
-</li>
-<li>Line 3
-<ul>
-<li>Using context clues (and your favorite search engine) what do you think the <code>mutate()</code> function does?</li>
-<li>The new <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> function has three arguments (<code>paste(arg1, arg2, arg3)</code>). What do you think the arguments are for?</li>
-</ul>
-</li>
-<li>Line 4 &amp; 5 (note: new line not strictly necessary, only to fit in page width without needing scroll)
-<ul>
-<li>This <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has a different format than we’ve covered so far, but the concept is the same. Assuming this <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> statement has three arguments (<code>ifelse(condition, mystery1, mystery2)</code>) what might the two mystery arguments be specifying?</li>
-<li>Looking at the section <code>survey_wave %in% c("first", "second")</code>, what do you think this would translate to, as a written explanation of the task here?</li>
-</ul>
-</li>
-<li>Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?</li>
-</ul>
-<details><summary>
-Example narrative
-</summary><p>Starting from the table/dataframe called <code>df</code>, we want to keep (<code>select</code>) all columns <em>except</em> the column named <code>respondent_name</code>.<br></p>
-<p>Then, make a new column called <code>identifier</code>. This new column is created by pasting together the value in the <code>respondent_id</code> column and the <code>survey_wave</code> column, separated by an underscore, <code>_</code>.<br></p>
-<p>Then, make another new column called <code>survey_type</code>. The values in this column are determined by an <code>ifelse</code> statement: if the value in the <code>survey_wave</code> column is any of the values specified in the list <code>("first", "second")</code> (so if the value is <code>first</code> or <code>second</code>), then the value in the <code>survey_type</code> column will be <code>phone</code>. Otherwise, the value will be <code>in person</code>.<br></p>
-</details><p><br></p>
-<hr>
-</div>
-<div id="new-functions-in-stata" class="section level2" number="10.4">
-<h2>
-<span class="header-section-number">10.4</span> New functions in Stata<a class="anchor" aria-label="anchor" href="#new-functions-in-stata"><i class="fas fa-link"></i></a>
-</h2>
-<p>This challenge uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
-<p>Relying on what we’ve learned so far and context clues, what is the code below doing?</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb70-1"><a href="practice.html#cb70-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
-<details><summary>
-What is this code doing?
-</summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (<code>n-1</code>) value of <code>variable</code>.</p>
-There are <a href="https://www.stata.com/support/faqs/data-management/replacing-missing-values/">many ways to replace missing values in Stata</a>, this is one.
-</details><hr>
-</div>
-<div id="c" class="section level2" number="10.5">
-<h2>
-<span class="header-section-number">10.5</span> C++<a class="anchor" aria-label="anchor" href="#c"><i class="fas fa-link"></i></a>
-</h2>
-<p>This is a C++ file named <code>testScratchDoc.cpp</code></p>
-<p>Review the file then answer the following questions, annotating as you see fit.</p>
-<ul>
-<li>How is the code similar to some of the code that we’ve seen so far?</li>
-<li>What do you think the code does (generally)?</li>
-<li>What questions do you have about it?</li>
-<li>What are some suggestions to make it easier to read?</li>
-</ul>
-<div class="sourceCode" id="cb71"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb71-1"><a href="practice.html#cb71-1" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb71-2"><a href="practice.html#cb71-2" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb71-3"><a href="practice.html#cb71-3" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;cstring&gt;</span></span>
-<span id="cb71-4"><a href="practice.html#cb71-4" tabindex="-1"></a></span>
-<span id="cb71-5"><a href="practice.html#cb71-5" tabindex="-1"></a></span>
-<span id="cb71-6"><a href="practice.html#cb71-6" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb71-7"><a href="practice.html#cb71-7" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello World!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-8"><a href="practice.html#cb71-8" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="practice.html#cb71-9" tabindex="-1"></a><span class="co">//    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;</span></span>
-<span id="cb71-10"><a href="practice.html#cb71-10" tabindex="-1"></a></span>
-<span id="cb71-11"><a href="practice.html#cb71-11" tabindex="-1"></a>    <span class="co">// mbr (a,b,c,d)</span></span>
-<span id="cb71-12"><a href="practice.html#cb71-12" tabindex="-1"></a>    <span class="dt">int</span> a<span class="op">=</span><span class="dv">6</span><span class="op">;</span></span>
-<span id="cb71-13"><a href="practice.html#cb71-13" tabindex="-1"></a>    <span class="dt">int</span> b<span class="op">=</span><span class="dv">3</span><span class="op">;</span></span>
-<span id="cb71-14"><a href="practice.html#cb71-14" tabindex="-1"></a>    <span class="dt">int</span> c<span class="op">=</span><span class="dv">8</span><span class="op">;</span> <span class="co">//c=b+1; inner/outer test c=4</span></span>
-<span id="cb71-15"><a href="practice.html#cb71-15" tabindex="-1"></a>    <span class="dt">int</span> d<span class="op">=</span><span class="dv">5</span><span class="op">;</span></span>
-<span id="cb71-16"><a href="practice.html#cb71-16" tabindex="-1"></a></span>
-<span id="cb71-17"><a href="practice.html#cb71-17" tabindex="-1"></a>    <span class="co">//mbr (i,j,k,l)</span></span>
-<span id="cb71-18"><a href="practice.html#cb71-18" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">=</span><span class="dv">1</span><span class="op">;</span>    <span class="co">// i=n;  inner/outer test i=1</span></span>
-<span id="cb71-19"><a href="practice.html#cb71-19" tabindex="-1"></a>    <span class="dt">int</span> j<span class="op">=</span><span class="dv">2</span><span class="op">;</span></span>
-<span id="cb71-20"><a href="practice.html#cb71-20" tabindex="-1"></a>    <span class="dt">int</span> k<span class="op">=</span><span class="dv">3</span><span class="op">;</span>  <span class="co">// k=j+1; inner/outer test k=3</span></span>
-<span id="cb71-21"><a href="practice.html#cb71-21" tabindex="-1"></a>    <span class="dt">int</span> l<span class="op">=</span><span class="dv">4</span><span class="op">;</span></span>
-<span id="cb71-22"><a href="practice.html#cb71-22" tabindex="-1"></a>    <span class="dt">bool</span> intersect_x <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb71-23"><a href="practice.html#cb71-23" tabindex="-1"></a>    <span class="dt">bool</span> intersect_y <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span>
-<span id="cb71-24"><a href="practice.html#cb71-24" tabindex="-1"></a></span>
-<span id="cb71-25"><a href="practice.html#cb71-25" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>a<span class="op">,</span>b<span class="op">,</span>c<span class="op">,</span>d<span class="op">);</span></span>
-<span id="cb71-26"><a href="practice.html#cb71-26" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"MBR1[</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">,</span><span class="sc">%d</span><span class="st">]</span><span class="sc">\n</span><span class="st">"</span><span class="op">,</span>i<span class="op">,</span>j<span class="op">,</span>k<span class="op">,</span>l<span class="op">);</span></span>
-<span id="cb71-27"><a href="practice.html#cb71-27" tabindex="-1"></a></span>
-<span id="cb71-28"><a href="practice.html#cb71-28" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>c<span class="op">&lt;</span>i<span class="op">)</span> <span class="op">||(</span>k<span class="op">&lt;</span>a<span class="op">)</span> <span class="op">))</span></span>
-<span id="cb71-29"><a href="practice.html#cb71-29" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb71-30"><a href="practice.html#cb71-30" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-31"><a href="practice.html#cb71-31" tabindex="-1"></a>        intersect_x <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb71-32"><a href="practice.html#cb71-32" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_x is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_x<span class="op">);</span></span>
-<span id="cb71-33"><a href="practice.html#cb71-33" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
-<span id="cb71-34"><a href="practice.html#cb71-34" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"x does not intersect!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-35"><a href="practice.html#cb71-35" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb71-36"><a href="practice.html#cb71-36" tabindex="-1"></a></span>
-<span id="cb71-37"><a href="practice.html#cb71-37" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(!((</span>d<span class="op">&lt;</span>j<span class="op">)</span> <span class="op">||(</span>l<span class="op">&lt;</span>b<span class="op">)</span> <span class="op">))</span></span>
-<span id="cb71-38"><a href="practice.html#cb71-38" tabindex="-1"></a>    <span class="op">{</span></span>
-<span id="cb71-39"><a href="practice.html#cb71-39" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y intersects!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-40"><a href="practice.html#cb71-40" tabindex="-1"></a>        intersect_y <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
-<span id="cb71-41"><a href="practice.html#cb71-41" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"intersect_y is </span><span class="sc">%d\n</span><span class="st">"</span><span class="op">,</span> intersect_y<span class="op">);</span></span>
-<span id="cb71-42"><a href="practice.html#cb71-42" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span><span class="op">{</span></span>
-<span id="cb71-43"><a href="practice.html#cb71-43" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"y does not intercept!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-44"><a href="practice.html#cb71-44" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb71-45"><a href="practice.html#cb71-45" tabindex="-1"></a></span>
-<span id="cb71-46"><a href="practice.html#cb71-46" tabindex="-1"></a>    <span class="cf">if</span><span class="op">(</span>intersect_x<span class="op">&amp;&amp;</span>intersect_y<span class="op">)</span></span>
-<span id="cb71-47"><a href="practice.html#cb71-47" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 intersects with MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-48"><a href="practice.html#cb71-48" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb71-49"><a href="practice.html#cb71-49" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"MBR1 does not intersect MBR2</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb71-50"><a href="practice.html#cb71-50" tabindex="-1"></a></span>
-<span id="cb71-51"><a href="practice.html#cb71-51" tabindex="-1"></a></span>
-<span id="cb71-52"><a href="practice.html#cb71-52" tabindex="-1"></a></span>
-<span id="cb71-53"><a href="practice.html#cb71-53" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb71-54"><a href="practice.html#cb71-54" tabindex="-1"></a><span class="co">    // testing writing to memory using pointers</span></span>
-<span id="cb71-55"><a href="practice.html#cb71-55" tabindex="-1"></a><span class="co">    int page = 1;</span></span>
-<span id="cb71-56"><a href="practice.html#cb71-56" tabindex="-1"></a></span>
-<span id="cb71-57"><a href="practice.html#cb71-57" tabindex="-1"></a><span class="co">    int *pData; // pointer to data</span></span>
-<span id="cb71-58"><a href="practice.html#cb71-58" tabindex="-1"></a><span class="co">    pData = &amp;page;</span></span>
-<span id="cb71-59"><a href="practice.html#cb71-59" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
-<span id="cb71-60"><a href="practice.html#cb71-60" tabindex="-1"></a></span>
-<span id="cb71-61"><a href="practice.html#cb71-61" tabindex="-1"></a><span class="co">    int* newP; // new pointer to data</span></span>
-<span id="cb71-62"><a href="practice.html#cb71-62" tabindex="-1"></a><span class="co">    int a = 2;</span></span>
-<span id="cb71-63"><a href="practice.html#cb71-63" tabindex="-1"></a><span class="co">    int b = 3;</span></span>
-<span id="cb71-64"><a href="practice.html#cb71-64" tabindex="-1"></a></span>
-<span id="cb71-65"><a href="practice.html#cb71-65" tabindex="-1"></a><span class="co">    int m = sizeof(b);</span></span>
-<span id="cb71-66"><a href="practice.html#cb71-66" tabindex="-1"></a></span>
-<span id="cb71-67"><a href="practice.html#cb71-67" tabindex="-1"></a><span class="co">    newP = pData+m;</span></span>
-<span id="cb71-68"><a href="practice.html#cb71-68" tabindex="-1"></a></span>
-<span id="cb71-69"><a href="practice.html#cb71-69" tabindex="-1"></a><span class="co">    memcpy(pData,&amp;a,sizeof(int));</span></span>
-<span id="cb71-70"><a href="practice.html#cb71-70" tabindex="-1"></a><span class="co">    printf("\npdata is %s; \n&amp;pData is %p; \n*pdata is %d",pData, &amp;pData, *pData);</span></span>
-<span id="cb71-71"><a href="practice.html#cb71-71" tabindex="-1"></a></span>
-<span id="cb71-72"><a href="practice.html#cb71-72" tabindex="-1"></a><span class="co">    memcpy(pData+m,&amp;b,sizeof(int));</span></span>
-<span id="cb71-73"><a href="practice.html#cb71-73" tabindex="-1"></a><span class="co">//    newP = pData+sizeof(int);</span></span>
-<span id="cb71-74"><a href="practice.html#cb71-74" tabindex="-1"></a><span class="co">    printf("\nnewP is %s; \n&amp;newP is %p; \n*newP is %d",newP, &amp;newP, *newP);</span></span>
-<span id="cb71-75"><a href="practice.html#cb71-75" tabindex="-1"></a><span class="co">*/</span> <span class="co">// end testing writing to memory using pointers</span></span>
-<span id="cb71-76"><a href="practice.html#cb71-76" tabindex="-1"></a></span>
-<span id="cb71-77"><a href="practice.html#cb71-77" tabindex="-1"></a></span>
-<span id="cb71-78"><a href="practice.html#cb71-78" tabindex="-1"></a></span>
-<span id="cb71-79"><a href="practice.html#cb71-79" tabindex="-1"></a>    <span class="co">// testing whether you can initialize a structure with an outside variable</span></span>
-<span id="cb71-80"><a href="practice.html#cb71-80" tabindex="-1"></a>    <span class="co">// not really, you can with an outside constant</span></span>
-<span id="cb71-81"><a href="practice.html#cb71-81" tabindex="-1"></a><span class="co">/*    const int b = 100;</span></span>
-<span id="cb71-82"><a href="practice.html#cb71-82" tabindex="-1"></a><span class="co">    const int c = 7;</span></span>
-<span id="cb71-83"><a href="practice.html#cb71-83" tabindex="-1"></a><span class="co">    const int a = (int)(b/c);</span></span>
-<span id="cb71-84"><a href="practice.html#cb71-84" tabindex="-1"></a><span class="co">    int i;</span></span>
-<span id="cb71-85"><a href="practice.html#cb71-85" tabindex="-1"></a></span>
-<span id="cb71-86"><a href="practice.html#cb71-86" tabindex="-1"></a><span class="co">    struct test {</span></span>
-<span id="cb71-87"><a href="practice.html#cb71-87" tabindex="-1"></a><span class="co">        int test[a];</span></span>
-<span id="cb71-88"><a href="practice.html#cb71-88" tabindex="-1"></a><span class="co">    };</span></span>
-<span id="cb71-89"><a href="practice.html#cb71-89" tabindex="-1"></a></span>
-<span id="cb71-90"><a href="practice.html#cb71-90" tabindex="-1"></a><span class="co">    test mytest;</span></span>
-<span id="cb71-91"><a href="practice.html#cb71-91" tabindex="-1"></a></span>
-<span id="cb71-92"><a href="practice.html#cb71-92" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
-<span id="cb71-93"><a href="practice.html#cb71-93" tabindex="-1"></a><span class="co">    {</span></span>
-<span id="cb71-94"><a href="practice.html#cb71-94" tabindex="-1"></a><span class="co">        mytest.test[i]=i;</span></span>
-<span id="cb71-95"><a href="practice.html#cb71-95" tabindex="-1"></a><span class="co">    }</span></span>
-<span id="cb71-96"><a href="practice.html#cb71-96" tabindex="-1"></a></span>
-<span id="cb71-97"><a href="practice.html#cb71-97" tabindex="-1"></a><span class="co">    for(i=0; i&lt;a; i++)</span></span>
-<span id="cb71-98"><a href="practice.html#cb71-98" tabindex="-1"></a><span class="co">    {</span></span>
-<span id="cb71-99"><a href="practice.html#cb71-99" tabindex="-1"></a><span class="co">        printf("\nmytest[%d]=%d",i,mytest.test[i]);</span></span>
-<span id="cb71-100"><a href="practice.html#cb71-100" tabindex="-1"></a><span class="co">    }*/</span></span>
-<span id="cb71-101"><a href="practice.html#cb71-101" tabindex="-1"></a></span>
-<span id="cb71-102"><a href="practice.html#cb71-102" tabindex="-1"></a></span>
-<span id="cb71-103"><a href="practice.html#cb71-103" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb71-104"><a href="practice.html#cb71-104" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb71-105"><a href="practice.html#cb71-105" tabindex="-1"></a><span class="co">/*</span></span>
-<span id="cb71-106"><a href="practice.html#cb71-106" tabindex="-1"></a><span class="co">#include &lt;stdio.h&gt;</span></span>
-<span id="cb71-107"><a href="practice.html#cb71-107" tabindex="-1"></a></span>
-<span id="cb71-108"><a href="practice.html#cb71-108" tabindex="-1"></a><span class="co">main() {</span></span>
-<span id="cb71-109"><a href="practice.html#cb71-109" tabindex="-1"></a><span class="co">    printf("Hello World!\n");</span></span>
-<span id="cb71-110"><a href="practice.html#cb71-110" tabindex="-1"></a><span class="co">    char sentence []="test your 12 7 42";</span></span>
-<span id="cb71-111"><a href="practice.html#cb71-111" tabindex="-1"></a><span class="co">    char str[20];</span></span>
-<span id="cb71-112"><a href="practice.html#cb71-112" tabindex="-1"></a><span class="co">    int a, b, c;</span></span>
-<span id="cb71-113"><a href="practice.html#cb71-113" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s %s %d %d %d", str, str, &amp;a, &amp;b, &amp;c);</span></span>
-<span id="cb71-114"><a href="practice.html#cb71-114" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
-<span id="cb71-115"><a href="practice.html#cb71-115" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
-<span id="cb71-116"><a href="practice.html#cb71-116" tabindex="-1"></a><span class="co">    sscanf(sentence,"%s your %d 7 %d", str, &amp;a, &amp;b);</span></span>
-<span id="cb71-117"><a href="practice.html#cb71-117" tabindex="-1"></a><span class="co">    printf("%d %d %d\n", a,b,c);</span></span>
-<span id="cb71-118"><a href="practice.html#cb71-118" tabindex="-1"></a><span class="co">    printf("%s\n", str);</span></span>
-<span id="cb71-119"><a href="practice.html#cb71-119" tabindex="-1"></a><span class="co">    printf("%s\n", sentence);</span></span>
-<span id="cb71-120"><a href="practice.html#cb71-120" tabindex="-1"></a></span>
-<span id="cb71-121"><a href="practice.html#cb71-121" tabindex="-1"></a><span class="co">}*/</span></span></code></pre></div>
-<hr>
-</div>
-<div id="matlab" class="section level2" number="10.6">
-<h2>
-<span class="header-section-number">10.6</span> MATLAB<a class="anchor" aria-label="anchor" href="#matlab"><i class="fas fa-link"></i></a>
-</h2>
-<p>This is a MATLAB file named <code>assignment01_leaf.m</code></p>
-<p>Review the file then answer the following questions, annotating as you see fit.</p>
-<ul>
-<li>How is the code similar to some of the code that we’ve seen so far?</li>
-<li>What do you think starts a comment line?</li>
-<li>What do you think the code does (generally)?</li>
-<li>What questions do you have about it?</li>
-<li>What are some suggestions to make it easier to read?</li>
-</ul>
-<div class="sourceCode" id="cb72"><pre class="sourceCode octave"><code class="sourceCode octave"><span id="cb72-1"><a href="practice.html#cb72-1" tabindex="-1"></a><span class="cf">function</span> assignment01_leaf</span>
-<span id="cb72-2"><a href="practice.html#cb72-2" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% (C) Student Name Here %%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-3"><a href="practice.html#cb72-3" tabindex="-1"></a>TRAIN <span class="op">=</span> <span class="bu">load</span>(<span class="st">'FaultsNNA_csv'</span>)<span class="op">;</span> <span class="co">% Only these two lines need to be changed to test a different dataset. % </span></span>
-<span id="cb72-4"><a href="practice.html#cb72-4" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-5"><a href="practice.html#cb72-5" tabindex="-1"></a></span>
-<span id="cb72-6"><a href="practice.html#cb72-6" tabindex="-1"></a>TRAIN_class_labels <span class="op">=</span> TRAIN(<span class="op">:,</span><span class="fl">1</span>)<span class="op">;</span>    <span class="co">% Pull out the class labels.</span></span>
-<span id="cb72-7"><a href="practice.html#cb72-7" tabindex="-1"></a>TRAIN(<span class="op">:,</span><span class="fl">1</span>) <span class="op">=</span> []<span class="op">;</span>    <span class="co">% Remove class labels from training set.</span></span>
-<span id="cb72-8"><a href="practice.html#cb72-8" tabindex="-1"></a></span>
-<span id="cb72-9"><a href="practice.html#cb72-9" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-10"><a href="practice.html#cb72-10" tabindex="-1"></a><span class="co">% Compute and display Default Rate and other Basic Information</span></span>
-<span id="cb72-11"><a href="practice.html#cb72-11" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb72-12"><a href="practice.html#cb72-12" tabindex="-1"></a>[<span class="fu">class</span><span class="op">,</span><span class="fu">count</span>] <span class="op">=</span> <span class="fu">mode</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>))<span class="op">;</span></span>
-<span id="cb72-13"><a href="practice.html#cb72-13" tabindex="-1"></a>default_error_rate<span class="op">=</span><span class="fl">1</span><span class="op">-</span>(<span class="fu">count</span><span class="op">/</span><span class="fu">size</span>(TRAIN_class_labels(<span class="op">:,</span><span class="fl">1</span>)<span class="op">,</span><span class="fl">1</span>))<span class="op">;</span></span>
-<span id="cb72-14"><a href="practice.html#cb72-14" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset you tested has '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">length</span>(<span class="fu">unique</span>(TRAIN_class_labels)))<span class="op">,</span> <span class="st">' classes.'</span>])<span class="op">;</span></span>
-<span id="cb72-15"><a href="practice.html#cb72-15" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The training set is of size '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">1</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-16"><a href="practice.html#cb72-16" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The time series are of length '</span><span class="op">,</span> <span class="fu">int2str</span>(<span class="fu">size</span>(TRAIN<span class="op">,</span><span class="fl">2</span>))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-17"><a href="practice.html#cb72-17" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The dataset''s most common class is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">class</span>)<span class="op">,</span><span class="st">' with a total of '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">count</span>)<span class="op">,</span><span class="st">' occurances.'</span>])<span class="op">;</span></span>
-<span id="cb72-18"><a href="practice.html#cb72-18" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The default error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(default_error_rate)<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-19"><a href="practice.html#cb72-19" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-20"><a href="practice.html#cb72-20" tabindex="-1"></a></span>
-<span id="cb72-21"><a href="practice.html#cb72-21" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-22"><a href="practice.html#cb72-22" tabindex="-1"></a><span class="co">% Compute and display the k-fold error rate</span></span>
-<span id="cb72-23"><a href="practice.html#cb72-23" tabindex="-1"></a><span class="co">%</span></span>
-<span id="cb72-24"><a href="practice.html#cb72-24" tabindex="-1"></a>k<span class="op">=</span><span class="fu">length</span>(TRAIN_class_labels)<span class="op">;</span></span>
-<span id="cb72-25"><a href="practice.html#cb72-25" tabindex="-1"></a>k_fold_error_rate <span class="op">=</span> k_fold_cross_validation(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>k)<span class="op">;</span></span>
-<span id="cb72-26"><a href="practice.html#cb72-26" tabindex="-1"></a><span class="fu">disp</span>([<span class="st">'The normal k-fold error rate is '</span><span class="op">,</span><span class="fu">num2str</span>(k_fold_error_rate)<span class="op">,</span><span class="st">' where k='</span><span class="op">,</span><span class="fu">num2str</span>(k)<span class="op">,</span><span class="st">' and length of train set is '</span><span class="op">,</span><span class="fu">num2str</span>(<span class="fu">length</span>(TRAIN_class_labels))<span class="op">,</span><span class="st">'.'</span>])<span class="op">;</span></span>
-<span id="cb72-27"><a href="practice.html#cb72-27" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-28"><a href="practice.html#cb72-28" tabindex="-1"></a></span>
-<span id="cb72-29"><a href="practice.html#cb72-29" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-30"><a href="practice.html#cb72-30" tabindex="-1"></a><span class="co">% Here is a sample classification algorithm, it is the simple (yet very competitive) one-nearest</span></span>
-<span id="cb72-31"><a href="practice.html#cb72-31" tabindex="-1"></a><span class="co">% neighbor using the Euclidean distance. </span></span>
-<span id="cb72-32"><a href="practice.html#cb72-32" tabindex="-1"></a><span class="co">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span>
-<span id="cb72-33"><a href="practice.html#cb72-33" tabindex="-1"></a><span class="cf">function</span> predicted_class <span class="op">=</span> Classification_Algorithm(TRAIN<span class="op">,</span>TRAIN_class_labels<span class="op">,</span>unknown_object)</span>
-<span id="cb72-34"><a href="practice.html#cb72-34" tabindex="-1"></a>best_so_far <span class="op">=</span> <span class="fu">inf</span><span class="op">;</span></span>
-<span id="cb72-35"><a href="practice.html#cb72-35" tabindex="-1"></a><span class="cf">for</span> <span class="fu">i</span> <span class="op">=</span> <span class="fl">1</span> <span class="op">:</span> <span class="fu">length</span>(TRAIN_class_labels)</span>
-<span id="cb72-36"><a href="practice.html#cb72-36" tabindex="-1"></a>    compare_to_this_object <span class="op">=</span> TRAIN(<span class="fu">i</span><span class="op">,:</span>)<span class="op">;</span></span>
-<span id="cb72-37"><a href="practice.html#cb72-37" tabindex="-1"></a>    <span class="fu">distance</span> <span class="op">=</span> <span class="fu">sqrt</span>(<span class="fu">sum</span>((compare_to_this_object <span class="op">-</span> unknown_object)<span class="op">.^</span><span class="fl">2</span>))<span class="op">;</span> <span class="co">% Euclidean distance</span></span>
-<span id="cb72-38"><a href="practice.html#cb72-38" tabindex="-1"></a>    <span class="cf">if</span> <span class="fu">distance</span> <span class="op">&lt;</span> best_so_far</span>
-<span id="cb72-39"><a href="practice.html#cb72-39" tabindex="-1"></a>        predicted_class <span class="op">=</span> TRAIN_class_labels(<span class="fu">i</span>)<span class="op">;</span></span>
-<span id="cb72-40"><a href="practice.html#cb72-40" tabindex="-1"></a>        best_so_far <span class="op">=</span> <span class="fu">distance</span><span class="op">;</span></span>
-<span id="cb72-41"><a href="practice.html#cb72-41" tabindex="-1"></a>    <span class="cf">end</span></span>
-<span id="cb72-42"><a href="practice.html#cb72-42" tabindex="-1"></a> <span class="cf">end</span><span class="op">;</span></span></code></pre></div>
-
-</div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="common-issues.html"><span class="header-section-number">9</span> Common Issues</a></div>
-<div class="next"><a href="recap-and-consultation-tips.html"><span class="header-section-number">11</span> Recap and Consultation Tips</a></div>
+<div class="prev"><a href="conditionals-and-making-choices.html"><span class="header-section-number">6</span> Conditionals and Making Choices</a></div>
+<div class="next"><a href="functions.html"><span class="header-section-number">8</span> Functions</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#practice"><span class="header-section-number">10</span> Practice</a></li>
-<li><a class="nav-link" href="#new-types-of-conditions-in-sql"><span class="header-section-number">10.1</span> New types of conditions (in SQL)</a></li>
-<li><a class="nav-link" href="#nested-for-loops-and-if-else-statements-in-python"><span class="header-section-number">10.2</span> Nested for loops and if else statements (in Python)</a></li>
-<li><a class="nav-link" href="#new-syntax-and-terms-in-r"><span class="header-section-number">10.3</span> New syntax and terms (in R)</a></li>
-<li><a class="nav-link" href="#new-functions-in-stata"><span class="header-section-number">10.4</span> New functions in Stata</a></li>
-<li><a class="nav-link" href="#c"><span class="header-section-number">10.5</span> C++</a></li>
-<li><a class="nav-link" href="#matlab"><span class="header-section-number">10.6</span> MATLAB</a></li>
+<li><a class="nav-link" href="#practice"><span class="header-section-number">7</span> Practice</a></li>
+<li><a class="nav-link" href="#nested-for-loops-and-if-else-statements-in-python"><span class="header-section-number">7.1</span> Nested for loops and if else statements (in Python)</a></li>
 </ul>
 
       <div class="book-extra">
@@ -575,7 +267,7 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-03-10.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-04-15.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
