@@ -260,11 +260,11 @@ Error: unexpected ')' in:
 
 ## Language examples: Formatting may vary
 
-Programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
+Much like with `for` loops, programming languages may have specific formatting for conditional statements. This may mean certain brackets must be used, new lines are required between sections, or tab indents are needed.
 
 **Python** requires indentation for code blocks.  Code blocks in different structures must be aligned with the same indentation.
 
-Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block intented by one
+Programming structures, such as `if`, `else`, `elif`, or `for` expects `:` at the end of each statement with the subsequent code block indented by one
 ```python
 if x == y:
   print("values are equal")
@@ -275,9 +275,7 @@ else:
 ```
 <hr>
 
-The next language examples do not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
-
-**R** makes use of curly brackets `{}` to indicate each section of an `if else` statement.
+**R** makes use of curly brackets `{}` to indicate each section of an `if else` statement. R does not require indentation for code blocks; however, indentation is used because it's easier for humans to read!
 
 ```r
 if (x == y) {
@@ -289,9 +287,8 @@ if (x == y) {
 }
 ```
 <hr>
-The following example is **C/C++** syntax.  One big difference between C/C++ and Python or R is C/C++ is a compiled programming language, which must first be compiled into a file (often *.exe, but can be anything) that contains the machine-language instructions to be executed.
 
-**C/C++** syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
+**C/C++** syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block and uses `cout` rather than `print` to specify what should be returned in the console.
 
 ```c
 if (x == y) {
@@ -304,7 +301,7 @@ if (x == y) {
 ```
 <hr>
 
-**PHP** is very similar to C/C++, but is used for web development.
+**PHP** is very similar to C/C++ with curly brackets and semicolons, but uses `echo` rather than `cout`.
 
 ```php
 if (x == y) {
@@ -317,7 +314,7 @@ if (x == y) {
 ```
 <hr>
 
-With **Bash**, you need to be careful of spaces around your operators and parentheses. (cheatsheets https://ss64.com/bash/if.html https://devhints.io/bash#conditionals)
+Here's a new language: **Bash**. This language is often used from the command line to perform operations on files. With **Bash**, you need to be careful of spaces around your operators and parentheses. (cheatsheets https://ss64.com/bash/if.html https://devhints.io/bash#conditionals)
 
 This Bash script example compares numbers
 

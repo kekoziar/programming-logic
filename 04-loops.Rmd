@@ -572,11 +572,14 @@ If a step is missed, it can be disastrous.  I can attest. I wrote a script to re
 
 ## Language examples: Formatting may vary
 
-Programming languages may have specific formatting for loops. This may mean certain brackets must be used, tab indents are needed, or ranges are specified a certain way.
+Programming languages may have specific formatting for loops. This may mean certain brackets must be used, tab indents are needed, or ranges are specified a certain way. 
+
+Formatting of outputs may also look slightly different, with some languages printing each output iteration on a new line, and some not.
 
 **Python** requires indentation for code blocks.  Code blocks in different structures must be aligned with the same indentation.
 
-Programming structures such as `for` expect `:` at the end of each statement with the subsequent code block intented by one
+Programming structures such as `for` expect `:` at the end of each statement with the subsequent code block indented by one.
+
 ```python
 for x in range(0, 5):
   print(x)
@@ -597,30 +600,20 @@ The following example is **C/C++** syntax.  One big difference between C/C++ and
 
 **C/C++** syntax looks a lot like R, but requires semicolons at the end of each line to be executed in a code block, while R does not require the semicolon (although R will also run if there are semicolons).
 
-```c
+Note that **C/C++** also uses the `cout` command to specify what should be returned to the console, rather than `print` like in **Python** or **R**.
 
+```c
+for (int i = 0; i <= 5; i++) {
+  cout << i;
+}
 ```
 <hr>
 
-**PHP** is very similar to C/C++, but is used for web development.
+**PHP** is very similar to C/C++, but is used for web development. Note that **PHP** uses `echo` rather than `cout` or `print` to specify what should be returned to the console.
 
 ```php
-
+for ($x = 0; $x <= 5; $x++) {
+  echo $x";
+}
 ```
-<hr>
-
-With **Bash**, you need to be careful of spaces around your operators and parentheses. (cheatsheets https://ss64.com/bash/if.html https://devhints.io/bash#conditionals)
-
-This Bash script example compares numbers
-
-```bash
-
-```
-
-This Bash script example compares text
-
-```bash
-
-```
-
 <hr>
