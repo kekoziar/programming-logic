@@ -1,0 +1,77 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Practice 
+
+In this section, we'll practice applying our understanding of functions and arguments to unfamiliar code.
+
+The code example below may look intimidating! But remember, we're less concerned here about understanding every detail about what the code is doing, and more about using what we've learned about programming logic as a lens through which to begin interpreting code.
+
+## New syntax and terms (in R)
+
+While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own function terms and syntax, which can take a while to get used to. 
+
+Don't panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice. Some of us prefer DuckDuckGo).\
+
+Here is an example of R code:
+
+```r
+1.  df_new <- df %>% 
+2.    select(-respondent_name) %>% 
+3.    mutate(identifier = paste(respondent_id, survey_wave, sep = "_")) %>% 
+4.    mutate(survey_type = 
+5.           ifelse(survey_wave %in% c("first", "second"), "phone", "in person"))
+  
+```
+__Exercise__: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.\
+
+Each line has a new take on the same logic we've covered in prior sections; a breakdown of new terms is below to guide your annotation.
+
+- Line 1
+  - What is `df_new <- df` doing here?
+    - Hint: refer to 8.1.3, Common Variable Names
+  - What does the `%>%` symbol indicate?
+- Line 2
+  - What is the `select()` function likely doing? 
+  - What might it mean that the argument in this function is preceded by `-`?
+- Line 3
+  - Using context clues (and your favorite search engine) what do you think the `mutate()` function does?
+  - The new `paste()` function has three arguments (`paste(arg1, arg2, arg3)`). What do you think the arguments are for?
+- Line 4 & 5 (note: new line not strictly necessary, only to fit in page width without needing scroll)
+  - This `ifelse()` statement has a different format than we've covered so far, but the concept is the same. Assuming this `ifelse()` statement has three arguments (`ifelse(condition, mystery1, mystery2)`) what might the two mystery arguments be specifying?
+  - Looking at the section `survey_wave %in% c("first", "second")`, what do you think this would translate to, as a written explanation of the task here?
+- Finally, it is always important to understand the data type and structure of the data being acted upon. Keep in mind, based on the questions above, what is the structure of the data being used here?
+  
+<details>
+<summary>Example narrative</summary>
+
+Starting from the table/dataframe called `df`, we want to keep (`select`) all columns _except_ the column named `respondent_name`.\
+
+Then, make a new column called `identifier`. This new column is created by pasting together the value in the `respondent_id` column and the `survey_wave` column, separated by an underscore, `_`.\
+
+Then, make another new column called `survey_type`. The values in this column are determined by an `ifelse` statement: if the value in the `survey_wave` column is any of the values specified in the list `("first", "second")` (so if the value is `first` or `second`), then the value in the `survey_type` column will be `phone`. Otherwise, the value will be `in person`.\
+
+</details>\
+
+<hr>
+
+## New functions in Stata - challenge question
+
+This code example uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor's experience, Stata is not user-friendly, but your mileage may vary!)
+
+Relying on what we've learned so far and context clues, what do you think the code below is doing?
+
+```stata
+replace variable = variable[_n-1] if missing(variable)
+```
+<details>
+<summary>What is this code doing?</summary>
+This is a bit of code to replace any missing values of `variable` with with previous (`n-1`) value of `variable`. 
+
+There are [many ways to replace missing values in Stata](https://www.stata.com/support/faqs/data-management/replacing-missing-values/), this is one.
+</details>
+
+<hr>
