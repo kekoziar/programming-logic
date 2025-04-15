@@ -52,6 +52,9 @@ function-names
 aliases
 exercise-create-popcorn-function
 language-examples-formatting-may-vary-may-not-need-in-this-section-since-round-and-mean-included-above
+practice-1
+new-syntax-and-terms-in-r
+new-functions-in-stata---challenge-question
 self-documenting-code
 variable-names
 naming-restrictions
@@ -68,9 +71,9 @@ order-of-execution
 order-of-assignment
 matching-delimiters-quotes-parens-brackets
 reading-and-writing-data-files
-practice-1
+practice-2
 new-types-of-conditions-in-sql
-new-syntax-and-terms-in-r
+new-syntax-and-terms-in-r-1
 new-functions-in-stata
 c
 matlab
