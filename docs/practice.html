@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="In this section, we’ll practice applying our understanding of for loops and if else conditional statements to unfamiliar code. The code example below may look intimidating! But remember, we’re...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -66,7 +66,8 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="about.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
 <li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
@@ -139,62 +140,62 @@
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="practice.html#cb44-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
-<span id="cb44-2"><a href="practice.html#cb44-2" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="practice.html#cb44-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
-<span id="cb44-4"><a href="practice.html#cb44-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
-<span id="cb44-5"><a href="practice.html#cb44-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
-<span id="cb44-6"><a href="practice.html#cb44-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
-<span id="cb44-7"><a href="practice.html#cb44-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
-<span id="cb44-8"><a href="practice.html#cb44-8" tabindex="-1"></a><span class="fl">6.</span> </span>
-<span id="cb44-9"><a href="practice.html#cb44-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
-<span id="cb44-10"><a href="practice.html#cb44-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
-<span id="cb44-11"><a href="practice.html#cb44-11" tabindex="-1"></a><span class="fl">9.</span> </span>
-<span id="cb44-12"><a href="practice.html#cb44-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
-<span id="cb44-13"><a href="practice.html#cb44-13" tabindex="-1"></a><span class="fl">11.</span> </span>
-<span id="cb44-14"><a href="practice.html#cb44-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
-<span id="cb44-15"><a href="practice.html#cb44-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
-<span id="cb44-16"><a href="practice.html#cb44-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
-<span id="cb44-17"><a href="practice.html#cb44-17" tabindex="-1"></a><span class="fl">15.</span> </span>
-<span id="cb44-18"><a href="practice.html#cb44-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
-<span id="cb44-19"><a href="practice.html#cb44-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
-<span id="cb44-20"><a href="practice.html#cb44-20" tabindex="-1"></a><span class="fl">18.</span> </span>
-<span id="cb44-21"><a href="practice.html#cb44-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
-<span id="cb44-22"><a href="practice.html#cb44-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
-<span id="cb44-23"><a href="practice.html#cb44-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
-<span id="cb44-24"><a href="practice.html#cb44-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
-<span id="cb44-25"><a href="practice.html#cb44-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
-<span id="cb44-26"><a href="practice.html#cb44-26" tabindex="-1"></a><span class="fl">24.</span> </span>
-<span id="cb44-27"><a href="practice.html#cb44-27" tabindex="-1"></a><span class="fl">25.</span> </span>
-<span id="cb44-28"><a href="practice.html#cb44-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
-<span id="cb44-29"><a href="practice.html#cb44-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
-<span id="cb44-30"><a href="practice.html#cb44-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
-<span id="cb44-31"><a href="practice.html#cb44-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
-<span id="cb44-32"><a href="practice.html#cb44-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
-<span id="cb44-33"><a href="practice.html#cb44-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb44-34"><a href="practice.html#cb44-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
-<span id="cb44-35"><a href="practice.html#cb44-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
-<span id="cb44-36"><a href="practice.html#cb44-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
-<span id="cb44-37"><a href="practice.html#cb44-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
-<span id="cb44-38"><a href="practice.html#cb44-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb44-39"><a href="practice.html#cb44-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
-<span id="cb44-40"><a href="practice.html#cb44-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
-<span id="cb44-41"><a href="practice.html#cb44-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
-<span id="cb44-42"><a href="practice.html#cb44-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
-<span id="cb44-43"><a href="practice.html#cb44-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
-<span id="cb44-44"><a href="practice.html#cb44-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
-<span id="cb44-45"><a href="practice.html#cb44-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
-<span id="cb44-46"><a href="practice.html#cb44-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
-<span id="cb44-47"><a href="practice.html#cb44-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
-<span id="cb44-48"><a href="practice.html#cb44-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
-<span id="cb44-49"><a href="practice.html#cb44-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
-<span id="cb44-50"><a href="practice.html#cb44-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
-<span id="cb44-51"><a href="practice.html#cb44-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
-<span id="cb44-52"><a href="practice.html#cb44-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
-<span id="cb44-53"><a href="practice.html#cb44-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
-<span id="cb44-54"><a href="practice.html#cb44-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
-<span id="cb44-55"><a href="practice.html#cb44-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
-<span id="cb44-56"><a href="practice.html#cb44-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="practice.html#cb43-1" tabindex="-1"></a><span class="co"># Code to scrape data from website</span></span>
+<span id="cb43-2"><a href="practice.html#cb43-2" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="practice.html#cb43-3" tabindex="-1"></a><span class="fl">1.</span>  base_url <span class="op">=</span> <span class="st">"https://nces.ed.gov/ipeds/datacenter/"</span></span>
+<span id="cb43-4"><a href="practice.html#cb43-4" tabindex="-1"></a><span class="fl">2.</span>  data_url <span class="op">=</span> <span class="st">"DataFiles.aspx?"</span></span>
+<span id="cb43-5"><a href="practice.html#cb43-5" tabindex="-1"></a><span class="fl">3.</span>  year_base <span class="op">=</span> <span class="st">"year="</span></span>
+<span id="cb43-6"><a href="practice.html#cb43-6" tabindex="-1"></a><span class="fl">4.</span>  years <span class="op">=</span> [<span class="st">"1995"</span>, <span class="st">"1996"</span>, <span class="st">"1997"</span>, <span class="st">"1998"</span>]</span>
+<span id="cb43-7"><a href="practice.html#cb43-7" tabindex="-1"></a><span class="fl">5.</span>  session_id <span class="op">=</span> <span class="st">"&amp;sid=4f8f293f-df75-42cd-9cc0-ed184270cf17&amp;rtid=7"</span></span>
+<span id="cb43-8"><a href="practice.html#cb43-8" tabindex="-1"></a><span class="fl">6.</span> </span>
+<span id="cb43-9"><a href="practice.html#cb43-9" tabindex="-1"></a><span class="fl">7.</span>  <span class="co"># what type of files do you want to save?</span></span>
+<span id="cb43-10"><a href="practice.html#cb43-10" tabindex="-1"></a><span class="fl">8.</span>  file_type <span class="op">=</span> [<span class="st">"zip"</span>,<span class="st">"csv"</span>]</span>
+<span id="cb43-11"><a href="practice.html#cb43-11" tabindex="-1"></a><span class="fl">9.</span> </span>
+<span id="cb43-12"><a href="practice.html#cb43-12" tabindex="-1"></a><span class="fl">10.</span> <span class="co"># where do you want to save locally?</span></span>
+<span id="cb43-13"><a href="practice.html#cb43-13" tabindex="-1"></a><span class="fl">11.</span> </span>
+<span id="cb43-14"><a href="practice.html#cb43-14" tabindex="-1"></a><span class="fl">12.</span> <span class="co"># save_loc is redundant, but a reminder that you should have locally folders that reflect the years, </span></span>
+<span id="cb43-15"><a href="practice.html#cb43-15" tabindex="-1"></a><span class="fl">13.</span> <span class="co"># because that's where below is saving to</span></span>
+<span id="cb43-16"><a href="practice.html#cb43-16" tabindex="-1"></a><span class="fl">14.</span> save_loc <span class="op">=</span> years </span>
+<span id="cb43-17"><a href="practice.html#cb43-17" tabindex="-1"></a><span class="fl">15.</span> </span>
+<span id="cb43-18"><a href="practice.html#cb43-18" tabindex="-1"></a><span class="fl">16.</span> <span class="co"># what kind of prefix do you want on your files</span></span>
+<span id="cb43-19"><a href="practice.html#cb43-19" tabindex="-1"></a><span class="fl">17.</span> save_prefix <span class="op">=</span> <span class="st">"ipeds_"</span> </span>
+<span id="cb43-20"><a href="practice.html#cb43-20" tabindex="-1"></a><span class="fl">18.</span> </span>
+<span id="cb43-21"><a href="practice.html#cb43-21" tabindex="-1"></a><span class="fl">19.</span> <span class="co"># scrape</span></span>
+<span id="cb43-22"><a href="practice.html#cb43-22" tabindex="-1"></a><span class="fl">20.</span> <span class="cf">for</span> year <span class="kw">in</span> years:</span>
+<span id="cb43-23"><a href="practice.html#cb43-23" tabindex="-1"></a><span class="fl">21.</span>     url <span class="op">=</span> base_url<span class="op">+</span>data_url<span class="op">+</span>year_base<span class="op">+</span>year<span class="op">+</span>session_id </span>
+<span id="cb43-24"><a href="practice.html#cb43-24" tabindex="-1"></a><span class="fl">22.</span>     webpage <span class="op">=</span> requests.get(url)</span>
+<span id="cb43-25"><a href="practice.html#cb43-25" tabindex="-1"></a><span class="fl">23.</span>     soup <span class="op">=</span> BeautifulSoup(webpage.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb43-26"><a href="practice.html#cb43-26" tabindex="-1"></a><span class="fl">24.</span> </span>
+<span id="cb43-27"><a href="practice.html#cb43-27" tabindex="-1"></a><span class="fl">25.</span> </span>
+<span id="cb43-28"><a href="practice.html#cb43-28" tabindex="-1"></a><span class="fl">26.</span>     <span class="cf">if</span> os.path.isdir(<span class="st">"./"</span><span class="op">+</span>year):</span>
+<span id="cb43-29"><a href="practice.html#cb43-29" tabindex="-1"></a><span class="fl">27.</span>         <span class="co"># notice output path has "year" as a variable indicating folders</span></span>
+<span id="cb43-30"><a href="practice.html#cb43-30" tabindex="-1"></a><span class="fl">28.</span>         output_path <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>year<span class="op">+</span><span class="st">"_"</span><span class="op">+</span><span class="st">".html"</span></span>
+<span id="cb43-31"><a href="practice.html#cb43-31" tabindex="-1"></a><span class="fl">29.</span>     </span>
+<span id="cb43-32"><a href="practice.html#cb43-32" tabindex="-1"></a><span class="fl">30.</span>         <span class="cf">if</span> os.path.exists(output_path):</span>
+<span id="cb43-33"><a href="practice.html#cb43-33" tabindex="-1"></a><span class="fl">31.</span>             <span class="bu">print</span>(output_path<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb43-34"><a href="practice.html#cb43-34" tabindex="-1"></a><span class="fl">32.</span>         <span class="cf">else</span>:</span>
+<span id="cb43-35"><a href="practice.html#cb43-35" tabindex="-1"></a><span class="fl">33.</span>             <span class="co"># saving the html file</span></span>
+<span id="cb43-36"><a href="practice.html#cb43-36" tabindex="-1"></a><span class="fl">34.</span>             <span class="bu">print</span>(<span class="st">"saving "</span><span class="op">+</span>output_path)</span>
+<span id="cb43-37"><a href="practice.html#cb43-37" tabindex="-1"></a><span class="fl">35.</span>     </span>
+<span id="cb43-38"><a href="practice.html#cb43-38" tabindex="-1"></a><span class="fl">36.</span>             <span class="cf">with</span> <span class="bu">open</span>(output_path, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb43-39"><a href="practice.html#cb43-39" tabindex="-1"></a><span class="fl">37.</span>                 <span class="bu">file</span>.write(webpage.content) </span>
+<span id="cb43-40"><a href="practice.html#cb43-40" tabindex="-1"></a><span class="fl">38.</span>             </span>
+<span id="cb43-41"><a href="practice.html#cb43-41" tabindex="-1"></a><span class="fl">39.</span>         <span class="co"># saving files linked on original html page which meet file type requirement</span></span>
+<span id="cb43-42"><a href="practice.html#cb43-42" tabindex="-1"></a><span class="fl">40.</span>         <span class="cf">for</span> link <span class="kw">in</span> soup.find_all(<span class="st">'a'</span>)[<span class="dv">0</span>:<span class="dv">16</span>]:  </span>
+<span id="cb43-43"><a href="practice.html#cb43-43" tabindex="-1"></a><span class="fl">41.</span>             data_target <span class="op">=</span> link.get(<span class="st">'href'</span>)</span>
+<span id="cb43-44"><a href="practice.html#cb43-44" tabindex="-1"></a><span class="fl">42.</span>             <span class="co"># data_target[-3:]</span></span>
+<span id="cb43-45"><a href="practice.html#cb43-45" tabindex="-1"></a><span class="fl">43.</span>             <span class="cf">if</span> <span class="bu">any</span>(extension <span class="op">==</span> data_target[<span class="op">-</span><span class="dv">3</span>:] <span class="cf">for</span> extension <span class="kw">in</span> file_type):</span>
+<span id="cb43-46"><a href="practice.html#cb43-46" tabindex="-1"></a><span class="fl">44.</span>                 wget_url <span class="op">=</span> base_url<span class="op">+</span>data_target</span>
+<span id="cb43-47"><a href="practice.html#cb43-47" tabindex="-1"></a><span class="fl">45.</span>                 wget_save <span class="op">=</span> <span class="st">"./"</span><span class="op">+</span>year<span class="op">+</span><span class="st">"/"</span><span class="op">+</span>save_prefix<span class="op">+</span>data_target.replace(<span class="st">"/"</span>,<span class="st">"-"</span>)</span>
+<span id="cb43-48"><a href="practice.html#cb43-48" tabindex="-1"></a><span class="fl">46.</span>     </span>
+<span id="cb43-49"><a href="practice.html#cb43-49" tabindex="-1"></a><span class="fl">47.</span>                 <span class="cf">if</span> os.path.exists(wget_save):</span>
+<span id="cb43-50"><a href="practice.html#cb43-50" tabindex="-1"></a><span class="fl">48.</span>                     <span class="bu">print</span>(wget_save<span class="op">+</span><span class="st">" already exists. Did NOT save."</span>)</span>
+<span id="cb43-51"><a href="practice.html#cb43-51" tabindex="-1"></a><span class="fl">49.</span>                 <span class="cf">else</span>:</span>
+<span id="cb43-52"><a href="practice.html#cb43-52" tabindex="-1"></a><span class="fl">50.</span>                     <span class="bu">print</span>(<span class="st">"SAVING "</span><span class="op">+</span> wget_url<span class="op">+</span> <span class="st">" at local location: "</span><span class="op">+</span>wget_save)</span>
+<span id="cb43-53"><a href="practice.html#cb43-53" tabindex="-1"></a><span class="fl">51.</span>                     wget.download(wget_url,wget_save)</span>
+<span id="cb43-54"><a href="practice.html#cb43-54" tabindex="-1"></a><span class="fl">52.</span>                     time.sleep(<span class="fl">.25</span>) <span class="co"># be kind, don't look like a DDOS attack</span></span>
+<span id="cb43-55"><a href="practice.html#cb43-55" tabindex="-1"></a><span class="fl">53.</span>     <span class="cf">else</span>:</span>
+<span id="cb43-56"><a href="practice.html#cb43-56" tabindex="-1"></a><span class="fl">54.</span>         <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">!!! save directory "</span><span class="op">+</span>year<span class="op">+</span><span class="st">" does NOT exist. please create</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div>
 <details><summary>
 Start and end locations
 </summary><ul>
@@ -268,7 +269,7 @@ Start and end locations
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-04-15.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-09-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

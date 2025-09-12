@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="In this section, we’ll practice applying our understanding of functions and arguments to unfamiliar code. The code example below may look intimidating! But remember, we’re less concerned here...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
 <script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
@@ -66,7 +66,8 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="about.html"><span class="header-section-number">1</span> About</a></li>
 <li><a class="" href="intro.html"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="" href="algorithms.html"><span class="header-section-number">3</span> Algorithms</a></li>
 <li><a class="" href="data-types.html"><span class="header-section-number">4</span> Data types</a></li>
@@ -101,12 +102,12 @@
 <p>While the logic underlying programming languages stays consistent, a central challenge is that different languages often have their own function terms and syntax, which can take a while to get used to.</p>
 <p>Don’t panic! Familiarity comes with experience and in the meantime, Google is your friend (well, the search engine of your choice. Some of us prefer DuckDuckGo).<br></p>
 <p>Here is an example of R code:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="practice-1.html#cb65-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb65-2"><a href="practice-1.html#cb65-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-3"><a href="practice-1.html#cb65-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb65-4"><a href="practice-1.html#cb65-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
-<span id="cb65-5"><a href="practice-1.html#cb65-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
-<span id="cb65-6"><a href="practice-1.html#cb65-6" tabindex="-1"></a>  </span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="practice-1.html#cb64-1" tabindex="-1"></a><span class="fl">1.</span>  df_new <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb64-2"><a href="practice-1.html#cb64-2" tabindex="-1"></a><span class="fl">2.</span>    <span class="fu">select</span>(<span class="sc">-</span>respondent_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb64-3"><a href="practice-1.html#cb64-3" tabindex="-1"></a><span class="fl">3.</span>    <span class="fu">mutate</span>(<span class="at">identifier =</span> <span class="fu">paste</span>(respondent_id, survey_wave, <span class="at">sep =</span> <span class="st">"_"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb64-4"><a href="practice-1.html#cb64-4" tabindex="-1"></a><span class="fl">4.</span>    <span class="fu">mutate</span>(<span class="at">survey_type =</span> </span>
+<span id="cb64-5"><a href="practice-1.html#cb64-5" tabindex="-1"></a><span class="fl">5.</span>           <span class="fu">ifelse</span>(survey_wave <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"first"</span>, <span class="st">"second"</span>), <span class="st">"phone"</span>, <span class="st">"in person"</span>))</span>
+<span id="cb64-6"><a href="practice-1.html#cb64-6" tabindex="-1"></a>  </span></code></pre></div>
 <p><strong>Exercise</strong>: Go line by line and annotate, in your own words, what that line of code is doing. Then, combine these into a written narrative of what this code is doing.<br></p>
 <p>Each line has a new take on the same logic we’ve covered in prior sections; a breakdown of new terms is below to guide your annotation.</p>
 <ul>
@@ -154,7 +155,7 @@ Example narrative
 </h2>
 <p>This code example uses Stata, a proprietary statistical analysis platform. Stata has a number of unique features and syntax that can make it challenging to interpret. (At least in this instructor’s experience, Stata is not user-friendly, but your mileage may vary!)</p>
 <p>Relying on what we’ve learned so far and context clues, what do you think the code below is doing?</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb66-1"><a href="practice-1.html#cb66-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb65-1"><a href="practice-1.html#cb65-1" tabindex="-1"></a><span class="kw">replace</span> <span class="kw">variable</span> = <span class="kw">variable</span>[<span class="dt">_n</span>-1] <span class="kw">if</span> <span class="fu">missing</span>(<span class="kw">variable</span>)</span></code></pre></div>
 <details><summary>
 What is this code doing?
 </summary><p>This is a bit of code to replace any missing values of <code>variable</code> with with previous (<code>n-1</code>) value of <code>variable</code>.</p>
@@ -187,7 +188,7 @@ There are <a href="https://www.stata.com/support/faqs/data-management/replacing-
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-04-15.</p>
+    <p>"<strong>Programming Logic for Non-Programmers</strong>" was written by Kat Koziar and Stephanie Labou. It was last built on 2025-09-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

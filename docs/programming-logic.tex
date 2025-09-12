@@ -88,15 +88,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -123,9 +125,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{wrapfig}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{bookmark}
@@ -139,7 +138,7 @@
 
 \title{Programming Logic for Non-Programmers}
 \author{Kat Koziar and Stephanie Labou}
-\date{2025-04-15}
+\date{2025-09-10}
 
 \begin{document}
 \maketitle
@@ -148,6 +147,9 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
 \chapter{About}\label{about}
 
 \texttt{BEGIN\ pitch()}
@@ -777,10 +779,6 @@ Your paper is formatted so it's easy to see what's going on with variable during
 The next step is to fill in the values for each iteration of the loop.
 
 Your paper will now look something like this:
-
-\begin{verbatim}
-## Warning: package 'ftExtra' was built under R version 4.4.2
-\end{verbatim}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 

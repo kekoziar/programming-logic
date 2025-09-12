@@ -13,6 +13,12 @@ description: "This is a programming logic for non-programmers workshop, with a t
 always_allow_html: yes
 ---
 
+# Preface {-}
+
+```{asis, echo=identical(knitr:::pandoc_to(), 'html')}
+**Note**: The online version of this book is free to read here, and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/) CC-BY-NC-SA.
+```
+
 # About
 
 `BEGIN pitch()`
