@@ -19,6 +19,13 @@ always_allow_html: yes
 **Note**: The online version of this book is free to read here, and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/) CC-BY-NC-SA.
 ```
 
+# Preferred Citation {-}
+
+```{asis, echo=identical(knitr:::pandoc_to(), 'html')}
+Koziar, K. and Labou, S. (2025). Programming Logic for Non-Programmers. GitHub. https://kekoziar.github.io/programming-logic/index.html. 
+```
+
+
 # About
 
 `BEGIN pitch()`
